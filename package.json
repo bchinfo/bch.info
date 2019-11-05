@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/merc1er/whitespace#readme",
   "devDependencies": {
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
+    "gulp-newer": "^1.4.0",
     "gulp-sass": "^4.0.2"
   }
 }
