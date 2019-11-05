@@ -2,7 +2,8 @@ let gulp = require('gulp'),
     sass = require('gulp-sass'),
     del = require('del'),
     newer = require('gulp-newer'),
-    browserSync = require('browser-sync');
+    browserSync = require('browser-sync'),
+    reload = browserSync.reload;
 
 
 // TASKS
@@ -10,40 +11,48 @@ gulp.task('clean', function(done){
   // Deletes all files from dist/
   del.sync('dist/', {force: true});
   done()
-})
+});
 
 gulp.task('sass', function(){
   return gulp.src('scss/style.scss')
     .pipe(sass()) // Compiles styles.scss to css
     .pipe(gulp.dest('app/static/css'))
-    .pipe(browserSync.reload({
+    .pipe(reload({
       stream: true
     }))
-})
+});
 
 // Copy html files to dist
 gulp.task('html', function(){
   return gulp.src('app/**/*.html')
     .pipe(newer('dist/')) // Only get the modified files
     .pipe(gulp.dest('dist/'))
-})
+});
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', function(){
   browserSync.init({
     server: {
       baseDir: 'app'
     },
   })
-})
+});
 
-// Watch
-// gulp.task('watch', ['browserSync', 'sass'], function (){
-//   gulp.watch('scss/**/*.scss', ['sass']);
-//   //
-// })
+gulp.task('reload', function(done){
+  reload();
+  done();
+});
 
-// watch files for changes and reload
-gulp.task('serve', function (done) {
+// Watch for changes
+gulp.task('watch', function(done){
+  // Watch HTML pages
+  gulp.watch('app/**/*.html', gulp.series('html', 'reload'));
+  // Watch SCSS files
+  gulp.watch('scss/**/*.scss', gulp.series('sass'));
+  done();
+});
+
+// Starts browserSync
+gulp.task('serve', function(done){
   browserSync({
     server: {
       baseDir: './dist',
@@ -55,7 +64,7 @@ gulp.task('serve', function (done) {
 
 
 // Default task
-gulp.task('default', gulp.series('clean', 'sass', 'html', 'serve'))
+gulp.task('default', gulp.series('clean', 'sass', 'html', 'serve', 'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'sass', 'html'))
+gulp.task('build', gulp.series('clean', 'sass', 'html'));
