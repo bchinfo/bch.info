@@ -29,6 +29,12 @@ gulp.task('html', function(){
     .pipe(gulp.dest('dist/'))
 });
 
+// Copy all static files
+gulp.task('copy-static', function(){
+  return gulp.src('app/static/**/*.*', {base: './app/static/'})
+    .pipe(gulp.dest('dist/static/'));
+});
+
 gulp.task('browserSync', function(){
   browserSync.init({
     server: {
@@ -45,9 +51,9 @@ gulp.task('reload', function(done){
 // Watch for changes
 gulp.task('watch', function(done){
   // Watch HTML pages
-  gulp.watch('app/**/*.html', gulp.series('html', 'reload'));
+  gulp.watch('app/**/*.html', gulp.series('html', 'copy-static', 'reload'));
   // Watch SCSS files
-  gulp.watch('scss/**/*.scss', gulp.series('sass'));
+  gulp.watch('scss/**/*.scss', gulp.series('sass', 'copy-static'));
   done();
 });
 
@@ -64,7 +70,8 @@ gulp.task('serve', function(done){
 
 
 // Default task
-gulp.task('default', gulp.series('clean', 'sass', 'html', 'serve', 'watch'));
+gulp.task('default', gulp.series('clean', 'sass', 'html',
+  'copy-static', 'serve', 'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'sass', 'html'));
+gulp.task('build', gulp.series('clean', 'sass', 'html', 'copy-static'));
