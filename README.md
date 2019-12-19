@@ -1,6 +1,4 @@
-# WhiteSpace Bordeaux Coworking Website
-
-Assets for [whitespace.fr](https://whitespace.fr) website.
+# Gulp project skeleton
 
 ### Run the develoment server
 
