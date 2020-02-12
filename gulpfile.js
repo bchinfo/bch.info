@@ -3,6 +3,7 @@ let gulp = require('gulp'),
     del = require('del'),
     newer = require('gulp-newer'),
     browserSync = require('browser-sync'),
+    cleanCSS = require('gulp-clean-css'),
     reload = browserSync.reload;
 
 
@@ -16,6 +17,7 @@ gulp.task('clean', function(done){
 gulp.task('sass', function(){
   return gulp.src('scss/style.scss')
     .pipe(sass()) // Compiles styles.scss to css
+    .pipe(cleanCSS({compatibility: 'ie9'})) // Minifies CSS
     .pipe(gulp.dest('app/static/css'))
     .pipe(reload({
       stream: true
