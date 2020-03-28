@@ -37,14 +37,6 @@ gulp.task('copy-static', function(){
     .pipe(gulp.dest('dist/static/'));
 });
 
-gulp.task('browserSync', function(){
-  browserSync.init({
-    server: {
-      baseDir: 'app'
-    },
-  })
-});
-
 gulp.task('reload', function(done){
   reload();
   done();
