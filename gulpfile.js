@@ -4,6 +4,7 @@ let gulp = require('gulp'),
     newer = require('gulp-newer'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
+    nunjucksRender = require('gulp-nunjucks-render'),
     reload = browserSync.reload;
 
 
@@ -14,6 +15,18 @@ gulp.task('clean', function(done){
   done()
 });
 
+// Nunjucks
+gulp.task('nunjucks', function() {
+  // Gets all .html files in pages
+  return gulp.src('app/**/*.html')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+    path: ['app/templates/']
+  }))
+  // Outputs files in dist folder
+  .pipe(gulp.dest('dist'))
+});
+
 gulp.task('sass', function(){
   return gulp.src('scss/style.scss')
     .pipe(sass()) // Compiles styles.scss to css
@@ -22,13 +35,6 @@ gulp.task('sass', function(){
     .pipe(reload({
       stream: true
     }))
-});
-
-// Copy html files to dist
-gulp.task('html', function(){
-  return gulp.src('app/**/*.html')
-    .pipe(newer('dist/')) // Only get the modified files
-    .pipe(gulp.dest('dist/'))
 });
 
 // Copy all static files
@@ -45,7 +51,7 @@ gulp.task('reload', function(done){
 // Watch for changes
 gulp.task('watch', function(done){
   // Watch HTML pages
-  gulp.watch('app/**/*.html', gulp.series('html', 'copy-static', 'reload'));
+  gulp.watch('app/**/*.html', gulp.series('nunjucks', 'copy-static', 'reload'));
   // Watch SCSS files
   gulp.watch('scss/**/*.scss', gulp.series('sass', 'copy-static'));
   done();
@@ -64,8 +70,9 @@ gulp.task('serve', function(done){
 
 
 // Default task
-gulp.task('default', gulp.series('clean', 'sass', 'html',
+gulp.task('default', gulp.series('clean', 'sass', 'nunjucks',
   'copy-static', 'serve', 'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'sass', 'html', 'copy-static'));
+gulp.task('build', gulp.series('clean', 'sass', 'nunjucks',
+  'copy-static'));
