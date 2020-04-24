@@ -27,6 +27,6 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-newer": "^1.4.0",
     "gulp-nunjucks-render": "^2.2.3",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.0"
   }
 }
