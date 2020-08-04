@@ -22,8 +22,8 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 - HTML files are located in `/app/`. `.njk` files are template ([Nunjucks](https://mozilla.github.io/nunjucks/)) files.
 
-- CSS files are location in `/scss/`. Use [Sass](https://sass-lang.com) syntax if possible.
+- CSS files are located in `/scss/`. Use [Sass](https://sass-lang.com) syntax if possible.
 
 ### Deployment
 
-The `master` is automatically deployed.
+The `master` branch is automatically deployed.
