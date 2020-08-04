@@ -1,25 +1,25 @@
 {
-  "name": "whitespace",
+  "name": "bch.info",
   "version": "1.0.0",
-  "description": "Coworking space in Bordeaux website",
+  "description": "Bitcoin Cash informational website",
   "main": "index.js",
   "scripts": {
     "test": "echo test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/merc1er/whitespace.git"
+    "url": "git+https://github.com/merc1er/bch.info.git"
   },
   "keywords": [
-    "Coworking",
-    "WhiteSpace"
+    "Bitcoin Cash",
+    "Bitcoin"
   ],
   "author": "Corentin Mercier",
-  "license": "ISC",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/merc1er/whitespace/issues"
+    "url": "https://github.com/merc1er/bch.info/issues"
   },
-  "homepage": "https://github.com/merc1er/whitespace#readme",
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "^2.26.12",
     "bootstrap": "^5.0.0-alpha1",
