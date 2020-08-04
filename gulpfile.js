@@ -55,6 +55,9 @@ gulp.task('watch', function(done){
   // Watch SCSS files
   gulp.watch('scss/**/*.scss', gulp.series('sass', 'copy-static'));
   done();
+  // Watch static files
+  gulp.watch('app/static/**/*.*', gulp.series('copy-static',
+    'reload'));
 });
 
 // Starts browserSync
