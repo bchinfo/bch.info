@@ -8,3 +8,9 @@
 // html {
 //   font-family: font;
 // }
+
+@include media-breakpoint-down(md){
+  .display-1 {
+    font-size: 3em;
+  }
+}

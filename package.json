@@ -21,8 +21,8 @@
   },
   "homepage": "",
   "devDependencies": {
+    "bootstrap": "^4.5.0",
     "browser-sync": "^2.26.12",
-    "bootstrap": "^5.0.0-alpha1",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
