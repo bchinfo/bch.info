@@ -1,6 +1,15 @@
 // Variables
 
 // Colors
+
 $primary: #0AC18E;
 $secondary: #0F1820;
 $white: #F8FDFF;
+
+// Spacing
+
+$spacer: 1rem;
+$spacers: (
+    6: ($spacer * 5),
+    7: ($spacer * 8)
+    );

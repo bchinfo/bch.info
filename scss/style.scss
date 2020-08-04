@@ -1,2 +1,11 @@
 @import "variables";
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "typography";
+
+
+.hero {
+  background-image: url('/static/img/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
