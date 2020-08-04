@@ -9,3 +9,4 @@ node_modules
 # Auto generated files
 dist/
 app/static/css/style.css
+README.html
