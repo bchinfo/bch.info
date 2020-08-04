@@ -3,6 +3,8 @@
 @import "typography";
 
 
+// Hero header
+
 .hero {
   background-image: url('/static/img/bg.svg');
   background-size: cover;
@@ -10,4 +12,11 @@
   background-position: center bottom;
   height: 800px;
   width: 100vw;
+}
+
+@include media-breakpoint-down(md){
+  .hero {
+    background-position: 20% bottom;
+    height: 600px;
+  }
 }
