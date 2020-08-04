@@ -1,3 +1,11 @@
+# Local env
 .DS_Store
+**/*.swp
+**/*.swap
+
+# NodeJS
 node_modules
+
+# Auto generated files
 dist/
+app/static/css/style.css

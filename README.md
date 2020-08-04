@@ -1,4 +1,4 @@
-# Gulp project skeleton
+# Bitcoin Cash informational website
 
 ### Run the develoment server
 
@@ -11,3 +11,7 @@ gulp
 ```
 
 Hit `ctrl + C` to stop the server.
+
+### Contribute
+
+Use the coding style recommended by [codeguide.co](https://codeguide.co).
