@@ -1,0 +1,39 @@
+// Cards
+
+.card {
+  &-header {
+    border-bottom: none;
+  }
+
+  &-footer {
+    border-top: none;
+  }
+}
+
+.card-deck {
+  display: inline-block;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+
+  .card {
+    flex: 1 0 0%;
+    margin-right: 0;
+    margin-bottom: $card-deck-margin;
+    margin-left: 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: -$card-deck-margin;
+    margin-left: -$card-deck-margin;
+
+    .card {
+      flex: 1 0 0%;
+      margin-right: $card-deck-margin;
+      margin-bottom: 0; // Override the default
+      margin-left: $card-deck-margin;
+    }
+  }
+}
