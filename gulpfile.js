@@ -1,10 +1,11 @@
-let gulp = require('gulp'),
+const gulp = require('gulp'),
     sass = require('gulp-sass'),
     del = require('del'),
     newer = require('gulp-newer'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    concat = require('gulp-concat');
     reload = browserSync.reload;
 
 
@@ -27,6 +28,7 @@ gulp.task('nunjucks', function() {
   .pipe(gulp.dest('dist'))
 });
 
+// Compile Sass
 gulp.task('sass', function(){
   return gulp.src('scss/style.scss')
     .pipe(sass()) // Compiles styles.scss to css
@@ -35,6 +37,13 @@ gulp.task('sass', function(){
     .pipe(reload({
       stream: true
     }))
+});
+
+// Contat JavaScript
+gulp.task('js', function() {
+  return gulp.src('js/*.js')
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('dist/static/js/'));
 });
 
 // Copy all static files
@@ -77,8 +86,8 @@ gulp.task('serve', function(done){
 
 // Default task
 gulp.task('default', gulp.series('clean', 'sass', 'nunjucks',
-  'copy-static', 'serve', 'watch'));
+  'copy-static', 'js', 'serve', 'watch'));
 
 // Deployment task
 gulp.task('build', gulp.series('clean', 'sass', 'nunjucks',
-  'copy-static'));
+  'copy-static', 'js'));

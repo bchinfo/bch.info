@@ -24,6 +24,8 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 - CSS files are located in `/scss/`. Use [Sass](https://sass-lang.com) syntax if possible.
 
+- JavaScript files are located in `/js/`. All files will be concatenated in alphabetical order unless specified otherwise.
+
 ### Deployment
 
 The `master` branch is automatically deployed.
