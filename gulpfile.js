@@ -5,6 +5,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    i18n = require('gulp-html-i18n'),
     concat = require('gulp-concat');
     reload = browserSync.reload;
 
@@ -16,6 +17,19 @@ gulp.task('clean', function(done){
   done()
 });
 
+// Internationalization
+gulp.task('i18n', function(){
+  return gulp.src('dist-lang/**/*.html')
+    .pipe(i18n({
+      langDir: 'lang', // takes translations from /lang/
+      createLangDirs: true,
+      defaultLang: 'en',
+      fallback: 'en',
+      delimiters: ['$(',')$']  // to avoid conflicts with Nunjucks
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
 // Nunjucks
 gulp.task('nunjucks', function() {
   // Gets all .html files in pages
@@ -25,7 +39,7 @@ gulp.task('nunjucks', function() {
     path: ['app/templates/']
   }))
   // Outputs files in dist folder
-  .pipe(gulp.dest('dist'))
+  .pipe(gulp.dest('dist-lang'))
 });
 
 // Compile Sass
@@ -69,6 +83,8 @@ gulp.task('watch', function(done){
     'reload'));
   // Watch JS files
   gulp.watch('js/*.js', gulp.series('js', 'reload'));
+  // Watch translations
+  gulp.watch('lang/**/*.yaml', gulp.series('i18n', 'reload'));
   done();
 });
 
@@ -88,9 +104,9 @@ gulp.task('serve', function(done){
 
 
 // Default task
-gulp.task('default', gulp.series('clean', 'sass', 'nunjucks',
+gulp.task('default', gulp.series('clean', 'sass', 'nunjucks', 'i18n',
   'copy-static', 'js', 'serve', 'watch'));
 
 // Deployment task
-gulp.task('build', gulp.series('clean', 'sass', 'nunjucks',
+gulp.task('build', gulp.series('clean', 'sass', 'nunjucks', 'i18n',
   'copy-static', 'js'));

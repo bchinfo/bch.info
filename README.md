@@ -29,3 +29,9 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 ### Deployment
 
 The `master` branch is automatically deployed.
+
+## Translate
+
+Translations are managed through [Crowdin](https://crowdin.com). If you wish to translate this website into your own language, please open an issue at this repo.
+
+Pull requests are automatically created when a translation is updated.

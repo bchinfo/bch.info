@@ -30,5 +30,8 @@
     "gulp-newer": "^1.4.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-sass": "^4.1.0"
+  },
+  "dependencies": {
+    "gulp-html-i18n": "^0.16.0"
   }
 }
