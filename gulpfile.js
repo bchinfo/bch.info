@@ -53,9 +53,13 @@ gulp.task('sass', function(){
     }))
 });
 
-// Contat JavaScript
+// Concat JavaScript
 gulp.task('js', function() {
-  return gulp.src('js/*.js')
+  const files = [
+    'node_modules/moveto/dist/moveTo.min.js',
+    'js/*.js'
+  ];
+  return gulp.src(files)
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('dist/static/js/'));
 });
