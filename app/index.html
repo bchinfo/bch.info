@@ -3,21 +3,7 @@
 {% block body %}
 
 <section class="hero">
-  <!-- Navbar -->
-  <nav class="navbar navbar-light">
-    <div class="container mt-4">
-      <a class="navbar-brand" href="/">
-        <img src="/static/img/bitcoin-cash-logo-horizontal-wt.svg" height="30" alt="Bitcoin Cash Logo" loading="lazy">
-      </a>
-
-      <div>
-        <a class="btn btn-transparent text-light px-3" href="#">
-          {% include "icons/menu.svg" %}
-        </a>
-      </div>
-    </div>
-  </nav>
-  <!-- /Navbar -->
+  {% include "navbar.njk" %}
 
   <div class="container py-6 text-white text-center text-md-left">
     <h1 class="display-1 font-weight-bold">Better money<br>for the world</h1>
