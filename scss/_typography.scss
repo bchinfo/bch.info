@@ -11,6 +11,12 @@
 
 @include media-breakpoint-down(md){
   .display-1 {
+    font-size: 4.5em;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .display-1 {
     font-size: 3em;
   }
 }
