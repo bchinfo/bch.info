@@ -1,0 +1,16 @@
+{% extends 'base.njk' %}
+
+{% block body %}
+
+<section class="hero bg-dark">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold mt-5">404</h1>
+    <p class="h2">Page not found</p>
+    <div class="mt-4 row justify-content-center justify-content-md-start">
+      <a class="btn btn-primary btn col-8 col-md-3" href="/$( _lang_ )$">Go back home</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
