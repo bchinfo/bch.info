@@ -31,6 +31,13 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>{% block title %}Bitcoin Cash{% endblock %}</title>
+
+  <!-- Preload -->
+  {% if title == "index" %}
+  <link rel="preload" href="/static/img/hero.svg" as="image">
+  {% else %}
+  <link rel="preload" href="/static/img/hero-alt.svg" as="image">
+  {% endif %}
 </head>
 <body>
 
