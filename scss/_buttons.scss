@@ -7,3 +7,21 @@
     background-color: rgba(100, 100, 100, .4);
   }
 }
+
+// For App Store and Play Store
+.btn-store {
+  height: 50px;
+}
+
+@include media-breakpoint-down(sm) {
+  .btn-store {
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  // Add iPhone SE support
+  .btn-store {
+    height: 38px;
+  }
+}
