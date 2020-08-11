@@ -1,4 +1,12 @@
-# Bitcoin Cash informational website
+<div align="center">
+  <img src="app/static/img/bitcoin-cash-logo-flag.svg" height="70">
+  <h4><a href="https://bch.info" target="_blank">bch.info</a></h4>
+  <p>Bitcoin Cash informational website</p>
+</div>
+
+<hr>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/52d9f701-354f-4e58-9223-d4da49906174/deploy-status)](https://app.netlify.com/sites/bch/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/merc1er/bch.info/badge/master)](https://www.codefactor.io/repository/github/merc1er/bch.info/overview/master) [![Crowdin](https://badges.crowdin.net/bchinfo/localized.svg)](https://crowdin.com/project/bchinfo)
 
 ### Run the develoment server
 
@@ -30,7 +38,7 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 The `master` branch is automatically deployed.
 
-## Translate
+### Translate
 
 Translations are managed through [Crowdin](https://crowdin.com). If you wish to translate this website into your own language, please open an issue at this repo.
 
