@@ -1,12 +1,12 @@
 const gulp = require('gulp'),
     sass = require('gulp-sass'),
     del = require('del'),
-    newer = require('gulp-newer'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render'),
     i18n = require('gulp-html-i18n'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
+    terser = require('gulp-terser'),
     reload = browserSync.reload;
 
 
@@ -61,6 +61,8 @@ gulp.task('js', function() {
   ];
   return gulp.src(files)
     .pipe(concat('scripts.js'))
+    // Minify JS
+    .pipe(terser())
     .pipe(gulp.dest('dist/static/js/'));
 });
 
