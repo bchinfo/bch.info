@@ -51,6 +51,10 @@ footer .nav.flex-column .nav-link {
   display: none;
 }
 
+#closeMenu {
+  width: 58px; // set same width as the hamburger button
+}
+
 .no-scrolling {
   height: 100%;
   overflow: hidden;
