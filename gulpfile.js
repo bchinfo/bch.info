@@ -56,6 +56,8 @@ gulp.task('sass', function(){
 // Concat JavaScript
 gulp.task('js', function() {
   const files = [
+    'node_modules/jquery/dist/jquery.slim.min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     'node_modules/moveto/dist/moveTo.min.js',
     'js/*.js'
   ];
