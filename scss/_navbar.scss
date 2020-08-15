@@ -1,0 +1,16 @@
+// Navigation
+
+.nav.flex-column .nav-link {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+#logo {
+  height: 25px;
+}
+
+@media screen and (max-width: 346px) {
+  #logo {
+    height: 22px;
+  }
+}
