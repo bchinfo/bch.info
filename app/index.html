@@ -65,9 +65,12 @@
       <div class="card-deck">
 
         <div class="card shadow-lg">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h2>Individuals</h2>
-            <hr>
+            <div class="px-5 mb-3">
+              {% include "graphics/individual.svg" %}
+            </div>
+
             <a href="/$( _lang_ )$/wallets" class="d-block py-1">$( index.wallet )$ {% include "icons/arrow-right.svg" %}</a>
             <a href="/$( _lang_ )$/exchanges" class="d-block py-1">Get Bitcoin Cash {% include "icons/arrow-right.svg" %}</a>
             <!-- <a href="#" class="d-block py-1">Spend Bitcoin Cash {% include "icons/arrow-right.svg" %}</a> -->
@@ -75,18 +78,24 @@
         </div>
 
         <div class="card shadow-lg">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h2>Pools & Exchanges</h2>
-            <hr>
+            <div class="px-5 mb-3">
+              {% include "graphics/node.svg" %}
+            </div>
+
             <a href="/$( _lang_ )$/nodes" class="d-block py-1">Run a full node {% include "icons/arrow-right.svg" %}</a>
             <a href="/$( _lang_ )$/upgrade" class="d-block py-1">Upgrade your full node {% include "icons/arrow-right.svg" %}</a>
           </div>
         </div>
 
         <div class="card shadow-lg">
-          <div class="card-body">
+          <div class="card-body text-center">
             <h2>Developers</h2>
-            <hr>
+            <div class="px-5 mb-3">
+              {% include "graphics/developer.svg" %}
+            </div>
+
             <a href="/$( _lang_ )$/developers" class="d-block py-1">Libraries {% include "icons/arrow-right.svg" %}</a>
             <a href="/$( _lang_ )$/nodes" class="d-block py-1">Run a full node {% include "icons/arrow-right.svg" %}</a>
           </div>
