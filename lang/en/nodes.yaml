@@ -4,7 +4,7 @@ sub: Be part of the network by running a full node
 recommended:
   title: Recommended node for miners
   bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
-  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash Node.
+  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
   btn: Go to website
 
 popular:
