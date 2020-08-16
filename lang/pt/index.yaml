@@ -1,4 +1,5 @@
 ---
+title: Better money<br>for the world
 get-started: Get started
 wallet: Choose a wallet
 upgrade:
@@ -11,3 +12,7 @@ fraud: No fraud
 border: No borders
 chargeback: No chargebacks
 frozen: No frozen funds
+get-bch: Get Bitcoin Cash
+pools-exch: Pools & Exchanges
+run: Run a full node
+upgrade-node: Upgrade your full node
