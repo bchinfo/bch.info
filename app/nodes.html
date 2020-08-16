@@ -17,14 +17,23 @@
 <section class="bg-white">
   <div class="container">
     <div class="row py-6 align-items-center justify-content-center">
-      <div class="col-10 col-lg-5">
-        <img src="/static/img/nodes/bchn.png" alt="Bitcoin Cash Node command line" class="img-fluid">
+      <div class="col-10 col-lg-4">
+        {% include "graphics/node.svg" %}
       </div>
       <div class="col-lg-1"></div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
+      <div class="col-lg-7 mt-5 mt-lg-0">
         <h2>Recommended node for miners</h2>
-        <p class="lead py-3">Bitcoin Cash Node is a professional, miner-friendly node that solves practical problems for Bitcoin Cash.</p>
-        <a class="btn btn-primary" href="https://bitcoincashnode.org" target="_blank">Go to website</a>
+        <div class="card-deck">
+          <div class="card card-body ml-0">
+            <p class="lead pb-2 pt-3"><b>Bitcoin Cash Node</b> is a professional and miner-friendly node.</p>
+            <a class="btn btn-primary" href="https://bitcoincashnode.org" target="_blank">Go to website</a>
+          </div>
+
+          <div class="card card-body ml-0">
+            <p class="lead pb-2 pt-3"><b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash Node.</p>
+            <a class="btn btn-primary" href="https://bitcoinunlimited.info" target="_blank">Go to website</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
