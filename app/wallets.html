@@ -1,6 +1,6 @@
 {% extends 'base.njk' %}
 
-{% block title %}Wallets{% endblock %}
+{% block title %}$( wallets.title )${% endblock %}
 
 {% block body %}
 
@@ -8,8 +8,8 @@
   {% include "navbar.njk" %}
 
   <div class="container py-6 text-white text-center text-md-left">
-    <h1 class="display-1 font-weight-bold mt-5">Wallets</h1>
-    <p class="h3 text-muted">Send, receive and hold Bitcoin Cash with a wallet</p>
+    <h1 class="display-1 font-weight-bold mt-5">$( wallets.title )$</h1>
+    <p class="h3 text-muted">$( wallets.sub )$</p>
   </div>
 </section>
 
@@ -18,8 +18,8 @@
     <div class="row py-6">
       <div class="col-md-6 mb-5">
         <!-- Mobile -->
-        <h2>Mobile wallets</h2>
-        <p class="lead">Easy and safe for most people</p>
+        <h2>$( wallets.mobile.title )$</h2>
+        <p class="lead">$( wallets.mobile.sub )$</p>
         <a class="d-block" href="https://wallet.bitcoin.com" target="_blank">Bitcoin.com Wallet</a>
         <a class="d-block" href="https://bitpay.com/wallet" target="_blank">BitPay</a>
         <a class="d-block" href="https://www.ifwallet.com" target="_blank">IFWallet</a>
@@ -27,24 +27,24 @@
 
       <!-- Desktop -->
       <div class="col-md-6 mb-5">
-        <h2>Desktop wallets</h2>
-        <p class="lead">More advanced wallets on your computer</p>
+        <h2>$( wallets.desktop.title )$</h2>
+        <p class="lead">$( wallets.desktop.sub )$</p>
         <a class="d-block" href="https://electroncash.org" target="_blank">Electron Cash</a>
         <a class="d-block" href="https://crescent.cash" target="_blank">Crescent Cash</a>
       </div>
 
       <!-- Hardware -->
       <div class="col-md-6 mb-5 mb-md-0">
-        <h2>Hardware wallets</h2>
-        <p class="lead">Built for security</p>
+        <h2>$( wallets.hardware.title )$</h2>
+        <p class="lead">$( wallets.hardware.sub )$</p>
         <a class="d-block" href="https://www.ledger.com" target="_blank">Ledger</a>
         <a class="d-block" href="https://trezor.io" target="_blank">Trezor</a>
       </div>
 
       <!-- Paper -->
       <div class="col-md-6">
-        <h2>Paper wallets</h2>
-        <p class="lead">Ideal for gifts</p>
+        <h2>$( wallets.paper.title )$</h2>
+        <p class="lead">$( wallets.paper.sub )$</p>
         <a class="d-block" href="https://paperwallet.bitcoin.com/" target="_blank">Bitcoin.com Paper Wallets</a>
         <a class="d-block" href="https://bitcoincashnotes.com/" target="_blank">Bitcoin Cash Notes</a>
       </div>
