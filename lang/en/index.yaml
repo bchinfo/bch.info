@@ -13,7 +13,6 @@ border: No borders
 chargeback: No chargebacks
 frozen: No frozen funds
 
-get-bch: Get Bitcoin Cash
 pools-exch: Pools & Exchanges
 run: Run a full node
 upgrade-node: Upgrade your full node
