@@ -1,6 +1,6 @@
 {% extends 'base.njk' %}
 
-{% block title %}Exchanges{% endblock %}
+{% block title %}$( exchanges.title )${% endblock %}
 
 {% block body %}
 
@@ -8,21 +8,22 @@
   {% include "navbar.njk" %}
 
   <div class="container py-6 text-white text-center text-md-left">
-    <h1 class="display-1 font-weight-bold mt-5">Exchanges</h1>
-    <p class="h3 text-muted">Buy Bitcoin Cash</p>
+    <h1 class="display-1 font-weight-bold mt-5">$( exchanges.title )$</h1>
+    <p class="h3 text-muted">$( exchanges.sub )$</p>
   </div>
 </section>
 
-<section class="bg-white">
+<section class="bg-white py-6">
   <div class="container">
-    <div class="row py-6">
+    <h2 class="pb-5">$( exchanges.recommended )$</h2>
+    <div class="row">
 
       <!-- Kraken -->
       <div class="col-lg-4">
         <div class="card card-body bg-light shadow-lg">
           <img src="/static/img/exchanges/kraken.svg" alt="Kraken logo" class="mx-3" height="50">
-          <p class="my-4">Kraken operates in North America, Europe and Japan.</p>
-          <a href="https://kraken.com" target="_blank" class="btn btn-primary">Visit Kraken</a>
+          <p class="my-4">$( exchanges.kraken.desc )$</p>
+          <a href="https://kraken.com" target="_blank" class="btn btn-primary">$( exchanges.kraken.btn )$</a>
         </div>
       </div>
 
@@ -30,16 +31,16 @@
       <div class="col-lg-4 mt-4 mt-lg-0">
         <div class="card card-body bg-light shadow-lg">
           <img src="/static/img/exchanges/coinbase.svg" alt="Coinbase logo" class="mx-3" height="50">
-          <p class="my-4">Buy Bitcoin Cash from North America, Europe, Australia, Singapore and more.</p>
-          <a href="https://coinbase.com" target="_blank" class="btn btn-primary">Visit Coinbase</a>
+          <p class="my-4">$( exchanges.coinbase.desc )$</p>
+          <a href="https://coinbase.com" target="_blank" class="btn btn-primary">$( exchanges.coinbase.btn )$</a>
         </div>
       </div>
 
       <div class="col-lg-4 mt-4 mt-lg-0">
         <div class="card card-body bg-light shadow-lg">
           <img src="/static/img/exchanges/coinex.svg" alt="coinex logo" class="mx-3" height="50">
-          <p class="my-4">Convert any cryptocurrency into Bitcoin Cash from anywhere.</p>
-          <a href="https://coinex.com" target="_blank" class="btn btn-primary">Visit Coinex</a>
+          <p class="my-4">$( exchanges.coinex.desc )$</p>
+          <a href="https://coinex.com" target="_blank" class="btn btn-primary">$( exchanges.coinex.btn )$</a>
         </div>
       </div>
 
@@ -49,7 +50,7 @@
 
 <section class="bg-white pb-6">
   <div class="container">
-    <h2 class="pb-4">More exchanges</h2>
+    <h2 class="pb-5">$( exchanges.more )$</h2>
     <div class="row">
 
       {% for exchange in exchanges %}
