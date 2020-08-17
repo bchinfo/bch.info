@@ -1,6 +1,6 @@
 {% extends 'base.njk' %}
 
-{% block title %}Upgrade your full node{% endblock %}
+{% block title %}$( upgrade.title )${% endblock %}
 
 {% block body %}
 
@@ -8,8 +8,8 @@
   {% include "navbar.njk" %}
 
   <div class="container py-6 text-white text-center text-md-left">
-    <h1 class="display-1 font-weight-bold mt-5">Upgrade your node</h1>
-    <p class="h3 text-muted">Be compatible with the next network upgrade</p>
+    <h1 class="display-1 font-weight-bold mt-5">$( upgrade.title )$</h1>
+    <p class="h3 text-muted">$( upgrade.sub )$</p>
   </div>
 </section>
 
@@ -22,11 +22,10 @@
       <div class="col-lg-1"></div>
       <div class="col-lg-7 mt-5 mt-lg-0">
 
-        <h2 class="mb-4">The Bitcoin Cash network is upgrading November 15, 2020.</h2>
-        <p>Most users should not be affected, but should follow any update instructions from their app or service providers.</p>
-        <p>Node operators will need to upgrade their nodes to the latest version. You can see a list of nodes <a href="/$( _lang_ )$/nodes">here</a>.</p>
-
-        <p>Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://gitlab.com/bitcoin-cash-node/bchn-sw/bitcoincash-upgrade-specifications/-/merge_requests/7" target="_blank">new DAA specification</a>. Some examples are available at <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoincashj</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/tree/asert_daa" target="_blank">Electron Cash</a></p>
+        <h2 class="mb-4">$( upgrade.content.title )$</h2>
+        <p>$( upgrade.content.p1 )$</p>
+        <p>$( upgrade.content.p2 )$</p>
+        <p>$( upgrade.content.p3 )$</p>
 
       </div>
     </div>

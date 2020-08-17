@@ -1,0 +1,8 @@
+title: Upgrade your node
+sub: Be compatible with the next network upgrade
+
+content:
+  title: The Bitcoin Cash network is upgrading November 15, 2020
+  p1: Most users should not be affected, but should follow any update instructions from their app or service providers.
+  p2: Node operators will need to upgrade their nodes to the latest version. You can see a list of nodes <a href="/$( _lang_ )$/nodes">here</a>.
+  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://gitlab.com/bitcoin-cash-node/bchn-sw/bitcoincash-upgrade-specifications/-/merge_requests/7" target="_blank">new DAA specification</a>. Some examples are available at <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoincashj</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/tree/asert_daa" target="_blank">Electron Cash</a>
