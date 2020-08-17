@@ -1,0 +1,14 @@
+---
+title: Nodos completos
+sub: Sé parte de la red corriendo un nodo completo
+recommended:
+  title: Nodos recomendados para mineros
+  bchn: <b>Bitcoin Cash Node</b> es un nodo profesional y amigable para los mineros.
+  bu: <b>Bitcoin Unlimited</b> es actualmente el nodo Bitcoin Cash con mayor representación en términos cuantitativos.
+  btn: Ir al sitio web
+popular:
+  title: Nodos populares
+  sub: Comunmente usados en sitios de cambio y servicios
+less:
+  title: Nodos menos comunes
+  sub: Explora funcionalidades de vanguardia

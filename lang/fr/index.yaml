@@ -1,0 +1,16 @@
+---
+title: Better money<br>for the world
+get-started: Démarrer
+wallet: Choisir un portefeuille
+upgrade:
+  title: Network upgrade notice
+  p1: The Bitcoin Cash network is upgrading November 15, 2020. Most users should not be affected, but should follow any update instructions from their app or service providers.
+  p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
+  btn: Voir les notes de mise à jour
+overdraft: Pas de découvert
+border: Pas de frontières
+chargeback: Pas d'annulations
+frozen: Pas de fonds bloqués
+pools-exch: Pools & Échanges
+run: Installer un full node
+upgrade-node: Mettre à jour votre full node
