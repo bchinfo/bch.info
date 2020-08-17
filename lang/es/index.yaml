@@ -1,10 +1,10 @@
 ---
-title: Better money<br>for the world
-get-started: Get started
+title: Una mejor moneda para<br> el mundo
+get-started: Comenzar
 wallet: Elige una cartera
 upgrade:
-  title: Network upgrade notice
-  p1: The Bitcoin Cash network is upgrading November 15, 2020. Most users should not be affected, but should follow any update instructions from their app or service providers.
+  title: Aviso de actualización de red
+  p1: La red Bitcoin Cash llevará a cabo su actualización programada el 15 de Noviembre de 2020. La mayoría de los usuarios no deberían verse afectados, pero recomendamos seguir las instrucciones de actualización de sus correspondiente aplicaciones o proveedores de servicios.
   p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
   btn: See upgrade notes
 overdraft: No overdrafts
