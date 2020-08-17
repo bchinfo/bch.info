@@ -1,0 +1,100 @@
+{
+  "exchanges": [
+    {
+      "name": "Bittrex",
+      "link": "https://bittrex.com/"
+    },
+    {
+      "name": "Cex.io",
+      "link": "https://cex.io"
+    },
+    {
+      "name": "Huobi",
+      "link": "https://www.huobi.com/"
+    },
+    {
+      "name": "Coinfloor",
+      "link": "https://coinfloor.com"
+    },
+    {
+      "name": "Sideshift",
+      "link": "https://sideshift.ai/btc/bch"
+    },
+    {
+      "name": "Shapeshift",
+      "link": "https://shapeshift.com/"
+    },
+    {
+      "name": "Uphold",
+      "link": "https://uphold.com/"
+    },
+    {
+      "name": "Bithumb",
+      "link": "https://www.bithumb.com/"
+    },
+    {
+      "name": "AlfaCashier",
+      "link": "https://www.alfacashier.com/"
+    },
+    {
+      "name": "Evercoin",
+      "link": "https://evercoin.com/"
+    },
+    {
+      "name": "Coinone",
+      "link": "https://coinone.co.kr/"
+    },
+    {
+      "name": "bitFlyer",
+      "link": "https://bitflyer.com/"
+    },
+    {
+      "name": "Binance",
+      "link": "https://www.binance.com/"
+    },
+    {
+      "name": "bitcoin.de",
+      "link": "https://www.bitcoin.de/"
+    },
+    {
+      "name": "Godex",
+      "link": "https://godex.io/"
+    },
+    {
+      "name": "etoro",
+      "link": "https://www.etoro.com/"
+    },
+    {
+      "name": "ChangeNow",
+      "link": "https://changenow.io/"
+    },
+    {
+      "name": "Bitstamp",
+      "link": "https://www.bitstamp.net/"
+    },
+    {
+      "name": "LocalBitcoinCash",
+      "link": "https://www.localbitcoincash.org/"
+    },
+    {
+      "name": "BestRate",
+      "link": "https://bestrate.org/"
+    },
+    {
+      "name": "CoinFalcon",
+      "link": "https://coinfalcon.com/"
+    },
+    {
+      "name": "Bitcoin.com",
+      "link": "https://exchange.bitcoin.com/"
+    },
+    {
+      "name": "Gemini",
+      "link": "https://gemini.com/exchange"
+    },
+    {
+      "name": "Crypto.com",
+      "link": "https://crypto.com/exchange"
+    }
+  ]
+}

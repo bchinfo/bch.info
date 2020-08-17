@@ -4,6 +4,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    data = require('gulp-data'),
     i18n = require('gulp-html-i18n'),
     concat = require('gulp-concat'),
     terser = require('gulp-terser'),
@@ -34,6 +35,10 @@ gulp.task('i18n', function(){
 gulp.task('nunjucks', function() {
   // Gets all .html files in pages
   return gulp.src('app/**/*.html')
+  // Adds data from exchanges.json
+  .pipe(data(function() {
+    return require('./app/data/exchanges.json')
+  }))
   // Renders template with nunjucks
   .pipe(nunjucksRender({
     path: ['app/templates/']

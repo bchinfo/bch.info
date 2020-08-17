@@ -46,4 +46,19 @@
     </div>
   </div>
 </section>
+
+<section class="bg-white pb-6">
+  <div class="container">
+    <h2 class="pb-4">More exchanges</h2>
+    <div class="row">
+
+      {% for exchange in exchanges %}
+      <div class="col-6 col-md-4">
+        <p><a href="{{ exchange.link }}" target="_blank">{{ exchange.name }} {% include "icons/arrow-right.svg" %}</a></p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
 {% endblock %}
