@@ -1,9 +1,9 @@
 ---
-title: Full nodes
-sub: Be part of the network by running a full node
+title: Nodos completos
+sub: Sé parte de la red corriendo un nodo completo
 recommended:
-  title: Recommended node for miners
-  bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
+  title: Nodos recomendados para mineros
+  bchn: <b>Bitcoin Cash Node</b> es un nodo profesional y amigable para los mineros.
   bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
   btn: Go to website
 popular:
