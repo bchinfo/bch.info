@@ -8,7 +8,16 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/52d9f701-354f-4e58-9223-d4da49906174/deploy-status)](https://app.netlify.com/sites/bch/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/merc1er/bch.info/badge/master)](https://www.codefactor.io/repository/github/merc1er/bch.info/overview/master) [![Crowdin](https://badges.crowdin.net/bchinfo/localized.svg)](https://crowdin.com/project/bchinfo)
 
-### Run the develoment server
+### Table of contents
+
+- [Run the develoment server](#run-the-develoment-server)
+- [Contribute](#contribute)
+- [Deployment](#deployment)
+- [Translate](#translate)
+
+<hr>
+
+### 💻 Run the develoment server
 
 You will need [nodeJS](https://nodejs.org/en/) installed on your machine, then run:
 
@@ -20,7 +29,9 @@ gulp
 
 Hit `ctrl + C` to stop the server.
 
-### Contribute
+<hr>
+
+### ➕ Contribute
 
 ##### Coding style
 
@@ -34,11 +45,15 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 - JavaScript files are located in `/js/`. All files will be concatenated in alphabetical order unless specified otherwise.
 
-### Deployment
+<hr>
+
+### 🚀 Deployment
 
 The `master` branch is automatically deployed.
 
-### Translate
+<hr>
+
+### 🇬🇧 Translate
 
 Translations are managed through [Crowdin](https://crowdin.com/project/bchinfo). If you wish to translate this website into your own language, please open an issue at this repo.
 
