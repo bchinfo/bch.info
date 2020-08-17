@@ -11,7 +11,6 @@ overdraft: Pas de découvert
 border: Pas de frontières
 chargeback: Pas d'annulations
 frozen: Pas de fonds bloqués
-get-bch: Obtenir des Bitcoin Cash
 pools-exch: Pools & Échanges
 run: Installer un full node
 upgrade-node: Mettre à jour votre full node
