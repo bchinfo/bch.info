@@ -5,9 +5,9 @@ wallet: Elige una cartera
 upgrade:
   title: Aviso de actualización de red
   p1: La red Bitcoin Cash llevará a cabo su actualización programada el 15 de Noviembre de 2020. La mayoría de los usuarios no deberían verse afectados, pero recomendamos seguir las instrucciones de actualización de sus correspondiente aplicaciones o proveedores de servicios.
-  p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
-  btn: See upgrade notes
-overdraft: No overdrafts
+  p2: Los operadores y desarrolladores de nodos que mantienen librerías SPV necesitarán actualizar su software.
+  btn: Ver notas de actualización
+overdraft: Sin sobregiros
 border: Sin fronteras
 chargeback: Sin contracargos
 frozen: Sin fondos congelados
