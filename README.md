@@ -10,10 +10,10 @@
 
 ### Table of contents
 
-- [Run the develoment server](#run-the-develoment-server)
-- [Contribute](#contribute)
-- [Deployment](#deployment)
-- [Translate](#translate)
+- [Run the develoment server](#-run-the-develoment-server)
+- [Contribute](#-contribute)
+- [Deployment](#-deployment)
+- [Translate](#-translate)
 
 <hr>
 
