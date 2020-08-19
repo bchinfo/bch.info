@@ -1,6 +1,8 @@
 {% extends 'base.njk' %}
 {% set title = 'index' %}
 
+{% block description %}$( index.desc )${% endblock %}
+
 {% block body %}
 
 <section class="hero bg-white">
@@ -94,7 +96,7 @@
             </div>
 
             <a href="/$( _lang_ )$/developers" class="d-block py-1">$( footer.libraries )$ {% include "icons/arrow-right.svg" %}</a>
-            <a href="/$( _lang_ )$/nodes" class="d-block py-1">Run a full node {% include "icons/arrow-right.svg" %}</a>
+            <a href="/$( _lang_ )$/nodes" class="d-block py-1">$( index.run )$ {% include "icons/arrow-right.svg" %}</a>
           </div>
         </div>
 

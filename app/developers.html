@@ -8,8 +8,8 @@
   {% include "navbar.njk" %}
 
   <div class="container py-6 text-white text-center text-md-left">
-    <h1 class="display-1 font-weight-bold mt-5">$( footer.libraries )$</h1>
-    <p class="h3 text-muted">Software libraries and SDKs</p>
+    <h1 class="display-1 font-weight-bold">$( footer.libraries )$</h1>
+    <p class="h3 text-muted">$( developers.sub )$</p>
   </div>
 </section>
 
@@ -18,7 +18,7 @@
     <div class="row">
 
       <div class="col-md-6 mb-5">
-        <h2>All in one</h2>
+        <h2>$( developers.aio )$</h2>
         <ul class="nav flex-column">
           <li class="nav-item">java: <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoinj</a> </li>
           <li class="nav-item">js: <a href="https://fullstack.cash" target="_blank">fullstack</a></li>
@@ -29,7 +29,7 @@
       </div>
 
       <div class="col-md-6 mb-5">
-        <h2>Data and utilities</h2>
+        <h2>$( developers.data )$</h2>
         <ul class="nav flex-column">
           <li class="nav-item">js/ts: <a href="libauth.org" target="_blank">libauth</a></li>
           <li class="nav-item">js: <a href="https://github.com/bitpay/bitauth" target="_blank">bitauth</a></li>
@@ -38,7 +38,7 @@
       </div>
 
       <div class="col-md-6 mb-5">
-        <h2>Blockchain and network</h2>
+        <h2>$( developers.bc )$</h2>
         <ul class="nav flex-column">
           <li class="nav-item">js/ts: <a href="https://www.npmjs.com/package/electrum-cash" target="_blank">electrum-cash</a></li>
           <li class="nav-item">api: <a href="http://bitdb.bch.sx/explorer" target="_blank">bitdb and bitsocket</a></li>
@@ -47,7 +47,7 @@
       </div>
 
       <div class="col-md-6 mb-5">
-        <h2>Smart contracts</h2>
+        <h2>$( developers.smart-contracts )$</h2>
         <ul class="nav flex-column">
           <li class="nav-item">js/ts: <a href="https://cashscript.org">cashscript</a></li>
           <li class="nav-item">js/cli: <a href="https://spedn.pl/">spedn</a></li>
@@ -56,7 +56,7 @@
       </div>
 
       <div class="col-md-6 mb-5">
-        <h2>Tokens</h2>
+        <h2>$( developers.tokens )$</h2>
         <ul class="nav flex-column">
           <li class="nav-item">js, dart: <a href="http://slp.dev">slp.dev</a></li>
         </ul>
