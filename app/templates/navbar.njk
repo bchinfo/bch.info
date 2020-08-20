@@ -6,8 +6,13 @@
     </a>
 
     <div>
-      <div class="d-none d-sm-inline text-white mr-4">
-        Language {% include "icons/globe.svg" %}
+      <div class="d-none d-sm-inline text-white mr-4 dropdown">
+        <button class="btn btn-secondary shadow-none" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Language {% include "icons/globe.svg" %}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="lang">
+          {% include "languages.njk" %}
+        </div>
       </div>
       <button class="btn btn-transparent text-light px-3" id="menuToggler">
         {% include "icons/menu.svg" %}
