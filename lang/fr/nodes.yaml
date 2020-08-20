@@ -1,14 +1,14 @@
 ---
 title: Full nodes
-sub: Faites partie du réseau en faisant tourner un noeud complet (full node)
+sub: Be part of the network by running a full node
 recommended:
-  title: Noeud recommandé pour les mineurs
-  bchn: <b>Bitcoin Cash Node</b> est un nœud professionnel et orienté mineur.
-  bu: <b>Bitcoin Unlimited</b> est actuellement le nœud Bitcoin Cash le plus populaire par nombre de nœuds.
-  btn: Accéder au site Web
+  title: Recommended node for miners
+  bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
+  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
+  btn: Go to website
 popular:
-  title: Nœuds populaires
-  sub: Généralement utilisé par les échanges et autres services
+  title: Popular nodes
+  sub: Commonly used among exchanges and services
 less:
-  title: Noeuds moins communs
-  sub: Explorez les dernières fonctionnalités
+  title: Less common nodes
+  sub: Explore cutting edge features
