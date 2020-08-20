@@ -1,8 +1,8 @@
 ---
-title: Upgrade your node
-sub: Be compatible with the next network upgrade
+title: 升级节点
+sub: 兼容接下来的网络更新
 content:
-  title: The Bitcoin Cash network is upgrading November 15, 2020
-  p1: Most users should not be affected, but should follow any update instructions from their app or service providers.
-  p2: Node operators will need to upgrade their nodes to the latest version. You can see a list of nodes <a href="/$( _lang_ )$/nodes">here</a>.
-  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://gitlab.com/bitcoin-cash-node/bchn-sw/bitcoincash-upgrade-specifications/-/merge_requests/7" target="_blank">new DAA specification</a>. Some examples are available at <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoincashj</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/tree/asert_daa" target="_blank">Electron Cash</a>
+  title: Bitcoin Cash 网络将于2020年11月15日进行更新
+  p1: 大多数的用户将不会受到影响，不过仍请关注所使用第三方应用或者服务提供商的更新指南。
+  p2: 节点软件将需要更新至最新版本，您可以参考<a href="/$( _lang_ )$/nodes">这里的节点列表</a>
+  p3: 维护SPV的开发者将需要进行一次小型的更新， 参见 <a href="https://gitlab.com/bitcoin-cash-node/bchn-sw/bitcoincash-upgrade-specifications/-/merge_requests/7" target="_blank">new DAA specification</a>。以及实践案例 <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoincashj</a> 和 <a href="https://github.com/Electron-Cash/Electron-Cash/tree/asert_daa" target="_blank">Electron Cash</a> 可供参考。
