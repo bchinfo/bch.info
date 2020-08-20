@@ -1,17 +1,17 @@
 ---
-title: Better money<br>for the world
-desc: Bitcoin Cash is the money of the future. It’s borderless. It’s secure. It’s electronic cash! Info about Bitcoin Cash (BCH) for users, developers, and businesses.
-get-started: Get started
-wallet: Choose a wallet
+title: 世界のための<br>より良いお金
+desc: ビットコインキャッシュは未来のお金です。ボーダーレスで安全な電子キャッシュ！Bitcoin Cash (BCH) ビットコインキャッシュユーザーと開発者、ビジネス向けのウェブサイトです。
+get-started: はじめよう
+wallet: ウォレットを選択
 upgrade:
-  title: Network upgrade notice
-  p1: The Bitcoin Cash network is upgrading November 15, 2020. Most users should not be affected, but should follow any update instructions from their app or service providers.
-  p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
-  btn: See upgrade notes
-overdraft: No overdrafts
-border: No borders
-chargeback: No chargebacks
-frozen: No frozen funds
-pools-exch: Pools & Exchanges
-run: Run a full node
-upgrade-node: Upgrade your full node
+  title: ネットワークアップグレードに関するお知らせ
+  p1: ビットコインキャッシュネットワークは2020年11月15日にアップグレードを控えています。これは殆どのユーザーには影響はありませんが、ご利用中のアプリやサービスから指示があればそちらに従ってください。
+  p2: ノードの運営者とSPVライブラリ利用している開発者はソフトウェアのアップグレードが必要です。
+  btn: アップグレードに関して
+overdraft: オーバードラフト無し
+border: ボーダー無し
+chargeback: チャージバック無し
+frozen: 資金凍結無し
+pools-exch: プール及び交換所
+run: フルノードをたてる
+upgrade-node: ノードをアップグレードしましょう
