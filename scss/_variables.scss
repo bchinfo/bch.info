@@ -38,3 +38,12 @@ $spacers: (
 
 $card-border-width: 0;
 $card-border-radius: 20px;
+
+// Dropdowns
+
+$dropdown-min-width: 129px;
+$dropdown-color: $white;
+$dropdown-bg: $dark;
+
+$dropdown-border-radius: 0 0 10px 10px;
+$dropdown-link-hover-bg: lighten($dark, 10%);
