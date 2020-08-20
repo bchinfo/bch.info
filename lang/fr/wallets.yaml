@@ -1,15 +1,15 @@
 ---
-title: Wallets
-sub: Send, receive and hold Bitcoin Cash with a wallet
+title: Portefeuilles
+sub: Envoyez, recevez et détenez Bitcoin Cash avec un portefeuille
 mobile:
-  title: Mobile wallets
-  sub: Easy and safe for most people
+  title: Portefeuilles mobiles
+  sub: Faciles et sûrs pour la plupart des utilisateurs
 desktop:
-  title: Desktop wallets
-  sub: More advanced wallets on your computer
+  title: Portefeuilles d'ordinateur
+  sub: Portefeuilles plus avancés sur votre ordinateur
 hardware:
-  title: Hardware wallets
-  sub: Built for security
+  title: Portefeuilles matériel (hardware)
+  sub: Conçus pour la sécurité
 paper:
-  title: Paper wallets
-  sub: Ideal for gifts
+  title: Portefeuilles papier
+  sub: Idéaux pour des cadeaux
