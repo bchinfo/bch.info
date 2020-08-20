@@ -1,11 +1,14 @@
 <!-- Navbar -->
 <nav class="navbar navbar-light pt-4">
   <div class="container">
-    <a class="navbar-brand" href="/$( _lang_ )$">
-      <img src="/static/img/logo-white.svg" alt="Bitcoin Cash Logo" loading="lazy" id="logo">
+    <a class="navbar-brand mb-2" href="/$( _lang_ )$">
+      <img src="/static/img/logo-white.svg" alt="Bitcoin Cash Logo" loading="lazy" class="logo">
     </a>
 
     <div>
+      <div class="d-none d-sm-inline text-white mr-4">
+        Language {% include "icons/globe.svg" %}
+      </div>
       <button class="btn btn-transparent text-light px-3" id="menuToggler">
         {% include "icons/menu.svg" %}
       </button>

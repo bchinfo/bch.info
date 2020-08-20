@@ -5,12 +5,12 @@
   padding-top: 0;
 }
 
-#logo {
+.logo {
   height: 25px;
 }
 
 @media screen and (max-width: 346px) {
-  #logo {
+  .logo {
     height: 22px;
   }
 }
