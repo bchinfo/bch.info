@@ -1,14 +1,14 @@
 ---
-title: Full nodes
-sub: Be part of the network by running a full node
+title: 全节点
+sub: 加入网络运行全节点
 recommended:
-  title: Recommended node for miners
-  bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
-  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
-  btn: Go to website
+  title: 挖矿推荐节点
+  bchn: <b>Bitcoin Cash Node</b> 一个专业并且矿工友好的节点软件。.
+  bu: <b>Bitcoin Unlimited</b> 是目前数量上使用最多的Bitcoin Cash 节点软件。
+  btn: 访问链接
 popular:
-  title: Popular nodes
-  sub: Commonly used among exchanges and services
+  title: 热门节点
+  sub: 交易所和服务商广泛使用
 less:
-  title: Less common nodes
-  sub: Explore cutting edge features
+  title: 更多选择
+  sub: 探索最前沿的各种特性
