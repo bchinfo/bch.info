@@ -1,14 +1,14 @@
 ---
-title: 交易所
-sub: 购入Bitcoin Cash
-recommended: 交易所推荐
+title: Exchanges
+sub: Buy Bitcoin Cash
+recommended: Recommended exchanges
 kraken:
-  desc: Kraken可供在北美洲、欧洲和日本进行交易
-  btn: 访问 Kraken
+  desc: Kraken operates in North America, Europe and Japan.
+  btn: Visit Kraken
 coinbase:
-  desc: 从北美，欧洲，澳大利亚和新加坡等地购入BitcoinCash
-  btn: 访问 Coinbase
+  desc: Buy Bitcoin Cash from North America, Europe, Australia, Singapore and more.
+  btn: Visit Coinbase
 coinex:
-  desc: 在任何地方将任何种类的加密货币兑换为Bitcoin Cash
-  btn: 访问 Coinex
-more: 更多交易所
+  desc: Convert any cryptocurrency into Bitcoin Cash from anywhere.
+  btn: Visit Coinex
+more: More exchanges
