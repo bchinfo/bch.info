@@ -5,7 +5,7 @@ get-started: Começar
 wallet: Escolha uma carteira
 upgrade:
   title: Aviso de atualização da rede
-  p1: A rede Bitcoin Cash realizará sua atualização programada em 15 de novembro de 2020. A maioria dos usuários não deveriam ser afetados, mas recomendamos seguir as instruções de atualização dos seus correspondentes aplicativos ou provedores de serviço.
+  p1: A rede Bitcoin Cash realizará sua atualização programada em 15 de novembro de 2020. A maioria dos usuários não deveriam ser afetados, mas recomendamos seguir as instruções de atualização de seus correspondentes aplicativos ou provedores de serviço.
   p2: Operadores de nodos e desenvolvedores que mantêm bibliotecas SPV precisarão atualizar seu software.
   btn: Veja as notas de atualização
 overdraft: Sem descobertos
