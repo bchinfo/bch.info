@@ -1,8 +1,8 @@
 ---
-title: Upgrade your node
-sub: Be compatible with the next network upgrade
+title: ノードをアップグレードしましょう
+sub: 次のアップグレード、皆で互換性を保ちましょう
 content:
-  title: The Bitcoin Cash network is upgrading November 15, 2020
-  p1: Most users should not be affected, but should follow any update instructions from their app or service providers.
-  p2: Node operators will need to upgrade their nodes to the latest version. You can see a list of nodes <a href="/$( _lang_ )$/nodes">here</a>.
-  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/" target="_blank">new DAA specification</a>. Some examples are available at <a href="https://github.com/pokkst/asert-java" target="_blank">bitcoincashj</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/blob/master/lib/asert_daa.py" target="_blank">Electron Cash</a>
+  title: ビットコインキャッシュネットワークは2020年11月15日にアップグレードします。
+  p1: 殆どのユーザーにこの影響はありませんが、ご利用中のアプリやサービスから指示がある場合、そちらに従ってください。
+  p2: ノード運営者はノードを最新バージョンにアップグレードする必要があります。ノードのリストはこちら <a href="/$( _lang_ )$/nodes"></a> で確認できます。
+  p3: "SPVライブラリ利用している開発者は<a href=\"https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/\" target=\"_blank\">新しいDAAのスペック</a>に合わせてアップグレードをする必要があります。\n<a href=\"http://github.com/pokkst/asert-java\" target=\"_blank\">The bitcoincashj maintainer (Java)</a>や<a href=\"https://github.com/Electron-Cash/Electron-Cash/blob/master/lib/asert_daa.py\" target=\"_blank\">Electron Cash (Python)</a>に実装例が紹介されています。\n"

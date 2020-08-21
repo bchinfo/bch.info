@@ -1,14 +1,14 @@
 ---
 title: 暗号通貨取引所
-sub: ビットコインキャッシュを購入する
-recommended: Recommended exchanges
+sub: Bitcoin Cashを購入する
+recommended: 推薦取引所
 kraken:
-  desc: Kraken operates in North America, Europe and Japan.
-  btn: Visit Kraken
+  desc: Krakenは北米、ヨーロッパで事業を展開しています。
+  btn: Krakenへ
 coinbase:
-  desc: Buy Bitcoin Cash from North America, Europe, Australia, Singapore and more.
-  btn: Visit Coinbase
+  desc: 北米、ヨーロッパ、オーストラリア、シンガポールなどでBitcoin Cashを購入。
+  btn: Coinbaseへ
 coinex:
-  desc: Convert any cryptocurrency into Bitcoin Cash from anywhere.
-  btn: Visit Coinex
-more: More exchanges
+  desc: どんな暗号通貨もどこからでもBitcoin Cashに交換出来ます。
+  btn: Coinexへ
+more: その他の交換所

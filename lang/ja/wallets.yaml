@@ -1,15 +1,15 @@
 ---
-title: Wallets
-sub: Send, receive and hold Bitcoin Cash with a wallet
+title: ウォレット
+sub: ウォレットでBitcoin Cashを振込、預入、貯金する
 mobile:
-  title: Mobile wallets
-  sub: Easy and safe for most people
+  title: モバイルウォレット
+  sub: 誰にでも簡単に安心して使えます
 desktop:
-  title: Desktop wallets
-  sub: More advanced wallets on your computer
+  title: デスクトップウォレット
+  sub: コンピュータ用のより高度なウォレット
 hardware:
-  title: Hardware wallets
-  sub: Built for security
+  title: ハードウェアウォレット
+  sub: より安全に
 paper:
-  title: Paper wallets
-  sub: Ideal for gifts
+  title: ペーパーウォレット
+  sub: ギフトなどに最適
