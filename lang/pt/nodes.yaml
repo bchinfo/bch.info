@@ -4,7 +4,7 @@ sub: Faça parte da rede correndo um nodo completo
 recommended:
   title: Nodos recomendados para mineiros
   bchn: <b>Bitcoin Cash Node</b> é um nodo profissional e amigável para mineradores.
-  bu: <b>Bitcoin Unlimited</b> tem atualmente a maior quantidade de nodos na rede.
+  bu: <b>Bitcoin Unlimited</b> tem atualmente a maior numero de nodos na rede.
   btn: Ir para o site
 popular:
   title: Nodos populares
