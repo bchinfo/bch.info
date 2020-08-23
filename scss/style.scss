@@ -68,3 +68,9 @@ $color-circle-size: 65px;
 .cursor-default {
   cursor: default !important;
 }
+
+.mobile-icon > svg {
+  height: 18px;
+  width: 18px;
+  margin-bottom: 5px;
+}
