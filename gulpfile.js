@@ -74,9 +74,13 @@ gulp.task('js', function() {
 });
 
 // Copy all static files
-gulp.task('copy-static', function(){
-  return gulp.src('app/static/**/*.*', {base: './app/static/'})
+gulp.task('copy-static', function(done){
+  // Copy special files to dist/
+  gulp.src('app/special/*').pipe(gulp.dest('dist/'));
+  // Copy static files
+  gulp.src('app/static/**/*.*', {base: './app/static/'})
     .pipe(gulp.dest('dist/static/'));
+  done();
 });
 
 gulp.task('reload', function(done){
