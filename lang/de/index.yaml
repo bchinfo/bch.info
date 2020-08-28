@@ -1,6 +1,6 @@
 ---
-title: Better money<br>for the world
-desc: Bitcoin Cash is the money of the future. It’s borderless. It’s secure. It’s electronic cash! Info about Bitcoin Cash (BCH) for users, developers, and businesses.
+title: Besseres Geld<br>für die Welt
+desc: Bitcoin Cash ist das Geld der Zukunft. Es ist grenzenlos. Es ist sicher. Es ist elektronisches Bargeld! Info über Bitcoin Cash (BCH) für Benutzer, Entwickler und Unternehmen.
 get-started: Get started
 wallet: Choose a wallet
 upgrade:
@@ -9,9 +9,9 @@ upgrade:
   p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
   btn: See upgrade notes
 overdraft: No overdrafts
-border: No borders
-chargeback: No chargebacks
-frozen: No frozen funds
+border: Keine Grenzen
+chargeback: Keine Rückbuchungen
+frozen: Kein eingefrorenes Guthaben
 pools-exch: Pools & Exchanges
 run: Run a full node
 upgrade-node: Upgrade your full node
