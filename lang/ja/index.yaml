@@ -14,4 +14,4 @@ chargeback: チャージバック無し
 frozen: 資金凍結無し
 pools-exch: プール及び交換所
 run: フルノードをたてる
-upgrade-node: ノードをアップグレードしましょう
+upgrade-node: Upgrade your node
