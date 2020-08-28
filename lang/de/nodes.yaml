@@ -1,14 +1,14 @@
 ---
-title: Knoten
-sub: Seien Sie Teil des Netzwerks, indem Sie einen Knoten betreiben
+title: Full Nodes
+sub: Seien Sie Teil des Netzwerks, indem Sie einen Füll Node betreiben
 recommended:
-  title: Empfohlene Knoten für Miner
-  bchn: <b>Bitcoin Cash Node</b> ist ein professioneller und miner-freundlicher Knoten.
-  bu: <b>Bitcoin Unlimited</b> ist derzeit der beliebteste Bitcoin Cash Knoten.
+  title: Empfohlene Nodes für Miner
+  bchn: <b>Bitcoin Cash Node</b> ist ein professioneller und miner-freundlicher Node.
+  bu: <b>Bitcoin Unlimited</b> ist derzeit der beliebteste Bitcoin Cash Node.
   btn: Gehe zur Website
 popular:
-  title: Beliebte Knoten
-  sub: Häufig verwendet bei Börsen und Diensten
+  title: Beliebte Nodes
+  sub: Häufig verwendet bei Tauschbörsen und Diensten
 less:
-  title: Kommende Knoten
+  title: Kommende Nodes
   sub: Erkunden Sie die neuesten Funktionen
