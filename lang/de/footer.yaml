@@ -1,10 +1,10 @@
 ---
-individuals: Individuals
-wallets: Wallets
-exchanges: Exchanges
-developers: Developers
+individuals: Privatpersonen
+wallets: Geldbörsen
+exchanges: Tauschbörsen
+developers: Entwickler
 nodes: Nodes
-libraries: Developer tools
-resources: Resources
-media: Media kit
-github: GitHub repo
+libraries: Entwicklerwerkzeuge
+resources: Ressourcen
+media: Medienpaket
+github: GitHub Repo
