@@ -1,15 +1,15 @@
 ---
 title: Geldbörsen
-sub: Send, receive and hold Bitcoin Cash with a wallet
+sub: Bitcoin Cash senden, empfangen und sparen mit einer Geldbörse
 mobile:
-  title: Mobile wallets
-  sub: Easy and safe for most people
+  title: Mobile Geldbörsen
+  sub: Einfach und sicher für die meisten Menschen
 desktop:
-  title: Desktop wallets
-  sub: More advanced wallets on your computer
+  title: Desktop-Wallets
+  sub: Erweiterte Geldbörsen auf Ihrem Computer
 hardware:
-  title: Hardware wallets
-  sub: Built for security
+  title: Hardware Geldbörsen
+  sub: Erstellt für Sicherheit
 paper:
-  title: Paper wallets
-  sub: Ideal for gifts
+  title: Papier-Geldbörsen
+  sub: Ideal für Geschenke
