@@ -95,6 +95,10 @@
     {
       "name": "Crypto.com",
       "link": "https://crypto.com/exchange"
+    },
+    {
+      "name": "OKEx",
+      "link": "https://www.okex.com/"
     }
   ]
 }
