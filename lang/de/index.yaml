@@ -6,12 +6,12 @@ wallet: Wählen Sie eine Geldbörse
 upgrade:
   title: Netzwerk-Upgrade Hinweis
   p1: Das Bitcoin Cash Netzwerk wird am 15. November 2020 aktualisiert. Die meisten Benutzer sollten nicht betroffen sein, sondern sollten alle Updateanweisungen ihrer App oder Dienstleister befolgen.
-  p2: Knoten-Betreiber und Entwickler, die SPV-Bibliotheken unterhalten, müssen ihre Software aktualisieren.
+  p2: Node-Betreiber und Entwickler, die SPV-Bibliotheken unterhalten, müssen ihre Software aktualisieren.
   btn: Upgrade-Notizen ansehen
 overdraft: Keine Überziehungen
 border: Keine Grenzen
 chargeback: Keine Rückbuchungen
 frozen: Kein eingefrorenes Guthaben
-pools-exch: Pools & Börsen
-run: Einen Knoten betreiben
-upgrade-node: Knoten aktualisieren
+pools-exch: Pools & Tauschbörsen
+run: Einen Füll Node betreiben
+upgrade-node: Node aktualisieren
