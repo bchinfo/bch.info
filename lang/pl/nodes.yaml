@@ -4,11 +4,11 @@ sub: Bądź częścią sieci uruchamiając pełny węzeł
 recommended:
   title: Zalecany węzeł dla górników
   bchn: <b>Bitcoin Cash Node</b> jest profesjonalnym i przyjaznym dla górników węzłem.
-  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
-  btn: Go to website
+  bu: <b>Bitcoin Unlimited</b> jest obecnie najpopularniejszym węzłem Bitcoin Cash.
+  btn: Przejdź do strony
 popular:
-  title: Popular nodes
-  sub: Commonly used among exchanges and services
+  title: Popularne węzły
+  sub: Powszechnie używany na gieldach i w serwisach
 less:
-  title: Upcoming nodes
-  sub: Explore cutting edge features
+  title: Przyszłe węzły
+  sub: Przeglądaj najnowsze funkcje
