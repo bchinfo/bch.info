@@ -11,7 +11,7 @@ upgrade:
 overdraft: Bez ujemnego salda
 border: Bez limitów
 chargeback: Bez obciążeń zwrotnych
-frozen: Nie da się zamrozić środków
+frozen: Bez zamrażań środków
 pools-exch: Poole i giełdy
 run: Uruchom pełny węzeł
 upgrade-node: Uaktualnij swój węzeł
