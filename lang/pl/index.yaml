@@ -7,9 +7,9 @@ upgrade:
   title: Powiadomienie o aktualizacji sieci
   p1: Sieć Bitcoin Cash będzie aktualizowana 15 listopada 2020 r. Na większość użytkowników nie powinno mieć to wpływu, ale powinni oni postępować zgodnie z instrukcjami dotyczącymi aktualizacji otrzymanymi od swoich dostawców aplikacji lub usług.
   p2: Operatorzy węzłów i programiści, którzy utrzymują biblioteki SPV, będą musieli zaktualizować swoje oprogramowanie.
-  btn: See upgrade notes
-overdraft: No overdrafts
-border: No borders
+  btn: Zobacz informacje o aktualizacji
+overdraft: Niemożliwe ujemne saldo
+border: Bez limitów
 chargeback: No chargebacks
 frozen: No frozen funds
 pools-exch: Poole i giełdy
