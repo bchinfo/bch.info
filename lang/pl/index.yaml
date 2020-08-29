@@ -1,12 +1,12 @@
 ---
 title: Lepsze pieniądze<br>dla świata
-desc: Bitcoin Cash is the money of the future. It’s borderless. It’s secure. It’s electronic cash! Info about Bitcoin Cash (BCH) for users, developers, and businesses.
-get-started: Get started
-wallet: Choose a wallet
+desc: Bitcoin Cash to pieniądze przyszłości. Bez granic. Bezpieczne. To elektroniczna gotówka! Informacje o Bitcoin Cash (BCH) dla użytkowników, programistów i firm.
+get-started: Pierwsze kroki
+wallet: Wybierz portfel
 upgrade:
-  title: Network upgrade notice
-  p1: The Bitcoin Cash network is upgrading November 15, 2020. Most users should not be affected, but should follow any update instructions from their app or service providers.
-  p2: Node operators and developers who maintain SPV libraries will need to upgrade their software.
+  title: Powiadomienie o aktualizacji sieci
+  p1: Sieć Bitcoin Cash będzie aktualizowana 15 listopada 2020 r. Na większość użytkowników nie powinno mieć to wpływu, ale powinni oni postępować zgodnie z instrukcjami dotyczącymi aktualizacji otrzymanymi od swoich dostawców aplikacji lub usług.
+  p2: Operatorzy węzłów i programiści, którzy utrzymują biblioteki SPV, będą musieli zaktualizować swoje oprogramowanie.
   btn: See upgrade notes
 overdraft: No overdrafts
 border: No borders
