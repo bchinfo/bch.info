@@ -12,6 +12,6 @@ overdraft: No overdrafts
 border: No borders
 chargeback: No chargebacks
 frozen: No frozen funds
-pools-exch: Pools & Exchanges
-run: Run a full node
-upgrade-node: Upgrade your node
+pools-exch: Poole i giełdy
+run: Uruchom pełny węzeł
+upgrade-node: Uaktualnij swój węzeł
