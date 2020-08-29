@@ -10,8 +10,8 @@ upgrade:
   btn: Zobacz informacje o aktualizacji
 overdraft: Niemożliwe ujemne saldo
 border: Bez limitów
-chargeback: No chargebacks
-frozen: No frozen funds
+chargeback: Niemożliwe obciążenie zwrotne
+frozen: Nie da się zamrozić środków
 pools-exch: Poole i giełdy
 run: Uruchom pełny węzeł
 upgrade-node: Uaktualnij swój węzeł
