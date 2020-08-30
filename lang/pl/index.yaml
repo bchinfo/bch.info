@@ -1,0 +1,17 @@
+---
+title: Lepsze pieniądze<br>dla świata
+desc: Bitcoin Cash to pieniądze przyszłości. Bez granic. Bezpieczne. To elektroniczna gotówka! Informacje o Bitcoin Cash (BCH) dla użytkowników, programistów i firm.
+get-started: Pierwsze kroki
+wallet: Wybierz portfel
+upgrade:
+  title: Powiadomienie o aktualizacji sieci
+  p1: Sieć Bitcoin Cash będzie aktualizowana 15 listopada 2020 r. Na większość użytkowników nie powinno mieć to wpływu, ale powinni oni postępować zgodnie z instrukcjami dotyczącymi aktualizacji otrzymanymi od swoich dostawców aplikacji lub usług.
+  p2: Operatorzy węzłów i programiści, którzy utrzymują biblioteki SPV, będą musieli zaktualizować swoje oprogramowanie.
+  btn: Zobacz informacje o aktualizacji
+overdraft: Bez ujemnego salda
+border: Bez limitów
+chargeback: Bez obciążeń zwrotnych
+frozen: Bez zamrażań środków
+pools-exch: Poole i giełdy
+run: Uruchom pełny węzeł
+upgrade-node: Uaktualnij swój węzeł
