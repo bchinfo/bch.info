@@ -16,3 +16,6 @@ $("#closeMenu").click(function() { // close menu
   $("#menu").hide();
   $("body").removeClass('no-scrolling');
 });
+
+
+// Gsap

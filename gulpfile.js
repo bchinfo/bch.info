@@ -64,6 +64,7 @@ gulp.task('js', function() {
     'node_modules/jquery/dist/jquery.slim.min.js',
     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
     'node_modules/moveto/dist/moveTo.min.js',
+    'node_modules/gsap/dist/gsap.min.js',
     'js/*.js'
   ];
   return gulp.src(files)
