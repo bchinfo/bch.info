@@ -3,7 +3,7 @@ title: A melhor moeda<br>do mundo
 desc: O Bitcoin Cash é a moeda do futuro. Não tem fronteiras. É seguro. É dinheiro eletrônico! Informações sobre Bitcoin Cash (BCH) para usuários, desenvolvedores e empresas.
 get-started: Começar
 wallet: Escolha uma carteira
-whitepaper: Read the whitepaper
+whitepaper: Leia o whitepaper
 upgrade:
   title: Aviso de atualização da rede
   p1: A rede Bitcoin Cash realizará sua atualização programada em 15 de novembro de 2020. A maioria dos usuários não deveriam ser afetados, mas recomendamos seguir as instruções de atualização de seus correspondentes aplicativos ou provedores de serviço.
@@ -15,4 +15,4 @@ chargeback: Sem estornos
 frozen: Sem fundos congelados
 pools-exch: Pools e Corretoras
 run: Corra um nodo completo
-upgrade-node: Upgrade your node
+upgrade-node: Atualize seu nodo
