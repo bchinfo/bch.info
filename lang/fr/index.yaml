@@ -3,7 +3,7 @@ title: Meilleure monnaie<br>au monde
 desc: Bitcoin Cash est l'argent du futur. Sans frontières. Sécurisé. C'est de l'argent électronique ! Informations à propos de Bitcoin Cash (BCH) pour les utilisateurs, les développeurs et les entreprises.
 get-started: Démarrer
 wallet: Choisir un portefeuille
-whitepaper: Read the whitepaper
+whitepaper: Lire le whitepaper
 upgrade:
   title: Notification de mise à jour du réseau
   p1: Le réseau Bitcoin Cash est mis à jour le 15 novembre 2020. La plupart des utilisateurs ne devraient pas être affectés, mais devraient mettre à jour leurs applications ou de leurs fournisseurs de services.
@@ -15,4 +15,4 @@ chargeback: Pas d'annulations
 frozen: Pas de fonds bloqués
 pools-exch: Pools & Échanges
 run: Installer un full node
-upgrade-node: Upgrade your node
+upgrade-node: Mettre à jour votre nœud
