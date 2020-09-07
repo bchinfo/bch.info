@@ -3,7 +3,7 @@ title: Besseres Geld<br>für die Welt
 desc: Bitcoin Cash ist das Geld der Zukunft. Es ist grenzenlos. Es ist sicher. Es ist elektronisches Bargeld! Info über Bitcoin Cash (BCH) für Benutzer, Entwickler und Unternehmen.
 get-started: Legen Sie los
 wallet: Wählen Sie eine Wallet
-whitepaper: Read the whitepaper
+whitepaper: Lesen Sie das Whitepaper
 upgrade:
   title: Netzwerk-Upgrade Hinweis
   p1: Das Bitcoin Cash Netzwerk wird am 15. November 2020 aktualisiert. Die meisten Benutzer sollten nicht betroffen sein, sondern sollten alle Updateanweisungen ihrer App oder Dienstleister befolgen.
@@ -14,5 +14,5 @@ border: Keine Grenzen
 chargeback: Keine Rückbuchungen
 frozen: Kein eingefrorenes Guthaben
 pools-exch: Pools & Tauschbörsen
-run: Einen Full Node betreiben
+run: Einen Knoten betreiben
 upgrade-node: Knoten aktualisieren
