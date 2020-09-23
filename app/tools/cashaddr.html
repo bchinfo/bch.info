@@ -1,0 +1,23 @@
+{% extends 'base.njk' %}
+
+{% block title %}CashAddress converter{% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="font-weight-bold">CashAddress converter</h1>
+    <p class="h3 text-muted">CashAddress - Legacy address format conversion tool</p>
+
+    <div class="row mt-6">
+      <div class="col-12 col-lg-10 form-inline">
+        <input class="form-control form-control-lg no-round-right col-8 shadow-sm" type="text" placeholder="Paste an address here">
+        <button class="btn btn-primary btn-lg no-round-left col-4">Convert</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
