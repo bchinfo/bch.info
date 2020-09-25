@@ -24,17 +24,34 @@
       <p class="text-danger d-none text-break" id="errorMessage">This is not a valid address</p>
     </div>
 
+  </div>
+</section>
+
+<section class="bg-white py-6">
+  <div class="container">
+
     <!-- Converted address -->
-    <div class="mt-3 text-left text-break d-none" id="convertedAddr">
-      <p id="cashAddr">Address</p>
-      <p id="legacyAddr">Legacy</p>
+    <div class="row text-left text-break align-items-center d-none" id="convertedAddr">
+      <div class="col-md-6">
+        <p class="h3">Cash Address format</p>
+        <p class="text-muted">Newer, safer format - use it whenever possible</p>
+        <br>
+        <button class="btn btn-secondary text-left" id="cashAddr">-</button>
+        <p class="small text-muted mt-2">Click the address to copy it</p>
+      </div>
+
+      <div class="col-md-6 mt-4 mt-md-0">
+        <p class="h3">Legacy format</p>
+        <p class="text-muted">Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost</p>
+        <button class="btn btn-secondary text-left" id="legacyAddr">-</button>
+        <p class="small text-muted mt-2">Click the address to copy it</p>
+      </div>
     </div>
 
   </div>
 </section>
 
 <script src="/static/js/bchaddrjs-0.4.9.min.js"></script>
-
 <script>
   function convertAddress() {
     const address = $("#address").val();
