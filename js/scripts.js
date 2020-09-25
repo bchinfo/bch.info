@@ -16,3 +16,14 @@ $("#closeMenu").click(function() { // close menu
   $("#menu").hide();
   $("body").removeClass('no-scrolling');
 });
+
+
+// Copy to clipboard
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+}
