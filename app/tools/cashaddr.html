@@ -31,20 +31,26 @@
   <div class="container">
 
     <!-- Converted address -->
-    <div class="row text-left text-break align-items-center">
+    <div class="row text-left overflow-hidden align-items-center">
       <div class="col-md-6">
         <p class="h3">Cash Address format</p>
         <p class="text-muted">Newer, safer format - use it whenever possible</p>
         <br>
-        <button class="btn btn-secondary text-left" id="cashAddr" onclick="copyToClipboard('#cashAddr')">-</button>
-        <p class="small text-muted mt-2">Click the address to copy it</p>
+
+        <div class="row container" onclick="copyToClipboard('#cashAddr')">
+          <button class="col-10 col-md-9 btn btn-secondary text-left no-round-right" id="cashAddr">-</button>
+          <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+        </div>
       </div>
 
       <div class="col-md-6 mt-4 mt-md-0">
         <p class="h3">Legacy format</p>
         <p class="text-muted">Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost</p>
-        <button class="btn btn-secondary text-left" id="legacyAddr" onclick="copyToClipboard('#legacyAddr')">-</button>
-        <p class="small text-muted mt-2">Click the address to copy it</p>
+
+        <div class="row container" onclick="copyToClipboard('#legacyAddr')">
+          <button class="col-10 col-md-9 btn btn-secondary text-left no-round-right" id="legacyAddr">-</button>
+          <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+        </div>
       </div>
     </div>
 

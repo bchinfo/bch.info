@@ -26,4 +26,8 @@ function copyToClipboard(element) {
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
+  if (!$(element).hasClass("btn-primary")) {
+    $(".btn-copy").removeClass("btn-primary").addClass("btn-secondary");
+    $(element).siblings().removeClass("btn-secondary").addClass("btn-primary");
+  }
 }
