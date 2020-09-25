@@ -80,6 +80,9 @@ gulp.task('copy-static', function(done){
   // Copy static files
   gulp.src('app/static/**/*.*', {base: './app/static/'})
     .pipe(gulp.dest('dist/static/'));
+  // Copy independant JavaScript files
+  gulp.src('node_modules/bchaddrjs/dist/bchaddrjs-0.4.9.min.js')
+    .pipe(gulp.dest('dist/static/js/'));
   done();
 });
 
