@@ -1,9 +1,9 @@
 ---
-title: CashAddress - 旧地址格式转换工具
+title: CashAddress - 旧地址格式转换
 sub: 地址转换工具
 convert: 转换
 not-valid: 此地址无效
-paste: 输入地址。
+paste: 输入地址
 cashaddr:
   title: Cash address
   sub: 更新、更安全的格式 - 不会与比特币 (BTC) 或其他币混淆
