@@ -73,3 +73,15 @@ $color-circle-size: 65px;
   width: 18px;
   margin-bottom: 5px;
 }
+
+// No rounded corners
+.no-round {
+  &-left {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  &-right {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

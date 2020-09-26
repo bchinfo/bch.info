@@ -16,3 +16,19 @@ $("#closeMenu").click(function() { // close menu
   $("#menu").hide();
   $("body").removeClass('no-scrolling');
 });
+
+
+// Copy to clipboard
+
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  if (!$(element).hasClass("btn-primary")) {
+    $(".btn-copy").removeClass("btn-primary").addClass("btn-secondary");
+    $(".address-qrcode").removeClass("btn-primary");
+    $(element).siblings().removeClass("btn-secondary").addClass("btn-primary");
+  }
+}

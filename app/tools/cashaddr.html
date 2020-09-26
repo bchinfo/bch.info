@@ -1,0 +1,102 @@
+{% extends 'base.njk' %}
+
+{% block title %}$( cashaddr.title )${% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white">
+    <h1 class="font-weight-bold">$( cashaddr.sub )$</h1>
+    <p class="h3 text-muted">$( cashaddr.title )$</p>
+
+    <!-- Input form -->
+    <div class="row mt-6">
+      <div class="col-12 col-lg-10 form-inline">
+        <input id="address" class="form-control form-control-lg no-round-right col-8 shadow-sm" type="text" placeholder="$( cashaddr.paste )$">
+        <button class="btn btn-primary btn-lg no-round-left col-4" onclick="convertAddress()">$( cashaddr.convert )$</button>
+      </div>
+    </div>
+
+    <!-- Error message -->
+    <div class="mt-3 text-left">
+      <p class="text-danger d-none text-break" id="errorMessage">$( cashaddr.not-valid )$</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="bg-white py-6 d-none" id="convertedAddr">
+  <div class="container">
+
+    <!-- Converted address -->
+    <div class="row text-left overflow-hidden align-items-center">
+      <div class="col-md-6">
+        <p class="h3">$( cashaddr.cashaddr.title )$</p>
+        <p class="text-muted">$( cashaddr.cashaddr.sub )$</p>
+        <div class="row container" onclick="copyToClipboard('#cashAddr')">
+          <button class="col-10 btn btn-secondary text-left no-round-right" id="cashAddr">-</button>
+          <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+
+          <!-- QR code -->
+          <div class="address-qrcode">
+            <canvas id="cashAddrQR"></canvas>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-4 mt-md-0">
+        <p class="h3">$( cashaddr.legacy.title )$</p>
+        <p class="text-muted">$( cashaddr.legacy.sub )$</p>
+
+        <div class="row container" onclick="copyToClipboard('#legacyAddr')">
+          <button class="col-10 btn btn-secondary text-left no-round-right" id="legacyAddr">-</button>
+          <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+
+          <!-- QR code -->
+          <div class="address-qrcode">
+            <canvas id="legacyAddrQR"></canvas>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="/static/js/bchaddrjs-0.4.9.min.js"></script>
+<script src="/static/js/qrcode.min.js"></script>
+<script>
+  function convertAddress() {
+    const address = $("#address").val();
+    if (address) {
+      if (bchaddr.isValidAddress(address)) {
+        $("#errorMessage").addClass("d-none");
+        // Conversion
+        const cash = bchaddr.toCashAddress(address);
+        const legacy = bchaddr.toLegacyAddress(address);
+        // Replace values
+        $("#cashAddr").text(cash);
+        $("#legacyAddr").text(legacy);
+        // Display converted address
+        $("#convertedAddr").removeClass("d-none");
+        // Display QR codes
+        QRCode.toCanvas(document.getElementById("cashAddrQR"), cash, function (error) {
+          if (error) console.error(error);
+        });
+        QRCode.toCanvas(document.getElementById("legacyAddrQR"), legacy, {width: 164}, function (error) {
+          if (error) console.error(error);
+        });
+      } else {
+        // Show error message
+        $("#convertedAddr").addClass("d-none");
+        $("#errorMessage").removeClass("d-none");
+        $("#errorMessage").text(address + " is not a valid address");
+      }
+    }
+  }
+</script>
+{% endblock %}
