@@ -1,12 +1,12 @@
 ---
-title: CashAddress - Legacy address format conversion tool
-sub: Address conversion tool
-convert: Convert
-not-valid: This is not a valid address
-paste: Paste an address
+title: Outil de conversion de format d'adresse CashAddress - Legacy
+sub: Outil de conversion d'adresse
+convert: Convertir
+not-valid: Cette adresse n'est pas valide
+paste: Entrez une adresse
 cashaddr:
   title: Cash address
-  sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
+  sub: Format plus récent et plus sûr - évite les confusions avec Bitcoin (BTC) et autres monnaies
 legacy:
-  title: Legacy format
-  sub: Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost
+  title: Legacy (ancien format)
+  sub: N'envoyez aucune monnaie autre que Bitcoin Cash (BCH) à cette adresse ou vos fonds peuvent être perdus
