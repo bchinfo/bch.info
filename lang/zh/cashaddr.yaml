@@ -1,0 +1,12 @@
+---
+title: CashAddress - 传统地址格式转换工具
+sub: 地址转换工具
+convert: 转换
+not-valid: 此地址无效
+paste: Paste an address
+cashaddr:
+  title: Cash address
+  sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
+legacy:
+  title: Legacy format
+  sub: Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost
