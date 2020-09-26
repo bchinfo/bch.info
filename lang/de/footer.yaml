@@ -1,6 +1,6 @@
 ---
 individuals: Privatpersonen
-wallets: Wallets
+wallets: Geldbörsen
 exchanges: Tauschbörsen
 developers: Entwickler
 nodes: Knoten
@@ -8,3 +8,4 @@ libraries: Entwicklerwerkzeuge
 resources: Ressourcen
 media: Medienpaket
 github: GitHub Repo
+tools: Tools
