@@ -1,13 +1,13 @@
 ---
-title: Cash address - Legacy address format conversion tool
+title: CashAddress - Konvertierungswerkzeug für das Legacy-Adressenformat
 sub: Adressenkonvertierungswerkzeug
 convert: Konvertieren
 not-valid: Dies ist keine gültige Adresse
 paste: Adresse einfügen
-is-not-valid: is not a valid address
+is-not-valid: ist keine gültige Adresse
 cashaddr:
   title: Cash Adresse
   sub: Neues, sichereres Format - wird nicht mit Bitcoin (BTC) oder anderen Coins verwechselt
 legacy:
-  title: Legacy address
+  title: Legacy Adresse
   sub: Senden Sie nichts anderes als Bitcoin Cash (BCH) an diese Adresse oder Ihr Guthaben kann verloren gehen
