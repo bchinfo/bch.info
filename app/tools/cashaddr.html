@@ -38,6 +38,12 @@
         <div class="row container" onclick="copyToClipboard('#cashAddr')">
           <button class="col-10 btn btn-secondary text-left no-round-right" id="cashAddr">-</button>
           <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+
+          <!-- QR code -->
+          <div class="address-qrcode">
+            <canvas id="cashAddrQR"></canvas>
+          </div>
+
         </div>
       </div>
 
@@ -48,6 +54,12 @@
         <div class="row container" onclick="copyToClipboard('#legacyAddr')">
           <button class="col-10 btn btn-secondary text-left no-round-right" id="legacyAddr">-</button>
           <button class="col-2 btn btn-secondary no-round-left btn-copy">{% include "icons/clipboard.svg" %}</button>
+
+          <!-- QR code -->
+          <div class="address-qrcode">
+            <canvas id="legacyAddrQR"></canvas>
+          </div>
+
         </div>
       </div>
     </div>
@@ -56,6 +68,7 @@
 </section>
 
 <script src="/static/js/bchaddrjs-0.4.9.min.js"></script>
+<script src="/static/js/qrcode.min.js"></script>
 <script>
   function convertAddress() {
     const address = $("#address").val();
@@ -70,6 +83,13 @@
         $("#legacyAddr").text(legacy);
         // Display converted address
         $("#convertedAddr").removeClass("d-none");
+        // Display QR codes
+        QRCode.toCanvas(document.getElementById("cashAddrQR"), cash, function (error) {
+          if (error) console.error(error);
+        });
+        QRCode.toCanvas(document.getElementById("legacyAddrQR"), legacy, {width: 164}, function (error) {
+          if (error) console.error(error);
+        });
       } else {
         // Show error message
         $("#convertedAddr").addClass("d-none");

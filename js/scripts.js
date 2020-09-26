@@ -28,6 +28,7 @@ function copyToClipboard(element) {
   $temp.remove();
   if (!$(element).hasClass("btn-primary")) {
     $(".btn-copy").removeClass("btn-primary").addClass("btn-secondary");
+    $(".address-qrcode").removeClass("btn-primary");
     $(element).siblings().removeClass("btn-secondary").addClass("btn-primary");
   }
 }
