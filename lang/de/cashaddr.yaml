@@ -4,9 +4,10 @@ sub: Adressenkonvertierungswerkzeug
 convert: Konvertieren
 not-valid: Dies ist keine gültige Adresse
 paste: Adresse einfügen
+is-not-valid: ist keine gültige Adresse
 cashaddr:
   title: Cash Adresse
   sub: Neues, sichereres Format - wird nicht mit Bitcoin (BTC) oder anderen Coins verwechselt
 legacy:
-  title: Legacy-Format
+  title: Legacy Adresse
   sub: Senden Sie nichts anderes als Bitcoin Cash (BCH) an diese Adresse oder Ihr Guthaben kann verloren gehen
