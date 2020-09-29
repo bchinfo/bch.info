@@ -1,10 +1,10 @@
 ---
-title: Cash address - Legacy address format conversion tool
+title: Ferramenta de conversão Cash address - Legacy address
 sub: Ferramenta de conversão de endereço
 convert: Converter
 not-valid: Endereço inválido
 paste: Colar endereço
-is-not-valid: is not a valid address
+is-not-valid: endereço inválido
 cashaddr:
   title: Cash address
   sub: Formato novo e mais seguro, evita ser confundido com Bitcoin (BTC) ou outras moedas
