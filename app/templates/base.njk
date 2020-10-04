@@ -63,7 +63,14 @@
   <!-- Menu -->
   {% include "menu.njk" %}
 
-  <!-- JavaScript -->
+  <!-- Global JavaScript -->
   <script src="/static/js/scripts.js"></script>
+
+  <!-- File specific JavaScript -->
+  {% if page == "cashaddr" %}
+  <script src="/static/js/bchaddrjs-0.4.9.min.js"></script>
+  <script src="/static/js/qrcode.min.js"></script>
+  {% endif %}
+
 </body>
 </html>
