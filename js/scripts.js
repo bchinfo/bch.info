@@ -66,7 +66,7 @@ function convertAddress() {
       // Show error message
       $("#convertedAddr").addClass("d-none");
       $("#errorMessage").removeClass("d-none");
-      $("#errorMessage").text(address + " $( cashaddr.is-not-valid )$");
+      $("#errorMessage").text(address + " " + $("#isNotValid").text());
     }
   }
 }
