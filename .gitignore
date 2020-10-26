@@ -5,6 +5,7 @@
 
 # NodeJS
 node_modules
+package-lock.json
 
 # Auto generated files
 dist/
