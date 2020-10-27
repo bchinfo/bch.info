@@ -83,6 +83,7 @@ async function broadcast() {
     let response = await fetch(endpoint + transaction);
     const json = await response.json();
     if (response.ok) { // if HTTP-status is 200-299
+      $("#errorBroadcast").addClass("d-none");
       $("#successBroadcast").removeClass("d-none");
       $("#txID").html(json)
       .attr("href", "https://explorer.bitcoin.com/bch/tx/" + json);
