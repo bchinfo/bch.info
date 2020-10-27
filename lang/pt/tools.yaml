@@ -1,0 +1,5 @@
+---
+sub: Useful Bitcoin Cash tools
+conversion: Address conversion
+broadcast: Transaction broadcaster
+broadcast-sub: Broadcast raw transactions to the network
