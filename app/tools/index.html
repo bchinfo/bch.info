@@ -1,0 +1,43 @@
+{% extends 'base.njk' %}
+
+{% block title %}Tools{% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold">$( footer.tools-tools )$</h1>
+    <p class="h3 text-muted">$( tools.sub )$</p>
+  </div>
+</section>
+
+<!-- Tools list -->
+<section class="bg-white">
+  <div class="container">
+    <div class="row py-6 align-items-center justify-content-center">
+      <div class="col-10 col-sm-6 col-lg-3">
+        {% include "graphics/developer.svg" %}
+      </div>
+      <div class="col-lg-1"></div>
+      <div class="col-lg-8 mt-5 mt-lg-0">
+        <div class="card-deck">
+          <div class="card card-body ml-0">
+            <h3 class="h4">$( tools.conversion )$</h3>
+            <p class="lead pb-2">$( cashaddr.title )$</p>
+            <a class="btn btn-primary" href="/$( _lang_ )$/tools/cashaddr">Try now</a>
+          </div>
+
+          <div class="card card-body ml-0">
+            <h3 class="h4">$( tools.broadcast )$</h3>
+            <p class="lead pb-2">$( tools.broadcast-sub )$</p>
+            <a class="btn btn-primary" href="/$( _lang_ )$/tools/broadcast">Try now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Tools list -->
+{% endblock %}
