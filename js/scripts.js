@@ -70,3 +70,28 @@ function convertAddress() {
     }
   }
 }
+
+
+// Transaction broadcaster
+
+async function broadcast() {
+  const transaction = $("#txHex").val();
+  if (transaction.length > 10) {
+    $("#errorMessage").addClass("d-none");
+    // Submit to rest.bitcoin.com
+    const endpoint = "https://rest.bitcoin.com/v2/rawtransactions/sendRawTransaction/";
+    let response = await fetch(endpoint + transaction);
+    const json = await response.json();
+    if (response.ok) { // if HTTP-status is 200-299
+      $("#successBroadcast").removeClass("d-none");
+      $("#txID").html(json)
+      .attr("href", "https://explorer.bitcoin.com/bch/tx/" + json);
+    } else {
+      // Transaction couldn't be broadcasted
+      $("#errorDetails").html(json.error);
+      $("#errorBroadcast").removeClass("d-none");
+    }
+  } else {
+    $("#errorMessage").removeClass("d-none");
+  }
+}
