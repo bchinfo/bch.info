@@ -1,0 +1,6 @@
+---
+broadcast: Transmitir
+is-not-valid: Transacción inválida
+error: No fue posible transmitir
+success: "Transacción enviada! Su ID es:"
+paste: Pegar transacción

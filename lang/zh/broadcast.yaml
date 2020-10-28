@@ -1,0 +1,6 @@
+---
+broadcast: 广播
+is-not-valid: 交易无效。
+error: 无法广播
+success: "交易已发送！其ID是："
+paste: 在此粘贴交易
