@@ -62,6 +62,13 @@ $color-circle-size: 65px;
   border-radius: 50%;
 }
 
+.bg-info-gradient {
+  background: $primary;
+  background: -webkit-linear-gradient(left, $dark-green, $primary);
+  background: -moz-linear-gradient(left, $dark-green, $primary);
+  background: linear-gradient(to right, $dark-green, $primary);
+}
+
 // Misc
 
 .cursor-default {
