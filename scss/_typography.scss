@@ -13,10 +13,18 @@
   .display-1 {
     font-size: 4.2em;
   }
+
+  .notice-title {
+    font-size: 2em;
+  }
 }
 
 @include media-breakpoint-down(sm){
   .display-1 {
     font-size: 2.8em;
+  }
+
+  .notice-title {
+    font-size: 1.5em;
   }
 }
