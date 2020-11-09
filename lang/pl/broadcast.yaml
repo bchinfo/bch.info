@@ -1,6 +1,6 @@
 ---
 broadcast: Rozgłoś
-is-not-valid: Transaction is not valid
-error: Could not broadcast
-success: "Transaction sent! Its ID is:"
-paste: Paste a transaction
+is-not-valid: Transakcja nieprawidłowa
+error: Nie udało się rozgłosić transakcji
+success: "Transakcja wysłana! ID transakcji to:"
+paste: Wklej transakcję
