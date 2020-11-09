@@ -1,5 +1,5 @@
 ---
-broadcast: Broadcast
+broadcast: Rozgłoś
 is-not-valid: Transaction is not valid
 error: Could not broadcast
 success: "Transaction sent! Its ID is:"
