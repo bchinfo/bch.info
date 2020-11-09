@@ -8,5 +8,5 @@ libraries: Narzędzia programistów
 resources: Zasoby
 media: Pakiet Medialny
 github: Repozytorium na GitHub
-tools: CashAddr conversion
-tools-tools: Tools
+tools: Narzędzie konwersji adresów Cash
+tools-tools: Narzędzia
