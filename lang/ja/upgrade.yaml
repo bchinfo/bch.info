@@ -5,4 +5,4 @@ content:
   title: ビットコインキャッシュネットワークは2020年11月15日にアップグレードします。
   p1: 殆どのユーザーにこの影響はありませんが、ご利用中のアプリやサービスから指示がある場合、そちらに従ってください。
   p2: ノード運営者はノードを最新バージョンにアップグレードする必要があります。ノードのリストはこちら <a href="/$( _lang_ )$/nodes"></a> で確認できます。
-  p3: "SPVライブラリ利用している開発者は<a href=\"https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/\" target=\"_blank\">新しいDAAのスペック</a>に合わせてアップグレードをする必要があります。\n<a href=\"https://github.com/pokkst/asert-java\" target=\"_blank\">The bitcoincashj maintainer (Java)</a>や<a href=\"https://github.com/Electron-Cash/Electron-Cash/blob/master/lib/asert_daa.py\" target=\"_blank\">Electron Cash (Python)</a>に実装例が紹介されています。"
+  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/" target="_blank">new DAA specification</a>. Some example implementations are available from <a href="https://github.com/pokkst/asert-java" target="_blank">the bitcoincashj maintainer (Java)</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/blob/master/electroncash/asert_daa.py" target="_blank">Electron Cash (Python)</a>.
