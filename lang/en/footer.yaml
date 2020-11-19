@@ -1,6 +1,7 @@
 individuals: Individuals
 wallets: Wallets
 exchanges: Exchanges
+explorers: Explorers
 
 developers: Developers
 nodes: Nodes
