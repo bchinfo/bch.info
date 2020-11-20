@@ -1,13 +1,13 @@
 ---
-title: Cash address - Legacy address format conversion tool
-sub: Address conversion tool
-convert: Convert
-not-valid: This is not a valid address
-paste: Paste an address
-is-not-valid: is not a valid address
+title: キャッシュアドレス - レガシーアドレス形式変換ツール
+sub: アドレス変換ツール
+convert: 変換
+not-valid: 有効なアドレスではありません。
+paste: アドレスをペースト
+is-not-valid: 有効なアドレスではありません
 cashaddr:
-  title: Cash address
-  sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
+  title: キャッシュアドレス
+  sub: 新しい、より安全なフォーマット - Bitcoin(BTC) や他のコインのアドレスと間違う事がありません
 legacy:
-  title: Legacy address
-  sub: Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost
+  title: レガシーアドレス
+  sub: このアドレスにBitcoin Cash(BCH) 以外を送信しないでください。あなたの資金が失われる可能性があります。
