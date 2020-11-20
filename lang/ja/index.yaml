@@ -3,7 +3,7 @@ title: 世界のための<br>より良いお金
 desc: ビットコインキャッシュは未来のお金です。ボーダーレスで安全な電子キャッシュ！Bitcoin Cash (BCH) ビットコインキャッシュユーザーと開発者、ビジネス向けのウェブサイトです。
 get-started: はじめよう
 wallet: ウォレットを選択
-whitepaper: Read the whitepaper
+whitepaper: ホワイトペーパーを読む
 upgrade:
   title: ネットワークアップグレードに関するお知らせ
   p1: ビットコインキャッシュネットワークは2020年11月15日にアップグレードを控えています。これは殆どのユーザーには影響はありませんが、ご利用中のアプリやサービスから指示があればそちらに従ってください。
@@ -15,4 +15,4 @@ chargeback: チャージバック無し
 frozen: 資金凍結無し
 pools-exch: プール及び交換所
 run: フルノードをたてる
-upgrade-node: Upgrade your node
+upgrade-node: ノードをアップグレードしましょう
