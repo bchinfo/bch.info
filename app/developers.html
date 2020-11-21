@@ -2,6 +2,51 @@
 
 {% block title %}$( footer.libraries )${% endblock %}
 
+{%
+  set aio = [
+    {
+      name: "bitcoinj",
+      link: "https://github.com/pokkst/bitcoincashj",
+      stack: "java"
+    },
+    {
+      name: "bitcoinj",
+      link: "https://fullstack.cash",
+      stack: "js"
+    },
+    {
+      name: "bitcore",
+      link: "https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash",
+      stack: "js"
+    },
+    {
+      name: "bitcash",
+      link: "https://pybitcash.github.io/bitcash",
+      stack: "python"
+    },
+    {
+      name: "python-bitcoincash",
+      link: "https://github.com/dagurval/python-bitcoincash",
+      stack: "python"
+    },
+    {
+      name: "bchd",
+      link: "https://github.com/gcash",
+      stack: "go"
+    },
+    {
+      name: "bchwallet",
+      link: "https://github.com/gcash/bchwallet",
+      stack: "go"
+    },
+    {
+      name: "neutrino",
+      link: "https://github.com/gcash/neutrino",
+      stack: "go"
+    }
+  ]
+%}
+
 {% block body %}
 
 <section class="hero-alt">
@@ -21,14 +66,9 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.aio )$</h2>
         <ul class="nav flex-column">
-          <li class="nav-item"><img src="/static/img/devtools/java.png" alt="Java" height="30"> <a href="https://github.com/pokkst/bitcoincashj" target="_blank">bitcoinj</a> </li>
-          <li class="nav-item"><img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <a href="https://fullstack.cash" target="_blank">fullstack</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <a href="https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash" target="_blank">bitcore</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/python.png" alt="Python" height="30"> <a href="https://pybitcash.github.io/bitcash" target="_blank">bitcash</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/python.png" alt="Python" height="30"> <a href="https://github.com/dagurval/python-bitcoincash" target="_blank">python-bitcoincash</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/go.png" alt="golang" height="30"> <a href="https://github.com/gcash" target="_blank">bchd</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/go.png" alt="golang" height="30"> <a href="https://github.com/gcash/bchwallet" target="_blank">bchwallet</a></li>
-          <li class="nav-item"><img src="/static/img/devtools/go.png" alt="golang" height="30"> <a href="https://github.com/gcash/neutrino">neutrino</a></li>
+          {% for item in aio %}
+          <li class="nav-item"><img src="/static/img/devtools/{{ item.stack }}.png" alt="{{ item.stack }}" height="30"> <a href="{{ item.link }}" target="_blank">{{ item.name }}</a></li>
+          {% endfor %}
         </ul>
       </div>
 
