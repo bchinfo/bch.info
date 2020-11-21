@@ -4,12 +4,12 @@
 
 {% set aio = [
   {
-    name: "bitcoinj",
+    name: "bitcoincashj",
     link: "https://github.com/pokkst/bitcoincashj",
     stacks: ["java"]
   },
   {
-    name: "bitcoinj",
+    name: "Fullstack",
     link: "https://fullstack.cash",
     stacks: ["js"]
   },
@@ -19,7 +19,7 @@
     stacks: ["js"]
   },
   {
-    name: "bitcash",
+    name: "BitCash",
     link: "https://pybitcash.github.io/bitcash",
     stacks: ["python"]
   },
@@ -29,7 +29,7 @@
     stacks: ["python"]
   },
   {
-    name: "bchd",
+    name: "BCHD",
     link: "https://github.com/gcash",
     stacks: ["go"]
   },
@@ -141,81 +141,75 @@
     <div class="row">
 
       <!-- All in one -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.aio )$</h2>
-        <ul class="nav flex-column">
-          {% for item in aio %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.aio )$</h3>
+        {% for item in aio %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
       <!-- Data and utilities -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.data )$</h2>
-        <ul class="nav flex-column">
-          {% for item in data %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.data )$</h3>
+        {% for item in data %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
       <!-- REST APIs -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.rest )$</h2>
-        <ul class="nav flex-column">
-          {% for item in rest %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.rest )$</h3>
+        {% for item in rest %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
       <!-- Blockchain and network -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.bc )$</h2>
-        <ul class="nav flex-column">
-          {% for item in network %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.bc )$</h3>
+        {% for item in network %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
       <!-- Smart contracts -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.smart-contracts )$</h2>
-        <ul class="nav flex-column">
-          {% for item in smart %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.smart-contracts )$</h3>
+        {% for item in smart %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
       <!-- Tokens -->
-      <div class="col-md-6 mb-5">
-        <h2>$( developers.tokens )$</h2>
-        <ul class="nav flex-column">
-          {% for item in tokens %}
-          <li class="nav-item">
-            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
-            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
-          </li>
-          {% endfor %}
-        </ul>
+      <div class="col-sm-6 col-lg-4 mb-5">
+        <h3 class="mb-3">$( developers.tokens )$</h3>
+        {% for item in tokens %}
+        <a class="btn mr-1 my-1 shadow-sm" href="{{ item.link }}" target="_blank">
+          {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+          <span>{{ item.name }}</span>
+        </a>
+        <br>
+        {% endfor %}
       </div>
 
     </div>
