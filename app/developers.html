@@ -2,50 +2,128 @@
 
 {% block title %}$( footer.libraries )${% endblock %}
 
-{%
-  set aio = [
-    {
-      name: "bitcoinj",
-      link: "https://github.com/pokkst/bitcoincashj",
-      stack: "java"
-    },
-    {
-      name: "bitcoinj",
-      link: "https://fullstack.cash",
-      stack: "js"
-    },
-    {
-      name: "bitcore",
-      link: "https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash",
-      stack: "js"
-    },
-    {
-      name: "bitcash",
-      link: "https://pybitcash.github.io/bitcash",
-      stack: "python"
-    },
-    {
-      name: "python-bitcoincash",
-      link: "https://github.com/dagurval/python-bitcoincash",
-      stack: "python"
-    },
-    {
-      name: "bchd",
-      link: "https://github.com/gcash",
-      stack: "go"
-    },
-    {
-      name: "bchwallet",
-      link: "https://github.com/gcash/bchwallet",
-      stack: "go"
-    },
-    {
-      name: "neutrino",
-      link: "https://github.com/gcash/neutrino",
-      stack: "go"
-    }
-  ]
-%}
+{% set aio = [
+  {
+    name: "bitcoinj",
+    link: "https://github.com/pokkst/bitcoincashj",
+    stacks: ["java"]
+  },
+  {
+    name: "bitcoinj",
+    link: "https://fullstack.cash",
+    stacks: ["js"]
+  },
+  {
+    name: "bitcore",
+    link: "https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash",
+    stacks: ["js"]
+  },
+  {
+    name: "bitcash",
+    link: "https://pybitcash.github.io/bitcash",
+    stacks: ["python"]
+  },
+  {
+    name: "python-bitcoincash",
+    link: "https://github.com/dagurval/python-bitcoincash",
+    stacks: ["python"]
+  },
+  {
+    name: "bchd",
+    link: "https://github.com/gcash",
+    stacks: ["go"]
+  },
+  {
+    name: "bchwallet",
+    link: "https://github.com/gcash/bchwallet",
+    stacks: ["go"]
+  },
+  {
+    name: "neutrino",
+    link: "https://github.com/gcash/neutrino",
+    stacks: ["go"]
+  }
+] %}
+
+{% set data = [
+  {
+    name: "libauth",
+    link: "https://libauth.org/",
+    stacks: ["js", 'ts']
+  },
+  {
+    name: "bchaddrjs",
+    link: "https://www.npmjs.com/package/bchaddrjs",
+    stacks: ["js"]
+  },
+  {
+    name: "bchutil",
+    link: "https://github.com/gcash/bchutil",
+    stacks: ["go"]
+  }
+] %}
+
+{% set rest = [
+  {
+    name: "rest.Bitcoin.com",
+    link: "https://rest.bitcoin.com",
+    stacks: ["api"]
+  },
+  {
+    name: "GetBlock",
+    link: "https://getblock.io",
+    stacks: ["api"]
+  }
+] %}
+
+{% set network = [
+  {
+    name: "electrum-cash",
+    link: "https://www.npmjs.com/package/electrum-cash",
+    stacks: ["js", "ts"]
+  },
+  {
+    name: "bitdb and bitsocket",
+    link: "https://bitdb.bch.sx/explorer",
+    stacks: ["api"]
+  },
+  {
+    name: "fulcrum (C++ electrumx)",
+    link: "https://github.com/cculianu/Fulcrum",
+    stacks: ["api"]
+  },
+  {
+    name: "dnsseeder",
+    link: "https://github.com/gcash/dnsseeder",
+    stacks: ["go"]
+  }
+] %}
+
+{% set smart = [
+  {
+    name: "cashscript",
+    link: "https://cashscript.org/",
+    stacks: ["js", "ts"]
+  },
+  {
+    name: "spedn",
+    link: "https://spedn.pl",
+    stacks: ["js", "cli"]
+  },
+  {
+    name: "meep",
+    link: "https://github.com/gcash/meep",
+    stacks: ["cli"]
+  }
+] %}
+
+{% set tokens = [
+  {
+    name: "slp.dev",
+    link: "https://slp.dev",
+    stacks: ["js", "dart"]
+  }
+] %}
 
 {% block body %}
 
@@ -67,7 +145,10 @@
         <h2>$( developers.aio )$</h2>
         <ul class="nav flex-column">
           {% for item in aio %}
-          <li class="nav-item"><img src="/static/img/devtools/{{ item.stack }}.png" alt="{{ item.stack }}" height="30"> <a href="{{ item.link }}" target="_blank">{{ item.name }}</a></li>
+          <li class="nav-item">
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
+          </li>
           {% endfor %}
         </ul>
       </div>
@@ -76,15 +157,12 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.data )$</h2>
         <ul class="nav flex-column">
+          {% for item in data %}
           <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <img src="/static/img/devtools/ts.png" alt="TypeScript" height="30"> <a href="https://libauth.org" target="_blank">libauth</a>
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
           </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <a href="https://www.npmjs.com/package/bchaddrjs" target="_blank">bchaddrjs</a>
-          </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/go.png" alt="golang" height="30"> <a href="https://github.com/gcash/bchutil">bchutil</a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -92,12 +170,12 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.rest )$</h2>
         <ul class="nav flex-column">
+          {% for item in rest %}
           <li class="nav-item">
-            <img src="/static/img/devtools/api.png" alt="api" height="30"> <a href="https://rest.bitcoin.com" target="_blank">rest.Bitcoin.com</a>
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
           </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/api.png" alt="api" height="30"> <a href="https://getblock.io" target="_blank">GetBlock</a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -105,15 +183,12 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.bc )$</h2>
         <ul class="nav flex-column">
+          {% for item in network %}
           <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <img src="/static/img/devtools/ts.png" alt="TypeScript" height="30"> <a href="https://www.npmjs.com/package/electrum-cash" target="_blank">electrum-cash</a>
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
           </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/api.png" alt="api" height="30"> <a href="https://bitdb.bch.sx/explorer" target="_blank">bitdb and bitsocket</a></li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/api.png" alt="api" height="30"> <a href="https://github.com/cculianu/Fulcrum" target="_blank">fulcrum</a> (C++ electrumx)
-          </li>
-          <li class="nav-item"><img src="/static/img/devtools/go.png" alt="golang" height="30"> <a href="https://github.com/gcash/dnsseeder" target="_blank">dnsseeder</a></li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -121,15 +196,12 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.smart-contracts )$</h2>
         <ul class="nav flex-column">
+          {% for item in smart %}
           <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <img src="/static/img/devtools/ts.png" alt="TypeScript" height="30"> <a href="https://cashscript.org">cashscript</a>
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
           </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <img src="/static/img/devtools/cli.png" alt="cli" height="30"> <a href="https://spedn.pl/">spedn</a>
-          </li>
-          <li class="nav-item">
-            <img src="/static/img/devtools/cli.png" alt="cli" height="30"> <a href="https://github.com/gcash/meep">meep</a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -137,9 +209,12 @@
       <div class="col-md-6 mb-5">
         <h2>$( developers.tokens )$</h2>
         <ul class="nav flex-column">
+          {% for item in tokens %}
           <li class="nav-item">
-            <img src="/static/img/devtools/js.png" alt="JavaScript" height="30"> <img src="/static/img/devtools/dart.png" alt="dart" height="30"> <a href="https://slp.dev">slp.dev</a>
+            {% for stack in item.stacks %}<img src="/static/img/devtools/{{ stack }}.png" alt="{{ stack }}" height="30">{% endfor %}
+            <a href="{{ item.link }}" target="_blank">{{ item.name }}</a>
           </li>
+          {% endfor %}
         </ul>
       </div>
 
