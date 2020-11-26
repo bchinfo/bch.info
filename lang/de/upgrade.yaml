@@ -2,6 +2,7 @@
 title: Knoten aktualisieren
 sub: Bleiben Sie kompatibel mit der nächsten Netzwerk-Aktualisierung
 content:
-  #title: The Bitcoin Cash network is upgrading November 15, 2020
+  title: The Bitcoin Cash network is upgrading November 15, 2020
   p1: Die meisten Benutzer sollten nicht betroffen sein, sondern sollten alle Updateanweisungen ihrer App oder Dienstleister befolgen.
   p2: Knoten-Betreiber müssen ihre Knoten auf die neueste Version aktualisieren. Sie können eine Liste der Knoten <a href="/$( _lang_ )$/nodes">hier</a> sehen.
+  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/" target="_blank">new DAA specification</a>. Some example implementations are available from <a href="https://github.com/pokkst/asert-java" target="_blank">the bitcoincashj maintainer (Java)</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/blob/master/electroncash/asert_daa.py" target="_blank">Electron Cash (Python)</a>.
