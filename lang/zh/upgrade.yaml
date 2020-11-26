@@ -2,6 +2,7 @@
 title: 升级节点
 sub: 兼容接下来的网络更新
 content:
-  #title: The Bitcoin Cash network is upgrading November 15, 2020
+  title: The Bitcoin Cash network is upgrading November 15, 2020
   p1: 大多数的用户将不会受到影响，不过仍请关注所使用第三方应用或者服务提供商的更新指南。
   p2: 节点软件将需要更新至最新版本，您可以参考<a href="/$( _lang_ )$/nodes">这里的节点列表</a>
+  p3: Developers who maintain SPV libraries will need to perform a minor upgrade to follow the <a href="https://upgradespecs.bitcoincashnode.org/2020-11-15-asert/" target="_blank">new DAA specification</a>. Some example implementations are available from <a href="https://github.com/pokkst/asert-java" target="_blank">the bitcoincashj maintainer (Java)</a> and <a href="https://github.com/Electron-Cash/Electron-Cash/blob/master/electroncash/asert_daa.py" target="_blank">Electron Cash (Python)</a>.
