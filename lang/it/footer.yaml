@@ -1,13 +1,13 @@
 ---
-individuals: Individuals
-wallets: Wallets
-exchanges: Exchanges
-explorers: Explorers
-developers: Developers
-nodes: Nodes
-libraries: Developer tools
-resources: Resources
-media: Media kit
-github: GitHub repo
-tools: CashAddr conversion
-tools-tools: Tools
+individuals: Privati
+wallets: Portafogli
+exchanges: Exchange
+explorers: Explorer
+developers: Sviluppatori
+nodes: Nodi
+libraries: Strumenti per sviluppatori
+resources: Risorse
+media: Kit per media
+github: Repo GitHub
+tools: Conversione CashAddr
+tools-tools: Strumenti
