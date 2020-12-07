@@ -1,14 +1,14 @@
 ---
-title: Exchanges
-sub: Buy Bitcoin Cash
-recommended: Recommended exchanges
+title: Exchange
+sub: Compra Bitcoin Cash
+recommended: Exchange consigliati
 kraken:
-  desc: Kraken operates in North America and Europe.
-  btn: Visit Kraken
+  desc: Kraken opera in Nord America e in Europa.
+  btn: Visita Kraken
 coinbase:
-  desc: Buy Bitcoin Cash from North America, Europe, Australia, Singapore and more.
-  btn: Visit Coinbase
+  desc: Compra Bitcoin Cash dal Nord America, Europa, Australia, Singapore e altro ancora.
+  btn: Visita Coinbase
 coinex:
-  desc: Convert any cryptocurrency into Bitcoin Cash from anywhere.
-  btn: Visit Coinex
-more: More exchanges
+  desc: Converti qualsiasi criptovaluta in Bitcoin Cash ovunque ti trovi.
+  btn: Visita Coinex
+more: Altri exchange
