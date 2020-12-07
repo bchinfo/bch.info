@@ -1,0 +1,12 @@
+---
+banner:
+  title: Bitcoincash.org and its owners no longer accurately represent Bitcoin Cash!
+  sub: Click to find out more
+title: Notice to services that use Bitcoin Cash (BCH)
+h1: <span class="text-muted">Bitcoincash.org</span> is unreliable for information regarding the Bitcoin Cash network
+h2: Recommended actions
+p1: Due to the decentralized nature of Bitcoin Cash, there is no official website for the network as a whole. Unfortunately, the most popular informational website, bitcoincash.org, has been publishing information that does not reflect the current reality of the Bitcoin Cash network and the November 15th 2020 scheduled upgrade.
+p2: Bitcoin ABC, which owns bitcoincash.org, wants to implement an 8% miner tax. This proposal has been rejected by the vast majority of the Bitcoin Cash ecosystem, and Bitcoin ABC will likely fork to a minority chain as a new coin. This reality has already been recognized in statements from <a href="https://twitter.com/BitGo/status/1322270023835144196">BitGo</a> (<a href="https://blog.bitgo.com/bitgos-approach-and-prediction-to-the-bch-hard-fork-4625938d0dbf">detail</a>), <a href="https://twitter.com/CoinbaseSupport/status/1324156279489622017">Coinbase</a>, <a href="https://twitter.com/krakenfx/status/1324838483198959619">Kraken</a> (<a href="https://blog.kraken.com/post/6795/bitcoin-cash-hard-fork-on-november-15-what-kraken-clients-need-to-know/">detail</a>) and others.
+p3: Please replace any references to bitcoincash.org with an alternative, such as <a href="/$( _lang_ )$">bch.info</a>.
+p4: 'In order to stay on the Bitcoin Cash network, services need to replace any Bitcoin ABC nodes with an alternative. <a href="https://bitcoincashnode.org/">Bitcoin Cash Node (BCHN)</a> is a drop-in replacement for Bitcoin ABC and is strongly recommended for miners and pools. There are five other BCH nodes that have various benefits: <a href="https://bchd.cash/">BCHD</a>, <a href="https://www.bitcoinunlimited.info/">Bitcoin Unlimited</a>, <a href="https://bitcoinverde.org/documentation/">Bitcoin Verde</a>, <a href="https://flowee.org/">Flowee</a> and <a href="https://kth.cash/">Knuth</a>.'
+p5: Also, please make sure any nodes are <a href="/$( _lang_ )$/upgrade">up to date</a> so that they are compatible with the November 15th 2020 upgrade. This upgrade will make Bitcoin Cash block times more reliable.
