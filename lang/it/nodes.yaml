@@ -1,14 +1,14 @@
 ---
-title: Full nodes
-sub: Be part of the network by running a full node
+title: Nodi
+sub: Fai parte della rete gestendo un nodo
 recommended:
-  title: Recommended node for miners
-  bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
-  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
-  btn: Go to website
+  title: Nodi raccomandati per i miner
+  bchn: <b>Bitcoin Cash Node</b> è un nodo professionale e amichevole verso i miner.
+  bu: <b>Bitcoin Unlimited</b> è attualmente il nodo Bitcoin Cash più utilizzato.
+  btn: Vai al sito web
 popular:
-  title: Popular nodes
-  sub: Commonly used among exchanges and services
+  title: Nodi famosi
+  sub: Solitamente usati da exchange e servizi
 less:
-  title: Upcoming nodes
-  sub: Explore cutting edge features
+  title: Nodi in arrivo
+  sub: Esplora caratteristiche all'avanguardia
