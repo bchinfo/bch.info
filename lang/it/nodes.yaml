@@ -4,7 +4,7 @@ sub: Fai parte della rete gestendo un nodo
 recommended:
   title: Nodi raccomandati per i miner
   bchn: <b>Bitcoin Cash Node</b> è un nodo professionale e amichevole verso i miner.
-  bu: <b>Bitcoin Unlimited</b> è attualmente il nodo Bitcoin Cash più utilizzato.
+  bu: <b>Bitcoin Unlimited</b> è il nodo Bitcoin Cash attualmente più utilizzato.
   btn: Vai al sito
 popular:
   title: Nodi famosi
