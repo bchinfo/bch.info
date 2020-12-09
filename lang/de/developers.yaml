@@ -2,6 +2,7 @@
 sub: Software-Bibliotheken und SDKs
 aio: All-in-one
 data: Daten und Hilfsmittel
-bc: Blockchain und Netzwerk
+bc: Netzwerk
 smart-contracts: Smart Contracts
-tokens: Tokens
+tokens: Token
+rest: REST-APIs

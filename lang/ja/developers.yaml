@@ -2,6 +2,7 @@
 sub: ソフトウェア ライブラリと SDK
 aio: オールインワン
 data: データとユーティリティ
-bc: ブロックチェーンとネットワーク
+bc: Network
 smart-contracts: スマートコントラクト
 tokens: トークン
+rest: REST APIs
