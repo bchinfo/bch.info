@@ -1,5 +1,5 @@
 ---
-individuals: Privati
+individuals: Utenti
 wallets: Portafogli
 exchanges: Exchange
 explorers: Explorer
@@ -7,7 +7,7 @@ developers: Sviluppatori
 nodes: Nodi
 libraries: Strumenti per sviluppatori
 resources: Risorse
-media: Kit per media
+media: Media kit
 github: Repo GitHub
 tools: Conversione CashAddr
 tools-tools: Strumenti
