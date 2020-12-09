@@ -1,0 +1,18 @@
+---
+title: Denaro migliore<br>per il mondo
+desc: Bitcoin Cash è il denaro del futuro. Non ha confini. È sicuro. È denaro elettronico! Informazioni su Bitcoin Cash (BCH) per utenti, sviluppatori e aziende.
+get-started: Inizia
+wallet: Scegli un portafoglio
+whitepaper: Leggi il whitepaper
+upgrade:
+  title: Avviso aggiornamento della rete
+  p1: La rete Bitcoin Cash si aggiorna il 15 Novembre 2020. Per la maggior parte degli utenti non cambierà niente, ma è consigliato effettuare gli aggiornamenti dalle loro app o dai propri fornitori di servizi.
+  p2: I gestori di nodi e gli sviluppatori che lavorano alle librerie SPV dovranno aggiornare il proprio software.
+  btn: Vedi note di aggiornamento
+overdraft: Nessun fido
+border: Nessun confine
+chargeback: Nessuno storno
+frozen: Nessun fondo congelato
+pools-exch: Pool & Exchange
+run: Gestisci un nodo
+upgrade-node: Aggiorna il tuo nodo

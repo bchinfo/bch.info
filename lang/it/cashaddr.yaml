@@ -1,0 +1,13 @@
+---
+title: Strumento per la conversione tra Indirizzi cash - Indirizzi legacy
+sub: Strumento per la conversione tra indirizzi
+convert: Converti
+not-valid: Questo indirizzo non è valido
+paste: Incolla un indirizzo
+is-not-valid: non è un indirizzo valido
+cashaddr:
+  title: Indirizzo cash
+  sub: Formato nuovo e più sicuro - non sarà confuso con quello di Bitcoin (BTC) o altre valute
+legacy:
+  title: Indirizzo legacy
+  sub: Invia solo Bitcoin Cash (BCH) a questo indirizzo o potresti perdere i fondi inviati
