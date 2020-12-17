@@ -12,7 +12,7 @@ upgrade:
 overdraft: Nessuno scoperto
 border: Nessun confine
 chargeback: Nessun chargeback
-frozen: Nessun fondo congelato
+frozen: Nessun fondo bloccato
 pools-exch: Pool & Exchange
 run: Gestisci un nodo
 upgrade-node: Aggiorna il tuo nodo
