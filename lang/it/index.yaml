@@ -6,13 +6,13 @@ wallet: Scegli un portafoglio
 whitepaper: Leggi il whitepaper
 upgrade:
   title: Avviso aggiornamento della rete
-  p1: La rete Bitcoin Cash si aggiorna il 15 Novembre 2020. Per la maggior parte degli utenti non cambierà niente, ma è consigliato effettuare gli aggiornamenti dalle loro app o dai propri fornitori di servizi.
+  p1: La rete Bitcoin Cash si aggiorna il 15 Novembre 2020. Per la maggior parte degli utenti non cambierà niente, ma è consigliato attenersi alle istruzioni delle proprie app e fornitori di servizi.
   p2: I gestori di nodi e gli sviluppatori che lavorano alle librerie SPV dovranno aggiornare il proprio software.
   btn: Vedi note di aggiornamento
-overdraft: Nessun fido
+overdraft: Nessuno scoperto
 border: Nessun confine
-chargeback: Nessuno storno
-frozen: Nessun fondo congelato
+chargeback: Nessun chargeback
+frozen: Nessun fondo bloccato
 pools-exch: Pool & Exchange
 run: Gestisci un nodo
 upgrade-node: Aggiorna il tuo nodo
