@@ -1,14 +1,14 @@
 ---
-title: Exchanges
-sub: Buy Bitcoin Cash
-recommended: Recommended exchanges
+title: การแลกเปลี่ยน
+sub: ซื้อ Bitcoin Cash
+recommended: กระดานแลกเปลี่ยนที่แนะนำ
 kraken:
-  desc: Kraken operates in North America and Europe.
-  btn: Visit Kraken
+  desc: Kraken ถูกดำเนินการในอเมริกาเหนือและในทวีปยุโรป
+  btn: เยี่ยมชม Kraken
 coinbase:
-  desc: Buy Bitcoin Cash from North America, Europe, Australia, Singapore and more.
-  btn: Visit Coinbase
+  desc: ซื้อ Bitcoin Cash จากอเมริกาเหนือ ยุโรป ออสเตรเลีย สิงคโปร์ และอื่นๆ
+  btn: เยี่ยมชม Coinbase
 coinex:
-  desc: Convert any cryptocurrency into Bitcoin Cash from anywhere.
-  btn: Visit Coinex
-more: More exchanges
+  desc: แปลงเหรียญคริปโตฯ อื่นๆจากที่ไหนก็ได้เป็น Bitcoin Cash 
+  btn: เยี่ยมชม Coinex
+more: กระดานแลกเปลี่ยนอื่นๆ
