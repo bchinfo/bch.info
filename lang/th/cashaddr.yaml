@@ -1,13 +1,13 @@
 ---
-title: ที่อยู่เงินสด - เครื่องมือแปลงรูปแบบที่อยู่ดั้งเดิม
-sub: Address conversion tool
-convert: Convert
-not-valid: This is not a valid address
-paste: Paste an address
-is-not-valid: is not a valid address
+title: ที่อยู่เงินสด - รูปแบบที่อยู่ดั้งเดิม
+sub: เครื่องมือแปลงรูปแบบที่อยู่ดั้งเดิม
+convert: แปลงค่า
+not-valid: ที่อยู่ไม่ถูกต้อง
+paste: วางที่อยู่
+is-not-valid: ไม่ใช่ที่อยู่ที่ถูกต้อง
 cashaddr:
-  title: Cash address
-  sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
+  title: ที่อยู่
+  sub: รูปแบบที่ใหม่กว่า ปลอดภัยกว่า-จะไม่ทำให้สับสนระหว่างเหรียญ Bitcoin (BTC) หรือ เหรียญอื่นๆ
 legacy:
-  title: Legacy address
-  sub: Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost
+  title: ที่อยู่ดั้งเดิม
+  sub: อย่าส่งอะไรนอกจากเหรียญ Bitcoin Cash (BCH) ไปยังที่อยู่นี้ เพราะยอดเงินจะสูญหาย
