@@ -14,5 +14,5 @@ border: ไร้พรมแดน
 chargeback: ไม่มีการปฏิเสธการชำระเงิน
 frozen: ไม่มีเงินแช่แข็ง
 pools-exch: Pools & Exchanges
-run: Run a full node
+run: รัน full node
 upgrade-node: อัปเกรดโหนดของคุณ
