@@ -1,8 +1,8 @@
 ---
 sub: สมุดซอฟแวร์และ SDKs
-aio: ทั้งหมดอยู่ในที่เดียว
-data: ข้อมูลและสาธารณูปโภค
+aio: ครบในที่เดียว
+data: ข้อมูลและสารประโยชน์
 bc: เครือข่าย
 smart-contracts: การตรวจสอบ Smart Contract
-tokens: เหรียญ token
+tokens: เหรียญ Token
 rest: REST APIs
