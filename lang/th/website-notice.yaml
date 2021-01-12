@@ -1,0 +1,12 @@
+---
+banner:
+  title: Bitcoincash.org และเจ้าของ ไม่มีส่วนเกี่ยวข้องกับ Bitcoin Cash แล้ว
+  sub: คลิกที่นี่เพื่อดูรายละเอียดเพิ่มเติม!
+title: ประกาศไปยังบริการต่างๆที่ใช้ Bitcoin Cash (BCH)
+h1: <span class="text-muted"> Bitcoincash.org </span> ไม่มีข้อมูลที่น่าเชื่อถือต่อเครือข่ายของ Bitcoin Cash
+h2: 'คำแนะนำ:'
+p1: เนื่องจากธรรมชาติของความไร้ตัวกลางของ Bitcoin Cash ดังนั้นจึงไม่มีเว็บไซต์ที่เป็นทางการสำหรับเครือข่ายทั้งหมด น่าเสียดายที่ bitcoincash.org เคยเป็นเว็บไซต์ให้ความรู้ที่ได้รับความนิยมเป็นอย่างมาก ได้นำเสนอข้อมูลที่ไม่ได้สะท้อนถึงข้อเท็จจริงเกี่ยวกับเครือข่ายของ Bitcoin Cash รวมถึงตารางการอัพเกรดในวันที่ 15 พฤศจิกายน 2563 ด้วย
+p2: Bitcoin ABC ที่เป็นเจ้าของ bitcoincash.org ต้องการที่จะให้มีการเก็บภาษีกับนักขุด Bitcoin Cash จำนวน 8% และวัตถุประสงค์นี้ก็ได้รับการปฎิเสธจากคนส่วนใหญ่ในเครือข่ายของ Bitcoin Cash และ Bitcoin ABC จะทำการ Fork เหรียญใหม่ มีปรากฎที่ <a href="https://twitter.com/BitGo/status/1322270023835144196"> BitGo</a>(<a href="https://blog.bitgo.com/bitgos-approach-and-prediction-to-the-bch-hard-fork-4625938d0dbf">รายละเอียด</a>),<a href="https://twitter.com/CoinbaseSupport/status/1324156279489622017">Coinbase</a>,<a href="https://twitter.com/krakenfx/status/1324838483198959619">Kraken</a>(<a href="https://blog.kraken.com/post/6795/bitcoin-cash-hard-fork-on-november-15-what-kraken-clients-need-to-know/">รายละเอียด</a>) และอื่นๆ
+p3: โปรดใช้การอ้างอิงจาก <a href="/$( _lang_ )$"> bch.info </a> แทน bitcoincash.org
+p4: 'ในกรณีที่จะอยู่ในเครือข่ายของ Bitcoin Cash หลายๆบริการจำเป็นต้องใช้โหนดอื่นแทน Bitcoin ABC <a href="https://bitcoincashnode.org/"> Bitcoin Cash Node (BCHN) </a> สามารถทดแทน Bitcoin ABC ได้และอยากจะแนะนำเป็นอย่างยิ่งสำหรับนักขุด เหมืองขุดและยังมีอีก 5 BCH nodes ที่มีประโยชน์ที่หลายหลาย<a href="https://bchd.cash/">BCHD</a>,<a href="https://www.bitcoinunlimited.info/">Bitcoin Unlimited</a>,<a href="https://bitcoinverde.org/documentation/">Bitcoin Verde</a>,<a href="https://flowee.org/">Flowee</a>and<a href="https://kth.cash/">Knuth</a>'
+p5: และอยากให้มั่นใจว่าโหนดเหล่านั้นมีการอัพเดต<a href="/$( _lang_ )$/nodes">up to date</a> และมีความพร้อมกับการอัพเกรดในวันที่ 15 พฤศจิกายน 2563 และการอัพเกรดนี้จะทำให้บล็อกของ Bitcoin Cash มีความน่าเชื่อถือมากขึ้นหลายเท่าตัว

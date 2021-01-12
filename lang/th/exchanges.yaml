@@ -1,0 +1,14 @@
+---
+title: กระดานแลกเปลี่ยน
+sub: ซื้อ Bitcoin Cash
+recommended: กระดานแลกเปลี่ยนที่แนะนำ
+kraken:
+  desc: Kraken ดำเนินการในอเมริกาเหนือและในทวีปยุโรป
+  btn: เยี่ยมชม Kraken
+coinbase:
+  desc: ซื้อ Bitcoin Cash จากอเมริกาเหนือ ยุโรป ออสเตรเลีย สิงคโปร์ และอื่นๆ
+  btn: เยี่ยมชม Coinbase
+coinex:
+  desc: แปลงเหรียญคริปโตฯ อื่นๆจากที่ไหนก็ได้เป็น Bitcoin Cash 
+  btn: เยี่ยมชม Coinex
+more: กระดานแลกเปลี่ยนอื่นๆ
