@@ -33,3 +33,17 @@
   from = "/wallets"
   to = "/en/wallets"
   force = true
+
+# Tools subfolder
+[[redirects]]
+  from = "/tools/"
+  to = "/en/tools/"
+  force = true
+[[redirects]]
+  from = "/tools/cashaddr"
+  to = "/en/tools/cashaddr"
+  force = true
+[[redirects]]
+  from = "/tools/broadcast"
+  to = "/en/tools/broadcast"
+  force = true
