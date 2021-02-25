@@ -78,18 +78,43 @@ async function broadcast() {
   const transaction = $("#txHex").val();
   if (transaction.length > 10) {
     $("#errorMessage").addClass("d-none");
-    // Submit to rest.bitcoin.com
-    const endpoint = "https://rest.bitcoin.com/v2/rawtransactions/sendRawTransaction/";
-    let response = await fetch(endpoint + transaction);
-    const json = await response.json();
+    // insomnia.fountainhead.cash
+    // https://insomnia.fountainhead.cash/#/transaction/post_tx_broadcast
+    const insomniaEndpoint = "https://insomnia.fountainhead.cash/v1/tx/broadcast";
+    // rest.bitcoin.com
+    const bitcoincomEndpoint = "https://rest.bitcoin.com/v2/rawtransactions/sendRawTransaction/";
+
+    let response;
+    try {
+      // try insomnia first
+      response = await fetch(insomniaEndpoint, {
+        method: "post",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'text/plain'
+        },
+        body: transaction
+      });
+    } catch (e) {
+      // use bitcoin.com if error
+      response = await fetch(bitcoincomEndpoint + transaction);
+
+    }
     if (response.ok) { // if HTTP-status is 200-299
+      const json = await response.json();
+      console.log(json);
       $("#errorBroadcast").addClass("d-none");
       $("#successBroadcast").removeClass("d-none");
-      $("#txID").html(json)
-      .attr("href", "https://explorer.bitcoin.com/bch/tx/" + json);
+      if (json.txid) {
+        txid = json.txid;  // handle different response format
+      } else {
+        txid = json;
+      }
+      $("#txID").html(txid)
+      .attr("href", "https://explorer.bitcoin.com/bch/tx/" + txid);
     } else {
       // Transaction couldn't be broadcasted
-      $("#errorDetails").html(json.error);
+      $("#errorDetails").html("Your transaction could not be broadcasted.");
       $("#errorBroadcast").removeClass("d-none");
     }
   } else {
