@@ -1,0 +1,66 @@
+{% extends 'base.njk' %}
+
+{% block title %}$( chips.title )${% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold">$( chips.title )$</h1>
+    <p class="h3 text-muted">$( chips.sub )$</p>
+  </div>
+</section>
+
+<section class="bg-white py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="lead">$( chips.description )$</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <p>Here is the list of CHIPs:</p>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col" class="text-nowrap">Date proposed</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Increase Unconfirmed Transaction Chain Limit</td>
+                <td>Feb 21, 2021</td>
+                <td>Pending</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>ADD NATIVE INTROSPECTION OPCODES</td>
+                <td>Feb 21, 2021</td>
+                <td>Pending</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Group Tokenization for Bitcoin Cash</td>
+                <td>Feb 21, 2021</td>
+                <td>Confirmed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
