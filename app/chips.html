@@ -27,27 +27,19 @@
           <table class="table mt-5">
             <thead>
               <tr>
-                <th scope="col">Title <span class="float-right d-md-none">{% include "icons/arrow-right.svg" %}</span></th>
+                <th scope="col" style="min-width: 300px;">Title</th>
                 <th scope="col" class="text-nowrap">Last updated</th>
                 <th scope="col">Activated</th>
               </tr>
             </thead>
             <tbody>
+              {% for chip in chips %}
               <tr>
-                <td scope="row"><a href="#">Increase Unconfirmed Transaction Chain Limit</a></td>
-                <td>Feb 21, 2021</td>
-                <td>No</td>
+                <td scope="row"><a href="{{ chip.link }}">{{ chip.title }}</a></td>
+                <td>{{ chip.lastUpdated }}</td>
+                <td>{{ chip.activated }}</td>
               </tr>
-              <tr>
-                <td scope="row" class="text-nowrap"><a href="#">ADD NATIVE INTROSPECTION OPCODES</a></td>
-                <td>Feb 21, 2021</td>
-                <td>No</td>
-              </tr>
-              <tr>
-                <td scope="row"><a href="#">Group Tokenization for Bitcoin Cash</a></td>
-                <td>Feb 21, 2021</td>
-                <td>Yes</td>
-              </tr>
+              {% endfor %}
             </tbody>
           </table>
         </div>

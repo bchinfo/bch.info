@@ -1,0 +1,22 @@
+{
+  "chips": [
+    {
+      "title": "Test title 1 - this is a long title",
+      "lastUpdated": "Feb 28, 2021",
+      "link": "https://bch.info",
+      "activated": "No"
+    },
+    {
+      "title": "Test title 2",
+      "lastUpdated": "Feb 28, 2021",
+      "link": "https://bch.info",
+      "activated": "No"
+    },
+    {
+      "title": "Test title 3",
+      "lastUpdated": "Feb 28, 2021",
+      "link": "https://bch.info",
+      "activated": "Yes"
+    }
+  ]
+}

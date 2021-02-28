@@ -45,6 +45,10 @@ gulp.task('nunjucks', function() {
   .pipe(data(function() {
     return require('./app/data/exchanges.json')
   }))
+  // Adds data from chips.json
+  .pipe(data(function() {
+    return require('./app/data/chips.json')
+  }))
   // Renders template with nunjucks
   .pipe(nunjucksRender({
     path: ['app/templates/']
