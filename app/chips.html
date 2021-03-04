@@ -29,6 +29,7 @@
               <tr>
                 <th scope="col" style="min-width: 300px;">Title</th>
                 <th scope="col" class="text-nowrap">Last updated</th>
+                <th scope="col">Consensus</th>
                 <th scope="col">Activated</th>
               </tr>
             </thead>
@@ -37,6 +38,7 @@
               <tr>
                 <td scope="row"><a href="{{ chip.link }}">{{ chip.title }}</a></td>
                 <td>{{ chip.lastUpdated }}</td>
+                <td>{{ chip.consensus }}</td>
                 <td>{{ chip.activated }}</td>
               </tr>
               {% endfor %}
