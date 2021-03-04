@@ -5,6 +5,7 @@
       "lastUpdated": "Feb 28, 2021",
       "link": "https://bch.info",
       "consensus": "No",
+      "tags": ["tag1"],
       "activated": "No"
     },
     {
@@ -12,6 +13,7 @@
       "lastUpdated": "Feb 28, 2021",
       "link": "https://bch.info",
       "consensus": "No",
+      "tags": ["tag1", "tag2"],
       "activated": "No"
     },
     {
@@ -19,6 +21,7 @@
       "lastUpdated": "Feb 28, 2021",
       "link": "https://bch.info",
       "consensus": "Yes",
+      "tags": ["tag2"],
       "activated": "Yes"
     }
   ]

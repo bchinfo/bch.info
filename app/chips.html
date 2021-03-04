@@ -21,6 +21,25 @@
       </div>
     </div>
 
+    <!-- Set tags -->
+    {% set tagMaster = [] %}
+    {% for chip in chips %}
+      {% for tag in chip.tags %}
+        {% if tag not in tagMaster %}
+          {% set tagMaster = (tagMaster.push(tag),tagMaster) %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% if tagMaster|length > 1 %}
+      <div class="mb-5">
+        <button class="btn btn-outline-light btn-sm btn-tag-toggle btn-tag-toggle-all active m-1">All <span class="sr-only">articles</span></button>
+        {% for t in tagMaster %}
+          <button class="btn btn-outline-light btn-sm btn-tag-toggle m-1 text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}} <span class="sr-only">articles</span></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+
     <div class="row">
       <div class="col">
         <div class="table-responsive">
