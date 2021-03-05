@@ -10,6 +10,10 @@
   to = "/en/bitcoin-cash-website-notice.html"
   force = true
 [[redirects]]
+  from = "/chips"
+  to = "/en/chips"
+  force = true
+[[redirects]]
   from = "/developers"
   to = "/en/developers"
   force = true
