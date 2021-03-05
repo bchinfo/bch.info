@@ -33,7 +33,7 @@
 
     {% if tagMaster|length > 1 %}
       <div class="mb-5">
-        <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">All</button>
+        <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">$( chips.all )$</button>
         {% for t in tagMaster %}
           <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
         {% endfor %}
@@ -46,11 +46,11 @@
           <table class="table mt-5">
             <thead>
               <tr>
-                <th scope="col" style="min-width: 300px;">Title</th>
-                <th scope="col" class="text-nowrap">Last updated</th>
-                <th scope="col">Consensus</th>
-                <th scope="col">Activated</th>
-                <th scope="col">Tags</th>
+                <th scope="col" style="min-width: 300px;">$( chips.chip-title )$</th>
+                <th scope="col" class="text-nowrap">$( chips.last-updated )$</th>
+                <th scope="col">$( chips.consensus )$</th>
+                <th scope="col">$( chips.activated )$</th>
+                <th scope="col">$( chips.tags )$</th>
               </tr>
             </thead>
             <tbody>
@@ -71,7 +71,7 @@
 
     <div class="row d-none" id="tag-error">
       <div class="col">
-        <p class="text-danger">No CHIP matched the selected tags.</p>
+        <p class="text-danger">$( chips.error )$</p>
       </div>
     </div>
 
