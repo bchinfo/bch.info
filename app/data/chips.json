@@ -23,6 +23,14 @@
       "consensus": "Yes",
       "tags": ["tag2"],
       "activated": "Yes"
+    },
+    {
+      "title": "Test title 4",
+      "lastUpdated": "Feb 28, 2021",
+      "link": "https://bch.info",
+      "consensus": "Yes",
+      "tags": ["tag3"],
+      "activated": "Yes"
     }
   ]
 }

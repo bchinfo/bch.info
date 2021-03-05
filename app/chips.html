@@ -33,9 +33,9 @@
 
     {% if tagMaster|length > 1 %}
       <div class="mb-5">
-        <button class="btn btn-outline-light btn-sm btn-tag-toggle btn-tag-toggle-all active m-1">All <span class="sr-only">articles</span></button>
+        <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">All</button>
         {% for t in tagMaster %}
-          <button class="btn btn-outline-light btn-sm btn-tag-toggle m-1 text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}} <span class="sr-only">articles</span></button>
+          <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
         {% endfor %}
       </div>
     {% endif %}
@@ -50,23 +50,31 @@
                 <th scope="col" class="text-nowrap">Last updated</th>
                 <th scope="col">Consensus</th>
                 <th scope="col">Activated</th>
+                <th scope="col">Tags</th>
               </tr>
             </thead>
             <tbody>
               {% for chip in chips %}
-              <tr>
+              <tr class="collapse-tag{% for tag in chip.tags %} tag-{{ tag }}{% endfor %}">
                 <td scope="row"><a href="{{ chip.link }}">{{ chip.title }}</a></td>
                 <td>{{ chip.lastUpdated }}</td>
                 <td>{{ chip.consensus }}</td>
                 <td>{{ chip.activated }}</td>
+                <td>{{ chip.tags }}</td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
         </div>
-
       </div>
     </div>
+
+    <div class="row d-none" id="tag-error">
+      <div class="col">
+        <p class="text-danger">No CHIP matched the selected tags.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
