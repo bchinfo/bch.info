@@ -1,0 +1,18 @@
+---
+title: Лучшие деньги<br>для мира
+desc: Bitcoin Cash is the money of the future. It’s borderless. It’s secure. It’s electronic cash! Info about Bitcoin Cash (BCH) for users, developers, and businesses.
+get-started: Get started
+wallet: Выберите Кошелек
+whitepaper: Читать белую бумагу
+upgrade:
+  title: Уведомление об обновлении сети
+  p1: Сеть Bitcoin Cash обновляется 15 ноября 2020 года. Большинство пользователей не должны быть затронуты, но должны следовать инструкциям по обновлению от их поставщиков услуг.
+  p2: Операторы и разработчики узлов, которые поддерживают библиотеки SPV, должны будут обновить свое программное обеспечение.
+  btn: Посмотреть заметки по обновлению
+overdraft: No overdrafts
+border: Без границ
+chargeback: Нет обратных платежей
+frozen: Нет замороженных средств
+pools-exch: Пулы и биржи
+run: Запустить полный узел
+upgrade-node: Обновить ваш узел
