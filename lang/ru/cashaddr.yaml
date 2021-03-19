@@ -1,0 +1,13 @@
+---
+title: Cash address - Legacy address format conversion tool
+sub: Address conversion tool
+convert: Конвертировать
+not-valid: This is not a valid address
+paste: Вставьте адрес
+is-not-valid: не является допустимым адресом
+cashaddr:
+  title: Cash address
+  sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
+legacy:
+  title: Старый адрес
+  sub: Не отправляйте биткойн наличными (BCH) на этот адрес, иначе ваши средства могут быть потеряны
