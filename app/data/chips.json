@@ -15,7 +15,9 @@
       "lastUpdated": "2021/3/16",
       "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Allow%20Smaller%20Transactions.md",
       "consensus": "Yes",
-      "tags": "",
+      "tags": [
+        "Transactions"
+      ],
       "activated": "No"
     },
     {
