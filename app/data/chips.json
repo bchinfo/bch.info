@@ -1,6 +1,14 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-01 Allow Transactions to be smaller in size",
+      "lastUpdated": "2021/3/16",
+      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Allow%20Smaller%20Transactions.md",
+      "consensus": "Yes",
+      "tags": "",
+      "activated": "No"
+    },
+    {
       "title": " CHIP-2021-02-Bigger-Script-Integers",
       "lastUpdated": "2021/02/25",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
