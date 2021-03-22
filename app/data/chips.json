@@ -1,6 +1,16 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-01 Restrict-Transaction-Version",
+      "lastUpdated": "2021/03/16",
+      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Restrict%20Transaction%20Versions.md",
+      "consensus": "Yes",
+      "tags": [
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-01 Allow Transactions to be smaller in size",
       "lastUpdated": "2021/3/16",
       "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Allow%20Smaller%20Transactions.md",
