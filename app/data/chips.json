@@ -1,6 +1,14 @@
 {
   "chips": [
     {
+      "title": " CHIP-2021-02-Bigger-Script-Integers",
+      "lastUpdated": "2021/02/25",
+      "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
+      "consensus": "Yes",
+      "tags": "",
+      "activated": "No"
+    },
+    {
       "title": "CHIP - 2021-02 - ADD NATIVE INTROSPECTION OPCODES",
       "lastUpdated": "2021/03/18",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md",
