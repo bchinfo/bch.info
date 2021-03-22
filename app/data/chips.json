@@ -25,7 +25,9 @@
       "lastUpdated": "2021/02/25",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
       "consensus": "Yes",
-      "tags": "",
+      "tags": [
+        "Script"
+      ],
       "activated": "No"
     },
     {
