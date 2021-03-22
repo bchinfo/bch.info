@@ -35,7 +35,9 @@
       "lastUpdated": "2021/03/18",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md",
       "consensus": "Yes",
-      "tags": "",
+      "tags": [
+        "Script"
+      ],
       "activated": "No"
     }
   ]
