@@ -1,36 +1,12 @@
 {
   "chips": [
     {
-      "title": "Test title 1 - this is a long title",
-      "lastUpdated": "Feb 28, 2021",
-      "link": "https://bch.info",
-      "consensus": "No",
-      "tags": ["tag1"],
-      "activated": "No"
-    },
-    {
-      "title": "Test title 2",
-      "lastUpdated": "Feb 28, 2021",
-      "link": "https://bch.info",
-      "consensus": "No",
-      "tags": ["tag1", "tag2"],
-      "activated": "No"
-    },
-    {
-      "title": "Test title 3",
-      "lastUpdated": "Feb 28, 2021",
-      "link": "https://bch.info",
+      "title": "CHIP - 2021-02 - ADD NATIVE INTROSPECTION OPCODES",
+      "lastUpdated": "2021/03/18",
+      "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md",
       "consensus": "Yes",
-      "tags": ["tag2"],
-      "activated": "Yes"
-    },
-    {
-      "title": "Test title 4",
-      "lastUpdated": "Feb 28, 2021",
-      "link": "https://bch.info",
-      "consensus": "Yes",
-      "tags": ["tag3"],
-      "activated": "Yes"
+      "tags": "",
+      "activated": "No"
     }
   ]
 }
