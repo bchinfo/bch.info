@@ -1,0 +1,65 @@
+{
+  "chips": [
+    {
+      "title": "Unconfirmed Transaction Chain Limit",
+      "lastUpdated": "2021/03/08",
+      "link": "https://github.com/softwareverde/bitcoin-cash-chips/blob/master/unconfirmed-transaction-chain-limit.md",
+      "consensus": "No",
+      "tags": [
+        "Mempool-policy"
+      ],
+      "activated": "No"
+    },
+    {
+      "title": "CHIP-2021-02-Group-Tokenization-for-Bitcoin-Cash",
+      "lastUpdated": "2021/03/14",
+      "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Group_Tokenization_for_Bitcoin_Cash.md",
+      "consensus": "Yes",
+      "tags": [
+        "Tokens",
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
+      "title": "CHIP-2021-01 Restrict-Transaction-Version",
+      "lastUpdated": "2021/03/16",
+      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Restrict%20Transaction%20Versions.md",
+      "consensus": "Yes",
+      "tags": [
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
+      "title": "CHIP-2021-01 Allow Transactions to be smaller in size",
+      "lastUpdated": "2021/3/16",
+      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Allow%20Smaller%20Transactions.md",
+      "consensus": "Yes",
+      "tags": [
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
+      "title": " CHIP-2021-02-Bigger-Script-Integers",
+      "lastUpdated": "2021/02/25",
+      "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    },
+    {
+      "title": "CHIP-2021-02-Add-Native-Introspection-Opcodes",
+      "lastUpdated": "2021/03/18",
+      "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    }
+  ]
+}

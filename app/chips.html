@@ -1,0 +1,81 @@
+{% extends 'base.njk' %}
+
+{% block title %}$( chips.title )${% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold">$( chips.title )$</h1>
+    <p class="h3 text-muted">$( chips.sub )$</p>
+  </div>
+</section>
+
+<section class="bg-white py-6">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <p class="lead">$( chips.description )$</p>
+      </div>
+    </div>
+
+    <!-- Set tags -->
+    {% set tagMaster = [] %}
+    {% for chip in chips %}
+      {% for tag in chip.tags %}
+        {% if tag not in tagMaster %}
+          {% set tagMaster = (tagMaster.push(tag),tagMaster) %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% if tagMaster|length > 1 %}
+      <div class="mb-5">
+        <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">$( chips.all )$</button>
+        {% for t in tagMaster %}
+          <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <div class="col">
+        <div class="table-responsive">
+          <table class="table mt-5">
+            <thead>
+              <tr>
+                <th scope="col" style="min-width: 300px;">$( chips.chip-title )$</th>
+                <th scope="col" class="text-nowrap">$( chips.last-updated )$</th>
+                <th scope="col">$( chips.consensus )$</th>
+                <th scope="col">$( chips.activated )$</th>
+                <th scope="col">$( chips.tags )$</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for chip in chips %}
+              <tr class="collapse-tag{% for tag in chip.tags %} tag-{{ tag }}{% endfor %}">
+                <td scope="row"><a href="{{ chip.link }}">{{ chip.title }}</a></td>
+                <td>{{ chip.lastUpdated }}</td>
+                <td>{{ chip.consensus }}</td>
+                <td>{{ chip.activated }}</td>
+                <td>{{ chip.tags }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row d-none" id="tag-error">
+      <div class="col">
+        <p class="text-danger">$( chips.error )$</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
