@@ -1,14 +1,14 @@
 ---
-title: Полные узлы
-sub: Станьте частью сети, запустив полный узел
+title: Full nodes
+sub: Be part of the network by running a full node
 recommended:
-  title: Рекомендуемый узел для майнеров
-  bchn: <b>Bitcoin Cash Node</b> — профессиональный и дружественный узел.
-  bu: <b>Bitcoin Unlimited</b> является самым популярным узлом в настоящее время Bitcoin Cash.
-  btn: Перейти на сайт
+  title: Recommended node for miners
+  bchn: <b>Bitcoin Cash Node</b> is a professional and miner-friendly node.
+  bu: <b>Bitcoin Unlimited</b> is currently the most popular Bitcoin Cash node by count.
+  btn: Go to website
 popular:
-  title: Популярные узлы
-  sub: Обычно используется между биржами и сервисами
+  title: Popular nodes
+  sub: Commonly used among exchanges and services
 less:
-  title: Предстоящие узлы
-  sub: Изучить передовые функции
+  title: Upcoming nodes
+  sub: Explore cutting edge features
