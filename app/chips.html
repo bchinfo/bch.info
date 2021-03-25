@@ -18,6 +18,7 @@
     <div class="row">
       <div class="col">
         <p class="lead">$( chips.description )$</p>
+        <p class="lead"><a href="https://gitlab.com/im_uname/cash-improvement-proposals/-/blob/master/CHIPs.md" target="_blank">A recommended process can be found here.</a></p>
       </div>
     </div>
 
@@ -32,7 +33,7 @@
     {% endfor %}
 
     {% if tagMaster|length > 1 %}
-    <div class="mb-5">
+    <div class="my-5">
       <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">$( chips.all )$</button>
       {% for t in tagMaster %}
       <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
