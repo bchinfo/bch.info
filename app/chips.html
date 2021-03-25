@@ -18,26 +18,27 @@
     <div class="row">
       <div class="col">
         <p class="lead">$( chips.description )$</p>
+        <p class="lead"><a href="https://gitlab.com/im_uname/cash-improvement-proposals/-/blob/master/CHIPs.md" target="_blank">A recommended process can be found here.</a></p>
       </div>
     </div>
 
     <!-- Set tags -->
     {% set tagMaster = [] %}
     {% for chip in chips %}
-      {% for tag in chip.tags %}
-        {% if tag not in tagMaster %}
-          {% set tagMaster = (tagMaster.push(tag),tagMaster) %}
-        {% endif %}
-      {% endfor %}
+    {% for tag in chip.tags %}
+    {% if tag not in tagMaster %}
+    {% set tagMaster = (tagMaster.push(tag),tagMaster) %}
+    {% endif %}
+    {% endfor %}
     {% endfor %}
 
     {% if tagMaster|length > 1 %}
-      <div class="mb-5">
-        <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">$( chips.all )$</button>
-        {% for t in tagMaster %}
-          <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
-        {% endfor %}
-      </div>
+    <div class="my-5">
+      <button class="btn btn-outline-dark btn-sm btn-tag-toggle btn-tag-toggle-all active m-1 shadow-none">$( chips.all )$</button>
+      {% for t in tagMaster %}
+      <button class="btn btn-outline-dark btn-sm btn-tag-toggle m-1 shadow-none text-capitalize" data-tag-target="tag-{{t}}">{{t|replace('-',' ')}}</button>
+      {% endfor %}
+    </div>
     {% endif %}
 
     <div class="row">
@@ -46,11 +47,11 @@
           <table class="table mt-5">
             <thead>
               <tr>
-                <th scope="col" style="min-width: 300px;">$( chips.chip-title )$</th>
-                <th scope="col" class="text-nowrap">$( chips.last-updated )$</th>
-                <th scope="col">$( chips.consensus )$</th>
-                <th scope="col">$( chips.activated )$</th>
-                <th scope="col">$( chips.tags )$</th>
+                <th scope="col" class="align-middle" style="min-width: 300px;">$( chips.chip-title )$</th>
+                <th scope="col" class="text-nowrap align-middle">$( chips.last-updated )$</th>
+                <th scope="col" class="align-middle">$( chips.consensus )$</th>
+                <th scope="col" class="align-middle">$( chips.activated )$</th>
+                <th scope="col" class="align-middle">$( chips.tags )$</th>
               </tr>
             </thead>
             <tbody>
