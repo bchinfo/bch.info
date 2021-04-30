@@ -1,6 +1,17 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-01-PMv3",
+      "lastUpdated": "2021/04/30",
+      "link": "https://github.com/bitjson/pmv3/",
+      "consensus": "Yes",
+      "tags": [
+        "Script",
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "Unconfirmed Transaction Chain Limit",
       "lastUpdated": "2021/03/08",
       "link": "https://github.com/softwareverde/bitcoin-cash-chips/blob/master/unconfirmed-transaction-chain-limit.md",
@@ -12,7 +23,7 @@
     },
     {
       "title": "CHIP-2021-02-Group-Tokenization-for-Bitcoin-Cash",
-      "lastUpdated": "2021/03/14",
+      "lastUpdated": "2021/04/27",
       "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Group_Tokenization_for_Bitcoin_Cash.md",
       "consensus": "Yes",
       "tags": [
