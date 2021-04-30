@@ -4,6 +4,7 @@ const gulp = require('gulp'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
     nunjucksRender = require('gulp-nunjucks-render'),
+    htmlmin = require('gulp-htmlmin'),
     data = require('gulp-data'),
     i18n = require('gulp-html-i18n'),
     concat = require('gulp-concat'),
@@ -52,6 +53,10 @@ gulp.task('nunjucks', function() {
   // Renders template with nunjucks
   .pipe(nunjucksRender({
     path: ['app/templates/']
+  }))
+  .pipe(htmlmin({ // minify HTML
+    collapseWhitespace: true,
+    removeComments: true
   }))
   // Outputs files in dist folder
   .pipe(gulp.dest('dist-lang'))

@@ -37,6 +37,7 @@
   "dependencies": {
     "bchaddrjs": "^0.4.9",
     "gulp-html-i18n": "^0.16.0",
+    "gulp-htmlmin": "^5.0.1",
     "moveto": "^1.8.2",
     "node-sass": "^4.14.0",
     "qrcode": "^1.4.4"
