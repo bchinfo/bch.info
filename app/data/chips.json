@@ -1,6 +1,17 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-01-PMv3",
+      "lastUpdated": "2021/04/30",
+      "link": "https://github.com/bitjson/pmv3/",
+      "consensus": "Yes",
+      "tags": [
+        "Script",
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-03-12 Multiple OP_RETURNs for Bitcoin Cash",
       "lastUpdated": "2021/03/26",
       "link": "https://github.com/ActorForth/Auction-Protocol/blob/main/CHIP-2021-03-12_Multiple_OP_RETURN_for_Bitcoin_Cash.md",
@@ -19,10 +30,10 @@
         "Mempool-policy"
       ],
       "activated": "No"
-    },    
+    },
     {
       "title": "CHIP-2021-02-Group-Tokenization-for-Bitcoin-Cash",
-      "lastUpdated": "2021/03/14",
+      "lastUpdated": "2021/04/27",
       "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Group_Tokenization_for_Bitcoin_Cash.md",
       "consensus": "Yes",
       "tags": [
