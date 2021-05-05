@@ -3,3 +3,5 @@ sub: Outils Bitcoin Cash
 conversion: Conversion d'adresse
 broadcast: Envoyer une transaction
 broadcast-sub: Envoyer une transaction au réseau
+faucet: Testnet3 faucet
+faucet-sub: Claim testnet Bitcoin Cash for testing purposes
