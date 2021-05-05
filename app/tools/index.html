@@ -22,17 +22,23 @@
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-8 mt-5 mt-lg-0">
-        <div class="card-deck">
-          <div class="card card-body ml-0">
+        <div class="row">
+          <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.conversion )$</h3>
             <p class="lead pb-2">$( cashaddr.title )$</p>
-            <a class="btn btn-primary" href="/$( _lang_ )$/tools/cashaddr">Try now</a>
+            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/cashaddr">Try now</a>
           </div>
 
-          <div class="card card-body ml-0">
+          <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.broadcast )$</h3>
             <p class="lead pb-2">$( tools.broadcast-sub )$</p>
-            <a class="btn btn-primary" href="/$( _lang_ )$/tools/broadcast">Try now</a>
+            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/broadcast">Try now</a>
+          </div>
+
+          <div class="col-md-6 ml-0 my-4">
+            <h3 class="h4">$( tools.faucet )$</h3>
+            <p class="lead pb-2">$( tools.faucet-sub )$</p>
+            <a class="btn btn-primary px-4" href="https://rest-unstable.mainnet.cash/faucet.html" target="_blank">Try now {% include "icons/external-link.svg" %}</a>
           </div>
         </div>
       </div>
