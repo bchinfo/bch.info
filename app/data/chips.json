@@ -19,7 +19,7 @@
       "tags": [
         "Transactions"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "Unconfirmed Transaction Chain Limit",
