@@ -1,6 +1,16 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-05-loops: Bounded Looping Operations",
+      "lastUpdated": "2021/05/29",
+      "link": "https://github.com/bitjson/bch-loops",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-01-PMv3",
       "lastUpdated": "2021/04/30",
       "link": "https://github.com/bitjson/pmv3/",
