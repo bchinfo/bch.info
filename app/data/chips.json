@@ -1,6 +1,17 @@
 {
   "chips": [
     {
+      "title": "CHIP-2021-05 Minimum Fee Rate Voting Via Versionbits",
+      "lastUpdated": "2021/05/31",
+      "link": "https://gitlab.com/freetrader/chips/-/blob/master/CHIP-2021-05_Minimum_Fee_Rate_Voting_Via_Versionbits.md",
+      "consensus": "No",
+      "tags": [
+        "Mempool-policy",
+        "Fee policy"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-05-loops: Bounded Looping Operations",
       "lastUpdated": "2021/05/29",
       "link": "https://github.com/bitjson/bch-loops",
