@@ -3,155 +3,160 @@
 {% block title %}$( footer.libraries )${% endblock %}
 
 {% set aio = [
-  {
-    name: "bitcoincashj",
-    link: "https://github.com/pokkst/bitcoincashj",
-    stacks: ["java"]
-  },
-  {
-    name: "bch-js",
-    link: "https://github.com/Permissionless-Software-Foundation/bch-js",
-    stacks: ["js"]
-  },
-  {
-    name: "bitcore",
-    link: "https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash",
-    stacks: ["js"]
-  },
-  {
-    name: "BitCash",
-    link: "https://pybitcash.github.io/bitcash",
-    stacks: ["python"]
-  },
-  {
-    name: "python-bitcoincash",
-    link: "https://github.com/dagurval/python-bitcoincash",
-    stacks: ["python"]
-  },
-  {
-    name: "bitcoin-kit-ios",
-    link: "https://github.com/horizontalsystems/bitcoin-kit-ios",
-    stacks: ["swift"]
-  },
-  {
-    name: "bitcoin-kit-android",
-    link: "https://github.com/horizontalsystems/bitcoin-kit-android",
-    stacks: ["kotlin"]
-  },
-  {
-    name: "bitbox-flutter",
-    link: "https://github.com/tomasforgacbch/bitbox-flutter",
-    stacks: ["dart"]
-  }
+{
+  name: "Mainnet",
+  link: "https://mainnet.cash",
+  stacks: ["js", "api"]
+},
+{
+  name: "bitcoincashj",
+  link: "https://github.com/pokkst/bitcoincashj",
+  stacks: ["java"]
+},
+{
+  name: "bch-js",
+  link: "https://github.com/Permissionless-Software-Foundation/bch-js",
+  stacks: ["js"]
+},
+{
+  name: "bitcore",
+  link: "https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash",
+  stacks: ["js"]
+},
+{
+  name: "BitCash",
+  link: "https://pybitcash.github.io/bitcash",
+  stacks: ["python"]
+},
+{
+  name: "python-bitcoincash",
+  link: "https://github.com/dagurval/python-bitcoincash",
+  stacks: ["python"]
+},
+{
+  name: "bitcoin-kit-ios",
+  link: "https://github.com/horizontalsystems/bitcoin-kit-ios",
+  stacks: ["swift"]
+},
+{
+  name: "bitcoin-kit-android",
+  link: "https://github.com/horizontalsystems/bitcoin-kit-android",
+  stacks: ["kotlin"]
+},
+{
+  name: "bitbox-flutter",
+  link: "https://github.com/tomasforgacbch/bitbox-flutter",
+  stacks: ["dart"]
+}
 ] %}
 
 {% set data = [
-  {
-    name: "libauth",
-    link: "https://libauth.org/",
-    stacks: ["js", 'ts']
-  },
-  {
-    name: "bchaddrjs",
-    link: "https://www.npmjs.com/package/bchaddrjs",
-    stacks: ["js"]
-  },
-  {
-    name: "bchutil",
-    link: "https://github.com/gcash/bchutil",
-    stacks: ["go"]
-  },
-  {
-    name: "bitcoin-cash",
-    link: "https://github.com/be-cash/bitcoin-cash",
-    stacks: ["rust"]
-  },
-  {
-    name: "haskoin-core",
-    link: "https://github.com/haskoin/haskoin-core",
-    stacks: ["haskell"]
-  }
+{
+  name: "libauth",
+  link: "https://libauth.org/",
+  stacks: ["js", 'ts']
+},
+{
+  name: "bchaddrjs",
+  link: "https://www.npmjs.com/package/bchaddrjs",
+  stacks: ["js"]
+},
+{
+  name: "bchutil",
+  link: "https://github.com/gcash/bchutil",
+  stacks: ["go"]
+},
+{
+  name: "bitcoin-cash",
+  link: "https://github.com/be-cash/bitcoin-cash",
+  stacks: ["rust"]
+},
+{
+  name: "haskoin-core",
+  link: "https://github.com/haskoin/haskoin-core",
+  stacks: ["haskell"]
+}
 ] %}
 
 {% set rest = [
-  {
-    name: "Fullstack.cash",
-    link: "https://fullstack.cash",
-    stacks: ["api"]
-  },{
-    name: "Fountainhead.cash",
-    link: "https://fountainhead.cash/",
-    stacks: ["api"]
-  },
-  {
-    name: "rest.Bitcoin.com",
-    link: "https://rest.bitcoin.com",
-    stacks: ["api"]
-  },
-  {
-    name: "GetBlock",
-    link: "https://getblock.io",
-    stacks: ["api"]
-  }
+{
+  name: "Fullstack.cash",
+  link: "https://fullstack.cash",
+  stacks: ["api"]
+},{
+  name: "Fountainhead.cash",
+  link: "https://fountainhead.cash/",
+  stacks: ["api"]
+},
+{
+  name: "rest.Bitcoin.com clone",
+  link: "https://rest1.biggestfan.net",
+  stacks: ["api"]
+},
+{
+  name: "GetBlock",
+  link: "https://getblock.io",
+  stacks: ["api"]
+}
 ] %}
 
 {% set network = [
-  {
-    name: "electrum-cash",
-    link: "https://www.npmjs.com/package/electrum-cash",
-    stacks: ["js", "ts"]
-  },
-  {
-    name: "bitdb and bitsocket",
-    link: "https://bitdb.bch.sx/explorer",
-    stacks: ["api"]
-  },
-  {
-    name: "fulcrum (C++ electrumx)",
-    link: "https://github.com/cculianu/Fulcrum",
-    stacks: ["api"]
-  },
-  {
-    name: "dnsseeder",
-    link: "https://github.com/gcash/dnsseeder",
-    stacks: ["go"]
-  }
+{
+  name: "electrum-cash",
+  link: "https://www.npmjs.com/package/electrum-cash",
+  stacks: ["js", "ts"]
+},
+{
+  name: "bitdb and bitsocket",
+  link: "https://bitdb.bch.sx/explorer",
+  stacks: ["api"]
+},
+{
+  name: "fulcrum (C++ electrumx)",
+  link: "https://github.com/cculianu/Fulcrum",
+  stacks: ["api"]
+},
+{
+  name: "dnsseeder",
+  link: "https://github.com/gcash/dnsseeder",
+  stacks: ["go"]
+}
 ] %}
 
 {% set smart = [
-  {
-    name: "cashscript",
-    link: "https://cashscript.org/",
-    stacks: ["js", "ts"]
-  },
-  {
-    name: "spedn",
-    link: "https://spedn.pl",
-    stacks: ["js", "cli"]
-  },
-  {
-    name: "iguana",
-    link: "https://github.com/be-cash/iguana",
-    stacks: ["js", "rust"]
-  },
-  {
-    name: "meep",
-    link: "https://github.com/gcash/meep",
-    stacks: ["cli"]
-  }
+{
+  name: "cashscript",
+  link: "https://cashscript.org/",
+  stacks: ["js", "ts"]
+},
+{
+  name: "spedn",
+  link: "https://spedn.pl",
+  stacks: ["js", "cli"]
+},
+{
+  name: "iguana",
+  link: "https://github.com/be-cash/iguana",
+  stacks: ["js", "rust"]
+},
+{
+  name: "meep",
+  link: "https://github.com/gcash/meep",
+  stacks: ["cli"]
+}
 ] %}
 
 {% set tokens = [
-  {
-    name: "slp.dev",
-    link: "https://slp.dev",
-    stacks: ["js", "dart"]
-  },
-  {
-    name: "slpjs",
-    link: "https://github.com/simpleledger/slpjs",
-    stacks: ["js", "ts"]
-  }
+{
+  name: "slp.dev",
+  link: "https://slp.dev",
+  stacks: ["js", "dart"]
+},
+{
+  name: "slpjs",
+  link: "https://github.com/simpleledger/slpjs",
+  stacks: ["js", "ts"]
+}
 ] %}
 
 {% block body %}
