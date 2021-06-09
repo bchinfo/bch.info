@@ -94,9 +94,9 @@
       "activated": "Yes"
     },
     {
-      "title": " CHIP-2021-02-Bigger-Script-Integers",
-      "lastUpdated": "2021/02/25",
-      "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
+      "title": " CHIP-2021-03-Bigger-Script-Integers",
+      "lastUpdated": "2021/06/09",
+      "link": "https://gitlab.com/bitjson/chips/-/blob/math64/CHIP-2021-03-Bigger-Script-Integers.md",
       "consensus": "Yes",
       "tags": [
         "Script"
