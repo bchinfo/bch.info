@@ -1,6 +1,16 @@
 {
   "chips": [
     {
+      "title": " CHIP-2021-03-Bigger-Script-Integers",
+      "lastUpdated": "2021/06/09",
+      "link": "https://gitlab.com/bitjson/chips/-/blob/math64/CHIP-2021-03-Bigger-Script-Integers.md",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-02-Add-Native-Introspection-Opcodes",
       "lastUpdated": "2021/06/03",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md",
@@ -92,16 +102,6 @@
         "Mempool-policy"
       ],
       "activated": "Yes"
-    },
-    {
-      "title": " CHIP-2021-03-Bigger-Script-Integers",
-      "lastUpdated": "2021/06/09",
-      "link": "https://gitlab.com/bitjson/chips/-/blob/math64/CHIP-2021-03-Bigger-Script-Integers.md",
-      "consensus": "Yes",
-      "tags": [
-        "Script"
-      ],
-      "activated": "No"
     }
   ]
 }
