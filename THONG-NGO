@@ -2,9 +2,9 @@
   <img src="app/static/img/bitcoin-cash-NGO-logo-flag.svg" height="70">
   <h4><a href="https://bch.info" target="_blank">bch.info</a></h4>
   <p>Bitcoin Cash informational website</p>https://bitcoincash.org
-</ div >
+</ div >THONG-NGO 
   tên tác giả: Thông Ngô
-<hr>
+<hr>THONG-NGO
   email: quangthong1011@gmail.com
 [![Netlify Status](https://api.netlify.com/api/v1/badges/52d9f701-354f-4e58-9223-d4da49906174/deploy-status)](https://app.netlify.com/sites/bch/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/bchinfo/bch.info/badge)](https://www.codefactor.io/repository/github/bchinfo/bch.info) [![Crowdin](https://badges.crowdin.net/bchinfo/localized.svg)](https://crowdin.com/project/bchinfo)
 
@@ -15,7 +15,7 @@
 - [Deployment](#-deployment)
 - [Translate](#-translate)
 
-<hr>
+<hr>THONG-NGO
 
 ### 💻 Run the develoment server
 
@@ -45,13 +45,13 @@ Use the coding style recommended by [codeguide.co](https://codeguide.co).
 
 - JavaScript files are located in `/js/`. All files will be concatenated in alphabetical order unless specified otherwise.
 
-<hr>
+<hr>THONG-NGO 
 
 ### 🚀 Deployment
 
 The `master` branch is automatically deployed.
 
-<hr>
+<hr>THONG-NGO
 
 ### 🇬🇧 Translate
 
