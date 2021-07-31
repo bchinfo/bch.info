@@ -1,11 +1,11 @@
-<div align="center">
-  <img src="app/static/img/bitcoin-cash-logo-flag.svg" height="70">
+<div align="THONG NGO">
+  <img src="app/static/img/bitcoin-cash-NGO-logo-flag.svg" height="70">
   <h4><a href="https://bch.info" target="_blank">bch.info</a></h4>
-  <p>Bitcoin Cash informational website</p>
-</div>
-
+  <p>Bitcoin Cash informational website</p>https://bitcoincash.org
+</ div >
+  tên tác giả: Thông Ngô
 <hr>
-
+  email: quangthong1011@gmail.com
 [![Netlify Status](https://api.netlify.com/api/v1/badges/52d9f701-354f-4e58-9223-d4da49906174/deploy-status)](https://app.netlify.com/sites/bch/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/bchinfo/bch.info/badge)](https://www.codefactor.io/repository/github/bchinfo/bch.info) [![Crowdin](https://badges.crowdin.net/bchinfo/localized.svg)](https://crowdin.com/project/bchinfo)
 
 ### Table of contents
@@ -19,12 +19,12 @@
 
 ### 💻 Run the develoment server
 
-You will need [nodeJS](https://nodejs.org/en/) installed on your machine, then run:
-
-```shell
-npm install -g gulp-cli  # if you don't have Gulp already
-npm install
-gulp
+Bạn sẽ cần cài đặt [nodeJS] (https://nodejs.org/en/) trên máy tính của mình, sau đó chạy:
+https://bitcoincash.org
+`` vỏ/
+npm install -g gulp-cli # nếu bạn chưa có Gulp/
+install npm
+nuốt chửng
 ```
 
 Hit `ctrl + C` to stop the server.
