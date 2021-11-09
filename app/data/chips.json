@@ -1,6 +1,14 @@
 {
   "chips": [
     {
+      "title": "CHIP 2021-07 UTXO Fastsync",
+      "lastUpdated": "2021/07/07",
+      "link": "https://github.com/softwareverde/bitcoin-verde/blob/development/specification/utxo-fastsync-chip-20210625.md",
+      "consensus": "No",
+      "tags": "",
+      "activated": "No"
+    },
+    {
       "title": " CHIP-2021-03-Bigger-Script-Integers",
       "lastUpdated": "2021/06/09",
       "link": "https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Bigger-Script-Integers.md",
