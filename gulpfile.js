@@ -104,7 +104,7 @@ gulp.task('copy-static', function(done){
   // Copy independant JavaScript files
   gulp.src('node_modules/bchaddrjs/dist/bchaddrjs-0.4.9.min.js')
     .pipe(gulp.dest('dist/static/js/'));
-  gulp.src('node_modules/qrcode/build/qrcode.min.js')
+  gulp.src('node_modules/qrcode/build/qrcode.js')
     .pipe(gulp.dest('dist/static/js/'));
   done();
 });
