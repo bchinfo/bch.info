@@ -106,8 +106,6 @@ gulp.task('copy-static', function(done){
     .pipe(gulp.dest('dist/static/js/'));
   gulp.src('node_modules/qrcode/build/qrcode.min.js')
     .pipe(gulp.dest('dist/static/js/'));
-  gulp.src('node_modules/qrcode/build/qrcode.min.js.map')
-    .pipe(gulp.dest('dist/static/js/'));
   done();
 });
 
