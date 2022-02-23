@@ -5,7 +5,11 @@
       "lastUpdated": "2022/02/22",
       "link": "https://github.com/bitjson/cashtokens#covenant-tracking-non-fungible-tokens",
       "consensus": "Yes",
-      "tags": "Script,Tokens,Transactions",
+      "tags": [
+        "Script",
+        "Tokens",
+        "Transactions"
+      ],
       "activated": "No"
     },
     {
