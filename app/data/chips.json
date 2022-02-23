@@ -9,6 +9,18 @@
       "activated": "No"
     },
     {
+      "title": "CHIP-2021-02-Unforgeable-Groups-for-Bitcoin-Cash",
+      "lastUpdated": "2022/02/21",
+      "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Unforgeable_Groups_for_Bitcoin_Cash.md",
+      "consensus": "Yes",
+      "tags": [
+        "Tokens",
+        "Script",
+        "Transactions"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2021-05-vm-limits: Targeted Virtual Machine Limits",
       "lastUpdated": "2021/05/12",
       "link": "https://github.com/bitjson/bch-vm-limits",
@@ -71,18 +83,6 @@
       "link": "https://github.com/bitjson/pmv3/",
       "consensus": "Yes",
       "tags": [
-        "Script",
-        "Transactions"
-      ],
-      "activated": "No"
-    },
-    {
-      "title": "CHIP-2021-02-Unforgeable-Groups-for-Bitcoin-Cash",
-      "lastUpdated": "2022/02/21",
-      "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Unforgeable_Groups_for_Bitcoin_Cash.md",
-      "consensus": "Yes",
-      "tags": [
-        "Tokens",
         "Script",
         "Transactions"
       ],
