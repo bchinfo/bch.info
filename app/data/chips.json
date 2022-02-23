@@ -2,7 +2,7 @@
   "chips": [
     {
       "title": "CHIP-2022-02-CashTokens: Token Primitives for Bitcoin Cash",
-      "lastUpdated": "2021/02/22",
+      "lastUpdated": "2022/02/22",
       "link": "https://github.com/bitjson/cashtokens#covenant-tracking-non-fungible-tokens",
       "consensus": "Yes",
       "tags": "Script, Tokens, Transactions",
