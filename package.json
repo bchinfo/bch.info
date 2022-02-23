@@ -4,6 +4,7 @@
   "description": "Bitcoin Cash informational website",
   "main": "index.js",
   "scripts": {
+    "start": "npx gulp",
     "test": "echo test"
   },
   "repository": {
