@@ -78,8 +78,8 @@
     },
     {
       "title": "CHIP-2021-02-Unforgeable-Groups-for-Bitcoin-Cash",
-      "lastUpdated": "2021/11/29",
-      "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Group_Tokenization_for_Bitcoin_Cash.md",
+      "lastUpdated": "2022/02/21",
+      "link": "https://gitlab.com/0353F40E/group-tokenization/-/blob/master/CHIP-2021-02_Unforgeable_Groups_for_Bitcoin_Cash.md",
       "consensus": "Yes",
       "tags": [
         "Tokens",
