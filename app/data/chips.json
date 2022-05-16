@@ -48,7 +48,7 @@
       "tags": [
         "Script"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2021-02-Add-Native-Introspection-Opcodes",
@@ -58,7 +58,7 @@
       "tags": [
         "Script"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2021-05 Minimum Fee Rate Voting Via Versionbits",
