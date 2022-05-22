@@ -1,5 +1,5 @@
 const gulp = require('gulp'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     del = require('del'),
     browserSync = require('browser-sync'),
     cleanCSS = require('gulp-clean-css'),
