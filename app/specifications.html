@@ -16,13 +16,12 @@
   <div class="container">
     <div class="py-6 overflow-hidden">
 
-<h1 class="mb-5 font-weight-bold">Address format for Bitcoin Cash</h1>
+<h1 class="mb-5 font-weight-bold">Cashaddr: Address format for Bitcoin Cash</h1>
 
-<h2 id="abstract">
-<a class="anchor" href="#abstract"></a>Abstract
-</h2>
-<p>This document describes a proposed address format to be used on Bitcoin Cash. It is a base32 encoded format using BCH<a href="#bch">[1]</a> codes as checksum and that can be used directly in links or QR codes.</p>
-<p>This format reuses the work done for Bech32<a href="#bip173">[2]</a> and is similar in some aspects, but improves on others.</p>
+<h2 id="abstract">Abstract</h2>
+
+<p>This document describes a proposed address format to be used on Bitcoin Cash. It is a base32 encoded format using BCH<a href="#references">[1]</a> codes as checksum and that can be used directly in links or QR codes.</p>
+<p>This format reuses the work done for Bech32<a href="#references">[2]</a> and is similar in some aspects, but improves on others.</p>
 <h2 id="specification">
 <a class="anchor" href="#specification"></a>Specification
 </h2>
@@ -32,15 +31,13 @@
 <li>A separator, always <code>:</code></li>
 <li>A base32 encoded payload indicating the destination of the address and containing a checksum.</li>
 </ol>
-<h3 id="prefix">
-<a class="anchor" href="#prefix"></a>Prefix
-</h3>
+<h3 id="prefix">Prefix</h3>
 <p>The prefix indicates the network on which this addess is valid. It is set to <code>bitcoincash</code> for Bitcoin Cash main net, <code>bchtest</code> for bitcoin cash testnet and <code>bchreg</code> for bitcoin cash regtest.</p>
 <p>The prefix is followed by the separator <code>:</code>.</p>
 <p>When presented to users, the prefix may be omitted as it is part of the checksum computation. The checksum ensures that addresses on different networks will remain incompatible, even in the absence of an explicit prefix.</p>
-<h3 id="payload">
-<a class="anchor" href="#payload"></a>Payload
-</h3>
+
+<h3 id="payload">Payload</h3>
+
 <p>The payload is a base32 encoded stream of data.</p>
 <pre><code>
 |     | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
@@ -56,9 +53,7 @@
 <li>A hash.</li>
 <li>A 40 bits checksum.</li>
 </ol>
-<h4 id="version-byte">
-<a class="anchor" href="#version-byte"></a>Version byte
-</h4>
+<h4 id="version-byte">Version byte</h4>
 <p>The version byte's most signficant bit is reserved and must be 0. The 4 next bits indicate the type of address and the 3 least significant bits indicate the size of the hash.</p>
 <pre><code>
 | Size bits | Hash size in bits |
@@ -89,22 +84,23 @@
 </h4>
 <p>The checksum is a 40 bits BCH codes defined over GF(2^5). It ensures the detection of up to 6 errors in the address and 8 in a row. Combined with the length check, this provides very strong guarantee against errors.</p>
 <p>The checksum is computed per the code below:</p>
-<pre><code class="language-cpp">
-uint64_t PolyMod(const data &amp;v) {
-    uint64_t c = 1;
-    for (uint8_t d : v) {
-        uint8_t c0 = c &gt;&gt; 35;
-        c = ((c &amp; 0x07ffffffff) &lt;&lt; 5) ^ d;
-        
-        if (c0 &amp; 0x01) c ^= 0x98f2bc8e61;
-        if (c0 &amp; 0x02) c ^= 0x79b76d99e2;
-        if (c0 &amp; 0x04) c ^= 0xf33e5fb3c4;
-        if (c0 &amp; 0x08) c ^= 0xae2eabe2a8;
-        if (c0 &amp; 0x10) c ^= 0x1e4f43e470;
-    }
-    
-    return c ^ 1;
-}
+<pre class="bg-light rounded"><code class="language-cpp">
+  uint64_t PolyMod(const data &amp;v) {
+      uint64_t c = 1;
+      for (uint8_t d : v) {
+          uint8_t c0 = c &gt;&gt; 35;
+          c = ((c &amp; 0x07ffffffff) &lt;&lt; 5) ^ d;
+
+          if (c0 &amp; 0x01) c ^= 0x98f2bc8e61;
+          if (c0 &amp; 0x02) c ^= 0x79b76d99e2;
+          if (c0 &amp; 0x04) c ^= 0xf33e5fb3c4;
+          if (c0 &amp; 0x08) c ^= 0xae2eabe2a8;
+          if (c0 &amp; 0x10) c ^= 0x1e4f43e470;
+      }
+
+      return c ^ 1;
+  }
+
 </code></pre>
 <p>The checksum is calculated over the following data (list of integers in range 0-31):</p>
 <ol>
@@ -140,7 +136,7 @@ If PolyMod returns non-zero, then the address was broken.</li>
 <a class="anchor" href="#uppercaselowercase"></a>Uppercase/lowercase
 </h2>
 <p>Lower case is preferred for cashaddr, but uppercase is accepted. A mixture of lower case and uppercase must be rejected.</p>
-<p>Allowing for uppercase ensures that the address can be encoded efficiently in QR codes using the alphanumeric mode<a href="#alphanumqr">[3]</a>.</p>
+<p>Allowing for uppercase ensures that the address can be encoded efficiently in QR codes using the alphanumeric mode<a href="#references">[3]</a>.</p>
 <h2 id="double-prefix">
 <a class="anchor" href="#double-prefix"></a>Double prefix
 </h2>
@@ -199,12 +195,16 @@ If PolyMod returns non-zero, then the address was broken.</li>
 |64|1|pref:plg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mg7pj3lh8|D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B|
 |64|15|prefix:0lg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96ms92w6845|D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B|
 </code></pre>
-<h2 id="references">
-<a class="anchor" href="#references"></a>References
-</h2>
-<p><a name="bch">[1]</a> https://en.wikipedia.org/wiki/BCH_code</p>
-<p><a name="bip173">[2]</a> https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki</p>
-<p><a name="alphanumqr">[3]</a> http://www.thonky.com/qr-code-tutorial/alphanumeric-mode-encoding</p>
+<h2 id="references">References</h2>
+<p>
+  [1] <a href="https://en.wikipedia.org/wiki/BCH_code">https://en.wikipedia.org/wiki/BCH_code</a>
+</p>
+<p>
+  [2] <a href="https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki</a>
+</p>
+<p>
+  [3] <a href="http://www.thonky.com/qr-code-tutorial/alphanumeric-mode-encoding">http://www.thonky.com/qr-code-tutorial/alphanumeric-mode-encoding</a>
+</p>
 
     </div>
   </div>
