@@ -1,0 +1,520 @@
+{% extends 'base.njk' %}
+
+{% block title %}$( footer.specs )${% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold">$( footer.specs )$</h1>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="py-6 overflow-hidden">
+
+      <h1 class="mb-5 font-weight-bold">Cashaddr: Address format for Bitcoin Cash</h1>
+
+      <h2 id="abstract">Abstract</h2>
+
+      <p>This document describes a proposed address format to be used on Bitcoin Cash. It is a base32 encoded format using BCH<a href="#references">[1]</a> codes as checksum and that can be used directly in links or QR codes.</p>
+      <p>This format reuses the work done for Bech32<a href="#references">[2]</a> and is similar in some aspects, but improves on others.</p>
+      <h2 id="specification">
+        <a class="anchor" href="#specification"></a>Specification
+      </h2>
+      <p>The address is composed of</p>
+      <ol>
+        <li>A prefix indicating the network on which this address is valid.</li>
+        <li>A separator, always <code>:</code></li>
+        <li>A base32 encoded payload indicating the destination of the address and containing a checksum.</li>
+      </ol>
+      <h3 id="prefix">Prefix</h3>
+      <p>The prefix indicates the network on which this addess is valid. It is set to <code>bitcoincash</code> for Bitcoin Cash main net, <code>bchtest</code> for bitcoin cash testnet and <code>bchreg</code> for bitcoin cash regtest.</p>
+      <p>The prefix is followed by the separator <code>:</code>.</p>
+      <p>When presented to users, the prefix may be omitted as it is part of the checksum computation. The checksum ensures that addresses on different networks will remain incompatible, even in the absence of an explicit prefix.</p>
+
+      <h3 id="payload">Payload</h3>
+
+      <p>The payload is a base32 encoded stream of data.</p>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered w-50">
+          <thead>
+            <tr>
+              <th align="right"></th>
+              <th>0</th>
+              <th>1</th>
+              <th>2</th>
+              <th>3</th>
+              <th>4</th>
+              <th>5</th>
+              <th>6</th>
+              <th>7</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="right">+0</td>
+              <td>q</td>
+              <td>p</td>
+              <td>z</td>
+              <td>r</td>
+              <td>y</td>
+              <td>9</td>
+              <td>x</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td align="right">+8</td>
+              <td>g</td>
+              <td>f</td>
+              <td>2</td>
+              <td>t</td>
+              <td>v</td>
+              <td>d</td>
+              <td>w</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td align="right">+16</td>
+              <td>s</td>
+              <td>3</td>
+              <td>j</td>
+              <td>n</td>
+              <td>5</td>
+              <td>4</td>
+              <td>k</td>
+              <td>h</td>
+            </tr>
+            <tr>
+              <td align="right">+24</td>
+              <td>c</td>
+              <td>e</td>
+              <td>6</td>
+              <td>m</td>
+              <td>u</td>
+              <td>a</td>
+              <td>7</td>
+              <td>l</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The payload is composed of 3 elements:</p>
+      <ol>
+        <li>A version byte indicating the type of address.</li>
+        <li>A hash.</li>
+        <li>A 40 bits checksum.</li>
+      </ol>
+      <h4 id="version-byte">Version byte</h4>
+      <p>The version byte's most signficant bit is reserved and must be 0. The 4 next bits indicate the type of address and the 3 least significant bits indicate the size of the hash.</p>
+
+      <table class="table table-striped table-bordered w-25 text-nowrap">
+        <thead>
+          <tr>
+            <th align="right">Size bits</th>
+            <th align="right">Hash size in bits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="right">0</td>
+            <td align="right">160</td>
+          </tr>
+          <tr>
+            <td align="right">1</td>
+            <td align="right">192</td>
+          </tr>
+          <tr>
+            <td align="right">2</td>
+            <td align="right">224</td>
+          </tr>
+          <tr>
+            <td align="right">3</td>
+            <td align="right">256</td>
+          </tr>
+          <tr>
+            <td align="right">4</td>
+            <td align="right">320</td>
+          </tr>
+          <tr>
+            <td align="right">5</td>
+            <td align="right">384</td>
+          </tr>
+          <tr>
+            <td align="right">6</td>
+            <td align="right">448</td>
+          </tr>
+          <tr>
+            <td align="right">7</td>
+            <td align="right">512</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Encoding the size of the hash in the version field ensure that it is possible to check that the length of the address is correct.</p>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered w-50 text-nowrap">
+          <thead>
+            <tr>
+              <th align="right">Type bits</th>
+              <th align="center">Meaning</th>
+              <th align="right">Version byte value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="right">0</td>
+              <td align="center">P2KH</td>
+              <td align="right">0</td>
+            </tr>
+            <tr>
+              <td align="right">1</td>
+              <td align="center">P2SH</td>
+              <td align="right">8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Further types will be added as new features are added.</p>
+      <h4 id="hash">
+        <a class="anchor" href="#hash"></a>Hash
+      </h4>
+      <p>The hash part really deserves not much explanation as its meaning is dependent on the version field. It is the hash that represents the data, namely a hash of the public key for P2KH and the hash of the reedemScript for P2SH.</p>
+      <h4 id="checksum">
+        <a class="anchor" href="#checksum"></a>Checksum
+      </h4>
+      <p>The checksum is a 40 bits BCH codes defined over GF(2^5). It ensures the detection of up to 6 errors in the address and 8 in a row. Combined with the length check, this provides very strong guarantee against errors.</p>
+      <p>The checksum is computed per the code below:</p>
+      <pre class="bg-light rounded"><code class="language-cpp">
+  uint64_t PolyMod(const data &amp;v) {
+    uint64_t c = 1;
+    for (uint8_t d : v) {
+      uint8_t c0 = c &gt;&gt; 35;
+      c = ((c &amp; 0x07ffffffff) &lt;&lt; 5) ^ d;
+
+      if (c0 &amp; 0x01) c ^= 0x98f2bc8e61;
+      if (c0 &amp; 0x02) c ^= 0x79b76d99e2;
+      if (c0 &amp; 0x04) c ^= 0xf33e5fb3c4;
+      if (c0 &amp; 0x08) c ^= 0xae2eabe2a8;
+      if (c0 &amp; 0x10) c ^= 0x1e4f43e470;
+    }
+
+    return c ^ 1;
+  }
+
+      </code></pre>
+      <p>The checksum is calculated over the following data (list of integers in range 0-31):</p>
+      <ol>
+        <li>The lower 5 bits of each character of the prefix. - e.g. &quot;bit...&quot; becomes 2,9,20,...</li>
+        <li>A zero for the separator (5 zero bits).</li>
+        <li>The payload by chunks of 5 bits. If necessary, the payload is padded to the right with zero bits to complete any unfinished chunk at the end.</li>
+        <li>Eight zeros as a &quot;template&quot; for the checksum.</li>
+      </ol>
+      <p>The 40-bit number returned by PolyMod is split into eight 5-bit numbers (msb first).
+      The payload and the checksum are then encoded according to the base32 character table.</p>
+      <p>To verify a base32-formatted address, it is split at the colon &quot;:&quot; into prefix and payload.
+      Input data (list of integers) for PolyMod function is assembled from these parts:</p>
+      <ol>
+        <li>The lower 5 bits of each characters of the prefix.</li>
+        <li>A zero for the separator (5 zero bits).</li>
+        <li>Each base32 char of the payload mapped to it's respective number.
+        If PolyMod returns non-zero, then the address was broken.</li>
+      </ol>
+      <p>The following adresses can be used as test vector for checksum computation:</p>
+      <ul>
+        <li>prefix:x64nx6hz</li>
+        <li>p:gpf8m4h7</li>
+        <li>bitcoincash:qpzry9x8gf2tvdw0s3jn54khce6mua7lcw20ayyn</li>
+        <li>bchtest:testnetaddress4d6njnut</li>
+        <li>bchreg:555555555555555555555555555555555555555555555udxmlmrz</li>
+      </ul>
+      <p>NB: These addresses do not have valid payload on purpose.</p>
+      <h2 id="error-correction">
+        <a class="anchor" href="#error-correction"></a>Error correction
+      </h2>
+      <p>BCH codes allows for error correction. However, it is strongly advised that error correction is not done in an automatic manner as it may cause funds to be lost irrecoverably if done incorrectly. It may however be used to hint a user at a possible error.</p>
+      <h2 id="uppercaselowercase">
+        <a class="anchor" href="#uppercaselowercase"></a>Uppercase/lowercase
+      </h2>
+      <p>Lower case is preferred for cashaddr, but uppercase is accepted. A mixture of lower case and uppercase must be rejected.</p>
+      <p>Allowing for uppercase ensures that the address can be encoded efficiently in QR codes using the alphanumeric mode<a href="#references">[3]</a>.</p>
+      <h2 id="double-prefix">
+        <a class="anchor" href="#double-prefix"></a>Double prefix
+      </h2>
+      <p>In some contexts, such as payment URLs or QR codes, the addresses are currently prefixed with <code>bitcoincash:</code>. In these contexts, the address must not be double prefixed.</p>
+      <h2 id="examples-of-address-translation">
+        <a class="anchor" href="#examples-of-address-translation"></a>Examples of address translation
+      </h2>
+      <p>The following addresses are given in the legacy and new format.</p>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th align="left">Legacy</th>
+              <th align="left">CashAddr</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">1BpEi6DfDAUFd7GtittLSdBeYJvcoaVggu</td>
+              <td align="left">bitcoincash:qpm2qsznhks23z7629mms6s4cwef74vcwvy22gdx6a</td>
+            </tr>
+            <tr>
+              <td align="left">1KXrWXciRDZUpQwQmuM1DbwsKDLYAYsVLR</td>
+              <td align="left">bitcoincash:qr95sy3j9xwd2ap32xkykttr4cvcu7as4y0qverfuy</td>
+            </tr>
+            <tr>
+              <td align="left">16w1D5WRVKJuZUsSRzdLp9w3YGcgoxDXb</td>
+              <td align="left">bitcoincash:qqq3728yw0y47sqn6l2na30mcw6zm78dzqre909m2r</td>
+            </tr>
+            <tr>
+              <td align="left">3CWFddi6m4ndiGyKqzYvsFYagqDLPVMTzC</td>
+              <td align="left">bitcoincash:ppm2qsznhks23z7629mms6s4cwef74vcwvn0h829pq</td>
+            </tr>
+            <tr>
+              <td align="left">3LDsS579y7sruadqu11beEJoTjdFiFCdX4</td>
+              <td align="left">bitcoincash:pr95sy3j9xwd2ap32xkykttr4cvcu7as4yc93ky28e</td>
+            </tr>
+            <tr>
+              <td align="left">31nwvkZwyPdgzjBJZXfDmSWsC4ZLKpYyUw</td>
+              <td align="left">bitcoincash:pqq3728yw0y47sqn6l2na30mcw6zm78dzq5ucqzc37</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="larger-test-vectors">
+        <a class="anchor" href="#larger-test-vectors"></a>Larger Test Vectors
+      </h2>
+      <p>This table defines test vectors for various payloads of sizes 160-512 bits with various prefixes.   These test vectors aren't given in legacy address format because the legacy format is limited to payloads of 160 bits.</p>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-bordered text-nowrap">
+          <thead>
+            <tr>
+              <th align="left">Payload Size (bytes)</th>
+              <th align="left">Type</th>
+              <th align="left">CashAddr</th>
+              <th align="left">Payload (hex)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left">20</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qr6m7j9njldwwzlg9v7v53unlr4jkmx6eylep8ekg2</td>
+              <td align="left">F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9</td>
+            </tr>
+            <tr>
+              <td align="left">20</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:pr6m7j9njldwwzlg9v7v53unlr4jkmx6eyvwc0uz5t</td>
+              <td align="left">F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9</td>
+            </tr>
+            <tr>
+              <td align="left">20</td>
+              <td align="left">1</td>
+              <td align="left">pref:pr6m7j9njldwwzlg9v7v53unlr4jkmx6ey65nvtks5</td>
+              <td align="left">F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9</td>
+            </tr>
+            <tr>
+              <td align="left">20</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0r6m7j9njldwwzlg9v7v53unlr4jkmx6ey3qnjwsrf</td>
+              <td align="left">F5BF48B397DAE70BE82B3CCA4793F8EB2B6CDAC9</td>
+            </tr>
+            <tr>
+              <td align="left">24</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:q9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2ws4mr9g0</td>
+              <td align="left">7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA</td>
+            </tr>
+            <tr>
+              <td align="left">24</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:p9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2u94tsynr</td>
+              <td align="left">7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA</td>
+            </tr>
+            <tr>
+              <td align="left">24</td>
+              <td align="left">1</td>
+              <td align="left">pref:p9adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2khlwwk5v</td>
+              <td align="left">7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA</td>
+            </tr>
+            <tr>
+              <td align="left">24</td>
+              <td align="left">15</td>
+              <td align="left">prefix:09adhakpwzztepkpwp5z0dq62m6u5v5xtyj7j3h2p29kc2lp</td>
+              <td align="left">7ADBF6C17084BC86C1706827B41A56F5CA32865925E946EA</td>
+            </tr>
+            <tr>
+              <td align="left">28</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcw59jxxuz</td>
+              <td align="left">3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B</td>
+            </tr>
+            <tr>
+              <td align="left">28</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:pgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcvs7md7wt</td>
+              <td align="left">3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B</td>
+            </tr>
+            <tr>
+              <td align="left">28</td>
+              <td align="left">1</td>
+              <td align="left">pref:pgagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkcrsr6gzkn</td>
+              <td align="left">3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B</td>
+            </tr>
+            <tr>
+              <td align="left">28</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0gagf7w02x4wnz3mkwnchut2vxphjzccwxgjvvjmlsxqwkc5djw8s9g</td>
+              <td align="left">3A84F9CF51AAE98A3BB3A78BF16A6183790B18719126325BFC0C075B</td>
+            </tr>
+            <tr>
+              <td align="left">32</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxq5nlegake</td>
+              <td align="left">3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060</td>
+            </tr>
+            <tr>
+              <td align="left">32</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:pvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxq7fqng6m6</td>
+              <td align="left">3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060</td>
+            </tr>
+            <tr>
+              <td align="left">32</td>
+              <td align="left">1</td>
+              <td align="left">pref:pvch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxq4k9m7qf9</td>
+              <td align="left">3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060</td>
+            </tr>
+            <tr>
+              <td align="left">32</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0vch8mmxy0rtfrlarg7ucrxxfzds5pamg73h7370aa87d80gyhqxqsh6jgp6w</td>
+              <td align="left">3173EF6623C6B48FFD1A3DCC0CC6489B0A07BB47A37F47CFEF4FE69DE825C060</td>
+            </tr>
+            <tr>
+              <td align="left">40</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklv39gr3uvz</td>
+              <td align="left">C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB</td>
+            </tr>
+            <tr>
+              <td align="left">40</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:pnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvmgm6ynej</td>
+              <td align="left">C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB</td>
+            </tr>
+            <tr>
+              <td align="left">40</td>
+              <td align="left">1</td>
+              <td align="left">pref:pnq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklv0vx5z0w3</td>
+              <td align="left">C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB</td>
+            </tr>
+            <tr>
+              <td align="left">40</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0nq8zwpj8cq05n7pytfmskuk9r4gzzel8qtsvwz79zdskftrzxtar994cgutavfklvwsvctzqy</td>
+              <td align="left">C07138323E00FA4FC122D3B85B9628EA810B3F381706385E289B0B25631197D194B5C238BEB136FB</td>
+            </tr>
+            <tr>
+              <td align="left">48</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qh3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqex2w82sl</td>
+              <td align="left">E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C</td>
+            </tr>
+            <tr>
+              <td align="left">48</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:ph3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqnzf7mt6x</td>
+              <td align="left">E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C</td>
+            </tr>
+            <tr>
+              <td align="left">48</td>
+              <td align="left">1</td>
+              <td align="left">pref:ph3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqjntdfcwg</td>
+              <td align="left">E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C</td>
+            </tr>
+            <tr>
+              <td align="left">48</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0h3krj5607v3qlqh5c3wq3lrw3wnuxw0sp8dv0zugrrt5a3kj6ucysfz8kxwv2k53krr7n933jfsunqakcssnmn</td>
+              <td align="left">E361CA9A7F99107C17A622E047E3745D3E19CF804ED63C5C40C6BA763696B98241223D8CE62AD48D863F4CB18C930E4C</td>
+            </tr>
+            <tr>
+              <td align="left">56</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqscw8jd03f</td>
+              <td align="left">D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041</td>
+            </tr>
+            <tr>
+              <td align="left">56</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:pmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqs6kgdsg2g</td>
+              <td align="left">D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041</td>
+            </tr>
+            <tr>
+              <td align="left">56</td>
+              <td align="left">1</td>
+              <td align="left">pref:pmvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsammyqffl</td>
+              <td align="left">D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041</td>
+            </tr>
+            <tr>
+              <td align="left">56</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0mvl5lzvdm6km38lgga64ek5jhdl7e3aqd9895wu04fvhlnare5937w4ywkq57juxsrhvw8ym5d8qx7sz7zz0zvcypqsgjrqpnw8</td>
+              <td align="left">D9FA7C4C6EF56DC4FF423BAAE6D495DBFF663D034A72D1DC7D52CBFE7D1E6858F9D523AC0A7A5C34077638E4DD1A701BD017842789982041</td>
+            </tr>
+            <tr>
+              <td align="left">64</td>
+              <td align="left">0</td>
+              <td align="left">bitcoincash:qlg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mtky5sv5w</td>
+              <td align="left">D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B</td>
+            </tr>
+            <tr>
+              <td align="left">64</td>
+              <td align="left">1</td>
+              <td align="left">bchtest:plg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mc773cwez</td>
+              <td align="left">D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B</td>
+            </tr>
+            <tr>
+              <td align="left">64</td>
+              <td align="left">1</td>
+              <td align="left">pref:plg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96mg7pj3lh8</td>
+              <td align="left">D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B</td>
+            </tr>
+            <tr>
+              <td align="left">64</td>
+              <td align="left">15</td>
+              <td align="left">prefix:0lg0x333p4238k0qrc5ej7rzfw5g8e4a4r6vvzyrcy8j3s5k0en7calvclhw46hudk5flttj6ydvjc0pv3nchp52amk97tqa5zygg96ms92w6845</td>
+              <td align="left">D0F346310D5513D9E01E299978624BA883E6BDA8F4C60883C10F28C2967E67EC77ECC7EEEAEAFC6DA89FAD72D11AC961E164678B868AEEEC5F2C1DA08884175B</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="references">References</h2>
+      <p>
+        [1] <a href="https://en.wikipedia.org/wiki/BCH_code">https://en.wikipedia.org/wiki/BCH_code</a>
+      </p>
+      <p>
+        [2] <a href="https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki">https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki</a>
+      </p>
+      <p>
+        [3] <a href="http://www.thonky.com/qr-code-tutorial/alphanumeric-mode-encoding">http://www.thonky.com/qr-code-tutorial/alphanumeric-mode-encoding</a>
+      </p>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
