@@ -1,0 +1,44 @@
+{% extends 'base.njk' %}
+
+{% block title %}May 15th, 2023 Bitcoin Cash network upgrade{% endblock %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-5 font-weight-bold">
+      May 15th, 2023<br>
+      Bitcoin Cash network upgrade
+    </h1>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="row py-6">
+      <div class="col">
+        <h6 class="font-weight-bold mb-4">Changelog:</h6>
+
+        <ol>
+          <li>Most notably, the Cashtokens upgrade which enables advanced abstraction in script and covenant designs, as well as conventional token and NFT usecases.</li>
+
+          <li>P2SH32, which allows for more cryptographically secure transactions.</li>
+
+          <li>Other minor improvements that cleans up the ruleset.</li>
+        </ol>
+
+        <h6 class="font-weight-bold mb-4 mt-5">For node operators, upgrade to the latest version of a compatible node:</h6>
+
+        <ul>
+          <li>Compatible, released: <a href="https://bitcoincashnode.org/" target="_blank">Bitcoin Cash Node</a></li>
+
+          <li>Yet to release a compatible version: <a href="https://bitcoinunlimited.info/" target="_blank">Bitcoin Unlimited</a>, <a href="https://bitcoinverde.org/" target="_blank">Bitcoin Verde</a>, <a href="https://bchd.cash/" target="_blank">BCHD</a>, <a href="https://kth.cash/">Knuth</a>, <a href="https://flowee.org/hub/" target="_blank">Flowee the Hub</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
