@@ -1,6 +1,16 @@
 {
   "chips": [
     {
+      "title": "Excessive Block-size Adjustment Algorithm (EBAA) for Bitcoin Cash",
+      "lastUpdated": "2023/04/19",
+      "link": "https://gitlab.com/0353F40E/ebaa/-/blob/main/README.md",
+      "consensus": "Consensus-sensitive",
+      "tags": [
+        "Blocksize limit policy"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2022-05 Pay-to-Script-Hash-32 (P2SH32) for Bitcoin Cash",
       "lastUpdated": "2022/07/17",
       "link": "https://gitlab.com/0353F40E/p2sh32/-/blob/main/CHIP-2022-05_Pay-to-Script-Hash-32_(P2SH32)_for_Bitcoin_Cash.md",
