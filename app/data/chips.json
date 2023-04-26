@@ -4,7 +4,7 @@
       "title": "Excessive Block-size Adjustment Algorithm (EBAA) for Bitcoin Cash",
       "lastUpdated": "2023/04/19",
       "link": "https://gitlab.com/0353F40E/ebaa/-/blob/main/README.md",
-      "consensus": "Consensus-sensitive",
+      "consensus": "Yes",
       "tags": [
         "Blocksize limit policy"
       ],
