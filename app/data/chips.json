@@ -19,7 +19,7 @@
         "Transactions",
         "Addresses"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2022-02-CashTokens: Token Primitives for Bitcoin Cash",
@@ -32,7 +32,7 @@
         "Transactions",
         "Addresses"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2021-02-Unforgeable-Groups-for-Bitcoin-Cash",
@@ -132,7 +132,7 @@
       "tags": [
         "Transactions"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2021-01 Allow Transactions to be smaller in size",
@@ -142,7 +142,7 @@
       "tags": [
         "Transactions"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "Unconfirmed Transaction Chain Limit",
