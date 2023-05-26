@@ -1,0 +1,68 @@
+{% extends 'base.njk' %}
+
+{% block title %}$( footer.community )${% endblock %}
+
+{% set community = [
+  {
+    name: "helpme.cash",
+    link: "https://helpme.cash/"
+  },
+  {
+    name: "Bitcoin Cash 'Foundation'",
+    link: "https://bitcoincashfoundation.org/"
+  },
+  {
+    name: "WhyBitcoinCash",
+    link: "https://whybitcoincash.com/"
+  },
+  {
+    name: "Bitcoincash.org",
+    link: "https://bitcoincash.org/"
+  },
+  {
+    name: "Reddit /r/btc",
+    link: "https://www.reddit.com/r/btc/"
+  },
+  {
+    name: "Reddit /r/bitcoincash",
+    link: "https://www.reddit.com/r/bitcoincash/"
+  },
+  {
+    name: "Reddit /r/cashtokens",
+    link: "https://www.reddit.com/r/cashtokens/"
+  },
+  {
+    name: "Telegram bchchannel",
+    link: "https://t.me/bchchannel"
+  },
+  {
+    name: "Discord Bitcoincashers",
+    link: "https://discord.gg/Bgq457hvtj"
+  }
+] %}
+
+{% block body %}
+
+<section class="hero-alt">
+  {% include "navbar.njk" %}
+
+  <div class="container py-6 text-white text-center text-md-left">
+    <h1 class="display-1 font-weight-bold">$( footer.community )$</h1>
+    <p class="h3 text-muted">$( community.sub )$</p>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="container">
+    <div class="row py-6">
+
+      {% for group in community %}
+      <div class="col-6 col-md-4">
+        <p><a href="{{ group.link }}" target="_blank">{{ group.name }} {% include "icons/arrow-right.svg" %}</a></p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+{% endblock %}
