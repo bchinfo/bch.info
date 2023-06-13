@@ -13,3 +13,6 @@ hardware:
 paper:
   title: ペーパーウォレット
   sub: ギフトなどに最適
+browser:
+  title: Browser wallets
+  sub: Get started quickly
