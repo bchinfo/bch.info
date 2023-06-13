@@ -16,3 +16,7 @@ hardware:
 paper:
   title: Paper wallets
   sub: Ideal for gifts
+  
+browser:
+  title: Browser wallets
+  sub: Get started quickly
