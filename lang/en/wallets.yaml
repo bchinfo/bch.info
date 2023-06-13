@@ -1,22 +1,17 @@
 title: Wallets
 sub: Send, receive and hold Bitcoin Cash with a wallet
-
 mobile:
   title: Mobile wallets
   sub: Easy and safe for most people
-
 desktop:
   title: Desktop wallets
   sub: More advanced wallets on your computer
-
 hardware:
   title: Hardware wallets
   sub: Built for security
-
 paper:
   title: Paper wallets
   sub: Ideal for gifts
-  
 browser:
   title: Browser wallets
   sub: Get started quickly
