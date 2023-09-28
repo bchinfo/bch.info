@@ -11,6 +11,16 @@
       "activated": "No"
     },
     {
+      "title": "CHIP-2023-07-Composite-Arithmetic-Opcodes",
+      "lastUpdated": "2023/07/28",
+      "link": "https://github.com/mr-zwets/Composite-Arithmetic-Opcodes/blob/main/README.md",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2022-05 Pay-to-Script-Hash-32 (P2SH32) for Bitcoin Cash",
       "lastUpdated": "2022/07/17",
       "link": "https://gitlab.com/0353F40E/p2sh32/-/blob/main/CHIP-2022-05_Pay-to-Script-Hash-32_(P2SH32)_for_Bitcoin_Cash.md",
