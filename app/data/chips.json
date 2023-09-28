@@ -2,7 +2,7 @@
   "chips": [
     {
       "title": "Excessive Block-size Adjustment Algorithm (EBAA) for Bitcoin Cash",
-      "lastUpdated": "2023/04/19",
+      "lastUpdated": "2023/09/02",
       "link": "https://gitlab.com/0353F40E/ebaa/-/blob/main/README.md",
       "consensus": "Yes",
       "tags": [
