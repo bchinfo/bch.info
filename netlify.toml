@@ -1,53 +1,64 @@
-# English path redirects
-# Force because the files exist (root paths still resolve to English)
-# Keep this list in alphabetical order
+# If the user arrives at root with their accept-language set, 
+#  redirect to a localized version of the site
+
 [[redirects]]
   from = "/"
-  to = "/en/"
-  force = true
-[[redirects]]
-  from = "/bitcoin-cash-website-notice"
-  to = "/en/bitcoin-cash-website-notice.html"
-  force = true
-[[redirects]]
-  from = "/chips"
-  to = "/en/chips"
-  force = true
-[[redirects]]
-  from = "/developers"
-  to = "/en/developers"
-  force = true
-[[redirects]]
-  from = "/exchanges"
-  to = "/en/exchanges"
-  force = true
-[[redirects]]
-  from = "/explorers"
-  to = "/en/explorers"
-  force = true
-[[redirects]]
-  from = "/media"
-  to = "/en/media"
-  force = true
-[[redirects]]
-  from = "/nodes"
-  to = "/en/nodes"
-  force = true
-[[redirects]]
-  from = "/wallets"
-  to = "/en/wallets"
-  force = true
+  to = "/es/"
+  status = 301
+  conditions = {Language = ["es"]}
 
-# Tools subfolder
 [[redirects]]
-  from = "/tools/"
-  to = "/en/tools/"
-  force = true
+  from = "/"
+  to = "/zh/"
+  status = 301
+  conditions = {Language = ["zh"]}
+
 [[redirects]]
-  from = "/tools/cashaddr"
-  to = "/en/tools/cashaddr"
-  force = true
+  from = "/"
+  to = "/fr/"
+  status = 301
+  conditions = {Language = ["fr"]}
+
 [[redirects]]
-  from = "/tools/broadcast"
-  to = "/en/tools/broadcast"
-  force = true
+  from = "/"
+  to = "/de/"
+  status = 301
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 301
+  conditions = {Language = ["it"]}
+
+[[redirects]]
+  from = "/"
+  to = "/jp/"
+  status = 301
+  conditions = {Language = ["jp"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pt/"
+  status = 301
+  conditions = {Language = ["pt"]}
+
+[[redirects]]
+  from = "/"
+  to = "/th/"
+  status = 301
+  conditions = {Language = ["th"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pl/"
+  status = 301
+  conditions = {Language = ["pl"]}
+
+# If all above conditions fail (en or not recognized lang),
+#  or the user hits a deeper link, redirect to en/ 
+
+[[redirects]]
+  from = "/*"
+  to = "/en/:splat"
+  status = 302
