@@ -1,5 +1,7 @@
 # If the user arrives at root with their accept-language set, 
 #  redirect to a localized version of the site
+#
+# otherwise serve site of root url.
 
 [[redirects]]
   from = "/"
@@ -55,10 +57,8 @@
   status = 301
   conditions = {Language = ["pl"]}
 
-# If all above conditions fail (en or not recognized lang),
-#  or the user hits a deeper link, redirect to en/ 
-
 [[redirects]]
-  from = "/*"
-  to = "/en/:splat"
-  status = 302
+  from = "/"
+  to = "/en/"
+  status = 301
+  conditions = {Language = ["en"]}
