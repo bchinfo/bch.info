@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "npx gulp",
-    "redirects": "netlify dev -c 'npm run start' --target-port 3000",
     "test": "echo test"
   },
   "repository": {
@@ -33,8 +32,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-terser": "^1.3.2",
-    "jquery": "^3.5.1",
-    "netlify-cli": "^17.15.3"
+    "jquery": "^3.5.1"
   },
   "dependencies": {
     "bchaddrjs": "^0.4.9",
