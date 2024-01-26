@@ -1,4 +1,14 @@
-# redirect all links to the default locale: "_"
+/_/*  /de/:splat  301!  Language=de
+/_/*  /en/:splat  301!  Language=en
+/_/*  /es/:splat  301!  Language=es
+/_/*  /fr/:splat  301!  Language=fr
+/_/*  /it/:splat  301!  Language=it
+/_/*  /ja/:splat  301!  Language=ja
+/_/*  /pl/:splat  301!  Language=pl
+/_/*  /pt/:splat  301!  Language=pt
+/_/*  /ru/:splat  301!  Language=ru
+/_/*  /th/:splat  301!  Language=th
+/_/*  /zh/:splat  301!  Language=zh
 
 /                            /_/ 301! 
 /chips                       /_/chips 301! 
@@ -11,18 +21,3 @@
 /tools/                      /_/tools/ 301! 
 /tools/cashaddr              /_/tools/cashaddr 301! 
 /tools/broadcast             /_/tools/broadcast 301! 
-
-# If translations are available in the user's language 
-# redirect from the default locale to the user's locale
-
-/_/*  /de/:splat  301  Language=de
-/_/*  /en/:splat  301  Language=en
-/_/*  /es/:splat  301  Language=es
-/_/*  /fr/:splat  301  Language=fr
-/_/*  /it/:splat  301  Language=it
-/_/*  /ja/:splat  301  Language=ja
-/_/*  /pl/:splat  301  Language=pl
-/_/*  /pt/:splat  301  Language=pt
-/_/*  /ru/:splat  301  Language=ru
-/_/*  /th/:splat  301  Language=th
-/_/*  /zh/:splat  301  Language=zh
