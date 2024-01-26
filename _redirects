@@ -1,0 +1,29 @@
+# if the user is on the default locale, but a translation is available,
+#  redirect them to the correct locale.
+
+/_/*  /de/:splat  301!  Language=de
+/_/*  /en/:splat  301!  Language=en
+/_/*  /es/:splat  301!  Language=es
+/_/*  /fr/:splat  301!  Language=fr
+/_/*  /it/:splat  301!  Language=it
+/_/*  /ja/:splat  301!  Language=ja
+/_/*  /pl/:splat  301!  Language=pl
+/_/*  /pt/:splat  301!  Language=pt
+/_/*  /ru/:splat  301!  Language=ru
+/_/*  /th/:splat  301!  Language=th
+/_/*  /zh/:splat  301!  Language=zh
+
+# If the user has a link without a locale, 
+#  direct them to the same at the default locale.
+
+/                            /_/ 301! 
+/chips                       /_/chips 301! 
+/developers                  /_/developers 301! 
+/exchanges                   /_/exchanges 301! 
+/explorers                   /_/explorers 301! 
+/media                       /_/media 301! 
+/nodes                       /_/nodes 301! 
+/wallets                     /_/wallets  301! 
+/tools/                      /_/tools/ 301! 
+/tools/cashaddr              /_/tools/cashaddr 301! 
+/tools/broadcast             /_/tools/broadcast 301! 

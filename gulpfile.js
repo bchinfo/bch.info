@@ -29,8 +29,8 @@ gulp.task('i18n', function(){
     .pipe(i18n({
       langDir: 'lang', // takes translations from /lang/
       createLangDirs: true,
-      defaultLang: 'en',
-      fallback: 'en',
+      defaultLang: '_',
+      fallback: '_',
       delimiters: ['$(',')$']  // to avoid conflicts with Nunjucks
     }))
     .pipe(gulp.dest('dist'));
@@ -96,6 +96,8 @@ gulp.task('js', function() {
 // Copy all static files
 
 gulp.task('copy-static', function(done){
+  // Copy _redirects
+  gulp.src('_redirects').pipe(gulp.dest('dist/'));
   // Copy special files to dist/
   gulp.src('app/special/*').pipe(gulp.dest('dist/'));
   // Copy static files

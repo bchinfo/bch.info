@@ -13,3 +13,6 @@ dist/
 dist-lang/
 app/static/css/style.css
 README.html
+
+# Local Netlify folder
+.netlify
