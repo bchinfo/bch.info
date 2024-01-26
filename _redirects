@@ -1,3 +1,6 @@
+# if the user is on the default locale, but a translation is available,
+#  redirect them to the correct locale.
+
 /_/*  /de/:splat  301!  Language=de
 /_/*  /en/:splat  301!  Language=en
 /_/*  /es/:splat  301!  Language=es
@@ -9,6 +12,9 @@
 /_/*  /ru/:splat  301!  Language=ru
 /_/*  /th/:splat  301!  Language=th
 /_/*  /zh/:splat  301!  Language=zh
+
+# If the user has a link without a locale, 
+#  direct them to the same at the default locale.
 
 /                            /_/ 301! 
 /chips                       /_/chips 301! 
