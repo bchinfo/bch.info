@@ -8,7 +8,7 @@
       "tags": [
         "Blocksize limit policy"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2023-07-Composite-Arithmetic-Opcodes",
