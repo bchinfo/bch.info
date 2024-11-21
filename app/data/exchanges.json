@@ -1,6 +1,10 @@
 {
   "exchanges": [
     {
+      "name": "ChangeHero",
+      "link": "https://changehero.io/"
+    },
+    {
       "name": "Bittrex",
       "link": "https://bittrex.com/"
     },
