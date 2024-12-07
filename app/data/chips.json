@@ -1,6 +1,26 @@
 {
   "chips": [
     {
+      "title": "CHIP-2024-07-BigInt: High-Precision Arithmetic for Bitcoin Cash",
+      "lastUpdated": "2024/11/13",
+      "link": "https://github.com/bitjson/bch-bigint",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "Chipnet"
+    },
+    {
+      "title": "CHIP-2021-05-vm-limits: Targeted Virtual Machine Limits",
+      "lastUpdated": "2024/11/13",
+      "link": "https://github.com/bitjson/bch-vm-limits",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "Chipnet"
+    },
+    {
       "title": "Excessive Block-size Adjustment Algorithm (EBAA) for Bitcoin Cash",
       "lastUpdated": "2023/09/02",
       "link": "https://gitlab.com/0353F40E/ebaa/-/blob/main/README.md",
@@ -8,7 +28,7 @@
       "tags": [
         "Blocksize limit policy"
       ],
-      "activated": "No"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2023-07-Composite-Arithmetic-Opcodes",
@@ -54,14 +74,6 @@
         "Script",
         "Transactions"
       ],
-      "activated": "No"
-    },
-    {
-      "title": "CHIP-2021-05-vm-limits: Targeted Virtual Machine Limits",
-      "lastUpdated": "2021/05/12",
-      "link": "https://github.com/bitjson/bch-vm-limits",
-      "consensus": "Yes",
-      "tags": "",
       "activated": "No"
     },
     {
