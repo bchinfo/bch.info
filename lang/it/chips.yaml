@@ -5,7 +5,7 @@ description: I Cash Improvement Proposals (CHIPs) sono documenti contenenti le p
 all: Tutto
 chip-title: Titolo
 last-updated: Ultimo aggiornamento
-consensus: Consenso
+consensus: Influisce il Consenso?
 activated: Attivato
 tags: Tag
 error: Nessun CHIP trovato per i tag selezionati.

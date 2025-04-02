@@ -3,3 +3,5 @@ sub: คู่มีที่มีประโยชน์สำหรับ Bi
 conversion: เครื่องมือแปลงรูปแบบที่อยู่
 broadcast: ตัวดำเนินการธุรกรรม
 broadcast-sub: แสดงธุรกรรมไปยังเครือข่าย
+faucet: Testnet3 faucet
+faucet-sub: Claim testnet Bitcoin Cash for testing purposes
