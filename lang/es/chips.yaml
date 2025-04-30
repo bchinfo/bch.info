@@ -1,11 +1,11 @@
 ---
 title: CHIPs
-sub: Cash Improvement Proposals
-description: Cash Improvement Proposals (CHIPs) are documents that record proposals to upgrade the Bitcoin Cash protocol, and their ongoing progress, both technical and consensus-building.
-all: All
-chip-title: Title
-last-updated: Last updated
-consensus: Affects Consensus?
-activated: Activated
-tags: Tags
-error: No CHIP matched the selected tags.
+sub: Propuestas de Mejora de Bitcoin Cash
+description: Las propuestas de mejora de Bitcoin Cash (CHIPs por sus siglas en inglés) son documentos que registran propuestas para actualizar el protocolo de Bitcoin Cash y su progreso continuo, tanto técnico como de búsqueda de consenso.
+all: Todas
+chip-title: Título
+last-updated: Última actualización
+consensus: '¿Afecta al consenso?'
+activated: Activada
+tags: Etiqueta
+error: Ninguna CHIP coincide con las etiquetas seleccionadas.
