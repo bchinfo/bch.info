@@ -3,3 +3,5 @@ sub: Przydatne narzędzie Bitcoin Cash
 conversion: Konwersja adresów
 broadcast: Rozgłaszacz transakcji
 broadcast-sub: Rozgłoś transakcję w formacie raw
+faucet: Testnet3 faucet
+faucet-sub: Claim testnet Bitcoin Cash for testing purposes
