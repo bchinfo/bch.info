@@ -3,3 +3,5 @@ sub: 有用的 Bitcoin Cash 工具
 conversion: 地址转换工具
 broadcast: 交易广播工具
 broadcast-sub: 将已签名的交易上传到BCH网络。
+faucet: Testnet3 faucet
+faucet-sub: Claim testnet Bitcoin Cash for testing purposes

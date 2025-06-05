@@ -3,3 +3,5 @@ sub: Bitcoin Cash用の便利なツール
 conversion: アドレス変換ツール
 broadcast: トランザクションブロードキャスター
 broadcast-sub: 生のトランザクションをネットワークにブロードキャストする
+faucet: Testnet3 faucet
+faucet-sub: Claim testnet Bitcoin Cash for testing purposes
