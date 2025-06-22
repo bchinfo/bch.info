@@ -9,7 +9,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/52d9f701-354f-4e58-9223-d4da49906174/deploy-status)](https://app.netlify.com/sites/bch/deploys) [![CodeFactor](https://www.codefactor.io/repository/github/bchinfo/bch.info/badge)](https://www.codefactor.io/repository/github/bchinfo/bch.info) [![Crowdin](https://badges.crowdin.net/bchinfo/localized.svg)](https://crowdin.com/project/bchinfo)
 
 ### Table of contents
-
+Romeo Rosete
 - [Run the develoment server](#-run-the-develoment-server)
 - [Contribute](#-contribute)
 - [Deployment](#-deployment)
