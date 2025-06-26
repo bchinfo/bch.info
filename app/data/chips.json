@@ -8,7 +8,7 @@
       "tags": [
         "Script"
       ],
-      "activated": "Chipnet"
+      "activated": "Yes"
     },
     {
       "title": "CHIP-2021-05-vm-limits: Targeted Virtual Machine Limits",
@@ -18,7 +18,7 @@
       "tags": [
         "Script"
       ],
-      "activated": "Chipnet"
+      "activated": "Yes"
     },
     {
       "title": "Excessive Block-size Adjustment Algorithm (EBAA) for Bitcoin Cash",
