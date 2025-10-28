@@ -6,8 +6,8 @@ not-valid: Dirección inválida
 paste: Pegar dirección
 is-not-valid: dirección inválida
 cashaddr:
-  title: Cash address
+  title: Dirección Cash
   sub: Formato nuevo y más seguro, evita ser confundido con Bitcoin (BTC) u otras monedas
 legacy:
-  title: Legacy address
+  title: Dirección en formato antiguo
   sub: No envíes otra cosa más que Bitcoin Cash (BCH) a esta dirección o tus fondos se perderán
