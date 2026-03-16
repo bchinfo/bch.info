@@ -1,6 +1,10 @@
 {
   "exchanges": [
     {
+      "name": "Junction",
+      "link": "https://junction.exchange"
+    },
+    {
       "name": "Bittrex",
       "link": "https://bittrex.com/"
     },
