@@ -95,6 +95,10 @@
     {
       "name": "Bitvavo",
       "link": "https://bitvavo.com/"
+    },
+    {
+      "name": "Zest",
+      "link": "https://zest.exchange/currencies/bitcoin-cash"
     }
   ]
 }
