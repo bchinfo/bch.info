@@ -99,6 +99,10 @@
     {
       "name": "YiFi",
       "link": "https://yifi.io/"
+    },
+    {
+      "name": "Eidex DEX Aggregator",
+      "link": "https://eidex.io/screener/bch-bch-to-btc-btc"
     }
   ]
 }
