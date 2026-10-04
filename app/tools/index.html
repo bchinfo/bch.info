@@ -1,8 +1,4 @@
-{% extends 'base.njk' %}
-
-{% block title %}Tools{% endblock %}
-
-{% block body %}
+{% extends 'base.njk' %} {% block title %}Tools{% endblock %} {% block body %}
 
 <section class="hero-alt">
   {% include "navbar.njk" %}
@@ -26,31 +22,50 @@
           <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.conversion )$</h3>
             <p class="lead pb-2">$( cashaddr.title )$</p>
-            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/cashaddr">Try now</a>
+            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/cashaddr"
+              >Try now</a
+            >
           </div>
 
           <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.broadcast )$</h3>
             <p class="lead pb-2">$( tools.broadcast-sub )$</p>
-            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/broadcast">Try now</a>
+            <a class="btn btn-primary px-4" href="/$( _lang_ )$/tools/broadcast"
+              >Try now</a
+            >
           </div>
 
           <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.faucet )$</h3>
             <p class="lead pb-2">$( tools.faucet-sub )$</p>
-            <a class="btn btn-primary px-4" href="https://rest-unstable.mainnet.cash/faucet.html" target="_blank">Try now {% include "icons/external-link.svg" %}</a>
+            <a
+              class="btn btn-primary px-4"
+              href="https://rest-unstable.mainnet.cash/faucet.html"
+              target="_blank"
+              >Try now {% include "icons/external-link.svg" %}</a
+            >
           </div>
 
           <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.faucet-alt )$</h3>
             <p class="lead pb-2">$( tools.faucet-alt-sub )$</p>
-            <a class="btn btn-primary px-4" href="https://tbch.googol.cash/" target="_blank">Try now {% include "icons/external-link.svg" %}</a>
+            <a
+              class="btn btn-primary px-4"
+              href="https://tbch.googol.cash/"
+              target="_blank"
+              >Try now {% include "icons/external-link.svg" %}</a
+            >
           </div>
 
           <div class="col-md-6 ml-0 my-4">
             <h3 class="h4">$( tools.faucet4 )$</h3>
             <p class="lead pb-2">$( tools.faucet4-sub )$</p>
-            <a class="btn btn-primary px-4" href="https://tbch4.googol.cash/" target="_blank">Try now {% include "icons/external-link.svg" %}</a>
+            <a
+              class="btn btn-primary px-4"
+              href="https://tbch.googol.cash/"
+              target="_blank"
+              >Try now {% include "icons/external-link.svg" %}</a
+            >
           </div>
         </div>
       </div>
