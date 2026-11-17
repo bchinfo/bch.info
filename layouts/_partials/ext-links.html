@@ -1,0 +1,5 @@
+{{- /* A list of links to other sites: name, url, and optionally a note and
+       developer stack icons. */ -}}
+{{- range . }}
+<a href="{{ .url }}" target="_blank" rel="noopener"><span>{{ range .stacks }}<img class="stack" src="{{ printf "img/devtools/%s.png" . | relURL }}" alt="{{ . }}" width="20" height="20" loading="lazy">{{ end }}{{ .name }}{{ with .note }} <small>({{ . }})</small>{{ end }}</span><span aria-hidden="true">→</span></a>
+{{- end }}

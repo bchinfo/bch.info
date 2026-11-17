@@ -1,0 +1,156 @@
+# Developer tools, shown on the developers page.
+# "title" is a key in lang/<language>/developers.yaml.
+# "stacks" are icon names in static/img/devtools/.
+- title: developers.aio
+  items:
+  - name: Mainnet
+    url: https://mainnet.cash
+    stacks:
+    - js
+    - api
+  - name: bitcoincashj
+    url: https://github.com/pokkst/bitcoincashj
+    stacks:
+    - java
+  - name: bch-js
+    url: https://github.com/Permissionless-Software-Foundation/bch-js
+    stacks:
+    - js
+  - name: bitcore
+    url: https://github.com/bitpay/bitcore/tree/master/packages/bitcore-lib-cash
+    stacks:
+    - js
+  - name: BitCash
+    url: https://pybitcash.github.io/bitcash
+    stacks:
+    - python
+  - name: python-bitcoincash
+    url: https://github.com/dagurval/python-bitcoincash
+    stacks:
+    - python
+  - name: bitcoin-kit-android
+    url: https://github.com/horizontalsystems/bitcoin-kit-android
+    stacks:
+    - kotlin
+  - name: bitbox-flutter
+    url: https://github.com/tomasforgacbch/bitbox-flutter
+    stacks:
+    - dart
+- title: developers.data
+  items:
+  - name: libauth
+    url: https://libauth.org/
+    stacks:
+    - js
+    - ts
+  - name: bchaddrjs
+    url: https://www.npmjs.com/package/bchaddrjs
+    stacks:
+    - js
+  - name: bchutil
+    url: https://github.com/gcash/bchutil
+    stacks:
+    - go
+  - name: bitcoin-cash
+    url: https://github.com/be-cash/bitcoin-cash
+    stacks:
+    - rust
+  - name: haskoin-core
+    url: https://github.com/haskoin/haskoin-core
+    stacks:
+    - haskell
+  - name: rbch
+    url: https://cran.r-project.org/package=rbch
+    stacks:
+    - r
+- title: developers.rest
+  items:
+  - name: Fullstack.cash
+    url: https://fullstack.cash
+    stacks:
+    - api
+  - name: Fountainhead.cash
+    url: https://fountainhead.cash/
+    stacks:
+    - api
+  - name: rest.Bitcoin.com clone
+    url: https://rest1.biggestfan.net
+    stacks:
+    - api
+  - name: GetBlock
+    url: https://getblock.io
+    stacks:
+    - api
+  - name: Coinremitter
+    url: https://coinremitter.com/docs/api/v3/BCH
+    stacks:
+    - api
+  - name: Tokenview
+    url: https://services.tokenview.io/en/product/api/bch
+    stacks:
+    - api
+- title: developers.bc
+  items:
+  - name: electrum-cash
+    url: https://www.npmjs.com/package/electrum-cash
+    stacks:
+    - js
+    - ts
+  - name: Chaingraph
+    url: https://github.com/bitauth/chaingraph
+    stacks:
+    - js
+    - ts
+  - name: bitdb and bitsocket
+    url: https://bitdb.bch.sx/explorer
+    stacks:
+    - api
+  - name: fulcrum (C++ electrumx)
+    url: https://github.com/cculianu/Fulcrum
+    stacks:
+    - api
+  - name: dnsseeder
+    url: https://github.com/gcash/dnsseeder
+    stacks:
+    - go
+- title: developers.smart-contracts
+  items:
+  - name: cashscript
+    url: https://cashscript.org/
+    stacks:
+    - js
+    - ts
+  - name: CashScript-Py
+    url: https://gitlab.com/cashscript-py/cashscript-py
+    stacks:
+    - python
+  - name: spedn
+    url: https://spedn.pl
+    stacks:
+    - js
+    - cli
+  - name: AlbaDsl
+    url: https://github.com/albaDsl/alba-dsl
+    stacks:
+    - haskell
+  - name: meep
+    url: https://github.com/gcash/meep
+    stacks:
+    - cli
+- title: developers.tokens
+  items:
+  - name: airdrop-tool
+    url: https://github.com/mr-zwets/airdrop-tool
+    stacks:
+    - js
+    - ts
+  - name: AuthUpdate
+    url: https://github.com/mr-zwets/AuthUpdate
+    stacks:
+    - js
+    - ts
+  - name: CashTokens Studio
+    url: https://github.com/paytaca/cashtokens-studio
+    stacks:
+    - js
+    - ts

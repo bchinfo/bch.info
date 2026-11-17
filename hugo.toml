@@ -1,0 +1,196 @@
+baseURL = "https://bch.info/"
+title = "Bitcoin Cash"
+defaultContentLanguage = "en"
+# Keep the /en/ URL scheme of the current site; the root redirects to it.
+defaultContentLanguageInSubdir = true
+disableKinds = ["taxonomy", "term"]
+
+[languages.en]
+  label = "English"
+  weight = 1
+[languages.zh]
+  label = "简体中文"
+  weight = 2
+[languages.es]
+  label = "Español"
+  weight = 3
+[languages.fr]
+  label = "Français"
+  weight = 4
+[languages.de]
+  label = "Deutsch"
+  weight = 5
+[languages.it]
+  label = "Italiano"
+  weight = 6
+[languages.ja]
+  label = "日本語"
+  weight = 7
+[languages.pt]
+  label = "Português"
+  weight = 8
+[languages.th]
+  label = "ไทย"
+  weight = 9
+[languages.pl]
+  label = "Polski"
+  weight = 10
+[languages.ru]
+  label = "Русский"
+  weight = 11
+
+[params]
+  author = "The Bitcoin Cash Community"
+  github = "https://github.com/bchinfo/bch.info"
+  image = "/img/thumbnail.png"
+
+# The latest release of each of these nodes is listed on the homepage.
+# The feeds are fetched when the site is built.
+[[params.releases]]
+  name = "Bitcoin Cash Node"
+  url = "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node/-/releases.atom"
+[[params.releases]]
+  name = "Knuth"
+  url = "https://github.com/k-nuth/kth/releases.atom"
+[[params.releases]]
+  name = "BCHD"
+  url = "https://github.com/gcash/bchd/releases.atom"
+
+# Refetch feeds at most once an hour during local development.
+[caches.getresource]
+  maxAge = "1h"
+
+# The specifications and upgrade pages are written as HTML files in content/.
+[security]
+  allowContent = ["! ^text/org$"]
+
+[outputs]
+  home = ["html"]
+  section = ["html"]
+
+# The text of the site is read from the translations in lang/ (managed through
+# Crowdin) as data.
+[[module.mounts]]
+  source = "data"
+  target = "data"
+[[module.mounts]]
+  source = "lang"
+  target = "data/lang"
+
+# The pages in content/ hold no text of their own, so the same files are used
+# for every language.
+[[module.mounts]]
+  source = "content"
+  target = "content"
+  [module.mounts.sites.matrix]
+    languages = ["**"]
+
+# Menu labels: "t" is a key in lang/<language>/, as "<file>.<key>".
+# "static = true" marks a file that is not under a language prefix.
+[[menus.main]]
+  identifier = "main-wallets"
+  url = "/wallets/"
+  weight = 10
+  [menus.main.params]
+    t = "footer.wallets"
+[[menus.main]]
+  identifier = "main-exchanges"
+  url = "/exchanges/"
+  weight = 20
+  [menus.main.params]
+    t = "footer.exchanges"
+[[menus.main]]
+  identifier = "main-developers"
+  url = "/developers/"
+  weight = 30
+  [menus.main.params]
+    t = "footer.developers"
+[[menus.main]]
+  identifier = "main-community"
+  url = "/community/"
+  weight = 40
+  [menus.main.params]
+    t = "footer.community"
+
+[[menus.individuals]]
+  identifier = "individuals-wallets"
+  url = "/wallets/"
+  weight = 10
+  [menus.individuals.params]
+    t = "index.wallet"
+[[menus.individuals]]
+  identifier = "individuals-exchanges"
+  url = "/exchanges/"
+  weight = 20
+  [menus.individuals.params]
+    t = "footer.exchanges"
+[[menus.individuals]]
+  identifier = "individuals-explorers"
+  url = "/explorers/"
+  weight = 30
+  [menus.individuals.params]
+    t = "footer.explorers"
+[[menus.individuals]]
+  identifier = "individuals-community"
+  url = "/community/"
+  weight = 40
+  [menus.individuals.params]
+    t = "footer.community"
+
+[[menus.pools]]
+  identifier = "pools-nodes"
+  url = "/nodes/"
+  weight = 10
+  [menus.pools.params]
+    t = "index.run"
+
+[[menus.developers]]
+  identifier = "developers-libraries"
+  url = "/developers/"
+  weight = 10
+  [menus.developers.params]
+    t = "footer.libraries"
+[[menus.developers]]
+  identifier = "developers-nodes"
+  url = "/nodes/"
+  weight = 20
+  [menus.developers.params]
+    t = "index.run"
+[[menus.developers]]
+  identifier = "developers-chips"
+  url = "/chips/"
+  weight = 30
+  [menus.developers.params]
+    t = "chips.title"
+
+[[menus.resources]]
+  identifier = "resources-community"
+  url = "/community/"
+  weight = 10
+  [menus.resources.params]
+    t = "footer.community"
+[[menus.resources]]
+  identifier = "resources-media"
+  url = "/media/"
+  weight = 20
+  [menus.resources.params]
+    t = "footer.media"
+[[menus.resources]]
+  identifier = "resources-tools"
+  url = "/tools/"
+  weight = 30
+  [menus.resources.params]
+    t = "footer.tools-tools"
+[[menus.resources]]
+  identifier = "resources-specs"
+  url = "/specifications/"
+  weight = 40
+  [menus.resources.params]
+    t = "footer.specs"
+[[menus.resources]]
+  identifier = "resources-github"
+  url = "https://github.com/bchinfo/bch.info"
+  weight = 50
+  [menus.resources.params]
+    t = "footer.github"
+

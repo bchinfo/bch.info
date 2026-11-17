@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<section class="section cells">
+{{- range index hugo.Data .Params.data }}
+<div class="cell">
+<div>
+<h2 class="cell__title">{{ partial "t.html" .title }}</h2>
+{{- with .sub }}
+<p class="muted">{{ partial "t.html" . }}</p>
+{{- end }}
+</div>
+<div class="link-list">{{ partial "ext-links.html" .items }}</div>
+</div>
+{{- end }}
+</section>
+{{- with .Params.credit }}
+<p class="credit"><a href="{{ .url }}" target="_blank" rel="noopener">{{ .text }}</a></p>
+{{- end }}
+{{ end }}

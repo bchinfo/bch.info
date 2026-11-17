@@ -1,0 +1,11 @@
+<footer class="site-footer">
+<nav>
+<a href="{{ "bitcoin.pdf" | relURL }}">{{ partial "t.html" "index.whitepaper" }}</a>
+<a href="{{ site.Params.github }}">{{ partial "t.html" "footer.github" }}</a>
+</nav>
+<nav>
+{{- range .AllTranslations }}
+<a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.Label }}</a>
+{{- end }}
+</nav>
+</footer>

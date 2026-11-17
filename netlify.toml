@@ -1,0 +1,212 @@
+# Netlify build settings.
+
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.170.0"
+
+# Images and downloads used to live under /static/.
+[[redirects]]
+  from = "/static/*"
+  to = "/:splat"
+  status = 301
+
+# Send visitors to the homepage in their browser's language. Everyone else
+# gets the redirect to /en/ that Hugo generates.
+
+[[redirects]]
+  from = "/"
+  to = "/zh/"
+  status = 302
+  force = true
+  conditions = {Language = ["zh"]}
+
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  force = true
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = true
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/"
+  to = "/de/"
+  status = 302
+  force = true
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/"
+  to = "/it/"
+  status = 302
+  force = true
+  conditions = {Language = ["it"]}
+
+[[redirects]]
+  from = "/"
+  to = "/ja/"
+  status = 302
+  force = true
+  conditions = {Language = ["ja"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pt/"
+  status = 302
+  force = true
+  conditions = {Language = ["pt"]}
+
+[[redirects]]
+  from = "/"
+  to = "/th/"
+  status = 302
+  force = true
+  conditions = {Language = ["th"]}
+
+[[redirects]]
+  from = "/"
+  to = "/pl/"
+  status = 302
+  force = true
+  conditions = {Language = ["pl"]}
+
+[[redirects]]
+  from = "/"
+  to = "/ru/"
+  status = 302
+  force = true
+  conditions = {Language = ["ru"]}
+
+# Show each language's own "page not found" page.
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/zh/*"
+  to = "/zh/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/es/*"
+  to = "/es/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/fr/*"
+  to = "/fr/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/de/*"
+  to = "/de/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/it/*"
+  to = "/it/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/ja/*"
+  to = "/ja/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/pt/*"
+  to = "/pt/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/th/*"
+  to = "/th/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/pl/*"
+  to = "/pl/404.html"
+  status = 404
+
+[[redirects]]
+  from = "/ru/*"
+  to = "/ru/404.html"
+  status = 404
+
+# A link without a language, such as /wallets, goes to the page in the
+# visitor's language, or to the English one.
+
+[[redirects]]
+  from = "/*"
+  to = "/zh/:splat"
+  status = 302
+  conditions = {Language = ["zh"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/es/:splat"
+  status = 302
+  conditions = {Language = ["es"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/fr/:splat"
+  status = 302
+  conditions = {Language = ["fr"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/de/:splat"
+  status = 302
+  conditions = {Language = ["de"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/it/:splat"
+  status = 302
+  conditions = {Language = ["it"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/ja/:splat"
+  status = 302
+  conditions = {Language = ["ja"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/pt/:splat"
+  status = 302
+  conditions = {Language = ["pt"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/th/:splat"
+  status = 302
+  conditions = {Language = ["th"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/pl/:splat"
+  status = 302
+  conditions = {Language = ["pl"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/ru/:splat"
+  status = 302
+  conditions = {Language = ["ru"]}
+
+[[redirects]]
+  from = "/*"
+  to = "/en/:splat"
+  status = 302

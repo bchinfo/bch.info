@@ -1,0 +1,16 @@
+<header class="site-header">
+<div class="site-header__inner">
+{{- /* The official horizontal logo, inlined so that "Bitcoin" can take the
+       page's text colour on the dark background. */ -}}
+{{- $logo := os.ReadFile "static/img/bitcoin-cash-logo-horizontal-2020.svg" -}}
+{{- $logo = replace $logo "fill:#4d4d4d" "fill:currentColor" -}}
+{{- $logo = replace $logo "<svg " (printf "<svg role=\"img\" aria-label=%q " site.Title) }}
+<a class="brand" href="{{ "" | relLangURL }}">{{ $logo | safeHTML }}</a>
+<nav class="site-nav">
+{{- range site.Menus.main }}
+<a href="{{ partial "href.html" . }}">{{ partial "t.html" .Params.t }}</a>
+{{- end }}
+<a class="btn btn--light" href="{{ "#get-started" | relLangURL }}">{{ partial "t.html" "index.get-started" }}</a>
+</nav>
+</div>
+</header>

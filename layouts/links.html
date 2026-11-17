@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<section class="section padded">
+<div class="link-list link-list--grid">{{ partial "ext-links.html" (index hugo.Data .Params.data) }}</div>
+</section>
+{{ end }}

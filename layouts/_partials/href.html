@@ -1,0 +1,10 @@
+{{- /* Resolve a menu entry's URL: external links and static files stay as they
+       are, everything else gets the current language prefix. */ -}}
+{{- $url := .URL -}}
+{{- if hasPrefix $url "http" -}}
+{{- else if .Params.static -}}
+  {{- $url = relURL (strings.TrimPrefix "/" $url) -}}
+{{- else -}}
+  {{- $url = relLangURL (strings.TrimPrefix "/" $url) -}}
+{{- end -}}
+{{- return $url -}}

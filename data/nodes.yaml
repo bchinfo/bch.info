@@ -1,0 +1,19 @@
+# Full nodes, shown on the nodes page.
+# "title" and "sub" are keys in lang/<language>/nodes.yaml.
+- title: nodes.popular.title
+  sub: nodes.popular.sub
+  items:
+  - name: Bitcoin Cash Node (BCHN)
+    url: https://bitcoincashnode.org
+- title: nodes.less.title
+  sub: nodes.less.sub
+  items:
+  - name: BCHD
+    url: https://bchd.cash
+  - name: Knuth
+    url: https://kth.cash
+  - name: Flowee
+    url: https://flowee.org/
+  - name: Bitcoin Verde
+    url: https://bitcoinverde.org
+    note: currently not in consensus

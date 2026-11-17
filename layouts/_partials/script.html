@@ -1,0 +1,3 @@
+{{- with resources.Get . | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end }}

@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<section class="section mission">
+<div class="mission__text">
+<h2>{{ partial "t.html" "nodes.recommended.title" }}</h2>
+<p class="muted">{{ partial "t.html" "nodes.recommended.bchn" | safeHTML }}</p>
+<div><a class="btn btn--primary" href="https://bitcoincashnode.org" target="_blank" rel="noopener">{{ partial "t.html" "nodes.recommended.btn" }}</a></div>
+</div>
+<div class="mission__art" aria-hidden="true">{{ partial "chain.html" . }}</div>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section cells">
+{{- range hugo.Data.nodes }}
+<div class="cell">
+<div>
+<h2 class="cell__title">{{ partial "t.html" .title }}</h2>
+<p class="muted">{{ partial "t.html" .sub }}</p>
+</div>
+<div class="link-list">{{ partial "ext-links.html" .items }}</div>
+</div>
+{{- end }}
+</section>
+{{ end }}
