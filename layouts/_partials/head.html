@@ -7,6 +7,10 @@
 <meta name="description" content="{{ $description }}">
 <meta name="author" content="{{ site.Params.author }}">
 <meta name="theme-color" content="#0a0a0a">
+{{- /* Inline, so a saved theme is applied before the page is drawn. */}}
+{{- with resources.Get "js/theme.js" | minify }}
+<script>{{ .Content | safeJS }}</script>
+{{- end }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- range .AlternativeOutputFormats }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
