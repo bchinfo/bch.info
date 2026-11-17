@@ -7,14 +7,21 @@
 [build.environment]
   HUGO_VERSION = "0.170.0"
 
+# Deploy previews and branch deploys use their own address, not bch.info.
+[context.deploy-preview]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+  command = "hugo --gc --minify --baseURL $DEPLOY_PRIME_URL"
+
 # Images and downloads used to live under /static/.
 [[redirects]]
   from = "/static/*"
   to = "/:splat"
   status = 301
 
-# Send visitors to the homepage in their browser's language. Everyone else
-# gets the redirect to /en/ that Hugo generates.
+# Send visitors to the homepage in their browser's language, or to the English
+# one.
 
 [[redirects]]
   from = "/"
@@ -85,6 +92,12 @@
   status = 302
   force = true
   conditions = {Language = ["ru"]}
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
 
 # Show each language's own "page not found" page.
 
