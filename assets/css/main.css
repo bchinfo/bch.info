@@ -306,6 +306,30 @@ svg {
   color: var(--fg);
 }
 
+/* The button shows the theme it switches to: a sun in dark, a moon in light. */
+
+.theme-toggle__moon {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .theme-toggle__sun {
+    display: none;
+  }
+
+  :root:not([data-theme="dark"]) .theme-toggle__moon {
+    display: block;
+  }
+}
+
+:root[data-theme="light"] .theme-toggle__sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle__moon {
+  display: block;
+}
+
 .site-nav a {
   padding: 11px 0;
   color: var(--muted);
