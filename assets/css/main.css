@@ -803,6 +803,26 @@ svg {
   color: var(--muted);
 }
 
+.page-head__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 560px;
+  margin-top: 12px;
+  padding: 14px 18px;
+  border: 1px solid var(--outline);
+  background: var(--bg);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.page-head__note svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--green-text);
+}
+
 .page-head .btn-row,
 .page-head .field-row {
   margin-top: 16px;
