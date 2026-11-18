@@ -1,0 +1,319 @@
+# The upgrade history page, newest first. Add a new upgrade at the top.
+#
+#   date     as shown on the page
+#   title
+#   kind     hard (hard fork upgrade), soft (soft fork upgrade) or other (standardness change)
+#   summary  one line, always visible (optional)
+#   links    extra links shown under the title (optional)
+#   body     the long description, as HTML. It is hidden behind a "Details" button unless it is
+#            shorter than about 160 characters (optional)
+#   split    true for the entry where Bitcoin Cash split from BTC; it is shown as a highlighted band
+#
+# Text adapted from https://minisatoshi.cash/upgrade-history
+- date: '2026-05-15'
+  title: Layla
+  kind: hard
+  summary: Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions
+  body: <p>The Layla upgrade brings in the ability to perform loops in Bitcoin Cash's VM, sets Pay to Script as
+    the outputs standard, re-enables bitwise op-codes, and adds to ability to declare and invoke functions.</p><p><strong>CHIP-2021-05
+    Loops:</strong><br>Introduces the well-established, OP_BEGIN/OP_UNTIL loop construction to the Bitcoin Cash
+    VM, bounded by the density-based limits activated in the 2025 upgrade. Loops eliminate duplication in repeated
+    procedures, significantly reducing transaction sizes and enabling previously impractical constructions.</p><p><strong>CHIP-2024-12
+    P2S:</strong><br>Makes Pay-2-Script (P2S) outputs standard, enables longer token commitments (up to 128 bytes),
+    and unifies the standard unlocking bytecode length limit with the consensus limit (10,000 bytes). These changes
+    improve wallet ecosystem safety, simplify contract design, and reduce transaction sizes for many vault, multi-party
+    covenant, and decentralized financial applications.</p><p><strong>CHIP-2025-05 Bitwise:</strong><br>Re-enables
+    bitwise operations, including OP_INVERT for bit inversion, arithmetic shifts (OP_LSHIFTNUM and OP_RSHIFTNUM)
+    for numeric values, and binary/logical shifts (OP_LSHIFTBIN and OP_RSHIFTBIN) for binary data. These operations
+    allow Bitcoin Cash contracts to more efficiently implement a variety of financial and cryptographic algorithms.</p><p><strong>CHIP-2025-05
+    Functions:</strong><br>Enables factoring of contract bytecode into reusable functions with OP_DEFINE/OP_INVOKE,
+    eliminating duplicated logic and reducing transaction sizes. Functions improve the efficiency of complex financial
+    and cryptographic computations, including zero-knowledge proof verification, homomorphic encryption, post-quantum
+    cryptography, and more.</p>
+- date: '2025-05-15'
+  title: VMLA
+  kind: hard
+  summary: Targeted Virtual Machine Limits + BigInts
+  body: '<p>Bitcoin Cash''s virtual machine (VM) limits have been re-targeted to enable more advanced contracts,
+    reduce transaction sizes, and reduce full node compute requirements.</p><p><strong>More advanced contracts:</strong><br>The
+    201 opcode limit and 520-byte, Pay-to-Script-Hash (P2SH) contract length limit each raise the cost of developing
+    Bitcoin Cash products by requiring contract authors to remove important features or otherwise complicate products
+    with harder-to-audit, multi-input systems. Replacing these limits reduces the cost of contract development and
+    security audits.</p><p><strong>Larger stack items:</strong><br>Re-targeted limits enable new post-quantum cryptographic
+    applications, stronger escrow and settlement strategies, larger hash preimages, more practical zero-knowledge
+    proofs, homomorphic encryption, and other important developments for the future security and competitiveness
+    of Bitcoin Cash.</p><p><strong>Simpler, easier-to-audit, high-precision math:</strong><br>Lowers the cost of
+    developing, maintaining, and auditing contract systems relying on high-precision math: automated market makers,
+    decentralized exchanges, decentralized stablecoins, collateralized loan protocols, cross-chain and sidechain
+    bridges, and other decentralized financial applications. By allowing Bitcoin Cash to offer contracts maximum-efficiency,
+    native math operations, this proposal would significantly reduce transaction sizes, block space usage, and node
+    CPU utilization vs. existing emulated-math solutions.</p></li>'
+- date: '2024-05-15'
+  title: ABLA
+  kind: hard
+  summary: Adaptive Blocksize Limit Algorithm
+  body: <p>Needing to coordinate manual increases to BitcoinCash's blocksize limit incurs a meta cost on all network
+    participants. The need to regularly come to agreement makes the network vulnerable to social attacks, as had
+    occured on Bitcoin Core from its early history.</p><p>To reduce Bitcoin Cash's social attack surface and save
+    on meta costs for all network participants, ABLA automatically adjusts the blocksize limit after each block,
+    based on the exponentially weighted moving average size of previous blocks.</p><p>The algorithm preserves the
+    existing 32 MB limit as the floor "stand-by" value, and any increase by the algorithm can be thought of as a
+    bonus on top of that, sustained by actual transaction load.</p>
+- date: '2023-05-15'
+  title: CashTokens
+  kind: hard
+  summary: P2SH32 | Restrict Transaction Version | Minimum Transaction Size | Native Layer 1, UTXO, Miner-validated
+    Tokens
+  body: '<strong>P2SH32</strong><br><p>Increases cryptographic security of existing P2SH feature by enabling a 32-byte
+    variant of it.</p><strong>Restrict Transaction Version:</strong><br><p>Tightens enforcement of allowed transaction
+    version field values by making it a consensus rule instead of the network relay rule that is currently in force.</p><p>Making
+    allowed values part of consensus specification enables its use in tracking future consensus specification upgrades.
+    This would make it easier to roll-out future hard-fork upgrades in a non-breaking and backwards-compatible way
+    for non-node software.</p><strong>Minimum Transaction Size:</strong><br><p>Reduces the current consensus minimum
+    transaction size of 100 bytes down to a minimum size of 65 bytes. This more relaxed 65-byte minimum size, like
+    the previous 100-byte minimum size, applies to both coinbase and non-coinbase transactions uniformly.</p><strong>Native
+    Layer 1, UTXO, Miner-validated Tokens:</strong><br><p>Bitcoin Cash contracts lacked primitives for issuing messages
+    that can be verified by other contracts, preventing the development of decentralized application ecosystems
+    on Bitcoin Cash. This upgrade introduced Byte-String Commitments and Numeric Commitments.</p><p><strong>(Existing)
+    Contract-Issued Commitments</strong><br>In the context of the Bitcoin Cash virtual machine (VM), a commitment
+    can be defined as an irrevocable message that was provably issued by a particular entity. Two forms of commitments
+    were already available to Bitcoin Cash contracts:</p><ul><li>Transaction signatures: a commitment made by a
+    private key attesting to the signing serialization of a transaction</li><li>Data signatures: a commitment made
+    by a private key attesting to the hash of an arbitrary message (introduced in 2018 by OP_CHECKDATASIG)'
+- date: '2022-05-15'
+  title: U8
+  kind: hard
+  summary: Addition of Introspection Op-codes | Bigger Integers & OP_MUL Re-enabling
+  body: '<p>Since the introduction of OP_CHECKDATASIG, it has been possible to implement practical Bitcoin Cash
+    covenants – contracts which validate properties of the transaction in which the contract funds are spent.</p><p>Covenants
+    enable a wide range of new innovation, but the strategy by which they were implemented was extremely ineﬃcient:
+    most of a transaction’s content must be duplicated for each input which utilizes a covenant. In practice, this
+    doubles or triples the size of even the simplest covenant transactions, and advanced covenant applications quickly
+    exceed VM limits. This severely limited the extent of BCH covenant development and usage.</p><p>This upgrade
+    adds a set of new virtual machine (VM) operations which enable BCH contracts to eﬃciently access details about
+    the current transaction like output values, recipients, and more – without increasing transaction validation
+    costs.</p><p>BCH virtual machine (VM) math operations were limited to signed 32-bit integers, preventing contracts
+    from operating on values larger than 2147483647. Workarounds which allow contracts to emulate higher-precision
+    math are often impractical, difficult to secure, and significantly increase transaction fees.</p><p>This unusually-low
+    limit on arithmetic operations has been present since the earliest Bitcoin release to avoid standardizing a
+    strategy for overflow handling (though 64-bit math was always used internally). Since the development of covenants,
+    this unusual overflow-handling strategy has become a source of contract vulnerabilities and a barrier to real-world
+    applications. Few remaining computing environments operate using 32-bit integers, and this limit has never been
+    relevant to worst-case transaction validation performance.</p><p>This upgrade expands the integer range allowed
+    in BCH contracts (from 32-bit to 64-bit numbers) and re-enables the multiplication opcode.</p>'
+- date: '2021-05-15'
+  title: BigBlockIfTrue
+  kind: other
+  summary: Enabling Transactions with Multiple OP_RETURNs | Removal of Unconfirmed Transaction Chain Limit
+  body: <p>Multiple OP_RETURNs enable developers to use OP_RETURN in a manner that justifies its core benefit -
+    experimentation of new features/protocol updates without breaking existing systems or stressing the block chain
+    with extraneous UTXOs. This is still subject to the existing 223 byte limit.</p><p>When a transaction is first
+    transmitted on the Bitcoin Cash network, it is considered “unconfirmed” until it is “mined” into a block. These
+    transactions that are not yet mined are also referred to as “zero-conf” transactions. Transactions are dependent
+    upon other transactions, such that they are chained together; the value allocated by one transaction is then
+    spent by a subsequent transaction.</p><p>Until this upgrade, the Bitcoin Cash network only permitted transactions
+    to be chained together 50 times before a block must include them. Transactions exceeding the 50th were often
+    ignored by the network, despite being valid. Once a transaction is submitted to the network, it cannot be revoked.
+    This situation, when encountered, can be extremely diﬃcult to remedy with today’s available tools and simultaneously
+    creates an unnecessary amount of complexity when being accounted for by network and applications developers.</p><p>The
+    limit is now removed.</p>
+- date: '2020-11-15'
+  title: Axion
+  kind: hard
+  summary: 'Diﬃculty Adjustment Algorithm Change: ASERT (aserti3-2d DAA)'
+  body: <p>The DAA introduced in November 2017 exhibited susceptibility to a daily periodic diﬃculty oscillation
+    stemming directly from the simple moving average design of the algorithm. The periodic diﬃculty oscillations
+    incentivized switch mining and disincentivized steady hashrate mining.</p><p>The oscillations in diﬃculty and
+    hashrate have resulted in a daily pattern of long confirmation times followed by bursts of rapid blocks. Average
+    confirmation time of transactions are significantly increased as few transactions are included in the rapidly
+    mined blocks.</p><p>ASERT does not exhibit the above-mentioned oscillations and has a range of other attractive
+    qualities such as robustness against singularities without a need for additional rules, and absence of accumulation
+    of rounding/approximation error.</p>
+- date: '2020-05-15'
+  title: Phonon
+  kind: hard
+  summary: OP_REVERSEBYTES | SigChecks
+  body: '<p>OP_REVERSEBYTES reverses the bytes of the stackitem.</p><p>Although partly eﬀective, there are well
+    known issues with SigOps, which mainly stem from the fact that SigOps are judged by parsing scripts, rather
+    than executing them. Bitcoin splits scripts into two transactions (the scriptPubKey of the transaction that
+    creates a coin, and the scriptSig of the transaction that spends it), yet the actual CPU work of verifying a
+    transaction solely happens in the spending transaction, and this leads to some paradoxical situations: a transaction/block
+    that contains high SigOps might involve very little CPU work, and conversely a transaction with low SigOps may
+    require very high CPU work.</p><p>The essential idea of SigChecks is to count actual executed signature check
+    operations solely in the spending transaction.</p>'
+- date: '2019-11-15'
+  title: Graviton
+  kind: hard
+  summary: Schnorr for Multisig | MINIMALDATAINSCRIPT
+  body: <p>OP_CHECKMULTISIG(VERIFY) upgraded to accept Schnorr signatures in a way that increases verification efficiency
+    and is compatible with batch verification.</p><p>MINIMALDATA flag, which restricts malleability vectors, has
+    been active at the mempool layer of most nodes but not at the consensus layer. The upgrade converts the existing
+    MINIMALDATA rules to consensus.</p>
+- date: '2019-05-15'
+  title: Great Wall
+  kind: hard
+  summary: Schnorr Signatures
+  body: <p>Schnorr signatures have some slightly improved properties over the ECDSA signatures currently used in
+    bitcoin:</p><ul><li>Known cryptographic proof of security</li><li>Proven that there are no unknown third-party
+    malleability mechanisms</li><li>Linearity allows some simple multi-party signature aggregation protocols. (compactness
+    / privacy / malleability benefits)</li><li>Possibility to do batch validation, resulting a slight speedup during
+    validation of large transactions or initial block downloads
+- date: '2018-11-15'
+  title: Magnetic Anomaly
+  kind: hard
+  summary: OP_CHECKDATASIG & OP_CHECKDATASIGVERIFY | Canonical Transaction Ordering (“CTOR”)
+  body: <p>OP_CHECKDATASIG and OP_CHECKDATASIGVERIFY check whether a signature is valid with respect to a message
+    and a public key.</p><p>OP_CHECKDATASIG permits data to be imported into a script, and have its validity checked
+    against some signing authority such as an "Oracle."</p><p>With the exception of the coinbase transaction, transactions
+    within a block MUST be sorted in numerically ascending order of the transaction id, interpreted as 256-bit little
+    endian integers. The coinbase transaction MUST be the first transaction in a block.</p><p>Context:<br>All nodes
+    already have all the transactions in the mempool. When a block is found, it is sending all transactions to all
+    nodes a second time. This delays block propagation and block validation. In order to improve this, Compact/Xthin(er)
+    utilize shorter transaction IDs to minimize the data needing to be sent a second time when a block is found.
+    Graphene takes this a step further by utilizing bloom filters to check which transactions are in which block.
+    However, the bloom filters only allow knowledge of what transactions go into the block, not in what order. The
+    ordering data makes up 80% of the data in a graphene block. By utilizing canonical ordering, 85% of the block
+    data no longer needs to be sent, allowing for 7x faster block propagation and validation.</p><p>CTOR also enables
+    better parallelization which enables far better scaling with technology. An additional benefit of faster block
+    propagation and validation is the mitigation of selfish mining (where miners that find the first block have
+    an advantage over others for the time it takes their nodes to receive and validate the recently found block).</p>
+- date: '2018-09-17'
+  title: CVE-2018-17144 Inflation Bug
+  kind: hard
+  body: <p>CVE-2018-17144 was a bug that could have allowed an attacker to spend the same Bitcoin more than once.</p><p>An
+    optimization included in Bitcoin Core 0.14.0 skipped a check on newly-received blocks that was thought to be
+    redundant, making the node willing to partly process blocks that tried to spend the same input more than once.
+    This would trigger some code meant to catch unexpected node operation and cause the node to deliberately crash.
+    This allowed a denial-of-service attack that could be exploited by miners.</p><p>The code meant to catch unexpected
+    operation (an assert) was rewritten for Bitcoin Core 0.15.0, unintentionally allowing the node to continue operation
+    in the case of duplication inputs. This allowed a miner to spend the same BTC more than once. These changes
+    were ported to Bitcoin Cash as well.</p><p>The vulnerability was discovered and disclosed by Bitcoin Cash developer
+    Awemany on September 17th, 2018. Patches were available within hours, and a binary release for the current release
+    branch within 36 hours. After several developers reviewing the patch were able to reverse engineer the bug and
+    discover the inflation risk, a full disclosure was made by Bitcoin Core developers on September 20th, 2018.</p><p>The
+    bug was never exploited on the Bitcoin Core nor Bitcoin Cash mainnet and an overwhelming majority of full nodes
+    subsequently updated to unaﬀected versions of Bitcoin Core / Bitcoin Cash.
+- date: '2018-05-15'
+  title: Monolith
+  kind: hard
+  summary: Block Size Limit to 32MB | Extra Opcodes (including OP_CAT)
+  body: <p>OP_CAT, OP_SPLIT, OP_AND, OP_OR, OP_XOR, OP_DIV, OP_MOD, OP_NUM2BIN, OP_BIN2NUM</p><p>In 2010 and 2011
+    the discovery of serious bugs prompted the deactivation of many opcodes in the Bitcoin script language. Rather
+    than simply re-enable the opcodes, the functionality that they provide has been re-examined and in some cases
+    the opcodes have been re-designed or new opcodes have been added to address specific issues.</p>
+- date: '2017-11-13'
+  title: Diﬃculty Adjustment Algorithm Change
+  kind: hard
+  summary: cw-144 algorithm
+  body: <p>With rapid price, and thereby hash, fluctuations, particularly in relation to BTC, an algorithm change
+    was necessary to ensure more reliable blocktimes.</p>
+- date: '2017-08-01'
+  title: User Activated Hard Fork
+  kind: hard
+  summary: Block Size Limit to 8MB | Removal of RBF
+  split: true
+- date: '2016-07-04'
+  title: OP_CHECKSEQUENCEVERIFY
+  kind: soft
+- date: '2016-02-23'
+  title: Addition of Opt-In Replace-By-Fee (”RBF”)
+  kind: soft
+- date: '2015-12-14'
+  title: OP_CHECKLOCKTIMEVERIFY
+  kind: soft
+- date: '2015-07-04'
+  title: Strict DER Encoding for Signatures
+  kind: soft
+- date: '2014-03-19'
+  title: Addition of OP_RETURN
+  kind: soft
+- date: '2013-03-11'
+  title: Unexpected Hard Fork/Chain Split
+  kind: other
+  body: <p>A block that had a larger number of total transaction inputs than previously seen was mined and broadcasted.
+    Bitcoin 0.8 nodes were able to handle this, but some pre-0.8 Bitcoin nodes rejected it, causing an unexpected
+    fork of the blockchain. The issue stemmed from differences between BerkeleyDB and LevelDB. Miners switched back
+    to the older version to resolve the fork and 0.8.1 was released with new limits to prevent this from reoccuring.</p>
+- date: '2013-02-19'
+  title: Migration from BerkeleyDB to LevelDB
+  kind: other
+  body: <p>Ultraprune is implemented, separating the UTXO set from the blockchain database.</p>
+- date: '2012-09-17'
+  title: BIP 22, 34 & 35
+  kind: soft
+  body: '<p>BIP 22: Defines "getblocktemplate" to replace "getwork" enabling miners to have more control over transactions
+    included in a block.</p><p>BIP 34: New rule requiring block height to be included in the coinbase transaction
+    of each block allowing each block to be uniquely identified, also addressing potential issues with duplicate
+    coinbase transactions.</p><p>BIP 35: New "mempool" RPC command allowing users to query the mempool of unconfirmed
+    transactions enhancing communication between nodes and clients, particularly useful for wallets or block explorers
+    requiring real-time data.</p>'
+- date: '2012-04-01'
+  title: Pay-to-Script-Hash
+  kind: soft
+- date: '2012-03-30'
+  title: Security and DoS Fixes
+  kind: soft
+  body: <p>Implementation of BIP 30 (a security fix for an attack involving duplicate coinbase transactions) and
+    fixes for memory related denial-of-serivice attacks.</p>
+- date: '2012-03-15'
+  title: Disallow Transactions with Same TXID
+  kind: soft
+- date: '2010-12-12'
+  title: Addition of DoS limits & Removal of Alert System
+  kind: soft
+- date: '2010-10-12'
+  title: 1MB Block Size Limit
+  kind: soft
+  body: <figure><blockquote><p>The limit was originally Hal Finney’s idea. Both Satoshi and I objected that it wouldn’t
+    scale at 1MB. Hal was concerned about a potential DoS attack though, and after discussion, Satoshi agreed...
+    But all 3 of us agreed that 1MB had to be temporary because it would never scale.</p></blockquote><figcaption>Ray
+    Dillinger</figcaption></figure><figure><blockquote><p>The plan from the begining was to support huge blocks.
+    The 1MB hard limit was always a temporary denial-of-service prevention measure.</p></blockquote><figcaption>Gavin
+    Andresen</figcaption></figure><figure><blockquote><p>It can be phased in, like:<br>if (blocknumber > 115000)<br>maxblocksize
+    = largerlimit</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
+- date: '2010-07-17'
+  title: Addition of Alert System
+  kind: soft
+  body: <figure><blockquote><p>I've been working on writing the alert system. Alerts are broadcast through the network
+    and apply to a range of version numbers. Alert messages are signed with a private key that only I have.<br>Getting
+    surprised by some temporary down time when your node would otherwise be at risk is better than getting surprised
+    by a thief draining all your inventory.</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
+- date: '2010-08-15'
+  title: Value Overflow Incident
+  kind: soft
+  body: <p>Satoshi pushes fix and tells users and miners to re-org the block with the overflowed transaction out
+    of history.</p>
+- date: '2010-08-01'
+  title: Separation of Evaluation of scriptSig and scriptPubKey
+  kind: hard
+- date: '2010-07-31'
+  title: Addition of OP_NOP Functions
+  kind: hard
+- date: '2010-07-25'
+  title: Software Follows Most PoW
+  kind: hard
+  body: <p>Previously Bitcoin software followed the longest chain.</p>
+- date: '2010-07-17'
+  title: Addition of Checkpoints
+  kind: soft
+  body: <figure><blockquote><p>I'll probably put a checkpoint in each version from now on.  Once the software has
+    settled what the widely accepted block chain is, there's no point in leaving open the unwanted non-zero possibility
+    of revision months later.</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
+- date: '2010-07-15'
+  title: Miscellaneous Bug Fixes
+  kind: soft
+- date: '2009-10-28'
+  title: Addition of nLockTime Enforcement
+  kind: soft
+- date: '2009-01-03'
+  title: Bitcoin Released
+  kind: hard
+  body: <figure><blockquote><p>The Times 03/Jan/2009 Chancellor on the brink of the second bailout for banks.</p></blockquote><figcaption>Satoshi
+    Nakamoto's message in the Genesis Block.</figcaption></figure>
+- date: '2008-10-31'
+  title: Bitcoin Whitepaper Published
+  kind: hard
+  links:
+  - name: Read the Whitepaper
+    url: https://bitcoincash.org/bitcoin.pdf
+  body: '<p>Bitcoin: A Peer-to-Peer Electronic Cash System</p>'

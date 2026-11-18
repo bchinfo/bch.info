@@ -1,3 +1,3 @@
 {{- range . }}
-<a href="{{ partial "href.html" . }}"><span>{{ partial "t.html" .Params.t }}</span><span aria-hidden="true">→</span></a>
+<a href="{{ partial "href.html" . }}"><span>{{ with .Params.t }}{{ partial "t.html" . }}{{ else }}{{ .Name }}{{ end }}</span><span aria-hidden="true">→</span></a>
 {{- end }}

@@ -38,7 +38,7 @@ To build the site into `public/`, run `hugo`.
 - `/content/` holds one file per page. It names the page's template and where its title comes from.
 - `/layouts/` holds the page templates. Shared pieces are in `/layouts/_partials/`.
 - `/assets/` holds the styles (`css/main.css`, plain CSS with the colours defined as variables at the top) and the scripts for the tools and the CHIPs page.
-- `/data/` holds the lists shown on the pages: wallets, exchanges, explorers, nodes, developer tools, community links and CHIPs.
+- `/data/` holds the lists shown on the pages: wallets, exchanges, explorers, nodes, developer tools, community links, CHIPs and the upgrade history.
 - `/lang/` holds the text of the site, one folder per language.
 - `/static/` holds the images, the logo packs and the whitepaper.
 

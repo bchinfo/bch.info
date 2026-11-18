@@ -1181,6 +1181,280 @@ td:last-child {
   display: none !important;
 }
 
+/* Upgrade history */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 16px;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 8px;
+  border: 1px solid var(--outline);
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.up-cube {
+  position: relative;
+}
+
+.up-cube polygon {
+  stroke-width: 1.2;
+}
+
+.up-cube .cube--ghost polygon {
+  fill: var(--bg);
+  stroke-dasharray: 3 3;
+}
+
+.up-row {
+  display: grid;
+  grid-template-columns: 112px 28px minmax(0, 1fr) auto;
+  column-gap: 28px;
+  align-items: start;
+  padding: 22px var(--pad);
+  border-top: 1px solid var(--line);
+}
+
+.up-row:first-child {
+  border-top: 0;
+}
+
+.up-date,
+.up-tag {
+  padding-top: 5px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+.up-tag--hard {
+  color: var(--green-text);
+}
+
+/* The vertical line that joins the cubes. */
+
+.up-mark {
+  position: relative;
+  align-self: stretch;
+}
+
+.up-mark::before {
+  content: "";
+  position: absolute;
+  left: 13.5px;
+  top: -23px;
+  bottom: -23px;
+  width: 1px;
+  background: var(--line);
+}
+
+.up-row:first-child .up-mark::before {
+  top: 14px;
+}
+
+.up-row:last-child .up-mark::before {
+  bottom: auto;
+  height: 37px;
+}
+
+.up-main {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.up-main h2 {
+  font-weight: 500;
+  font-size: 22px;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
+.up-link {
+  font-size: 15px;
+}
+
+/* The entry where Bitcoin Cash split from BTC. */
+
+.up-row--split {
+  align-items: center;
+  padding-top: 34px;
+  padding-bottom: 34px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  background: rgba(10, 193, 142, 0.08);
+}
+
+.up-row--split + .up-row {
+  border-top: 0;
+}
+
+.up-row--split .up-main {
+  gap: 10px;
+}
+
+.up-row--split h2 {
+  font-weight: 600;
+  font-size: clamp(26px, 3vw, 38px);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.up-row--split .up-date {
+  padding-top: 0;
+  color: var(--green-text);
+}
+
+.up-row--split .up-mark {
+  align-self: center;
+}
+
+.up-row--split .up-mark::before {
+  top: -80px;
+  bottom: -80px;
+}
+
+.up-logo svg {
+  width: auto;
+  height: 26px;
+}
+
+.upgrades details {
+  margin-top: 4px;
+}
+
+.upgrades summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 8px;
+  border: 1px solid var(--outline);
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.upgrades summary::-webkit-details-marker {
+  display: none;
+}
+
+.upgrades summary:hover {
+  color: var(--fg);
+}
+
+.upgrades details[open] summary {
+  border-color: var(--green-text);
+  color: var(--fg);
+}
+
+/* A plus that becomes a minus when the entry is open. */
+
+.up-pm {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.up-pm::before,
+.up-pm::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 6.5px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.up-pm::after {
+  transform: rotate(90deg);
+}
+
+.upgrades details[open] .up-pm::after {
+  display: none;
+}
+
+.up-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 760px;
+  padding: 18px 0 6px;
+  font-size: 16px;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.up-body--short {
+  padding: 0;
+}
+
+.up-body > * {
+  margin: 0;
+}
+
+.up-body strong {
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.up-body ul {
+  padding-left: 20px;
+}
+
+.up-body figure {
+  padding: 14px 18px;
+  border-left: 2px solid var(--green);
+  background: var(--hover);
+}
+
+.up-body blockquote {
+  margin: 0;
+  color: var(--fg);
+}
+
+.up-body figcaption {
+  margin-top: 6px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--dim);
+}
+
+@media (max-width: 760px) {
+  .up-row {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 16px;
+    row-gap: 6px;
+  }
+
+  .up-mark {
+    grid-row: 1 / span 3;
+  }
+
+  .up-date,
+  .up-main,
+  .up-tag {
+    grid-column: 2;
+    padding-top: 0;
+  }
+}
+
 /* Small screens */
 
 @media (max-width: 1000px) {

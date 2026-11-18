@@ -1,0 +1,53 @@
+{{ define "main" }}
+{{- $kinds := dict "hard" "Hard Fork Upgrade" "soft" "Soft Fork Upgrade" "other" "Standardness Change" }}
+{{- $cubes := dict "hard" "cube--green" "soft" "" "other" "cube--ghost" }}
+<section class="page-head">
+<div class="hero__field" aria-hidden="true">
+{{- range slice (slice 20 0 0.07 0) (slice 22 1 0.2 5) (slice 23 0 0.1 0) (slice 24 2 0.13 7) (slice 21 2 0.06 0) (slice 18 1 0.05 0) (slice 23 3 0.08 6) }}
+<span class="lit{{ if index . 3 }} lit--pulse{{ end }}" style="--c: {{ index . 0 }}; --r: {{ index . 1 }}; --o: {{ index . 2 }}{{ with index . 3 }}; --dur: {{ . }}s{{ end }}"></span>
+{{- end }}
+</div>
+<div class="page-head__body">
+<h1>{{ partial "title.html" . }}</h1>
+<p class="page-head__sub">{{ .Params.sub }}</p>
+<div class="legend">
+{{- range slice "hard" "soft" "other" }}
+<span><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .)) }}</svg>{{ index $kinds . }}</span>
+{{- end }}
+</div>
+</div>
+</section>
+<div class="hatch" aria-hidden="true"></div>
+<section class="section upgrades">
+{{- range hugo.Data.upgrade_history }}
+{{- $cube := partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .kind)) }}
+<article class="up-row{{ if .split }} up-row--split{{ end }}">
+<time class="up-date">{{ .date }}</time>
+<span class="up-mark"><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ $cube }}</svg></span>
+<div class="up-main">
+{{- if .split }}
+<span class="up-logo">{{ partial "logo.html" . }}</span>
+{{- end }}
+<h2>{{ .title }}</h2>
+{{- with .summary }}
+<p class="muted">{{ . }}</p>
+{{- end }}
+{{- range .links }}
+<p class="up-link"><a href="{{ .url }}">{{ .name }} →</a></p>
+{{- end }}
+{{- with .body }}
+{{- if le (len (plainify .)) 160 }}
+<div class="up-body up-body--short">{{ . | safeHTML }}</div>
+{{- else }}
+<details>
+<summary><span class="up-pm" aria-hidden="true"></span>Details</summary>
+<div class="up-body">{{ . | safeHTML }}</div>
+</details>
+{{- end }}
+{{- end }}
+</div>
+<span class="up-tag up-tag--{{ .kind }}">{{ index $kinds .kind }}</span>
+</article>
+{{- end }}
+</section>
+{{ end }}
