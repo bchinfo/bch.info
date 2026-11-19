@@ -5,9 +5,6 @@
   items:
   - name: Electron Cash
     url: https://electroncash.org
-  - name: Flowee Pay
-    url: https://flowee.org/products/pay
-    note: Android only
   - name: Paytaca
     url: https://paytaca.com
   - name: Selene Wallet
@@ -35,9 +32,6 @@
   items:
   - name: Electron Cash
     url: https://electroncash.org
-  - name: Flowee Pay
-    url: https://flowee.org/products/pay/
-    note: Linux only
   - name: Paytaca
     url: https://chromewebstore.google.com/detail/paytaca/pakphhpnneopheifihmjcjnbdbhaaiaa
     note: Chrome only
