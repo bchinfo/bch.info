@@ -18,7 +18,7 @@
 </div>
 {{- /* The page is newest first; this jumps to the oldest entry for reading in order. */ -}}
 {{- with last 1 hugo.Data.upgrade_history }}
-<a class="jump-link" href="#oldest">Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
+<a class="jump-link" href="#oldest" data-jump>Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
 {{- end }}
 </div>
 </div>

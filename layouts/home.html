@@ -17,7 +17,7 @@
 <p class="hero__tagline">{{ replace (partial "t.html" "index.title") "<br>" " " }}</p>
 <div class="hero__actions">
 <div class="btn-row btn-row--center">
-<a class="btn btn--primary" href="#get-started">{{ partial "t.html" "index.get-started" }} →</a>
+<a class="btn btn--primary" href="#get-started" data-jump>{{ partial "t.html" "index.get-started" }} →</a>
 <a class="btn btn--outline btn--solid" href="{{ "wallets/" | relLangURL }}">{{ partial "t.html" "index.wallet" }}</a>
 </div>
 <a class="hero__link" href="{{ "bitcoin.pdf" | relURL }}">{{ partial "t.html" "index.whitepaper" }} →</a>
