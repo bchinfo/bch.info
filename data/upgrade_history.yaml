@@ -311,7 +311,7 @@
     by a thief draining all your inventory.</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
 - date: '2010-08-15'
   title: Value Overflow Incident
-  icon: overflow
+  icon: bug
   kind: consensus
   body: <p>Satoshi pushes fix and tells users and miners to re-org the block with the overflowed transaction out
     of history.</p>
