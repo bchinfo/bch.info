@@ -8,7 +8,4 @@ kraken:
 coinbase:
   desc: Kup Bitcoin Cash w Ameryce Północnej, Europie, Australii, Singapurze i innych miejscach.
   btn: Odwiedź Coinbase
-coinex:
-  desc: Wymień dowolną kryptowalutę na Bitcoin Cash w dowolnym miejscu.
-  btn: Odwiedź Coinex
 more: Więcej giełd
