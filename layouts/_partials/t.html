@@ -1,0 +1,16 @@
+{{- /* Returns a string from the existing translations in lang/, for the
+       current language, falling back to English. The key is "<file>.<key>",
+       for example "index.get-started" or "nodes.recommended.title". */ -}}
+{{- $parts := split . "." -}}
+{{- $out := "" -}}
+{{- range slice site.Language.Lang "en" -}}
+  {{- if not $out -}}
+    {{- $node := index hugo.Data.lang . -}}
+    {{- range $parts -}}
+      {{- if reflect.IsMap $node }}{{ $node = index $node . }}{{ else }}{{ $node = "" }}{{ end -}}
+    {{- end -}}
+    {{- with $node }}{{ $out = . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $out }}{{ warnf "missing text: %s" $ }}{{ end -}}
+{{- return $out -}}

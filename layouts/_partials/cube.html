@@ -1,0 +1,17 @@
+{{- /* An isometric cube. x, y: top corner. dx, dy: half width and half height
+       of the top face. h: height of the sides. class: cube--hi, cube--green
+       or cube--ghost. */ -}}
+{{- $x := float .x -}}
+{{- $y := float .y -}}
+{{- $dx := float .dx -}}
+{{- $dy := float .dy -}}
+{{- $h := float .h -}}
+{{- $l := sub $x $dx -}}
+{{- $r := add $x $dx -}}
+{{- $y1 := add $y $dy -}}
+{{- $y2 := add $y1 $dy -}}
+<g class="cube {{ .class }}">
+<polygon class="t" points="{{ printf "%.1f,%.1f %.1f,%.1f %.1f,%.1f %.1f,%.1f" $x $y $r $y1 $x $y2 $l $y1 }}"/>
+<polygon class="l" points="{{ printf "%.1f,%.1f %.1f,%.1f %.1f,%.1f %.1f,%.1f" $l $y1 $x $y2 $x (add $y2 $h) $l (add $y1 $h) }}"/>
+<polygon class="r" points="{{ printf "%.1f,%.1f %.1f,%.1f %.1f,%.1f %.1f,%.1f" $x $y2 $r $y1 $r (add $y1 $h) $x (add $y2 $h) }}"/>
+</g>

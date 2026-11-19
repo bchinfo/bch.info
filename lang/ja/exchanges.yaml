@@ -8,7 +8,4 @@ kraken:
 coinbase:
   desc: 北米、ヨーロッパ、オーストラリア、シンガポールなどでBitcoin Cashを購入。
   btn: Coinbaseへ
-coinex:
-  desc: どんな暗号通貨もどこからでもBitcoin Cashに交換出来ます。
-  btn: Coinexへ
 more: その他の交換所

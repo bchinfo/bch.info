@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="app/static/img/bitcoin-cash-logo-flag.svg" height="70">
+  <img src="static/img/bitcoin-cash-logo-flag.svg" height="70">
   <h4><a href="https://bch.info" target="_blank">bch.info</a></h4>
   <p>Bitcoin Cash informational website</p>
 </div>
@@ -10,50 +10,52 @@
 
 ### Table of contents
 
-- [Run the develoment server](#-run-the-develoment-server)
+- [Run the development server](#-run-the-development-server)
 - [Contribute](#-contribute)
 - [Deployment](#-deployment)
-- [Translate](#-translate)
 
 <hr>
 
-### 💻 Run the develoment server
+### 💻 Run the development server
 
-You will need [nodeJS](https://nodejs.org/en/) installed on your machine, then run:
+The site is built with [Hugo](https://gohugo.io). Install Hugo 0.170 or newer, then run:
 
 ```shell
-npm install
-npm start
+hugo server
 ```
 
-Hit `ctrl + C` to stop the server.
+The site is served at http://localhost:1313 and reloads when a file changes. Hit `ctrl + C` to stop the server.
+
+To build the site into `public/`, run `hugo`.
 
 <hr>
 
 ### ➕ Contribute
 
-##### Coding style
-
-Use the coding style recommended by [codeguide.co](https://codeguide.co).
-
 ##### Structure
 
-- HTML files are located in `/app/`. `.njk` files are template ([Nunjucks](https://mozilla.github.io/nunjucks/)) files.
+- `hugo.toml` holds the settings, the languages and the menus.
+- `/content/` holds one file per page. It names the page's template and where its title comes from.
+- `/layouts/` holds the page templates. Shared pieces are in `/layouts/_partials/`.
+- `/assets/` holds the styles (`css/main.css`, plain CSS with the colours defined as variables at the top) and the scripts for the tools and the CHIPs page.
+- `/data/` holds the lists shown on the pages: wallets, exchanges, explorers, nodes, developer tools, community links, CHIPs and the upgrade history.
+- `/lang/` holds the text of the site, one folder per language.
+- `/static/` holds the images, the logo packs and the whitepaper.
 
-- CSS files are located in `/scss/`. Use [Sass](https://sass-lang.com) syntax if possible.
+##### Adding a wallet, an exchange or another link
 
-- JavaScript files are located in `/js/`. All files will be concatenated in alphabetical order unless specified otherwise.
+Edit the matching file in `/data/` and open a pull request. No template needs to change.
+
+##### Text
+
+Templates read their text from `/lang/` with the `t.html` partial, for example `{{ partial "t.html" "index.get-started" }}` for the `get-started` key in `index.yaml`. A missing translation falls back to English.
+
+##### Node releases
+
+The homepage lists the latest release of each node. They are read from the projects' release feeds when the site is built. The feeds are listed under `params.releases` in `hugo.toml`.
 
 <hr>
 
 ### 🚀 Deployment
 
-The `master` branch is automatically deployed.
-
-<hr>
-
-### 🇬🇧 Translate
-
-Translations are managed through [Crowdin](https://crowdin.com/project/bchinfo). If you wish to translate this website into your own language, please open an issue at this repo.
-
-Pull requests are automatically created when a translation is updated.
+The `master` branch is automatically deployed by Netlify. The build settings and redirects are in `netlify.toml`.

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+{{ partial "header.html" . }}
+<div class="frame">
+<main id="main">
+{{ block "main" . }}{{ end }}
+</main>
+<div class="hatch" aria-hidden="true"></div>
+{{ partial "footer.html" . }}
+</div>
+{{ partial "script.html" "js/jump.js" }}
+{{ block "scripts" . }}{{ end }}
+</body>
+</html>

@@ -1,0 +1,100 @@
+{{ define "main" }}
+<section class="hero">
+<div class="hero__field" aria-hidden="true">
+{{- /* Lit squares on the grid: column, row, opacity, pulse duration in seconds
+       (0 for none), 1 for the paler green. */ -}}
+{{- range slice
+      (slice 1 1 0.23 5 0) (slice 2 2 0.08 0 0) (slice 0 4 0.14 7 0) (slice 3 0 0.05 0 0)
+      (slice 8 1 0.16 6 1) (slice 14 0 0.07 0 0) (slice 20 1 0.25 4 0) (slice 21 2 0.09 0 0)
+      (slice 23 0 0.06 0 1) (slice 24 5 0.14 8 0) (slice 0 9 0.07 0 0) (slice 1 12 0.19 6.5 0)
+      (slice 2 13 0.09 0 1) (slice 6 14 0.05 0 0) (slice 10 14 0.13 5.5 0) (slice 17 14 0.07 0 0)
+      (slice 21 13 0.23 4.5 0) (slice 22 14 0.1 0 0) (slice 24 11 0.08 0 1) (slice 23 8 0.13 7.5 0) }}
+<span class="lit{{ if index . 4 }} lit--pale{{ end }}{{ if index . 3 }} lit--pulse{{ end }}" style="--c: {{ index . 0 }}; --r: {{ index . 1 }}; --o: {{ index . 2 }}{{ with index . 3 }}; --dur: {{ . }}s{{ end }}"></span>
+{{- end }}
+</div>
+<div class="hero__body">
+<h1 class="wordmark">{{ site.Title }}</h1>
+<p class="hero__tagline">{{ replace (partial "t.html" "index.title") "<br>" " " }}</p>
+<div class="hero__actions">
+<div class="btn-row btn-row--center">
+<a class="btn btn--primary" href="#get-started" data-jump>{{ partial "t.html" "index.get-started" }} →</a>
+<a class="btn btn--outline btn--solid" href="{{ "wallets/" | relLangURL }}">{{ partial "t.html" "index.wallet" }}</a>
+</div>
+<a class="hero__link" href="{{ "bitcoin.pdf" | relURL }}">{{ partial "t.html" "index.whitepaper" }} →</a>
+</div>
+</div>
+</section>
+
+<section class="strip">
+<span><b>/</b> {{ partial "t.html" "index.overdraft" }}</span>
+<span><b>/</b> {{ partial "t.html" "index.border" }}</span>
+<span><b>/</b> {{ partial "t.html" "index.chargeback" }}</span>
+<span><b>/</b> {{ partial "t.html" "index.frozen" }}</span>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section mission">
+<div class="mission__text">
+<span class="label"><b>01</b> / {{ site.Title }}</span>
+<p class="lead">{{ partial "t.html" "index.desc" }}</p>
+</div>
+<div class="mission__art" aria-hidden="true">
+{{ partial "chain.html" . }}
+</div>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section" id="get-started">
+<div class="section__head section__head--start">
+<div class="section__title">
+<span class="label"><b>02</b></span>
+<h2>{{ partial "t.html" "index.get-started" }}</h2>
+</div>
+<svg class="stairs" aria-hidden="true" viewBox="0 0 290 196">
+{{ partial "cube.html" (dict "x" 60 "y" 86 "dx" 38.1 "dy" 22 "h" 26) }}
+{{ partial "cube.html" (dict "x" 142.2 "y" 50 "dx" 38.1 "dy" 22 "h" 62) }}
+{{ partial "cube.html" (dict "x" 224.4 "y" 14 "dx" 38.1 "dy" 22 "h" 98 "class" "cube--green") }}
+</svg>
+</div>
+<div class="steps">
+<div class="step">
+<h3 class="step__title">{{ partial "t.html" "footer.individuals" }}</h3>
+<div class="link-list">{{ partial "menu-links.html" site.Menus.individuals }}</div>
+</div>
+<div class="step">
+<h3 class="step__title">{{ partial "t.html" "index.pools-exch" }}</h3>
+<div class="link-list">{{ partial "menu-links.html" site.Menus.pools }}</div>
+</div>
+<div class="step">
+<h3 class="step__title">{{ partial "t.html" "footer.developers" }}</h3>
+<div class="link-list">{{ partial "menu-links.html" site.Menus.developers }}</div>
+</div>
+</div>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section" id="nodes">
+<div class="section__head">
+<div class="section__title">
+<span class="label"><b>03</b> / {{ partial "t.html" "nodes.title" }}</span>
+<h2>{{ partial "t.html" "nodes.sub" }}</h2>
+</div>
+<div class="btn-row">
+<a class="btn btn--outline btn--small" href="{{ "nodes/" | relLangURL }}">{{ partial "t.html" "index.run" }} →</a>
+</div>
+</div>
+{{- range partialCached "releases.html" . }}
+<a class="news-row" href="{{ .url }}">
+<time class="news-row__date" datetime="{{ .date.Format "2006-01-02" }}">{{ .date | time.Format ":date_medium" }}</time>
+<span class="news-row__title">{{ .name }} {{ .version }}</span>
+<span class="news-row__tag" aria-hidden="true">→</span>
+</a>
+{{- end }}
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section ecosystem">
+<span class="label"><b>04</b> / {{ partial "t.html" "footer.resources" }}</span>
+<div class="link-list">{{ partial "menu-links.html" site.Menus.resources }}</div>
+</section>
+{{ end }}

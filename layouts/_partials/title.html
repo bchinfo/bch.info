@@ -1,0 +1,5 @@
+{{- /* Returns the page title: the "titleKey" text from lang/, or the title in
+       the page's front matter. */ -}}
+{{- $title := .Title -}}
+{{- with .Params.titleKey }}{{ $title = partial "t.html" . }}{{ end -}}
+{{- return $title -}}

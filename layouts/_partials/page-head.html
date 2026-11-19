@@ -1,0 +1,19 @@
+{{- /* The top of an inner page: grid field, title and subtitle. */ -}}
+{{- $page := . -}}
+<section class="page-head">
+<div class="hero__field" aria-hidden="true">
+{{- range slice (slice 20 0 0.07 0) (slice 22 1 0.2 5) (slice 23 0 0.1 0) (slice 24 2 0.13 7) (slice 21 2 0.06 0) (slice 18 1 0.05 0) (slice 23 3 0.08 6) }}
+<span class="lit{{ if index . 3 }} lit--pulse{{ end }}" style="--c: {{ index . 0 }}; --r: {{ index . 1 }}; --o: {{ index . 2 }}{{ with index . 3 }}; --dur: {{ . }}s{{ end }}"></span>
+{{- end }}
+</div>
+<div class="page-head__body">
+<h1>{{ partial "title.html" $page }}</h1>
+{{- with $page.Params.subKey }}
+<p class="page-head__sub">{{ partial "t.html" . }}</p>
+{{- end }}
+{{- with $page.Params.noteKey }}
+<p class="page-head__note"><svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="7.25"/><path d="M10 9.25v4.5M10 6.4v.1"/></svg><span>{{ partial "t.html" . }}</span></p>
+{{- end }}
+</div>
+</section>
+<div class="hatch" aria-hidden="true"></div>

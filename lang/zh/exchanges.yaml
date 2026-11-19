@@ -8,7 +8,4 @@ kraken:
 coinbase:
   desc: 从北美，欧洲，澳大利亚和新加坡等地购入BitcoinCash
   btn: 访问 Coinbase
-coinex:
-  desc: 在任何地方将任何种类的加密货币兑换为Bitcoin Cash
-  btn: 访问 Coinex
 more: 更多交易所

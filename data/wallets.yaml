@@ -1,0 +1,70 @@
+# Wallets, shown on the wallets page.
+# "title" and "sub" are keys in lang/<language>/wallets.yaml.
+- title: wallets.mobile.title
+  sub: wallets.mobile.sub
+  items:
+  - name: Electron Cash
+    url: https://electroncash.org
+  - name: Paytaca
+    url: https://paytaca.com
+  - name: Selene Wallet
+    url: https://selene.cash/
+  - name: Bitcoin.com Wallet
+    url: https://wallet.bitcoin.com
+  - name: BitPay
+    url: https://bitpay.com/wallet
+  - name: Edge
+    url: https://edge.app
+  - name: Melis
+    url: https://melis.io
+  - name: Stack Wallet
+    url: https://stackwallet.com/
+  - name: Coin Wallet
+    url: https://coin.space/
+  - name: Cake Wallet
+    url: https://cakewallet.com/
+  - name: Gem Wallet
+    url: https://gemwallet.com/
+- title: wallets.desktop.title
+  sub: wallets.desktop.sub
+  items:
+  - name: Electron Cash
+    url: https://electroncash.org
+  - name: Paytaca
+    url: https://chromewebstore.google.com/detail/paytaca/pakphhpnneopheifihmjcjnbdbhaaiaa
+    note: Chrome only
+  - name: Cashonize
+    url: https://about.cashonize.com/
+  - name: Melis
+    url: https://melis.io
+  - name: Coin Wallet
+    url: https://coin.space/
+  - name: Cake Wallet
+    url: https://cakewallet.com/
+- title: wallets.hardware.title
+  sub: wallets.hardware.sub
+  items:
+  - name: KeepKey
+    url: https://keepkey.com/
+  - name: Ledger
+    url: https://www.ledger.com
+  - name: Satochip
+    url: https://satochip.io
+  - name: Trezor
+    url: https://trezor.io
+- title: wallets.paper.title
+  sub: wallets.paper.sub
+  items:
+  - name: Bitcoin.com Paper Wallets
+    url: https://paperwallet.bitcoin.com/
+  - name: Cashaddress.org
+    url: https://cashaddress.org/
+- title: wallets.browser.title
+  sub: wallets.browser.sub
+  items:
+  - name: Cashonize
+    url: https://cashonize.com/
+  - name: Melis
+    url: https://wallet.melis.io/
+  - name: Coin Wallet
+    url: https://coin.space/

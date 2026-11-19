@@ -1,0 +1,64 @@
+{{ define "main" }}
+{{- $kinds := dict "consensus" "Consensus Change" "standardness" "Standardness Change" }}
+<section class="page-head">
+<div class="hero__field" aria-hidden="true">
+{{- range slice (slice 20 0 0.07 0) (slice 22 1 0.2 5) (slice 23 0 0.1 0) (slice 24 2 0.13 7) (slice 21 2 0.06 0) (slice 18 1 0.05 0) (slice 23 3 0.08 6) }}
+<span class="lit{{ if index . 3 }} lit--pulse{{ end }}" style="--c: {{ index . 0 }}; --r: {{ index . 1 }}; --o: {{ index . 2 }}{{ with index . 3 }}; --dur: {{ . }}s{{ end }}"></span>
+{{- end }}
+</div>
+<div class="page-head__body">
+<h1>{{ partial "title.html" . }}</h1>
+<p class="page-head__sub">{{ .Params.sub }}</p>
+<div class="head-row">
+<div class="legend">
+{{- range slice "consensus" "standardness" }}
+<span><i class="up-icon up-icon--{{ . }} up-icon--small" aria-hidden="true"></i>{{ index $kinds . }}</span>
+{{- end }}
+</div>
+{{- /* The page is newest first; this jumps to the oldest entry for reading in order. */ -}}
+{{- with last 1 hugo.Data.upgrade_history }}
+<a class="jump-link" href="#oldest" data-jump>Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
+{{- end }}
+</div>
+</div>
+</section>
+<div class="hatch" aria-hidden="true"></div>
+<section class="section upgrades">
+{{- /* The list is newest first: entries down to the split are Bitcoin Cash's
+       own (green), the ones after it are shared history with BTC (orange). */ -}}
+{{- $era := "post" }}
+{{- $count := len hugo.Data.upgrade_history }}
+{{- range $i, $entry := hugo.Data.upgrade_history }}
+{{- with $entry }}
+<article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}"{{ if eq (add $i 1) $count }} id="oldest"{{ end }}>
+<time class="up-date">{{ .date }}</time>
+<span class="up-mark"><i class="up-icon up-icon--{{ .kind }}" aria-hidden="true">{{ with index hugo.Data.upgrade_icons (.icon | default "genesis") }}<svg viewBox="0 0 24 24" width="22" height="22"><path d="{{ . }}"/></svg>{{ end }}</i></span>
+<div class="up-main">
+{{- if .split }}
+<span class="up-logo">{{ partial "logo.html" . }}</span>
+{{- end }}
+<h2>{{ .title }}</h2>
+{{- with .summary }}
+<p class="muted">{{ . }}</p>
+{{- end }}
+{{- range .links }}
+<p class="up-link"><a href="{{ .url }}">{{ .name }} →</a></p>
+{{- end }}
+{{- with .body }}
+{{- if le (len (plainify .)) 160 }}
+<div class="up-body up-body--short">{{ . | safeHTML }}</div>
+{{- else }}
+<details>
+<summary><span class="up-pm" aria-hidden="true"></span>Details</summary>
+<div class="up-body">{{ . | safeHTML }}</div>
+</details>
+{{- end }}
+{{- end }}
+</div>
+<span class="up-tag up-tag--{{ .kind }}">{{ index $kinds .kind }}</span>
+</article>
+{{- if .split }}{{ $era = "pre" }}{{ end }}
+{{- end }}
+{{- end }}
+</section>
+{{ end }}

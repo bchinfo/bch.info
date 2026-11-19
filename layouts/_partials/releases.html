@@ -1,0 +1,31 @@
+{{- /* Returns the latest release of each node in hugo.toml, newest first, read
+       from the nodes' Atom feeds. A feed that cannot be fetched is skipped
+       with a warning, so the build still succeeds offline. */ -}}
+{{- $items := slice -}}
+{{- range site.Params.releases -}}
+  {{- $feed := . -}}
+  {{- with try (resources.GetRemote $feed.url) -}}
+    {{- with .Err -}}
+      {{- warnf "releases: could not fetch %s: %s" $feed.url . -}}
+    {{- else with .Value -}}
+      {{- $data := .Content | transform.Unmarshal (dict "format" "xml") -}}
+      {{- $entries := $data.entry | default slice -}}
+      {{- if reflect.IsMap $entries }}{{ $entries = slice $entries }}{{ end -}}
+      {{- range first 1 $entries -}}
+        {{- $title := .title -}}
+        {{- if reflect.IsMap $title }}{{ $title = index $title "#text" }}{{ end -}}
+        {{- $link := .link -}}
+        {{- if reflect.IsSlice $link }}{{ $link = index $link 0 }}{{ end -}}
+        {{- $version := strings.TrimSpace (strings.TrimPrefix $feed.name $title) -}}
+        {{- $items = $items | append (dict
+              "date" (time.AsTime .updated)
+              "name" $feed.name
+              "version" $version
+              "url" (index $link "-href")) -}}
+      {{- end -}}
+    {{- else -}}
+      {{- warnf "releases: nothing returned by %s" $feed.url -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return (sort $items "date" "desc") -}}

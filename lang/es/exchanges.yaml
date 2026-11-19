@@ -8,7 +8,4 @@ kraken:
 coinbase:
   desc: Compra Bitcoin Cash en Norte América, Europa, Australia, Singapur y otros.
   btn: Visita Coinbase
-coinex:
-  desc: Convierte cualquier criptomoneda en Bitcoin Cash desde cualquier lugar.
-  btn: Visita Coinex
 more: Más sitios de cambio

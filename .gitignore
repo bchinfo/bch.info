@@ -2,16 +2,11 @@
 .DS_Store
 **/*.swp
 **/*.swap
-app/static/css
 
-# NodeJS
-node_modules
-
-# Auto generated files
-dist/
-dist-lang/
-app/static/css/style.css
-README.html
+# Hugo
+public/
+resources/_gen/
+.hugo_build.lock
 
 # Local Netlify folder
 .netlify

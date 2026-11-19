@@ -1,0 +1,36 @@
+{{ define "main" }}
+<section class="page-head">
+<div class="hero__field" aria-hidden="true"></div>
+<div class="page-head__body">
+<h1>{{ partial "title.html" . }}</h1>
+<p class="page-head__sub">{{ partial "t.html" .Params.subKey }}</p>
+<div class="btn-row">
+<a class="btn btn--primary" href="{{ "media/bitcoin-cash-logos.zip" | relURL }}">{{ partial "t.html" "media.download" }}</a>
+<a class="btn btn--outline btn--solid" href="{{ "media/bitcoin-cash-orange-logos.zip" | relURL }}">{{ partial "t.html" "media.download-orange" }}</a>
+</div>
+</div>
+</section>
+<div class="hatch" aria-hidden="true"></div>
+<section class="section">
+<div class="section__head">
+<h2>{{ partial "t.html" "media.colors" }}</h2>
+</div>
+<div class="cells cells--top">
+{{- range slice "#0AC18E" "#0F1820" "#F8FDFF" }}
+<div class="cell cell--row"><span class="swatch" style="background: {{ . }}"></span><span class="mono">{{ . }}</span></div>
+{{- end }}
+</div>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section">
+<div class="section__head">
+<h2>{{ partial "t.html" "media.logos" }}</h2>
+</div>
+<div class="cells cells--top">
+{{- range slice "bitcoin-cash-logo-horizontal.svg" "bitcoin-cash-logo-horizontal-2020.svg" }}
+<div class="cell"><span class="logo-tile logo-tile--wide"><img src="{{ printf "img/%s" . | relURL }}" alt="Bitcoin Cash logo"></span></div>
+{{- end }}
+</div>
+</section>
+{{ end }}

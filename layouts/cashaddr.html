@@ -1,0 +1,35 @@
+{{ define "main" }}
+<section class="page-head">
+<div class="hero__field" aria-hidden="true"></div>
+<div class="page-head__body">
+<h1>{{ partial "title.html" . }}</h1>
+<p class="page-head__sub">{{ partial "t.html" .Params.subKey }}</p>
+<form class="field-row" id="convert-form">
+<input id="address" type="text" autocomplete="off" spellcheck="false" placeholder="{{ partial "t.html" "cashaddr.paste" }}" aria-label="{{ partial "t.html" "cashaddr.paste" }}">
+<button class="btn btn--primary" type="submit">{{ partial "t.html" "cashaddr.convert" }}</button>
+</form>
+<p class="form-error" id="convert-error" data-suffix="{{ partial "t.html" "cashaddr.is-not-valid" }}" hidden></p>
+</div>
+</section>
+<div id="converted" hidden>
+<div class="hatch" aria-hidden="true"></div>
+<section class="section cells">
+{{- range slice (slice "cashaddr" "cashAddr") (slice "legacy" "legacyAddr") }}
+{{- $id := index . 1 }}
+<div class="cell">
+<div>
+<h2 class="cell__title">{{ partial "t.html" (printf "cashaddr.%s.title" (index . 0)) }}</h2>
+<p class="muted">{{ partial "t.html" (printf "cashaddr.%s.sub" (index . 0)) }}</p>
+</div>
+<button class="copy" type="button" data-copy="{{ $id }}" aria-label="Copy"><span id="{{ $id }}">-</span><span aria-hidden="true">⧉</span></button>
+<canvas class="qr" id="{{ $id }}QR"></canvas>
+</div>
+{{- end }}
+</section>
+</div>
+{{ end }}
+{{ define "scripts" }}
+<script src="{{ "js/bchaddrjs-0.4.9.min.js" | relURL }}" defer></script>
+<script src="{{ "js/qrcode.min.js" | relURL }}" defer></script>
+{{ partial "script.html" "js/cashaddr.js" }}
+{{ end }}

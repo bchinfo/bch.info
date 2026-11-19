@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+{{- $chips := hugo.Data.chips.chips }}
+{{- $tags := slice }}
+{{- range $chips }}{{ if reflect.IsSlice .tags }}{{ range .tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}{{ end }}
+{{- $tags = $tags | uniq }}
+<section class="section">
+<div class="padded prose">
+<p>{{ partial "t.html" "chips.description" }}</p>
+<p><a href="https://gitlab.com/im_uname/cash-improvement-proposals/-/blob/master/CHIPs.md" target="_blank" rel="noopener">A recommended process can be found here.</a></p>
+</div>
+{{- if gt (len $tags) 1 }}
+<div class="tag-row" id="chip-tags">
+<button class="tag is-active" type="button" data-tag="">{{ partial "t.html" "chips.all" }}</button>
+{{- range $tags }}
+<button class="tag" type="button" data-tag="{{ . }}">{{ replace . "-" " " }}</button>
+{{- end }}
+</div>
+{{- end }}
+<div class="table-wrap">
+<table id="chip-table">
+<thead>
+<tr>
+<th scope="col">{{ partial "t.html" "chips.chip-title" }}</th>
+<th scope="col">{{ partial "t.html" "chips.last-updated" }}</th>
+<th scope="col">{{ partial "t.html" "chips.consensus" }}</th>
+<th scope="col">{{ partial "t.html" "chips.activated" }}</th>
+<th scope="col">{{ partial "t.html" "chips.tags" }}</th>
+</tr>
+</thead>
+<tbody>
+{{- range $chips }}
+{{- /* A proposal without tags has an empty string instead of a list. */ -}}
+{{- $own := cond (reflect.IsSlice .tags) .tags slice }}
+<tr data-tags="{{ delimit $own "|" }}">
+<td><a href="{{ .link }}" target="_blank" rel="noopener">{{ .title }}</a></td>
+<td class="nowrap">{{ .lastUpdated }}</td>
+<td>{{ .consensus }}</td>
+<td>{{ .activated }}</td>
+<td>{{ delimit $own ", " }}</td>
+</tr>
+{{- end }}
+</tbody>
+</table>
+</div>
+<p class="form-error padded" id="chip-error" hidden>{{ partial "t.html" "chips.error" }}</p>
+</section>
+{{ end }}
+{{ define "scripts" }}{{ partial "script.html" "js/chips.js" }}{{ end }}

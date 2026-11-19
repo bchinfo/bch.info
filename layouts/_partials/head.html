@@ -1,0 +1,35 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- $title := site.Title -}}
+{{- if not .IsHome }}{{ $title = printf "%s | %s" (partial "title.html" .) site.Title }}{{ end }}
+{{- $description := .Description | default (partial "t.html" "index.desc") }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ site.Params.author }}">
+<meta name="theme-color" content="#0a0a0a">
+{{- /* Inline, so a saved theme is applied before the page is drawn. */}}
+{{- with resources.Get "js/theme.js" | minify }}
+<script>{{ .Content | safeJS }}</script>
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- range .AlternativeOutputFormats }}
+<link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{- end }}
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:image" content="{{ site.Params.image | absURL }}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "img/fav/favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ "img/fav/favicon-96x96.png" | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "img/fav/apple-icon-180x180.png" | relURL }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap">
+{{- with resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+{{- end }}

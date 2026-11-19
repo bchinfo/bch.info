@@ -1,0 +1,19 @@
+# Block explorers, shown on the explorers page.
+- name: 3XPL
+  url: https://3xpl.com/bitcoin-cash
+- name: BCH Ninja
+  url: https://explorer.bch.ninja
+- name: BCHExplorer.info
+  url: https://bchexplorer.info/
+- name: Blockchair
+  url: https://www.blockchair.com/bitcoin-cash
+- name: Blockchain.com
+  url: https://www.blockchain.com/explorer?view=bch
+- name: BCH Explorer
+  url: https://bchexplorer.cash/
+- name: Salem Kode's Bitcoin Cash Explorer
+  url: https://explorer.salemkode.com/
+- name: Tokenview
+  url: https://bch.tokenview.io/
+- name: ViaWallet
+  url: https://explorer.viawallet.com/bch

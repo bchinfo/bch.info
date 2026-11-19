@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<section class="section">
+<div class="section__head">
+<h2>{{ partial "t.html" "exchanges.recommended" }}</h2>
+</div>
+<div class="cells cells--top">
+{{- range slice (slice "kraken" "Kraken" "https://kraken.com") (slice "coinbase" "Coinbase" "https://coinbase.com") }}
+{{- $key := index . 0 }}
+<div class="cell">
+<span class="logo-tile"><img src="{{ printf "img/exchanges/%s.svg" $key | relURL }}" alt="{{ index . 1 }}" height="32"></span>
+<p class="muted">{{ partial "t.html" (printf "exchanges.%s.desc" $key) }}</p>
+<a class="btn btn--primary" href="{{ index . 2 }}" target="_blank" rel="noopener">{{ partial "t.html" (printf "exchanges.%s.btn" $key) }}</a>
+</div>
+{{- end }}
+</div>
+</section>
+
+<div class="hatch" aria-hidden="true"></div>
+<section class="section">
+<div class="section__head">
+<h2>{{ partial "t.html" "exchanges.more" }}</h2>
+</div>
+<div class="padded padded--flush">
+<div class="link-list link-list--grid">
+{{- range hugo.Data.exchanges.exchanges }}
+<a href="{{ .link }}" target="_blank" rel="noopener"><span>{{ .name }}</span><span aria-hidden="true">→</span></a>
+{{- end }}
+</div>
+</div>
+</section>
+{{ end }}
