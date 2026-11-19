@@ -1206,6 +1206,39 @@ td:last-child {
 
 /* Upgrade history */
 
+/* The legend, with the button that jumps to the oldest entry beside it. */
+
+.head-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  align-self: stretch;
+  margin-top: 16px;
+}
+
+.head-row .legend {
+  margin-top: 0;
+}
+
+.jump-link {
+  padding: 6px 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.jump-link span {
+  color: var(--green-text);
+}
+
+.jump-link:hover {
+  color: var(--fg);
+}
+
 .legend {
   display: flex;
   flex-wrap: wrap;

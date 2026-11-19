@@ -10,9 +10,15 @@
 <div class="page-head__body">
 <h1>{{ partial "title.html" . }}</h1>
 <p class="page-head__sub">{{ .Params.sub }}</p>
+<div class="head-row">
 <div class="legend">
 {{- range slice "hard" "soft" "other" }}
 <span><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .)) }}</svg>{{ index $kinds . }}</span>
+{{- end }}
+</div>
+{{- /* The page is newest first; this jumps to the oldest entry for reading in order. */ -}}
+{{- with last 1 hugo.Data.upgrade_history }}
+<a class="jump-link" href="#oldest">Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
 {{- end }}
 </div>
 </div>
@@ -22,9 +28,11 @@
 {{- /* The list is newest first: entries down to the split are Bitcoin Cash's
        own (green), the ones after it are shared history with BTC (orange). */ -}}
 {{- $era := "post" }}
-{{- range hugo.Data.upgrade_history }}
+{{- $count := len hugo.Data.upgrade_history }}
+{{- range $i, $entry := hugo.Data.upgrade_history }}
+{{- with $entry }}
 {{- $cube := partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .kind)) }}
-<article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}">
+<article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}"{{ if eq (add $i 1) $count }} id="oldest"{{ end }}>
 <time class="up-date">{{ .date }}</time>
 <span class="up-mark"><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ $cube }}</svg></span>
 <div class="up-main">
@@ -52,6 +60,7 @@
 <span class="up-tag up-tag--{{ .kind }}">{{ index $kinds .kind }}</span>
 </article>
 {{- if .split }}{{ $era = "pre" }}{{ end }}
+{{- end }}
 {{- end }}
 </section>
 {{ end }}
