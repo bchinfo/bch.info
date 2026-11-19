@@ -1268,8 +1268,8 @@ td:last-child {
 }
 
 /* Cubes take the colour of their era: green for Bitcoin Cash's own history,
-   orange for the history shared with BTC before the 2017 split. A hard fork is
-   a solid cube, a soft fork a tinted one, a standardness change a dashed one. */
+   orange for the history shared with BTC before the 2017 split. A consensus
+   change is a solid cube, a standardness change a dashed one. */
 
 .legend,
 .up-row--post {
@@ -1286,39 +1286,23 @@ td:last-child {
   --era-text: var(--orange-text);
 }
 
-.up-hard polygon {
+.up-consensus polygon {
   stroke: var(--bg);
 }
 
-.up-hard .t {
+.up-consensus .t {
   fill: var(--era);
 }
 
-.up-hard .l {
+.up-consensus .l {
   fill: var(--era-deep);
 }
 
-.up-hard .r {
+.up-consensus .r {
   fill: var(--era-mid);
 }
 
-.up-soft polygon {
-  stroke: color-mix(in srgb, var(--era) 60%, var(--bg));
-}
-
-.up-soft .t {
-  fill: color-mix(in srgb, var(--era) 26%, var(--bg));
-}
-
-.up-soft .l {
-  fill: color-mix(in srgb, var(--era) 10%, var(--bg));
-}
-
-.up-soft .r {
-  fill: color-mix(in srgb, var(--era) 17%, var(--bg));
-}
-
-.up-other polygon {
+.up-standardness polygon {
   fill: var(--bg);
   stroke: color-mix(in srgb, var(--era) 70%, var(--bg));
   stroke-dasharray: 3 3;
@@ -1346,7 +1330,7 @@ td:last-child {
   white-space: nowrap;
 }
 
-.up-tag--hard {
+.up-tag--consensus {
   color: var(--era-text);
 }
 
