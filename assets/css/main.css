@@ -1269,17 +1269,10 @@ td:last-child {
   white-space: nowrap;
 }
 
-.up-cube {
-  position: relative;
-}
-
-.up-cube polygon {
-  stroke-width: 1.2;
-}
-
-/* Cubes take the colour of their era: green for Bitcoin Cash's own history,
-   orange for the history shared with BTC before the 2017 split. A consensus
-   change is a solid cube, a standardness change a dashed one. */
+/* Each entry has an icon in a small tile. Tiles take the colour of their era:
+   green for Bitcoin Cash's own history, orange for the history shared with
+   BTC before the 2017 split. A consensus change has a solid outline, a
+   standardness change a dashed one. */
 
 .legend,
 .up-row--post {
@@ -1304,31 +1297,39 @@ td:last-child {
   background: color-mix(in srgb, var(--era) var(--era-tint), var(--bg));
 }
 
-.up-consensus polygon {
-  stroke: var(--bg);
+.up-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid color-mix(in srgb, var(--era) 55%, var(--bg));
+  background: color-mix(in srgb, var(--era) 14%, var(--bg));
+  color: var(--era-text);
 }
 
-.up-consensus .t {
-  fill: var(--era);
+.up-icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.up-consensus .l {
-  fill: var(--era-deep);
+.up-icon--standardness {
+  border-style: dashed;
+  background: var(--bg);
 }
 
-.up-consensus .r {
-  fill: var(--era-mid);
-}
-
-.up-standardness polygon {
-  fill: var(--bg);
-  stroke: color-mix(in srgb, var(--era) 70%, var(--bg));
-  stroke-dasharray: 3 3;
+.up-icon--small {
+  width: 18px;
+  height: 18px;
 }
 
 .up-row {
   display: grid;
-  grid-template-columns: 112px 28px minmax(0, 1fr) auto;
+  grid-template-columns: 112px 40px minmax(0, 1fr) auto;
   column-gap: 28px;
   align-items: start;
   padding: 22px var(--pad);
@@ -1362,7 +1363,7 @@ td:last-child {
 .up-mark::before {
   content: "";
   position: absolute;
-  left: 13.5px;
+  left: 19.5px;
   top: -23px;
   bottom: -23px;
   width: 1px;
@@ -1548,7 +1549,7 @@ td:last-child {
 
 @media (max-width: 760px) {
   .up-row {
-    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-columns: 40px minmax(0, 1fr);
     column-gap: 16px;
     row-gap: 6px;
   }

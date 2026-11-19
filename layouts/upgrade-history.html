@@ -1,6 +1,5 @@
 {{ define "main" }}
 {{- $kinds := dict "consensus" "Consensus Change" "standardness" "Standardness Change" }}
-{{- $cubes := dict "consensus" "up-consensus" "standardness" "up-standardness" }}
 <section class="page-head">
 <div class="hero__field" aria-hidden="true">
 {{- range slice (slice 20 0 0.07 0) (slice 22 1 0.2 5) (slice 23 0 0.1 0) (slice 24 2 0.13 7) (slice 21 2 0.06 0) (slice 18 1 0.05 0) (slice 23 3 0.08 6) }}
@@ -13,7 +12,7 @@
 <div class="head-row">
 <div class="legend">
 {{- range slice "consensus" "standardness" }}
-<span><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .)) }}</svg>{{ index $kinds . }}</span>
+<span><i class="up-icon up-icon--{{ . }} up-icon--small" aria-hidden="true"></i>{{ index $kinds . }}</span>
 {{- end }}
 </div>
 {{- /* The page is newest first; this jumps to the oldest entry for reading in order. */ -}}
@@ -31,10 +30,9 @@
 {{- $count := len hugo.Data.upgrade_history }}
 {{- range $i, $entry := hugo.Data.upgrade_history }}
 {{- with $entry }}
-{{- $cube := partial "cube.html" (dict "x" 14 "y" 2 "dx" 10.4 "dy" 6 "h" 12 "class" (index $cubes .kind)) }}
 <article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}"{{ if eq (add $i 1) $count }} id="oldest"{{ end }}>
 <time class="up-date">{{ .date }}</time>
-<span class="up-mark"><svg class="up-cube" aria-hidden="true" viewBox="0 0 28 28" width="28" height="28">{{ $cube }}</svg></span>
+<span class="up-mark"><i class="up-icon up-icon--{{ .kind }}" aria-hidden="true">{{ with index hugo.Data.upgrade_icons (.icon | default "genesis") }}<svg viewBox="0 0 24 24" width="22" height="22"><path d="{{ . }}"/></svg>{{ end }}</i></span>
 <div class="up-main">
 {{- if .split }}
 <span class="up-logo">{{ partial "logo.html" . }}</span>

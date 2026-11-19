@@ -2,6 +2,7 @@
 #
 #   date     as shown on the page
 #   title
+#   icon     the name of a drawing in upgrade_icons.yaml
 #   kind     consensus (a change to the consensus rules) or standardness (a change to which
 #            transactions nodes relay by default)
 #   summary  one line, always visible (optional)
@@ -13,6 +14,7 @@
 # Text adapted from https://minisatoshi.cash/upgrade-history
 - date: '2026-05-15'
   title: Layla
+  icon: loop
   kind: consensus
   summary: Loops + Pay to Script + Re-enable Bitwise Op-codes + Functions
   body: <p>The Layla upgrade brings in the ability to perform loops in Bitcoin Cash's VM, sets Pay to Script as
@@ -33,6 +35,7 @@
     cryptography, and more.</p>
 - date: '2025-05-15'
   title: VMLA
+  icon: gauge
   kind: consensus
   summary: Targeted Virtual Machine Limits + BigInts
   body: '<p>Bitcoin Cash''s virtual machine (VM) limits have been re-targeted to enable more advanced contracts,
@@ -51,6 +54,7 @@
     CPU utilization vs. existing emulated-math solutions.</p></li>'
 - date: '2024-05-15'
   title: ABLA
+  icon: expand
   kind: consensus
   summary: Adaptive Blocksize Limit Algorithm
   body: <p>Needing to coordinate manual increases to BitcoinCash's blocksize limit incurs a meta cost on all network
@@ -62,6 +66,7 @@
     bonus on top of that, sustained by actual transaction load.</p>
 - date: '2023-05-15'
   title: CashTokens
+  icon: token
   kind: consensus
   summary: P2SH32 | Restrict Transaction Version | Minimum Transaction Size | Native Layer 1, UTXO, Miner-validated
     Tokens
@@ -83,6 +88,7 @@
     by a private key attesting to the hash of an arbitrary message (introduced in 2018 by OP_CHECKDATASIG)'
 - date: '2022-05-15'
   title: U8
+  icon: chip
   kind: consensus
   summary: Addition of Introspection Op-codes | Bigger Integers & OP_MUL Re-enabling
   body: '<p>Since the introduction of OP_CHECKDATASIG, it has been possible to implement practical Bitcoin Cash
@@ -104,6 +110,7 @@
     in BCH contracts (from 32-bit to 64-bit numbers) and re-enables the multiplication opcode.</p>'
 - date: '2021-05-15'
   title: BigBlockIfTrue
+  icon: chain
   kind: standardness
   summary: Enabling Transactions with Multiple OP_RETURNs | Removal of Unconfirmed Transaction Chain Limit
   body: <p>Multiple OP_RETURNs enable developers to use OP_RETURN in a manner that justifies its core benefit -
@@ -120,6 +127,7 @@
     limit is now removed.</p>
 - date: '2020-11-15'
   title: Axion
+  icon: atom
   kind: consensus
   summary: 'Diﬃculty Adjustment Algorithm Change: ASERT (aserti3-2d DAA)'
   body: <p>The DAA introduced in November 2017 exhibited susceptibility to a daily periodic diﬃculty oscillation
@@ -132,6 +140,7 @@
     of rounding/approximation error.</p>
 - date: '2020-05-15'
   title: Phonon
+  icon: wave
   kind: consensus
   summary: OP_REVERSEBYTES | SigChecks
   body: '<p>OP_REVERSEBYTES reverses the bytes of the stackitem.</p><p>Although partly eﬀective, there are well
@@ -144,6 +153,7 @@
     operations solely in the spending transaction.</p>'
 - date: '2019-11-15'
   title: Graviton
+  icon: orbit
   kind: consensus
   summary: Schnorr for Multisig | MINIMALDATAINSCRIPT
   body: <p>OP_CHECKMULTISIG(VERIFY) upgraded to accept Schnorr signatures in a way that increases verification efficiency
@@ -152,6 +162,7 @@
     MINIMALDATA rules to consensus.</p>
 - date: '2019-05-15'
   title: Great Wall
+  icon: wall
   kind: consensus
   summary: Schnorr Signatures
   body: <p>Schnorr signatures have some slightly improved properties over the ECDSA signatures currently used in
@@ -161,6 +172,7 @@
     validation of large transactions or initial block downloads
 - date: '2018-11-15'
   title: Magnetic Anomaly
+  icon: magnet
   kind: consensus
   summary: OP_CHECKDATASIG & OP_CHECKDATASIGVERIFY | Canonical Transaction Ordering (“CTOR”)
   body: <p>OP_CHECKDATASIG and OP_CHECKDATASIGVERIFY check whether a signature is valid with respect to a message
@@ -180,6 +192,7 @@
     an advantage over others for the time it takes their nodes to receive and validate the recently found block).</p>
 - date: '2018-09-17'
   title: CVE-2018-17144 Inflation Bug
+  icon: bug
   kind: consensus
   body: <p>CVE-2018-17144 was a bug that could have allowed an attacker to spend the same Bitcoin more than once.</p><p>An
     optimization included in Bitcoin Core 0.14.0 skipped a check on newly-received blocks that was thought to be
@@ -196,6 +209,7 @@
     subsequently updated to unaﬀected versions of Bitcoin Core / Bitcoin Cash.
 - date: '2018-05-15'
   title: Monolith
+  icon: monolith
   kind: consensus
   summary: Block Size Limit to 32MB | Extra Opcodes (including OP_CAT)
   body: <p>OP_CAT, OP_SPLIT, OP_AND, OP_OR, OP_XOR, OP_DIV, OP_MOD, OP_NUM2BIN, OP_BIN2NUM</p><p>In 2010 and 2011
@@ -204,32 +218,40 @@
     the opcodes have been re-designed or new opcodes have been added to address specific issues.</p>
 - date: '2017-11-13'
   title: Diﬃculty Adjustment Algorithm Change
+  icon: sliders
   kind: consensus
   summary: cw-144 algorithm
   body: <p>With rapid price, and thereby hash, fluctuations, particularly in relation to BTC, an algorithm change
     was necessary to ensure more reliable blocktimes.</p>
 - date: '2017-08-01'
   title: User Activated Hard Fork
+  icon: fork
   kind: consensus
   summary: Block Size Limit to 8MB | Removal of RBF
   split: true
 - date: '2016-07-04'
   title: OP_CHECKSEQUENCEVERIFY
+  icon: hourglass
   kind: consensus
 - date: '2016-02-23'
   title: Addition of Opt-In Replace-By-Fee (”RBF”)
+  icon: replace
   kind: consensus
 - date: '2015-12-14'
   title: OP_CHECKLOCKTIMEVERIFY
+  icon: clock
   kind: consensus
 - date: '2015-07-04'
   title: Strict DER Encoding for Signatures
+  icon: signature
   kind: consensus
 - date: '2014-03-19'
   title: Addition of OP_RETURN
+  icon: return
   kind: consensus
 - date: '2013-03-11'
   title: Unexpected Hard Fork/Chain Split
+  icon: warning
   kind: standardness
   body: <p>A block that had a larger number of total transaction inputs than previously seen was mined and broadcasted.
     Bitcoin 0.8 nodes were able to handle this, but some pre-0.8 Bitcoin nodes rejected it, causing an unexpected
@@ -237,10 +259,12 @@
     to the older version to resolve the fork and 0.8.1 was released with new limits to prevent this from reoccuring.</p>
 - date: '2013-02-19'
   title: Migration from BerkeleyDB to LevelDB
+  icon: database
   kind: standardness
   body: <p>Ultraprune is implemented, separating the UTXO set from the blockchain database.</p>
 - date: '2012-09-17'
   title: BIP 22, 34 & 35
+  icon: list
   kind: consensus
   body: '<p>BIP 22: Defines "getblocktemplate" to replace "getwork" enabling miners to have more control over transactions
     included in a block.</p><p>BIP 34: New rule requiring block height to be included in the coinbase transaction
@@ -250,20 +274,25 @@
     requiring real-time data.</p>'
 - date: '2012-04-01'
   title: Pay-to-Script-Hash
+  icon: hash
   kind: consensus
 - date: '2012-03-30'
   title: Security and DoS Fixes
+  icon: shield
   kind: consensus
   body: <p>Implementation of BIP 30 (a security fix for an attack involving duplicate coinbase transactions) and
     fixes for memory related denial-of-serivice attacks.</p>
 - date: '2012-03-15'
   title: Disallow Transactions with Same TXID
+  icon: duplicate
   kind: consensus
 - date: '2010-12-12'
   title: Addition of DoS limits & Removal of Alert System
+  icon: bell-off
   kind: consensus
 - date: '2010-10-12'
   title: 1MB Block Size Limit
+  icon: cap
   kind: consensus
   body: <figure><blockquote><p>The limit was originally Hal Finney’s idea. Both Satoshi and I objected that it wouldn’t
     scale at 1MB. Hal was concerned about a potential DoS attack though, and after discussion, Satoshi agreed...
@@ -274,6 +303,7 @@
     = largerlimit</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
 - date: '2010-07-17'
   title: Addition of Alert System
+  icon: bell
   kind: consensus
   body: <figure><blockquote><p>I've been working on writing the alert system. Alerts are broadcast through the network
     and apply to a range of version numbers. Alert messages are signed with a private key that only I have.<br>Getting
@@ -281,38 +311,47 @@
     by a thief draining all your inventory.</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
 - date: '2010-08-15'
   title: Value Overflow Incident
+  icon: overflow
   kind: consensus
   body: <p>Satoshi pushes fix and tells users and miners to re-org the block with the overflowed transaction out
     of history.</p>
 - date: '2010-08-01'
   title: Separation of Evaluation of scriptSig and scriptPubKey
+  icon: layers
   kind: consensus
 - date: '2010-07-31'
   title: Addition of OP_NOP Functions
+  icon: noop
   kind: consensus
 - date: '2010-07-25'
   title: Software Follows Most PoW
+  icon: work
   kind: consensus
   body: <p>Previously Bitcoin software followed the longest chain.</p>
 - date: '2010-07-17'
   title: Addition of Checkpoints
+  icon: pin
   kind: consensus
   body: <figure><blockquote><p>I'll probably put a checkpoint in each version from now on.  Once the software has
     settled what the widely accepted block chain is, there's no point in leaving open the unwanted non-zero possibility
     of revision months later.</p></blockquote><figcaption>Satoshi Nakamoto</figcaption></figure>
 - date: '2010-07-15'
   title: Miscellaneous Bug Fixes
+  icon: wrench
   kind: consensus
 - date: '2009-10-28'
   title: Addition of nLockTime Enforcement
+  icon: lock
   kind: consensus
 - date: '2009-01-03'
   title: Bitcoin Released
+  icon: genesis
   kind: consensus
   body: <figure><blockquote><p>The Times 03/Jan/2009 Chancellor on the brink of the second bailout for banks.</p></blockquote><figcaption>Satoshi
     Nakamoto's message in the Genesis Block.</figcaption></figure>
 - date: '2008-10-31'
   title: Bitcoin Whitepaper Published
+  icon: document
   kind: consensus
   links:
   - name: Read the Whitepaper
