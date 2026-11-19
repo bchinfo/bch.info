@@ -25,6 +25,7 @@
   --green-text: #3fe0ae;
   --green-ink: #04140e;
   --green-hover: #3fe0ae;
+  --orange-text: #f9a84d;
   --wordmark-from: #b4f7e2;
 
   --cube-top: #1e1e1e;
@@ -70,6 +71,7 @@
     --green-pale: #0ac18e;
     --green-text: #07805e;
     --green-hover: #2fd3a3;
+    --orange-text: #a85a00;
     --wordmark-from: #07805e;
 
     --cube-top: #ffffff;
@@ -106,6 +108,7 @@
   --green-pale: #0ac18e;
   --green-text: #07805e;
   --green-hover: #2fd3a3;
+  --orange-text: #a85a00;
   --wordmark-from: #07805e;
 
   --cube-top: #ffffff;
@@ -1231,8 +1234,60 @@ td:last-child {
   stroke-width: 1.2;
 }
 
-.up-cube .cube--ghost polygon {
+/* Cubes take the colour of their era: green for Bitcoin Cash's own history,
+   orange for the history shared with BTC before the 2017 split. A hard fork is
+   a solid cube, a soft fork a tinted one, a standardness change a dashed one. */
+
+.legend,
+.up-row--post {
+  --era: var(--green);
+  --era-mid: var(--green-mid);
+  --era-deep: var(--green-deep);
+  --era-text: var(--green-text);
+}
+
+.up-row--pre {
+  --era: #f7931a;
+  --era-mid: #d97f12;
+  --era-deep: #b3660a;
+  --era-text: var(--orange-text);
+}
+
+.up-hard polygon {
+  stroke: var(--bg);
+}
+
+.up-hard .t {
+  fill: var(--era);
+}
+
+.up-hard .l {
+  fill: var(--era-deep);
+}
+
+.up-hard .r {
+  fill: var(--era-mid);
+}
+
+.up-soft polygon {
+  stroke: color-mix(in srgb, var(--era) 60%, var(--bg));
+}
+
+.up-soft .t {
+  fill: color-mix(in srgb, var(--era) 26%, var(--bg));
+}
+
+.up-soft .l {
+  fill: color-mix(in srgb, var(--era) 10%, var(--bg));
+}
+
+.up-soft .r {
+  fill: color-mix(in srgb, var(--era) 17%, var(--bg));
+}
+
+.up-other polygon {
   fill: var(--bg);
+  stroke: color-mix(in srgb, var(--era) 70%, var(--bg));
   stroke-dasharray: 3 3;
 }
 
@@ -1259,7 +1314,7 @@ td:last-child {
 }
 
 .up-tag--hard {
-  color: var(--green-text);
+  color: var(--era-text);
 }
 
 /* The vertical line that joins the cubes. */
