@@ -27,6 +27,7 @@
   --green-hover: #3fe0ae;
   --orange-text: #f9a84d;
   --wordmark-from: #b4f7e2;
+  --era-tint: 6%;
 
   --cube-top: #1e1e1e;
   --cube-left: #111111;
@@ -73,6 +74,7 @@
     --green-hover: #2fd3a3;
     --orange-text: #a85a00;
     --wordmark-from: #07805e;
+    --era-tint: 7%;
 
     --cube-top: #ffffff;
     --cube-hi-top: #ffffff;
@@ -110,6 +112,7 @@
   --green-hover: #2fd3a3;
   --orange-text: #a85a00;
   --wordmark-from: #07805e;
+  --era-tint: 7%;
 
   --cube-top: #ffffff;
   --cube-hi-top: #ffffff;
@@ -1293,6 +1296,14 @@ td:last-child {
   --era-text: var(--orange-text);
 }
 
+/* Each era also tints the background of its rows, so the two blocks of
+   history read as different from a distance. */
+
+.up-row--pre,
+.up-row--post {
+  background: color-mix(in srgb, var(--era) var(--era-tint), var(--bg));
+}
+
 .up-consensus polygon {
   stroke: var(--bg);
 }
@@ -1393,7 +1404,7 @@ td:last-child {
   padding-bottom: 34px;
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
-  background: rgba(10, 193, 142, 0.08);
+  background: color-mix(in srgb, var(--green) calc(var(--era-tint) * 2.4), var(--bg));
 }
 
 .up-row--split + .up-row {
