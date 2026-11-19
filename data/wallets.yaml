@@ -45,7 +45,7 @@
   sub: wallets.hardware.sub
   items:
   - name: KeepKey
-    url: https://shapeshift.com/keepkey
+    url: https://keepkey.com/
   - name: Ledger
     url: https://www.ledger.com
   - name: Satochip
