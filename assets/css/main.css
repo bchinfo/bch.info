@@ -295,6 +295,71 @@ svg {
   margin-left: auto;
 }
 
+/* A navigation group: a label that opens a small menu of links. */
+
+.nav-group {
+  position: relative;
+}
+
+.nav-group summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 0;
+  color: var(--muted);
+  white-space: nowrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-group summary svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.nav-group summary:hover,
+.nav-group[open] summary {
+  color: var(--fg);
+}
+
+.nav-group[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.nav-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: -18px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  min-width: 230px;
+  padding: 8px 0;
+  border: 1px solid var(--outline);
+  background: var(--bg);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.nav-menu a {
+  padding: 9px 18px;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu a[aria-current] {
+  background: var(--hover);
+  color: var(--fg);
+}
+
 .site-actions {
   display: flex;
   align-items: center;
@@ -341,17 +406,6 @@ svg {
 
 :root[data-theme="light"] .theme-toggle__moon {
   display: block;
-}
-
-.site-nav a {
-  padding: 11px 0;
-  color: var(--muted);
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.site-nav a:hover {
-  color: var(--fg);
 }
 
 /* The framed column. Its inside is 25 grid cells of 48px with 1px lines. */
@@ -739,37 +793,57 @@ svg {
   color: var(--green-text);
 }
 
-/* Footer */
+/* Footer: the whole site as three columns of links, then the languages. */
 
 .site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px 56px;
-  padding: 32px var(--pad) 48px;
   border-top: 1px solid var(--line-strong);
   font-size: 15px;
 }
 
-.site-footer nav {
+.site-footer__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 32px 40px;
+  padding: 40px var(--pad);
+}
+
+.site-footer__groups nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 4px 26px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.site-footer nav a {
-  padding: 11px 0;
+.site-footer h2 {
+  margin-bottom: 10px;
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 1.55;
+  color: var(--dim);
+}
+
+.site-footer a {
+  padding: 5px 0;
   color: var(--muted);
-  white-space: nowrap;
+  text-decoration: none;
 }
 
-.site-footer nav a:hover {
+.site-footer a:hover {
   color: var(--green-text);
 }
 
-.site-footer nav a[aria-current] {
+.site-footer a[aria-current] {
   color: var(--fg);
+}
+
+.site-footer__languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 22px;
+  padding: 18px var(--pad) 28px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
 }
 
 /* 404 */
@@ -1595,13 +1669,25 @@ td:last-child {
     margin-left: auto;
   }
 
+  .site-header__inner {
+    position: relative;
+  }
+
   .site-nav {
     order: 1;
     width: 100%;
-    flex-wrap: nowrap;
-    gap: 24px;
-    overflow-x: auto;
-    scrollbar-width: none;
+    gap: 0 24px;
+  }
+
+  /* On a phone a menu spans the width of the header. */
+  .nav-group {
+    position: static;
+  }
+
+  .nav-menu {
+    top: 100%;
+    left: calc(var(--pad) + 1px);
+    right: calc(var(--pad) + 1px);
   }
 
   /* The wordmark goes on two lines so it can stay large. */

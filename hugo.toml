@@ -87,31 +87,96 @@ disableKinds = ["taxonomy", "term"]
 
 # Menu labels: "t" is a key in lang/<language>/, as "<file>.<key>".
 # "static = true" marks a file that is not under a language prefix.
-[[menus.main]]
-  identifier = "main-wallets"
+# The site navigation: three groups, shown as menus in the header and as
+# columns in the footer. Every page of the site is in one of them.
+[[menus.nav_individuals]]
+  identifier = "nav_individuals-wallets"
   url = "/wallets/"
   weight = 10
-  [menus.main.params]
+  [menus.nav_individuals.params]
     t = "footer.wallets"
-[[menus.main]]
-  identifier = "main-exchanges"
+[[menus.nav_individuals]]
+  identifier = "nav_individuals-exchanges"
   url = "/exchanges/"
   weight = 20
-  [menus.main.params]
+  [menus.nav_individuals.params]
     t = "footer.exchanges"
-[[menus.main]]
-  identifier = "main-developers"
-  url = "/developers/"
+[[menus.nav_individuals]]
+  identifier = "nav_individuals-explorers"
+  url = "/explorers/"
   weight = 30
-  [menus.main.params]
-    t = "footer.developers"
-[[menus.main]]
-  identifier = "main-community"
-  url = "/community/"
-  weight = 40
-  [menus.main.params]
-    t = "footer.community"
+  [menus.nav_individuals.params]
+    t = "footer.explorers"
 
+[[menus.nav_developers]]
+  identifier = "nav_developers-libraries"
+  url = "/developers/"
+  weight = 10
+  [menus.nav_developers.params]
+    t = "footer.libraries"
+[[menus.nav_developers]]
+  identifier = "nav_developers-nodes"
+  url = "/nodes/"
+  weight = 20
+  [menus.nav_developers.params]
+    t = "nodes.title"
+[[menus.nav_developers]]
+  identifier = "nav_developers-upgrade"
+  url = "/upgrade/"
+  weight = 30
+  [menus.nav_developers.params]
+    t = "upgrade.title"
+[[menus.nav_developers]]
+  identifier = "nav_developers-chips"
+  url = "/chips/"
+  weight = 40
+  [menus.nav_developers.params]
+    t = "chips.title"
+[[menus.nav_developers]]
+  identifier = "nav_developers-specs"
+  url = "/specifications/"
+  weight = 50
+  [menus.nav_developers.params]
+    t = "footer.specs"
+[[menus.nav_developers]]
+  identifier = "nav_developers-tools"
+  url = "/tools/"
+  weight = 60
+  [menus.nav_developers.params]
+    t = "footer.tools-tools"
+
+[[menus.nav_resources]]
+  identifier = "nav_resources-history"
+  name = "Upgrade history"
+  url = "/upgrade-history/"
+  weight = 10
+[[menus.nav_resources]]
+  identifier = "nav_resources-community"
+  url = "/community/"
+  weight = 20
+  [menus.nav_resources.params]
+    t = "footer.community"
+[[menus.nav_resources]]
+  identifier = "nav_resources-media"
+  url = "/media/"
+  weight = 30
+  [menus.nav_resources.params]
+    t = "footer.media"
+[[menus.nav_resources]]
+  identifier = "nav_resources-whitepaper"
+  url = "/bitcoin.pdf"
+  weight = 40
+  [menus.nav_resources.params]
+    t = "index.whitepaper"
+    static = true
+[[menus.nav_resources]]
+  identifier = "nav_resources-github"
+  url = "https://github.com/bchinfo/bch.info"
+  weight = 50
+  [menus.nav_resources.params]
+    t = "footer.github"
+
+# The lists on the homepage.
 [[menus.individuals]]
   identifier = "individuals-wallets"
   url = "/wallets/"

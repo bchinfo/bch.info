@@ -1,0 +1,4 @@
+{{- /* Returns a menu entry's label: its translated text, or its name. */ -}}
+{{- $label := .Name -}}
+{{- with .Params.t }}{{ $label = partial "t.html" . }}{{ end -}}
+{{- return $label -}}

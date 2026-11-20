@@ -1,0 +1,5 @@
+{{- /* Returns the navigation groups: a heading and the menu it lists. */ -}}
+{{- return slice
+      (dict "heading" (partial "t.html" "footer.individuals") "menu" site.Menus.nav_individuals)
+      (dict "heading" (partial "t.html" "footer.developers") "menu" site.Menus.nav_developers)
+      (dict "heading" (partial "t.html" "footer.resources") "menu" site.Menus.nav_resources) -}}

@@ -1,9 +1,17 @@
 <footer class="site-footer">
+{{- $here := .RelPermalink }}
+<div class="site-footer__groups">
+{{- range partial "nav-groups.html" . }}
 <nav>
-<a href="{{ "bitcoin.pdf" | relURL }}">{{ partial "t.html" "index.whitepaper" }}</a>
-<a href="{{ site.Params.github }}">{{ partial "t.html" "footer.github" }}</a>
+<h2>{{ .heading }}</h2>
+{{- range .menu }}
+{{- $href := partial "href.html" . }}
+<a href="{{ $href }}"{{ if eq $href $here }} aria-current="page"{{ end }}>{{ partial "menu-label.html" . }}</a>
+{{- end }}
 </nav>
-<nav>
+{{- end }}
+</div>
+<nav class="site-footer__languages">
 {{- range .AllTranslations }}
 <a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.Label }}</a>
 {{- end }}
