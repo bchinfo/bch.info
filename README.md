@@ -50,6 +50,10 @@ Edit the matching file in `/data/` and open a pull request. No template needs to
 
 Templates read their text from `/lang/` with the `t.html` partial, for example `{{ partial "t.html" "index.get-started" }}` for the `get-started` key in `index.yaml`. A missing translation falls back to English.
 
+##### News
+
+The news posts are in `data/news.json`, one entry per post with its `date`, `text` and `url`. The homepage shows the latest five and `/news/` shows them all, 25 per page.
+
 ##### Node releases
 
 The homepage lists the latest release of each node. They are read from the projects' release feeds when the site is built. The feeds are listed under `params.releases` in `hugo.toml`.

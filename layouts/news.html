@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+{{- $pager := .Paginate .Pages.ByDate.Reverse 25 }}
+<section class="section">
+{{- range $pager.Pages }}
+{{ partial "post-row.html" . }}
+{{- else }}
+<p class="padded muted">No news yet.</p>
+{{- end }}
+{{- if gt $pager.TotalPages 1 }}
+<nav class="pager" aria-label="Pages">
+{{- with $pager.Prev }}
+<a class="btn btn--outline btn--small" href="{{ .URL }}">← Newer</a>
+{{- else }}
+<span></span>
+{{- end }}
+<span class="pager__count">Page {{ $pager.PageNumber }} of {{ $pager.TotalPages }}</span>
+{{- with $pager.Next }}
+<a class="btn btn--outline btn--small" href="{{ .URL }}">Older →</a>
+{{- else }}
+<span></span>
+{{- end }}
+</nav>
+{{- end }}
+</section>
+{{ end }}

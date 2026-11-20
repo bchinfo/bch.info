@@ -92,9 +92,29 @@
 {{- end }}
 </section>
 
+{{- with site.GetPage "/news" }}
+{{- with first 5 .Pages.ByDate.Reverse }}
+<div class="hatch" aria-hidden="true"></div>
+<section class="section" id="news">
+<div class="section__head">
+<div class="section__title">
+<span class="label"><b>04</b> / News</span>
+<h2>News</h2>
+</div>
+<div class="btn-row">
+<a class="btn btn--outline btn--small" href="{{ (site.GetPage "/news").RelPermalink }}">All news →</a>
+</div>
+</div>
+{{- range . }}
+{{ partial "post-row.html" . }}
+{{- end }}
+</section>
+{{- end }}
+{{- end }}
+
 <div class="hatch" aria-hidden="true"></div>
 <section class="section ecosystem">
-<span class="label"><b>04</b> / {{ partial "t.html" "footer.resources" }}</span>
+<span class="label"><b>05</b> / {{ partial "t.html" "footer.resources" }}</span>
 <div class="link-list">{{ partial "menu-links.html" site.Menus.resources }}</div>
 </section>
 {{ end }}

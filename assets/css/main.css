@@ -726,6 +726,70 @@ svg {
   color: var(--green-text);
 }
 
+/* News posts */
+
+.post-row {
+  display: grid;
+  grid-template-columns: 136px minmax(0, 1fr) auto;
+  column-gap: 40px;
+  align-items: baseline;
+  padding: 24px var(--pad);
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.post-row:hover {
+  color: var(--fg);
+  background: var(--hover);
+}
+
+.post-row__date {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--dim);
+  white-space: nowrap;
+}
+
+.post-row__text {
+  max-width: 760px;
+  font-size: 19px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+
+.post-row__go {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--green-text);
+}
+
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px var(--pad);
+  border-top: 1px solid var(--line);
+}
+
+.pager__count {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--dim);
+}
+
+@media (max-width: 640px) {
+  .post-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 6px;
+  }
+
+  .post-row__date {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Get started */
 
 .stairs {

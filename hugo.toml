@@ -146,6 +146,11 @@ disableKinds = ["taxonomy", "term"]
     t = "footer.tools-tools"
 
 [[menus.nav_resources]]
+  identifier = "nav_resources-news"
+  name = "News"
+  url = "/news/"
+  weight = 5
+[[menus.nav_resources]]
   identifier = "nav_resources-history"
   name = "Upgrade history"
   url = "/upgrade-history/"

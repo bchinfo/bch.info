@@ -1,0 +1,12 @@
+{{- /* Turns each post in data/news.json into an entry of the news section, so
+       the news page can be paginated. The entries have no page of their own. */ -}}
+{{- range $i, $post := hugo.Data.news }}
+{{- $.AddPage (dict
+      "kind" "page"
+      "path" (printf "%s-%d" $post.date $i)
+      "title" $post.text
+      "dates" (dict "date" (time.AsTime $post.date))
+      "params" (dict "url" $post.url)
+      "build" (dict "render" "never" "list" "always")
+      "sites" (dict "matrix" (dict "languages" (slice "**")))) }}
+{{- end }}
