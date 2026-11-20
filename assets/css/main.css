@@ -829,13 +829,6 @@ svg {
 
 /* Link lists */
 
-.ecosystem {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding: clamp(40px, 5vw, 72px) var(--pad);
-}
-
 .link-list {
   display: flex;
   flex-direction: column;

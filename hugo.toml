@@ -233,39 +233,3 @@ disableKinds = ["taxonomy", "term"]
   [menus.developers.params]
     t = "chips.title"
 
-[[menus.resources]]
-  identifier = "resources-community"
-  url = "/community/"
-  weight = 10
-  [menus.resources.params]
-    t = "footer.community"
-[[menus.resources]]
-  identifier = "resources-media"
-  url = "/media/"
-  weight = 20
-  [menus.resources.params]
-    t = "footer.media"
-[[menus.resources]]
-  identifier = "resources-tools"
-  url = "/tools/"
-  weight = 30
-  [menus.resources.params]
-    t = "footer.tools-tools"
-[[menus.resources]]
-  identifier = "resources-specs"
-  url = "/specifications/"
-  weight = 40
-  [menus.resources.params]
-    t = "footer.specs"
-[[menus.resources]]
-  identifier = "resources-upgrade-history"
-  name = "Bitcoin Cash Upgrade History"
-  url = "/upgrade-history/"
-  weight = 45
-[[menus.resources]]
-  identifier = "resources-github"
-  url = "https://github.com/bchinfo/bch.info"
-  weight = 50
-  [menus.resources.params]
-    t = "footer.github"
-
