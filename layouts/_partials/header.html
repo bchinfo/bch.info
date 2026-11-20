@@ -1,6 +1,6 @@
 <header class="site-header">
 <div class="site-header__inner">
-<a class="brand" href="{{ "" | relLangURL }}">{{ partial "logo.html" . }}</a>
+<a class="brand" href="{{ "" | relLangURL }}">{{ partial "logo.html" (dict "file" "bitcoin-cash-logo-horizontal.svg") }}</a>
 {{- $here := .RelPermalink }}
 <nav class="site-nav">
 {{- range partial "nav-groups.html" . }}

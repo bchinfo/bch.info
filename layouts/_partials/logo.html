@@ -1,7 +1,11 @@
 {{- /* Returns the official horizontal logo as inline SVG, so that "Bitcoin" can
-       take the page's text colour in both themes. */ -}}
-{{- $logo := os.ReadFile "static/img/bitcoin-cash-logo-horizontal-2020.svg" -}}
+       take the page's text colour in both themes. Pass (dict "file" "...") to use
+       another logo file from static/img/; the 2020 logo is the default. */ -}}
+{{- $file := "bitcoin-cash-logo-horizontal-2020.svg" -}}
+{{- if reflect.IsMap . }}{{ with .file }}{{ $file = . }}{{ end }}{{ end -}}
+{{- $logo := os.ReadFile (printf "static/img/%s" $file) -}}
 {{- $logo = replace $logo "fill:#4d4d4d" "fill:currentColor" -}}
 {{- $logo = replace $logo " id=\"Layer_1\"" "" -}}
+{{- $logo = replaceRE `<title>[^<]*</title>` "" $logo -}}
 {{- $logo = replace $logo "<svg " (printf "<svg role=\"img\" aria-label=%q " site.Title) -}}
 {{- return ($logo | safeHTML) -}}
