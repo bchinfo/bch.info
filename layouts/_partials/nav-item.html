@@ -1,0 +1,14 @@
+{{- /* One navigation link. "item" is an entry of data/navigation.yaml, "here" the
+       current page's address. An item without a url is shown greyed out. */ -}}
+{{- with .item }}
+{{- if .url }}
+{{- $href := .url }}
+{{- if hasPrefix $href "http" }}
+{{- else if .static }}{{ $href = relURL (strings.TrimPrefix "/" $href) }}
+{{- else }}{{ $href = relLangURL (strings.TrimPrefix "/" $href) }}
+{{- end }}
+<a href="{{ $href }}"{{ if eq $href $.here }} aria-current="page"{{ end }}>{{ .name }}</a>
+{{- else }}
+<span class="nav-soon" aria-disabled="true" title="Coming soon">{{ .name }}</span>
+{{- end }}
+{{- end }}

@@ -4,9 +4,8 @@
 {{- range partial "nav-groups.html" . }}
 <nav>
 <h2>{{ .heading }}</h2>
-{{- range .menu }}
-{{- $href := partial "href.html" . }}
-<a href="{{ $href }}"{{ if eq $href $here }} aria-current="page"{{ end }}>{{ partial "menu-label.html" . }}</a>
+{{- range .items }}
+{{ partial "nav-item.html" (dict "item" . "here" $here) }}
 {{- end }}
 </nav>
 {{- end }}

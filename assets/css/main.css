@@ -291,7 +291,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 28px;
+  gap: 4px 22px;
   margin-left: auto;
 }
 
@@ -352,6 +352,19 @@ svg {
   color: var(--muted);
   text-decoration: none;
   white-space: nowrap;
+}
+
+/* A page we don't have yet: greyed out and not clickable. */
+
+.nav-menu .nav-soon {
+  padding: 9px 18px;
+  white-space: nowrap;
+}
+
+.nav-soon {
+  color: var(--faint);
+  opacity: 0.6;
+  cursor: default;
 }
 
 .nav-menu a:hover,
@@ -869,8 +882,10 @@ svg {
 
 .site-footer__groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-  gap: 32px 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
+  gap: 32px 24px;
+  font-size: 14px;
+  line-height: 1.4;
   padding: 40px var(--pad);
 }
 
@@ -888,6 +903,10 @@ svg {
   letter-spacing: 0;
   line-height: 1.55;
   color: var(--dim);
+}
+
+.site-footer .nav-soon {
+  padding: 5px 0;
 }
 
 .site-footer a {

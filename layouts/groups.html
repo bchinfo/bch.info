@@ -2,7 +2,7 @@
 {{ partial "page-head.html" . }}
 <section class="section cells">
 {{- range index hugo.Data .Params.data }}
-<div class="cell">
+<div class="cell" id="{{ index (split .title ".") 1 }}">
 <div>
 <h2 class="cell__title">{{ partial "t.html" .title }}</h2>
 {{- with .sub }}

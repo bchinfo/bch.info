@@ -9,9 +9,8 @@
 <details class="nav-group">
 <summary>{{ .heading }}<svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary>
 <div class="nav-menu">
-{{- range .menu }}
-{{- $href := partial "href.html" . }}
-<a href="{{ $href }}"{{ if eq $href $here }} aria-current="page"{{ end }}>{{ partial "menu-label.html" . }}</a>
+{{- range .items }}
+{{ partial "nav-item.html" (dict "item" . "here" $here) }}
 {{- end }}
 </div>
 </details>

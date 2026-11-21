@@ -34,7 +34,8 @@ To build the site into `public/`, run `hugo`.
 
 ##### Structure
 
-- `hugo.toml` holds the settings, the languages and the menus.
+- `hugo.toml` holds the settings and the languages.
+- `/data/navigation.yaml` holds the header menus and footer columns. An item without a `url` is a page we don't have yet and shows greyed out.
 - `/content/` holds one file per page. It names the page's template and where its title comes from.
 - `/layouts/` holds the page templates. Shared pieces are in `/layouts/_partials/`.
 - `/assets/` holds the styles (`css/main.css`, plain CSS with the colours defined as variables at the top) and the scripts for the tools and the CHIPs page.

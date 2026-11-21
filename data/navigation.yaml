@@ -1,0 +1,74 @@
+# The site navigation, shown as menus in the header and as columns in the footer.
+# An item without a "url" is a page we don't have yet: it is shown greyed out.
+# "static: true" marks a file that is not under a language prefix.
+- heading: Get & Use
+  items:
+  - name: Choose a Wallet
+    url: /wallets/
+  - name: Send & Receive
+  - name: Buy or Sell BCH
+    url: /exchanges/
+  - name: Spend Bitcoin Cash
+  - name: Explore DeFi
+  - name: Explore Tokens
+- heading: Learn
+  items:
+  - name: What is Bitcoin Cash?
+  - name: Why is Bitcoin Cash Different?
+  - name: Satoshi's Mission
+  - name: Full Upgrade Timeline History
+    url: /upgrade-history/
+  - name: Full Technology Stack
+- heading: Ecosystem
+  items:
+  - name: Nodes
+    url: /nodes/
+  - name: Block Explorers
+    url: /explorers/
+  - name: Exchanges
+    url: /exchanges/
+  - name: All Projects
+  - name: Payments & Commerce
+  - name: DeFi & CashTokens
+  - name: Tools & Infrastructure
+  - name: Games & Other Apps
+- heading: Developers
+  items:
+  - name: Getting Started
+  - name: Libraries & Documentation
+    url: /developers/
+  - name: Smart Contracts
+    url: /developers/#smart-contracts
+  - name: Node Software
+    url: /nodes/
+  - name: Protocol & CHIPs
+    url: /chips/
+- heading: Community
+  items:
+  - name: All community links
+    url: /community/
+  - name: Organizations & Initiatives
+  - name: Podcasts & Media
+  - name: Funding & Hackathons
+  - name: Social Channels & Meetups
+- heading: Tools & Resources
+  items:
+  - name: Address Converter
+    url: /tools/cashaddr/
+  - name: Transaction Broadcaster
+    url: /tools/broadcast/
+  - name: All Tools
+    url: /tools/
+  - name: Media Kit
+    url: /media/
+  - name: Whitepaper
+    url: /bitcoin.pdf
+    static: true
+  - name: Specifications
+    url: /specifications/
+  - name: Upgrade Your Node
+    url: /upgrade/
+  - name: News
+    url: /news/
+  - name: GitHub
+    url: https://github.com/bchinfo/bch.info
