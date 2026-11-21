@@ -10,9 +10,7 @@
 </nav>
 {{- end }}
 </div>
-<nav class="site-footer__languages">
-{{- range .AllTranslations }}
-<a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}"{{ if eq .Language.Lang site.Language.Lang }} aria-current="true"{{ end }}>{{ .Language.Label }}</a>
-{{- end }}
-</nav>
+<div class="site-footer__languages">
+{{ partial "lang-picker.html" (dict "page" . "up" true) }}
+</div>
 </footer>

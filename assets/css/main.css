@@ -266,7 +266,7 @@ svg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 4px 32px;
+  gap: 4px 24px;
   max-width: 1226px;
   min-height: 64px;
   margin: 0 auto;
@@ -293,7 +293,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 22px;
+  gap: 4px 16px;
   margin-left: auto;
 }
 
@@ -306,7 +306,7 @@ svg {
 .nav-group summary {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 5px;
   padding: 11px 0;
   color: var(--muted);
   white-space: nowrap;
@@ -448,6 +448,49 @@ svg {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* Language picker: a globe and the current language's code, opening a list
+   of the languages. In the header it opens to the left, in the footer upwards. */
+
+.lang-picker summary {
+  gap: 5px;
+  padding: 10px 2px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.lang-picker__globe {
+  stroke-width: 1.4;
+}
+
+.lang-picker .nav-menu {
+  left: auto;
+  right: -8px;
+  min-width: 190px;
+}
+
+.lang-picker .nav-menu a {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.lang-picker__code {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--dim);
+}
+
+.lang-picker--up .nav-menu {
+  top: auto;
+  bottom: calc(100% + 6px);
+  left: -10px;
+  right: auto;
+}
+
+.site-footer .lang-picker .nav-menu a {
+  padding: 8px 18px;
 }
 
 /* Menu button and panel, used below desktop width. */
@@ -1080,9 +1123,7 @@ svg {
 
 .site-footer__languages {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2px 22px;
-  padding: 18px var(--pad) 28px;
+  padding: 14px var(--pad) 22px;
   border-top: 1px solid var(--line);
   font-size: 14px;
 }
@@ -1948,14 +1989,25 @@ td:last-child {
   }
 }
 
-@media (max-width: 380px) {
-  /* On the narrowest phones the menu button shows only its icon. */
+@media (max-width: 480px) {
+  /* On phones the menu button shows only its icon. */
   .menu-button span {
     display: none;
   }
 
   .menu-button {
     padding: 0 11px;
+  }
+}
+
+@media (max-width: 389px) {
+  /* The narrowest phones: a smaller logo, and the language picker shows only its globe. */
+  .brand svg {
+    height: 16px;
+  }
+
+  .site-header .lang-picker summary span {
+    display: none;
   }
 }
 

@@ -17,6 +17,7 @@
 {{- end }}
 </nav>
 <div class="site-actions">
+{{ partial "lang-picker.html" (dict "page" .) }}
 {{- /* Shown by assets/js/theme.js, which also makes it work. */}}
 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme" hidden>
 <svg class="theme-toggle__moon" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M16.5 11.6A6.75 6.75 0 0 1 8.4 3.5a6.75 6.75 0 1 0 8.1 8.1z"/></svg>

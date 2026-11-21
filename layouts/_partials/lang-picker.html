@@ -1,0 +1,12 @@
+{{- /* A small menu to switch the page to another language. "page" is the current
+       page; "up" opens the menu upwards (for the footer). Uses the same open and
+       close behaviour as the header menus (assets/js/nav.js). */ -}}
+{{- $page := .page }}
+<details class="nav-group lang-picker{{ if .up }} lang-picker--up{{ end }}">
+<summary aria-label="Language: {{ site.Language.Label }}"><svg class="lang-picker__globe" aria-hidden="true" viewBox="0 0 20 20" width="16" height="16"><circle cx="10" cy="10" r="7.25"/><path d="M2.75 10h14.5M10 2.75c2 2 3 4.5 3 7.25s-1 5.25-3 7.25c-2-2-3-4.5-3-7.25s1-5.25 3-7.25z"/></svg><span>{{ upper site.Language.Lang }}</span><svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary>
+<div class="nav-menu">
+{{- range $page.AllTranslations }}
+<a href="{{ .RelPermalink }}" lang="{{ .Language.Lang }}" hreflang="{{ .Language.Lang }}"{{ if eq .Language.Lang site.Language.Lang }} aria-current="true"{{ end }}><span>{{ .Language.Label }}</span><span class="lang-picker__code">{{ upper .Language.Lang }}</span></a>
+{{- end }}
+</div>
+</details>
