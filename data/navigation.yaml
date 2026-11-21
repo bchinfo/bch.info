@@ -30,7 +30,6 @@
     url: /exchanges/
   - name: Payments & Commerce
   - name: DeFi & CashTokens
-  - name: Tools & Infrastructure
   - name: Games & Other Apps
 - heading: Developers
   items:
