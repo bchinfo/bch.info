@@ -256,6 +256,8 @@ svg {
 /* Header */
 
 .site-header {
+  position: relative;
+  z-index: 30;
   border-bottom: 1px solid var(--line);
 }
 
@@ -419,6 +421,159 @@ svg {
 
 :root[data-theme="light"] .theme-toggle__moon {
   display: block;
+}
+
+/* A link to a file or another site: a small arrow after the label. */
+
+.nav-ext {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-ext svg {
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Menu button and panel, used below desktop width. */
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--outline);
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--fg);
+  list-style: none;
+  cursor: pointer;
+}
+
+.menu-button::-webkit-details-marker,
+.menu-panel__group summary::-webkit-details-marker {
+  display: none;
+}
+
+.menu-button svg,
+.menu-panel__group summary svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.menu-button__close,
+.menu-toggle[open] .menu-button__open {
+  display: none;
+}
+
+.menu-toggle[open] .menu-button__close {
+  display: block;
+}
+
+.menu-toggle[open] .menu-button {
+  border-color: var(--fg);
+}
+
+/* The panel drops down under the header, across the framed column. */
+
+.menu-panel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--bg);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.menu-panel__inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 32px;
+  max-width: 1226px;
+  margin: 0 auto;
+  padding: 28px calc(var(--pad) + 1px) 36px;
+}
+
+.menu-panel__group summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--dim);
+  list-style: none;
+}
+
+.menu-panel__group summary svg {
+  display: none;
+}
+
+.menu-panel__group[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.menu-panel__links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu-panel__links a,
+.menu-panel__links .nav-soon {
+  padding: 6px 0;
+  font-size: 15px;
+}
+
+.menu-panel__links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.menu-panel__links a:hover,
+.menu-panel__links a[aria-current] {
+  color: var(--fg);
+}
+
+@media (max-width: 1260px) {
+  .site-nav {
+    display: none;
+  }
+
+  .site-actions {
+    margin-left: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 /* The framed column. Its inside is 25 grid cells of 48px with 1px lines. */
@@ -1736,44 +1891,48 @@ td:last-child {
 }
 
 @media (max-width: 640px) {
-  /* Logo and buttons on the first row, the links on the second. */
-  .site-header__inner {
-    column-gap: 12px;
-    padding-top: 10px;
-    padding-bottom: 4px;
-  }
-
   .brand svg {
     height: 20px;
   }
 
-  .site-actions .btn {
-    padding: 9px 14px;
+  .site-header__inner {
+    gap: 4px 12px;
   }
 
   .site-actions {
-    margin-left: auto;
+    gap: 4px;
   }
 
-  .site-header__inner {
-    position: relative;
+  /* The call to action is left to the page itself on phones. */
+  .site-actions__cta {
+    display: none;
   }
 
-  .site-nav {
-    order: 1;
-    width: 100%;
-    gap: 0 24px;
+  /* Sections in the menu panel open one at a time, as an accordion. */
+  .menu-panel__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 6px var(--pad) 18px;
   }
 
-  /* On a phone a menu spans the width of the header. */
-  .nav-group {
-    position: static;
+  .menu-panel__group {
+    border-bottom: 1px solid var(--line);
   }
 
-  .nav-menu {
-    top: 100%;
-    left: calc(var(--pad) + 1px);
-    right: calc(var(--pad) + 1px);
+  .menu-panel__group summary {
+    padding: 15px 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    color: var(--fg);
+    cursor: pointer;
+  }
+
+  .menu-panel__group summary svg {
+    display: block;
+  }
+
+  .menu-panel__links {
+    padding: 0 0 14px;
   }
 
   /* The wordmark goes on two lines so it can stay large. */
@@ -1786,6 +1945,17 @@ td:last-child {
 
   .hero__body {
     gap: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  /* On the narrowest phones the menu button shows only its icon. */
+  .menu-button span {
+    display: none;
+  }
+
+  .menu-button {
+    padding: 0 11px;
   }
 }
 

@@ -21,13 +21,13 @@
   - name: Full Technology Stack
 - heading: Ecosystem
   items:
+  - name: All Projects
   - name: Nodes
     url: /nodes/
   - name: Block Explorers
     url: /explorers/
   - name: Exchanges
     url: /exchanges/
-  - name: All Projects
   - name: Payments & Commerce
   - name: DeFi & CashTokens
   - name: Tools & Infrastructure
@@ -53,12 +53,12 @@
   - name: Social Channels & Meetups
 - heading: Tools & Resources
   items:
+  - name: All Tools
+    url: /tools/
   - name: Address Converter
     url: /tools/cashaddr/
   - name: Transaction Broadcaster
     url: /tools/broadcast/
-  - name: All Tools
-    url: /tools/
   - name: Media Kit
     url: /media/
   - name: Whitepaper
