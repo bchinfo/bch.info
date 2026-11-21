@@ -1,6 +1,6 @@
 {{- /* One post in a news list: date, text, and a link out to the post. */ -}}
 <a class="post-row" href="{{ .Params.url }}" target="_blank" rel="noopener">
 <time class="post-row__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_medium" }}</time>
-<span class="post-row__text">{{ .Title }}</span>
+<span class="post-row__text" title="{{ .Title }}">{{ .Title }}</span>
 <span class="post-row__go" aria-hidden="true">↗</span>
 </a>

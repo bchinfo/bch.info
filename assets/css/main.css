@@ -730,10 +730,10 @@ svg {
 
 .post-row {
   display: grid;
-  grid-template-columns: 136px minmax(0, 1fr) auto;
-  column-gap: 40px;
+  grid-template-columns: 112px minmax(0, 1fr) auto;
+  column-gap: 32px;
   align-items: baseline;
-  padding: 24px var(--pad);
+  padding: 13px var(--pad);
   border-top: 1px solid var(--line);
   text-decoration: none;
 }
@@ -750,12 +750,14 @@ svg {
   white-space: nowrap;
 }
 
+/* A post shows on one line, cut off with an ellipsis; the full post is on X. */
+
 .post-row__text {
-  max-width: 760px;
-  font-size: 19px;
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-  overflow-wrap: anywhere;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .post-row__go {
@@ -782,7 +784,15 @@ svg {
 @media (max-width: 640px) {
   .post-row {
     grid-template-columns: minmax(0, 1fr) auto;
-    row-gap: 6px;
+    row-gap: 2px;
+  }
+
+  /* On a phone a post may take two lines before it is cut off. */
+  .post-row__text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    white-space: normal;
   }
 
   .post-row__date {
