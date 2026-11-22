@@ -58,8 +58,6 @@
     url: /tools/
   - name: Address Converter
     url: /tools/cashaddr/
-  - name: Transaction Broadcaster
-    url: /tools/broadcast/
   - name: Media Kit
     url: /media/
   - name: Whitepaper

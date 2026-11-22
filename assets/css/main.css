@@ -1671,11 +1671,6 @@ td:last-child {
   overflow-wrap: anywhere;
 }
 
-.form-success {
-  color: var(--green-text);
-  overflow-wrap: anywhere;
-}
-
 .copy {
   display: flex;
   align-items: center;

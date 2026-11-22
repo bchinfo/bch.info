@@ -20,6 +20,17 @@
   to = "/:splat"
   status = 301
 
+# The transaction broadcaster was removed: send its old pages to the tools page.
+[[redirects]]
+  from = "/:lang/tools/broadcast/*"
+  to = "/:lang/tools/"
+  status = 301
+
+[[redirects]]
+  from = "/:lang/tools/broadcast"
+  to = "/:lang/tools/"
+  status = 301
+
 # Send visitors to the homepage in their browser's language, or to the English
 # one.
 

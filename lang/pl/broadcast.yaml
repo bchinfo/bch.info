@@ -1,6 +1,0 @@
----
-broadcast: Rozgłoś
-is-not-valid: Transakcja nieprawidłowa
-error: Nie udało się rozgłosić transakcji
-success: "Transakcja wysłana! ID transakcji to:"
-paste: Wklej transakcję
