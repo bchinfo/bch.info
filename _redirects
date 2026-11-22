@@ -26,4 +26,8 @@
 /wallets                     /_/wallets  301! 
 /tools/                      /_/tools/ 301! 
 /tools/cashaddr              /_/tools/cashaddr 301! 
-/tools/broadcast             /_/tools/broadcast 301! 
+/tools/broadcast             /_/tools/ 301! 
+
+# The transaction broadcaster was removed: send its old pages to the tools page.
+
+/:lang/tools/broadcast       /:lang/tools/ 301!

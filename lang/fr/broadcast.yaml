@@ -1,6 +1,0 @@
----
-broadcast: Envoyer
-is-not-valid: La transaction n'est pas valide
-error: Impossible de transmettre
-success: "Transaction envoyée ! Son ID est :"
-paste: Coller une transaction
