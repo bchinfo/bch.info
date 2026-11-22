@@ -3,7 +3,7 @@
 # its text is shown without a link.
 rows:
   - key: kings
-    url: ""
+    url: /upgrade-history/
   - key: transact
     url: ""
   - key: middlemen
