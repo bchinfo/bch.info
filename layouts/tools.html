@@ -14,7 +14,7 @@
 <div><a class="btn btn--primary" href="{{ . | relLangURL }}">Try now</a></div>
 {{- end }}
 {{- with .url }}
-<div><a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener">Try now ↗</a></div>
+<div><a class="btn btn--primary" href="{{ . }}" target="_blank" rel="noopener">Try now{{ partial "ext-icon.html" . }}</a></div>
 {{- end }}
 </div>
 {{- end }}

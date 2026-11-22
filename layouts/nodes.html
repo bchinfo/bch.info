@@ -4,7 +4,7 @@
 <div class="mission__text">
 <h2>{{ partial "t.html" "nodes.recommended.title" }}</h2>
 <p class="muted">{{ partial "t.html" "nodes.recommended.bchn" | safeHTML }}</p>
-<div><a class="btn btn--primary" href="https://bitcoincashnode.org" target="_blank" rel="noopener">{{ partial "t.html" "nodes.recommended.btn" }}</a></div>
+<div><a class="btn btn--primary" href="https://bitcoincashnode.org" target="_blank" rel="noopener">{{ partial "t.html" "nodes.recommended.btn" }}{{ partial "ext-icon.html" . }}</a></div>
 </div>
 <div class="mission__art" aria-hidden="true">{{ partial "chain.html" . }}</div>
 </section>
