@@ -1025,14 +1025,10 @@ a.box__row:hover {
   }
 }
 
-/* About page: one part per section, each a target of a link in the homepage box. */
+/* About page: one collapsible part per section, each a target of a link in
+   the homepage box. */
 
 .about__part {
-  display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
-  column-gap: 24px;
-  align-items: baseline;
-  padding: clamp(40px, 5vw, 64px) var(--pad);
   border-top: 1px solid var(--line);
   scroll-margin-top: 12px;
 }
@@ -1041,8 +1037,44 @@ a.box__row:hover {
   border-top: 0;
 }
 
-.about__part:target {
+.about__part summary {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  column-gap: 24px;
+  align-items: baseline;
+  padding: clamp(24px, 3vw, 36px) var(--pad);
+  list-style: none;
+  cursor: pointer;
+}
+
+.about__part summary::-webkit-details-marker {
+  display: none;
+}
+
+.about__part summary:hover {
   background: var(--hover);
+}
+
+.about__part summary h2 {
+  font-size: clamp(24px, 2.8vw, 36px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.about__part summary .up-pm {
+  align-self: center;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+}
+
+.about__part summary .up-pm::before,
+.about__part summary .up-pm::after {
+  top: 8.25px;
+}
+
+.about__part[open] summary .up-pm::after {
+  display: none;
 }
 
 .about__body {
@@ -1051,6 +1083,7 @@ a.box__row:hover {
   align-items: flex-start;
   gap: 18px;
   min-width: 0;
+  padding: 0 var(--pad) clamp(32px, 4vw, 48px) calc(var(--pad) + 72px);
 }
 
 .about__links {
@@ -1080,9 +1113,17 @@ a.box__row:hover {
 }
 
 @media (max-width: 640px) {
-  .about__part {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 8px;
+  .about__part summary {
+    grid-template-columns: minmax(0, 1fr) auto;
+    row-gap: 6px;
+  }
+
+  .about__part summary .label {
+    grid-column: 1 / -1;
+  }
+
+  .about__body {
+    padding-left: var(--pad);
   }
 }
 

@@ -2,10 +2,15 @@
 {{ partial "page-head.html" . }}
 <section class="section about">
 {{- range $i, $part := hugo.Data.about }}
-<article class="about__part" id="{{ $part.id }}">
+{{- /* Each section opens and closes on its heading. assets/js/about.js opens
+       the one a link points at. */}}
+<details class="about__part" id="{{ $part.id }}">
+<summary>
 <span class="label"><b>{{ printf "%02d" (add $i 1) }}</b></span>
-<div class="about__body">
 <h2>{{ $part.title }}</h2>
+<span class="up-pm" aria-hidden="true"></span>
+</summary>
+<div class="about__body">
 {{- with $part.body }}
 <div class="prose">{{ . | safeHTML }}</div>
 {{- else }}
@@ -21,7 +26,8 @@
 </p>
 {{- end }}
 </div>
-</article>
+</details>
 {{- end }}
 </section>
 {{ end }}
+{{ define "scripts" }}{{ partial "script.html" "js/about.js" }}{{ end }}
