@@ -1,0 +1,103 @@
+{{- /* The search index for one language: every page, and every item listed on
+       a page (wallets, exchanges, nodes, upgrades and so on).
+
+       Each entry has:
+         t  the title, shown in the results
+         x  more text to search in, shown under the title (optional)
+         k  more words to search in, not shown (optional)
+         s  the name of the page the item is listed on (optional)
+         u  where the result leads
+         e  true when that is another site */ -}}
+{{- $entries := slice }}
+
+{{- /* Other names a page goes by in the navigation. */}}
+{{- $navNames := dict }}
+{{- range hugo.Data.navigation }}
+{{- range .items }}
+{{- if and .url (not .static) (not (hasPrefix .url "http")) }}
+{{- $navNames = merge $navNames (dict .url (printf "%s %s" (index $navNames .url | default "") .name)) }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- range where site.Pages "Kind" "in" (slice "page" "section") }}
+{{- if or (ne .Section "news") (eq .Kind "section") }}
+{{- $page := . }}
+{{- $title := partial "title.html" . }}
+{{- $url := .RelPermalink }}
+{{- $sub := .Params.sub | default "" }}
+{{- with .Params.subKey }}{{ $sub = partial "t.html" . | plainify }}{{ end }}
+{{- if not $sub }}{{ $sub = .Plain | truncate 300 }}{{ end }}
+{{- $entries = $entries | append (dict "t" $title "x" $sub "k" (index $navNames (printf "%s/" .Path) | default "" | strings.TrimSpace) "u" $url) }}
+
+{{- /* The links listed on the page, in groups or as one list. */}}
+{{- with .Params.data }}
+{{- range index hugo.Data . }}
+{{- if .items }}
+{{- $group := partial "t.html" .title }}
+{{- $anchor := "" }}
+{{- if eq $page.Layout "groups" }}{{ $anchor = printf "#%s" (index (split .title ".") 1) }}{{ end }}
+{{- range .items }}
+{{- $entries = $entries | append (dict "t" .name "x" $group "s" $title "u" (printf "%s%s" $url $anchor)) }}
+{{- end }}
+{{- else }}
+{{- $entries = $entries | append (dict "t" .name "s" $title "u" $url) }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- if eq .Layout "exchanges" }}
+{{- range slice "Kraken" "Coinbase" }}
+{{- $entries = $entries | append (dict "t" . "s" $title "u" $url) }}
+{{- end }}
+{{- range hugo.Data.exchanges.exchanges }}
+{{- $entries = $entries | append (dict "t" .name "s" $title "u" $url) }}
+{{- end }}
+{{- end }}
+
+{{- if eq .Layout "chips" }}
+{{- range hugo.Data.chips.chips }}
+{{- $tags := "" }}
+{{- if reflect.IsSlice .tags }}{{ $tags = delimit .tags ", " }}{{ end }}
+{{- $entries = $entries | append (dict "t" .title "x" $tags "s" $title "u" $url) }}
+{{- end }}
+{{- end }}
+
+{{- if eq .Layout "upgrade-history" }}
+{{- range hugo.Data.upgrade_history }}
+{{- $text := printf "%s. %s %s" .date (.summary | default "") (.body | default "" | plainify | htmlUnescape) }}
+{{- $entries = $entries | append (dict "t" .title "x" (strings.TrimSpace $text) "s" $title "u" (printf "%s#%s" $url (.title | anchorize))) }}
+{{- end }}
+{{- end }}
+
+{{- if eq .Layout "about" }}
+{{- range hugo.Data.about }}
+{{- $entries = $entries | append (dict "t" .title "x" (.body | default "" | plainify | htmlUnescape) "s" $title "u" (printf "%s#%s" $url .id)) }}
+{{- end }}
+{{- end }}
+
+{{- end }}
+{{- end }}
+
+{{- /* Files and other sites linked from the navigation. */}}
+{{- $seen := slice }}
+{{- range hugo.Data.navigation }}
+{{- range .items }}
+{{- if and .url (or .static (hasPrefix .url "http")) (not (in $seen .url)) }}
+{{- $seen = $seen | append .url }}
+{{- $href := .url }}
+{{- if .static }}{{ $href = relURL (strings.TrimPrefix "/" .url) }}{{ end }}
+{{- $entries = $entries | append (dict "t" .name "u" $href "e" true) }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+{{- /* News posts lead to the post itself. */}}
+{{- with site.GetPage "/news" }}
+{{- $title := partial "title.html" . }}
+{{- range .Pages.ByDate.Reverse }}
+{{- $entries = $entries | append (dict "t" .Title "x" (.Date | time.Format ":date_medium") "s" $title "u" .Params.url "e" true) }}
+{{- end }}
+{{- end }}
+
+{{- $entries | jsonify }}

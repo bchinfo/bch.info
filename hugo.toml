@@ -64,8 +64,15 @@ disableKinds = ["taxonomy", "term"]
 [security]
   allowContent = ["! ^text/org$"]
 
+# The search index: one JSON file per language (for example /en/search.json),
+# written by layouts/home.searchindex.json and read by assets/js/search.js.
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search"
+  notAlternative = true
+
 [outputs]
-  home = ["html"]
+  home = ["html", "searchindex"]
   section = ["html"]
 
 # The text of the site is read from the translations in lang/ (managed through

@@ -17,6 +17,11 @@
 {{- end }}
 </nav>
 <div class="site-actions">
+{{- /* Shown by assets/js/search.js, which opens the search box
+       (layouts/_partials/search.html). */}}
+<button class="icon-button" type="button" data-search-open aria-label="Search" title="Search" hidden>
+<svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.75" cy="8.75" r="5.5"/><path d="M13 13l4 4"/></svg>
+</button>
 {{ partial "lang-picker.html" (dict "page" .) }}
 {{- /* Shown by assets/js/theme.js, which also makes it work. */}}
 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch between light and dark theme" hidden>
@@ -33,6 +38,10 @@
 </summary>
 <div class="menu-panel">
 <div class="menu-panel__inner">
+<button class="menu-search" type="button" data-search-open hidden>
+<svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.75" cy="8.75" r="5.5"/><path d="M13 13l4 4"/></svg>
+Search
+</button>
 {{- range partial "nav-groups.html" . }}
 <details class="menu-panel__group" open>
 <summary>{{ .heading }}<svg aria-hidden="true" viewBox="0 0 12 12" width="10" height="10"><path d="M2.5 4.5L6 8l3.5-3.5"/></svg></summary>

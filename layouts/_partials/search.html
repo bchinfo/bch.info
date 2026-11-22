@@ -1,0 +1,15 @@
+{{- /* The search box: a dialog opened from the header button, with "/" or with
+       Ctrl+K. assets/js/search.js fills in the results. The index and the
+       search library are only downloaded when the box is first opened. */ -}}
+{{- $index := "" }}
+{{- with site.Home.OutputFormats.Get "searchindex" }}{{ $index = .RelPermalink }}{{ end }}
+{{- $fuse := resources.Get "js/vendor/fuse-7.5.0.basic.min.js" | fingerprint }}
+<dialog class="search" id="search" aria-label="Search" data-index="{{ $index }}" data-library="{{ $fuse.RelPermalink }}">
+<div class="search__field">
+<svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.75" cy="8.75" r="5.5"/><path d="M13 13l4 4"/></svg>
+<input id="search-input" type="search" placeholder="Search" aria-label="Search" aria-controls="search-results" autocomplete="off" autocapitalize="off" spellcheck="false">
+<button class="search__close" type="button" data-search-close aria-label="Close">Esc</button>
+</div>
+<div class="search__results" id="search-results" role="listbox" aria-label="Results"></div>
+<p class="search__empty" id="search-empty" role="status" hidden></p>
+</dialog>

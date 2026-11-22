@@ -266,7 +266,7 @@ svg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 4px 24px;
+  gap: 4px 16px;
   max-width: 1226px;
   min-height: 64px;
   margin: 0 auto;
@@ -293,7 +293,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 16px;
+  gap: 4px 12px;
   margin-left: auto;
 }
 
@@ -378,14 +378,15 @@ svg {
 .site-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
-.theme-toggle {
+.theme-toggle,
+.icon-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: 32px;
   height: 40px;
   padding: 0;
   border: 0;
@@ -395,7 +396,13 @@ svg {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.theme-toggle[hidden],
+.icon-button[hidden] {
+  display: none;
+}
+
+.theme-toggle:hover,
+.icon-button:hover {
   color: var(--fg);
 }
 
@@ -627,6 +634,176 @@ svg {
 
   .menu-toggle {
     display: block;
+  }
+}
+
+/* The search button inside the menu panel, shown on phones only. */
+
+.menu-search {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 46px;
+  margin: 10px 0 4px;
+  padding: 0 14px;
+  border: 1px solid var(--outline);
+  border-radius: 6px;
+  background: none;
+  font: inherit;
+  font-size: 16px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* Search: a box over the page, with the results under the field. */
+
+.search {
+  width: min(640px, calc(100% - 32px));
+  max-height: min(560px, calc(100dvh - 24vh));
+  margin: 12vh auto 0;
+  padding: 0;
+  border: 1px solid var(--outline);
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.search[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.search::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.search__field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px 0 18px;
+  color: var(--muted);
+}
+
+.search__field svg {
+  flex: none;
+}
+
+.search__field input {
+  flex: 1;
+  min-width: 0;
+  height: 56px;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  font: inherit;
+  font-size: 17px;
+  color: var(--fg);
+  appearance: none;
+}
+
+.search__field input::placeholder {
+  color: var(--faint);
+}
+
+.search__field input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search__close {
+  flex: none;
+  padding: 4px 7px;
+  border: 1px solid var(--outline);
+  border-radius: 4px;
+  background: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.search__close:hover {
+  color: var(--fg);
+}
+
+.search__results {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.search__results:not(:empty),
+.search__empty {
+  border-top: 1px solid var(--line);
+}
+
+.search__hit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 18px;
+  border-left: 2px solid transparent;
+  text-decoration: none;
+}
+
+.search__hit[aria-selected] {
+  border-left-color: var(--green);
+  background: var(--hover);
+}
+
+.search__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.search__title {
+  color: var(--fg);
+}
+
+.search__more {
+  overflow: hidden;
+  font-size: 14px;
+  color: var(--muted);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search__where {
+  flex: none;
+  max-width: 45%;
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--faint);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search__empty {
+  padding: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .search {
+    margin-top: 16px;
+    max-height: calc(100dvh - 32px);
+  }
+
+  /* The name of the page goes above the result instead of beside it. */
+  .search__hit {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 3px;
+  }
+
+  .search__where {
+    max-width: none;
   }
 }
 
@@ -2175,6 +2352,15 @@ td:last-child {
 }
 
 @media (max-width: 480px) {
+  /* On phones the search button moves from the header into the menu panel. */
+  .site-actions > .icon-button {
+    display: none;
+  }
+
+  .menu-search:not([hidden]) {
+    display: flex;
+  }
+
   /* On phones the menu button shows only its icon. */
   .menu-button span {
     display: none;

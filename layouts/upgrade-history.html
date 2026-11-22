@@ -17,7 +17,7 @@
 </div>
 {{- /* The page is newest first; this jumps to the oldest entry for reading in order. */ -}}
 {{- with last 1 hugo.Data.upgrade_history }}
-<a class="jump-link" href="#oldest" data-jump>Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
+<a class="jump-link" href="#{{ (index . 0).title | anchorize }}" data-jump>Start from {{ substr (index . 0).date 0 4 }} <span aria-hidden="true">↓</span></a>
 {{- end }}
 </div>
 </div>
@@ -25,12 +25,12 @@
 <div class="hatch" aria-hidden="true"></div>
 <section class="section upgrades">
 {{- /* The list is newest first: entries down to the split are Bitcoin Cash's
-       own (green), the ones after it are shared history with BTC (orange). */ -}}
+       own (green), the ones after it are shared history with BTC (orange).
+       Each entry has an id made from its title, which the search links to. */ -}}
 {{- $era := "post" }}
-{{- $count := len hugo.Data.upgrade_history }}
 {{- range $i, $entry := hugo.Data.upgrade_history }}
 {{- with $entry }}
-<article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}"{{ if eq (add $i 1) $count }} id="oldest"{{ end }}>
+<article class="up-row up-row--{{ $era }}{{ if .split }} up-row--split{{ end }}" id="{{ .title | anchorize }}">
 <time class="up-date">{{ .date }}</time>
 <span class="up-mark"><i class="up-icon up-icon--{{ .kind }}" aria-hidden="true">{{ with index hugo.Data.upgrade_icons (.icon | default "genesis") }}<svg viewBox="0 0 24 24" width="22" height="22"><path d="{{ . }}"/></svg>{{ end }}</i></span>
 <div class="up-main">
