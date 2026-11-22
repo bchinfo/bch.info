@@ -1,20 +1,12 @@
 {
   "exchanges": [
     {
-      "name": "Bittrex",
-      "link": "https://bittrex.com/"
-    },
-    {
       "name": "Cex.io",
       "link": "https://cex.io"
     },
     {
       "name": "Huobi",
       "link": "https://www.huobi.com/"
-    },
-    {
-      "name": "Coinfloor",
-      "link": "https://coinfloor.com"
     },
     {
       "name": "Sideshift",
@@ -69,10 +61,6 @@
       "link": "https://www.bitstamp.net/"
     },
     {
-      "name": "BestRate",
-      "link": "https://bestrate.org/"
-    },
-    {
       "name": "CoinFalcon",
       "link": "https://coinfalcon.com/"
     },
@@ -85,8 +73,8 @@
       "link": "https://crypto.com/exchange"
     },
     {
-      "name": "OKEx",
-      "link": "https://www.okex.com/"
+      "name": "OKX",
+      "link": "https://www.okx.com/"
     },
     {
       "name": "BitcoinVN",
