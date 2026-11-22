@@ -2,13 +2,25 @@
 # to them by "id". Until a section has a "body" (HTML), the page shows its "todo"
 # note, which says what the section should cover. "links" are shown under it.
 - id: history
-  title: "Brimstone and fire: A brief history of BCH"
-  todo: Describe the reason, and results of each chain and catastrophe. Forking BTC, forking BSV, forking XEC, demise of SmartBCH.
+  title: "Trials of fire: Why does BCH exist?"
+  body: >-
+    <p>In 2017, Core developers strangled BTC. They refused to allow the capacity its users needed, making it
+    expensive, slow and unreliable. We disagreed, and BCH was born.</p>
+    <p>In 2018, a well-funded team tried to take us down a path of data storage over money, of compliance over
+    freedom, of headline numbers over reliability, and attempted a hashing attack over it. We stood our ground.
+    They left as BSV.</p>
+    <p>In 2020, lead developer of the majority implementation tried to capture mining rewards for his own team,
+    breaking BCH's neutrality. We pulled everyone else together, and stood our ground. They left as XEC.</p>
+    <p>In 2022, many of us were pulled into the promise of just bolting on an EVM smart contract as a second
+    layer. The attempt was reckless and unsafe, so it went down in flames. BCH's main chain welcomed everyone
+    back, to the straight and narrow of responsible, reliable improvements.</p>
+    <p>The trials harmed us. But they also shaped who we are today. BCH is the only major coin who has survived
+    social challenges others claim to be resistant against. Everyone else makes promises, we are proven.</p>
   links:
     - name: Full upgrade timeline
       url: /upgrade-history/
 - id: scaling
-  title: Scaling for the world
+  title: Reach everyone, cheaply and safely
   todo: Blocksize increases, Fulcrum improvements, potential upgrades like UTXO commitment in the pipeline.
 - id: tools
   title: Tools to free you from middlemen
