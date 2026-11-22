@@ -937,6 +937,83 @@ svg {
   color: var(--green-text);
 }
 
+/* The box under the hero: a statement, three lines that lead to the sections
+   that explain them, and a closing sentence. */
+
+.box__intro {
+  max-width: 900px;
+  padding: clamp(40px, 5vw, 64px) var(--pad) clamp(28px, 3.5vw, 40px);
+  font-weight: 500;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.box__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 32px;
+  padding: 18px var(--pad);
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+a.box__row:hover {
+  background: var(--hover);
+  color: var(--fg);
+}
+
+.box__text {
+  font-weight: 500;
+  font-size: clamp(19px, 2vw, 24px);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.box__go {
+  flex: none;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--green-text);
+  white-space: nowrap;
+}
+
+.box__row--soon .box__go {
+  color: var(--faint);
+  opacity: 0.7;
+}
+
+.box__closing {
+  padding: clamp(28px, 3.5vw, 40px) var(--pad) clamp(40px, 5vw, 56px);
+  border-top: 1px solid var(--line);
+  font-size: clamp(18px, 1.8vw, 21px);
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.box__closing a {
+  color: var(--fg);
+  text-decoration-color: var(--green);
+}
+
+.box__closing .box-soon {
+  color: var(--fg);
+}
+
+.box__closing strong {
+  font-weight: 600;
+  color: var(--green-text);
+}
+
+@media (max-width: 640px) {
+  .box__row {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
 /* News posts */
 
 .post-row {

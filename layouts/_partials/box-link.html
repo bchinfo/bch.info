@@ -1,0 +1,3 @@
+{{- /* A phrase in the homepage box: a link when its url is set, plain text
+       otherwise. */ -}}
+{{- if .url }}<a href="{{ .url | relLangURL }}">{{ .text }}</a>{{ else }}<span class="box-soon">{{ .text }}</span>{{ end -}}

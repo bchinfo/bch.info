@@ -32,10 +32,47 @@
 <span><b>/</b> {{ partial "t.html" "index.frozen" }}</span>
 </section>
 
+{{- $box := hugo.Data.home_box }}
+<div class="hatch" aria-hidden="true"></div>
+<section class="section box">
+<p class="box__intro">{{ partial "t.html" "index.box.intro" }}</p>
+<div class="box__rows">
+{{- range $box.rows }}
+{{- $label := partial "t.html" (printf "index.box.%s-link" .key) }}
+{{- if .url }}
+<a class="box__row" href="{{ .url | relLangURL }}"><span class="box__text">{{ partial "t.html" (printf "index.box.%s" .key) }}</span><span class="box__go">{{ $label }} <span aria-hidden="true">→</span></span></a>
+{{- else }}
+<div class="box__row box__row--soon"><span class="box__text">{{ partial "t.html" (printf "index.box.%s" .key) }}</span><span class="box__go" title="Coming soon">{{ $label }} <span aria-hidden="true">→</span></span></div>
+{{- end }}
+{{- end }}
+</div>
+<p class="box__closing">{{ partial "t.html" "index.box.closing-1" }} {{ partial "box-link.html" (dict "text" (partial "t.html" "index.box.easy") "url" $box.links.easy) }}{{ partial "t.html" "index.box.closing-2" }} {{ partial "box-link.html" (dict "text" (partial "t.html" "index.box.reliable") "url" $box.links.reliable) }}{{ partial "t.html" "index.box.closing-3" }} {{ partial "box-link.html" (dict "text" (partial "t.html" "index.box.torch") "url" $box.links.torch) }}{{ partial "t.html" "index.box.closing-4" }} <strong>{{ partial "t.html" "index.box.freedom" }}</strong>.</p>
+</section>
+
+{{- with site.GetPage "/news" }}
+{{- with first 5 .Pages.ByDate.Reverse }}
+<div class="hatch" aria-hidden="true"></div>
+<section class="section" id="news">
+<div class="section__head">
+<div class="section__title">
+<span class="label"><b>01</b> / News</span>
+<h2>News</h2>
+</div>
+<div class="btn-row">
+<a class="btn btn--outline btn--small" href="{{ (site.GetPage "/news").RelPermalink }}">All news →</a>
+</div>
+</div>
+{{- range . }}
+{{ partial "post-row.html" . }}
+{{- end }}
+</section>
+{{- end }}
+{{- end }}
+
 <div class="hatch" aria-hidden="true"></div>
 <section class="section mission">
 <div class="mission__text">
-<span class="label"><b>01</b> / {{ site.Title }}</span>
+<span class="label"><b>02</b> / {{ site.Title }}</span>
 <p class="lead">{{ partial "t.html" "index.desc" }}</p>
 </div>
 <div class="mission__art" aria-hidden="true">
@@ -47,7 +84,7 @@
 <section class="section" id="get-started">
 <div class="section__head section__head--start">
 <div class="section__title">
-<span class="label"><b>02</b></span>
+<span class="label"><b>03</b></span>
 <h2>{{ partial "t.html" "index.get-started" }}</h2>
 </div>
 <svg class="stairs" aria-hidden="true" viewBox="0 0 290 196">
@@ -76,7 +113,7 @@
 <section class="section" id="nodes">
 <div class="section__head">
 <div class="section__title">
-<span class="label"><b>03</b> / {{ partial "t.html" "nodes.title" }}</span>
+<span class="label"><b>04</b> / {{ partial "t.html" "nodes.title" }}</span>
 <h2>{{ partial "t.html" "nodes.sub" }}</h2>
 </div>
 <div class="btn-row">
@@ -91,25 +128,4 @@
 </a>
 {{- end }}
 </section>
-
-{{- with site.GetPage "/news" }}
-{{- with first 5 .Pages.ByDate.Reverse }}
-<div class="hatch" aria-hidden="true"></div>
-<section class="section" id="news">
-<div class="section__head">
-<div class="section__title">
-<span class="label"><b>04</b> / News</span>
-<h2>News</h2>
-</div>
-<div class="btn-row">
-<a class="btn btn--outline btn--small" href="{{ (site.GetPage "/news").RelPermalink }}">All news →</a>
-</div>
-</div>
-{{- range . }}
-{{ partial "post-row.html" . }}
-{{- end }}
-</section>
-{{- end }}
-{{- end }}
-
 {{ end }}

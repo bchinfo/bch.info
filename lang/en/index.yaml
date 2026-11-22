@@ -18,3 +18,20 @@ frozen: No frozen funds
 pools-exch: Pools & Exchanges
 run: Run a full node
 upgrade-node: Upgrade your node
+
+box:
+  intro: Bitcoin Cash carries both Satoshi's original mission of peer-to-peer electronic cash, and Bitcoin's unbroken chain from Genesis.
+  kings: We do not tolerate kings nor masters.
+  kings-link: History
+  transact: We do not pick and choose who can transact.
+  transact-link: Scaling mission
+  middlemen: We do not believe in middlemen nor custody.
+  middlemen-link: UTXO Script
+  closing-1: Bitcoin is Cash, it is
+  easy: easy to use
+  closing-2: ", it is"
+  reliable: reliable
+  closing-3: ", it"
+  torch: carries Satoshi's torch
+  closing-4: ", and it is"
+  freedom: freedom

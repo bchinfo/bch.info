@@ -1,0 +1,14 @@
+# Where the links in the homepage box go. Each name matches a key under "box" in
+# lang/<language>/index.yaml. A link without a url is a page we don't have yet:
+# its text is shown without a link.
+rows:
+  - key: kings
+    url: ""
+  - key: transact
+    url: ""
+  - key: middlemen
+    url: ""
+links:
+  easy: ""
+  reliable: ""
+  torch: ""
