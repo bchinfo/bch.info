@@ -13,6 +13,8 @@
   - name: Explore Tokens
 - heading: Learn
   items:
+  - name: About Bitcoin Cash
+    url: /about/
   - name: What is Bitcoin Cash?
   - name: Why is Bitcoin Cash Different?
   - name: Satoshi's Mission

@@ -3,12 +3,12 @@
 # its text is shown without a link.
 rows:
   - key: kings
-    url: /upgrade-history/
+    url: /about/#history
   - key: transact
-    url: ""
+    url: /about/#scaling
   - key: middlemen
-    url: ""
+    url: /about/#tools
 links:
-  easy: ""
-  reliable: ""
-  torch: ""
+  easy: /about/#smooth-money
+  reliable: /about/#reliable
+  torch: /about/#legacy

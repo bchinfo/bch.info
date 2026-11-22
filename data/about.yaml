@@ -1,0 +1,27 @@
+# The sections of the "About Bitcoin Cash" page, in order. The homepage box links
+# to them by "id". Until a section has a "body" (HTML), the page shows its "todo"
+# note, which says what the section should cover. "links" are shown under it.
+- id: history
+  title: "Brimstone and fire: A brief history of BCH"
+  todo: Describe the reason, and results of each chain and catastrophe. Forking BTC, forking BSV, forking XEC, demise of SmartBCH.
+  links:
+    - name: Full upgrade timeline
+      url: /upgrade-history/
+- id: scaling
+  title: Scaling for the world
+  todo: Blocksize increases, Fulcrum improvements, potential upgrades like UTXO commitment in the pipeline.
+- id: tools
+  title: Tools to free you from middlemen
+  todo: CashTokens, the many script improvements, link to CashScript?
+- id: smooth-money
+  title: Smooth money
+  todo: Describe keeping fees low as a central belief, as well as other things like unconfirmed chain etc.
+- id: reliable
+  title: A reliable foundation to build on
+  todo: Describe CHIP process and the principle of transparency, predictability that leads to reliability.
+  links:
+    - name: CHIPs
+      url: /chips/
+- id: legacy
+  title: Satoshi's legacy
+  todo: Describe the things we're dead set to keep, like PoW, 21M coins, neutrality (no tax to any specific entity), the original UTXO, etc.

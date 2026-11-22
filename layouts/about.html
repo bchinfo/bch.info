@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+<section class="section about">
+{{- range $i, $part := hugo.Data.about }}
+<article class="about__part" id="{{ $part.id }}">
+<span class="label"><b>{{ printf "%02d" (add $i 1) }}</b></span>
+<div class="about__body">
+<h2>{{ $part.title }}</h2>
+{{- with $part.body }}
+<div class="prose">{{ . | safeHTML }}</div>
+{{- else }}
+{{- with $part.todo }}
+<p class="draft-note"><span>To be written</span>{{ . }}</p>
+{{- end }}
+{{- end }}
+{{- with $part.links }}
+<p class="about__links">
+{{- range . }}
+<a href="{{ .url | relLangURL }}">{{ .name }} →</a>
+{{- end }}
+</p>
+{{- end }}
+</div>
+</article>
+{{- end }}
+</section>
+{{ end }}
