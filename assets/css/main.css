@@ -623,6 +623,24 @@ svg {
   color: var(--fg);
 }
 
+/* With the menus in the header, it spans the full width of the framed column
+   so they have room. */
+
+@media (min-width: 1261px) {
+  .site-header__inner {
+    gap: 4px 28px;
+    padding: 0;
+  }
+
+  .site-nav {
+    gap: 4px 20px;
+  }
+
+  .site-actions {
+    gap: 10px;
+  }
+}
+
 @media (max-width: 1260px) {
   .site-nav {
     display: none;
