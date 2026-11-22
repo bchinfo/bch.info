@@ -10,7 +10,7 @@
 <div class="cell">
 <span class="logo-tile"><img src="{{ printf "img/exchanges/%s.svg" $key | relURL }}" alt="{{ index . 1 }}" height="32"></span>
 <p class="muted">{{ partial "t.html" (printf "exchanges.%s.desc" $key) }}</p>
-<a class="btn btn--primary" href="{{ index . 2 }}" target="_blank" rel="noopener">{{ partial "t.html" (printf "exchanges.%s.btn" $key) }}</a>
+<a class="btn btn--primary" href="{{ index . 2 }}" target="_blank" rel="noopener">{{ partial "t.html" (printf "exchanges.%s.btn" $key) }}{{ partial "ext-icon.html" . }}</a>
 </div>
 {{- end }}
 </div>
