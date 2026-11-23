@@ -141,15 +141,15 @@
     result.hidden = false;
   });
 
-  // Copying an address: for a moment the button shows a tick and a "Copied"
-  // message appears at the bottom of the screen.
-  const toast = document.getElementById("copy-toast");
+  // Copying an address: for a moment the button shows a tick, with a small
+  // "Copied" bubble above it.
+  const copyStatus = document.getElementById("copy-status");
   let copiedTimer = null;
 
   function clearCopied() {
     clearTimeout(copiedTimer);
     document.querySelectorAll(".copy").forEach((button) => button.classList.remove("is-copied"));
-    toast.hidden = true;
+    copyStatus.textContent = "";
   }
 
   document.querySelectorAll(".copy").forEach((button) => {
@@ -157,7 +157,7 @@
       navigator.clipboard.writeText(document.getElementById(button.dataset.copy).textContent).then(() => {
         clearCopied();
         button.classList.add("is-copied");
-        toast.hidden = false;
+        copyStatus.textContent = copyStatus.dataset.text;
         copiedTimer = setTimeout(clearCopied, 2000);
       });
     });

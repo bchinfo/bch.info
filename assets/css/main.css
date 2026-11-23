@@ -1970,6 +1970,7 @@ td:last-child {
   font-family: var(--mono);
   font-size: 14px;
   line-height: 1.45;
+  position: relative;
   text-align: left;
   cursor: pointer;
 }
@@ -2014,35 +2015,45 @@ td:last-child {
   display: block;
 }
 
-/* A short message at the bottom of the screen. */
+/* ...and a small bubble above it says so. */
 
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 28px;
-  z-index: 40;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 16px 10px 12px;
-  border-radius: 6px;
+.copy__tip {
+  position: absolute;
+  right: 4px;
+  bottom: calc(100% + 9px);
+  display: none;
+  padding: 5px 10px;
+  border-radius: 5px;
   background: var(--fg);
-  color: var(--bg);
-  font-size: 15px;
+  font-family: var(--sans);
+  font-size: 13px;
   font-weight: 500;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-  transform: translateX(-50%);
-  animation: toast-in 0.16s ease-out;
+  line-height: 1.4;
+  color: var(--bg);
+  white-space: nowrap;
+  animation: tip-in 0.14s ease-out;
 }
 
-.toast svg {
-  color: var(--green-mid);
+.copy__tip::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 100%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  background: var(--fg);
+  transform: rotate(45deg);
 }
 
-@keyframes toast-in {
+.copy.is-copied .copy__tip {
+  display: block;
+}
+
+@keyframes tip-in {
   from {
     opacity: 0;
-    transform: translate(-50%, 8px);
+    transform: translateY(4px);
   }
 }
 

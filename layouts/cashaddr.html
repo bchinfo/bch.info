@@ -19,14 +19,14 @@
 <div class="addr-col" id="{{ $id }}Cell">
 <h2>{{ partial "t.html" (printf "cashaddr.%s.title" (index . 0)) }}</h2>
 <p>{{ partial "t.html" (printf "cashaddr.%s.sub" (index . 0)) }}</p>
-<button class="copy" type="button" data-copy="{{ $id }}" aria-label="Copy"><span class="copy__text" id="{{ $id }}">-</span><svg class="copy__icon" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="7" y="7" width="9.5" height="9.5" rx="1.5"/><path d="M13 7V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v6.5A1.5 1.5 0 0 0 5 13h2"/></svg><svg class="copy__done" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg></button>
+<button class="copy" type="button" data-copy="{{ $id }}" aria-label="Copy"><span class="copy__text" id="{{ $id }}">-</span><svg class="copy__icon" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="7" y="7" width="9.5" height="9.5" rx="1.5"/><path d="M13 7V5a1.5 1.5 0 0 0-1.5-1.5H5A1.5 1.5 0 0 0 3.5 5v6.5A1.5 1.5 0 0 0 5 13h2"/></svg><svg class="copy__done" aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg><span class="copy__tip" aria-hidden="true">{{ partial "t.html" "cashaddr.copied" }}</span></button>
 <canvas class="qr" id="{{ $id }}QR"></canvas>
 </div>
 {{- end }}
 </section>
 </div>
-{{- /* Shown for a moment by assets/js/cashaddr.js when an address is copied. */}}
-<p class="toast" id="copy-toast" role="status" hidden><svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 10.5l3.5 3.5 7.5-8"/></svg>{{ partial "t.html" "cashaddr.copied" }}</p>
+{{- /* Announces a copy to screen readers; assets/js/cashaddr.js fills it in. */}}
+<p class="visually-hidden" id="copy-status" role="status" data-text="{{ partial "t.html" "cashaddr.copied" }}"></p>
 {{ end }}
 {{ define "scripts" }}
 <script src="{{ "js/bchaddrjs-0.4.9.min.js" | relURL }}" defer></script>
