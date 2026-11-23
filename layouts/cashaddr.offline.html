@@ -1,0 +1,37 @@
+{{- /* The address conversion tool as one file that works without a connection.
+       It is downloaded from the tool's page. The styles and scripts are part of
+       the file, and the fonts of the site are left out: the device's own fonts
+       are used. */ -}}
+<!doctype html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{- /* The file needs nothing from the network; this stops it from asking. */}}
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:">
+<title>{{ partial "title.html" . }} | {{ site.Title }}</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="{{ .Permalink }}">
+{{- with resources.Get "css/main.css" | minify }}
+<style>{{ .Content | safeCSS }}</style>
+{{- end }}
+</head>
+<body>
+<header class="site-header">
+<div class="site-header__inner">
+<a class="brand" href="{{ .Permalink }}">{{ partial "logo.html" (dict "file" "bitcoin-cash-logo-horizontal.svg") }}</a>
+</div>
+</header>
+<div class="frame">
+<main id="main">
+{{ partial "cashaddr-tool.html" (dict "page" . "offline" true) }}
+</main>
+</div>
+{{- range slice "static/js/bchaddrjs-0.4.9.min.js" "static/js/qrcode.min.js" }}
+<script>{{ os.ReadFile . | safeJS }}</script>
+{{- end }}
+{{- with resources.Get "js/cashaddr.js" | minify }}
+<script>{{ .Content | safeJS }}</script>
+{{- end }}
+</body>
+</html>

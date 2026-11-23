@@ -59,6 +59,10 @@ The news posts are in `data/news.json`, one entry per post with its `date`, `tex
 
 The search box (the magnifier in the header, `/` or `Ctrl+K`) runs in the browser. When the site is built, `layouts/home.searchindex.json` writes one index per language (for example `/en/search.json`) from the pages and the lists in `/data/`, so new pages and new entries become searchable without any extra step. The matching is done by [Fuse.js](https://www.fusejs.io/), kept in `/assets/js/vendor/`.
 
+##### Offline address converter
+
+The address conversion tool can be downloaded as one file that works without a connection (the link is only shown on computers). The file is built from `layouts/cashaddr.offline.html`, with the styles and scripts written into it.
+
 ##### Node releases
 
 The homepage lists the latest release of each node. They are read from the projects' release feeds when the site is built. The feeds are listed under `params.releases` in `hugo.toml`.

@@ -5,6 +5,7 @@ not-valid: This is not a valid address
 paste: Paste an address
 is-not-valid: is not a valid address
 copied: Copied
+offline: Download for offline use
 
 cashaddr:
   title: Cash address
