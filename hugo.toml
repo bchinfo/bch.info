@@ -71,6 +71,14 @@ disableKinds = ["taxonomy", "term"]
   baseName = "search"
   notAlternative = true
 
+# The address converter as one file to download and use without a connection
+# (layouts/cashaddr.offline.html). content/tools/cashaddr.md asks for it.
+[outputFormats.Offline]
+  mediaType = "text/html"
+  baseName = "bch-address-converter"
+  isHTML = true
+  notAlternative = true
+
 [outputs]
   home = ["html", "searchindex"]
   section = ["html"]

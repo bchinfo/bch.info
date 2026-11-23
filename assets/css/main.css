@@ -1918,6 +1918,28 @@ td:last-child {
   overflow-wrap: anywhere;
 }
 
+/* The link to the converter's offline copy. Only shown on computers: a phone
+   does not run a page that was downloaded. */
+
+.offline-link {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.offline-link:hover {
+  color: var(--fg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .offline-link {
+    display: inline-flex;
+  }
+}
+
 /* The address converter's results: one column per format. The columns share
    their rows, so the titles, descriptions, addresses and QR codes line up
    whatever the length of the text. */
