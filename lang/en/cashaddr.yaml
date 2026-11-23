@@ -4,6 +4,7 @@ convert: Convert
 not-valid: This is not a valid address
 paste: Paste an address
 is-not-valid: is not a valid address
+copied: Copied
 
 cashaddr:
   title: Cash address

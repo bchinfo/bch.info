@@ -2003,6 +2003,49 @@ td:last-child {
   color: var(--green-text);
 }
 
+/* Once copied, a tick takes the place of the copy icon. */
+
+.copy__done,
+.copy.is-copied .copy__icon {
+  display: none;
+}
+
+.copy.is-copied .copy__done {
+  display: block;
+}
+
+/* A short message at the bottom of the screen. */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 12px;
+  border-radius: 6px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%);
+  animation: toast-in 0.16s ease-out;
+}
+
+.toast svg {
+  color: var(--green-mid);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+}
+
 .qr {
   margin-top: 24px;
   border-radius: 6px;

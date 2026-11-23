@@ -131,7 +131,7 @@
       return;
     }
     error.hidden = true;
-    document.querySelectorAll(".copy").forEach((button) => button.classList.remove("is-copied"));
+    clearCopied();
     const base = parsed.type & 1;
     const cashAddress = encode(parsed.prefix, base, parsed.hash);
     show("cashAddr", cashAddress);
@@ -141,10 +141,24 @@
     result.hidden = false;
   });
 
+  // Copying an address: for a moment the button shows a tick and a "Copied"
+  // message appears at the bottom of the screen.
+  const toast = document.getElementById("copy-toast");
+  let copiedTimer = null;
+
+  function clearCopied() {
+    clearTimeout(copiedTimer);
+    document.querySelectorAll(".copy").forEach((button) => button.classList.remove("is-copied"));
+    toast.hidden = true;
+  }
+
   document.querySelectorAll(".copy").forEach((button) => {
     button.addEventListener("click", () => {
       navigator.clipboard.writeText(document.getElementById(button.dataset.copy).textContent).then(() => {
-        document.querySelectorAll(".copy").forEach((b) => b.classList.toggle("is-copied", b === button));
+        clearCopied();
+        button.classList.add("is-copied");
+        toast.hidden = false;
+        copiedTimer = setTimeout(clearCopied, 2000);
       });
     });
   });
