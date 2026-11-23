@@ -1918,12 +1918,50 @@ td:last-child {
   overflow-wrap: anywhere;
 }
 
+/* The address converter's results: one column per format. The columns share
+   their rows, so the titles, descriptions, addresses and QR codes line up
+   whatever the length of the text. */
+
+.addr-cols {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-template-rows: repeat(4, auto);
+  column-gap: 1px;
+  overflow: hidden;
+}
+
+.addr-col {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  justify-items: start;
+  padding: 36px clamp(24px, 3vw, 40px) 44px;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.addr-col h2 {
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.addr-col p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* The address, which is also the button that copies it. */
+
 .copy {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
+  margin-top: 24px;
   padding: 13px 16px;
   border: 1px solid var(--outline);
   border-radius: 6px;
@@ -1931,9 +1969,29 @@ td:last-child {
   color: var(--fg);
   font-family: var(--mono);
   font-size: 14px;
+  line-height: 1.45;
   text-align: left;
-  overflow-wrap: anywhere;
   cursor: pointer;
+}
+
+/* In the columns an address is shown as two lines of the same length. */
+
+.copy__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.copy__text span {
+  display: block;
+}
+
+.copy svg {
+  flex: none;
+  color: var(--muted);
+}
+
+.copy:hover svg {
+  color: var(--fg);
 }
 
 .copy.is-copied {
@@ -1941,9 +1999,40 @@ td:last-child {
   color: var(--green-text);
 }
 
+.copy.is-copied svg {
+  color: var(--green-text);
+}
+
 .qr {
-  align-self: flex-start;
+  margin-top: 24px;
   border-radius: 6px;
+  box-shadow: 0 0 0 1px var(--outline);
+}
+
+/* Below this width three columns are too narrow for an address: the formats
+   are stacked, and each address runs on as one piece of text. */
+
+@media (max-width: 1099px) {
+  .addr-cols {
+    display: block;
+  }
+
+  .addr-col {
+    display: block;
+    padding: 30px var(--pad) 36px;
+  }
+
+  .copy {
+    max-width: 560px;
+  }
+
+  .copy__text span {
+    display: inline;
+  }
+
+  .qr {
+    display: block;
+  }
 }
 
 [hidden] {

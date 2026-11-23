@@ -105,7 +105,15 @@
   function show(id, value) {
     document.getElementById(id + "Cell").hidden = !value;
     if (!value) return;
-    document.getElementById(id).textContent = value;
+    // The address goes on two lines of the same length (the columns are too
+    // narrow for one).
+    const half = Math.ceil(value.length / 2);
+    const lines = [value.slice(0, half), value.slice(half)].filter(Boolean).map((text) => {
+      const line = document.createElement("span");
+      line.textContent = text;
+      return line;
+    });
+    document.getElementById(id).replaceChildren(...lines);
     QRCode.toCanvas(document.getElementById(id + "QR"), value, { width: 164 }, (err) => {
       if (err) console.error(err);
     });
@@ -123,6 +131,7 @@
       return;
     }
     error.hidden = true;
+    document.querySelectorAll(".copy").forEach((button) => button.classList.remove("is-copied"));
     const base = parsed.type & 1;
     const cashAddress = encode(parsed.prefix, base, parsed.hash);
     show("cashAddr", cashAddress);
