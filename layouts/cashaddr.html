@@ -14,9 +14,9 @@
 <div id="converted" hidden>
 <div class="hatch" aria-hidden="true"></div>
 <section class="section cells">
-{{- range slice (slice "cashaddr" "cashAddr") (slice "legacy" "legacyAddr") }}
+{{- range slice (slice "cashaddr" "cashAddr") (slice "token" "tokenAddr") (slice "legacy" "legacyAddr") }}
 {{- $id := index . 1 }}
-<div class="cell">
+<div class="cell" id="{{ $id }}Cell">
 <div>
 <h2 class="cell__title">{{ partial "t.html" (printf "cashaddr.%s.title" (index . 0)) }}</h2>
 <p class="muted">{{ partial "t.html" (printf "cashaddr.%s.sub" (index . 0)) }}</p>

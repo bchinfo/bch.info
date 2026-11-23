@@ -9,6 +9,10 @@ cashaddr:
   title: Cash address
   sub: Newer, safer format - will not be confused with Bitcoin (BTC) or other coins
 
+token:
+  title: CashTokens address
+  sub: Token-aware format - shows that the wallet can receive CashTokens
+
 legacy:
   title: Legacy address
   sub: Do not send anything other than Bitcoin Cash (BCH) to this address or your funds may be lost
