@@ -1,6 +1,8 @@
 # The sections of the "About Bitcoin Cash" page, in order. The homepage box links
 # to them by "id". Until a section has a "body" (HTML), the page shows its "todo"
 # note, which says what the section should cover. "links" are shown under it.
+# A link in a body to a page of this site starts with "/" and has no language
+# in it: layouts/about.html adds the language.
 - id: history
   title: "Trials of fire: Why does BCH exist?"
   body: >-
@@ -21,19 +23,62 @@
       url: /upgrade-history/
 - id: scaling
   title: Reach everyone, cheaply and safely
-  todo: Blocksize increases, Fulcrum improvements, potential upgrades like UTXO commitment in the pipeline.
+  body: >-
+    <p>When it comes to scaling, we chose neither the path of suffocating small block limits, nor the unsafe
+    "any size, any time, no matter the cost" approach sometimes accused of us.</p>
+    <p>We chose to scale blocksize responsibly,
+    <a href="https://gitlab.com/0353F40E/ebaa" target="_blank" rel="noopener">according to real usage history, at a pace reasonable for infrastructure to catch up</a>.
+    Our prominent developer crafted a <a href="https://fulcrumserver.org/" target="_blank" rel="noopener">high performance indexer</a> that is
+    now serving beyond BCH in the spirit of open source. We do not believe in the false dilemma that serving
+    everyone has to come at the cost of safety or decentralization.</p>
 - id: tools
-  title: Tools to free you from middlemen
-  todo: CashTokens, the many script improvements, link to CashScript?
+  title: "Script and tokens: Tools to free you from middlemen"
+  body: >-
+    <p>You do not need a centralized Layer 2 or be bundled with another chain to use powerful smart contracts.
+    We have <a href="https://cashscript.org/" target="_blank" rel="noopener">tools</a> native to our UTXO architecture.
+    <a href="https://gitlab.com/GeneralProtocols/research/chips/-/blob/master/CHIP-2021-02-Add-Native-Introspection-Opcodes.md" target="_blank" rel="noopener">Some</a>
+    of our <a href="https://github.com/bitjson/bch-functions" target="_blank" rel="noopener">upgrades</a> take us toe-to-toe against many of the
+    most powerful smart contract platforms.</p>
+    <p>You do not need fancy Layer 2s, involve custodians or unwieldy Script hacks to build custom tokens. We
+    have it <a href="https://cashtokens.org/" target="_blank" rel="noopener">natively</a>. Due to its sheer simplicity and efficiency, it is
+    also usable as part of the smart contract toolkit.</p>
+    <p>A common pattern seen at other chains is choosing between two extremes: be very conservative and push
+    many of the usecases to middlemen, or recklessly incorporate every trend only to compromise core
+    advantages. We carefully craft sensible, responsible paths forward that minimize the need for our users to
+    leave the noncustodial chain. You came here to escape middlemen, you shouldn't be stuck with a different
+    set.</p>
 - id: smooth-money
   title: Smooth money
-  todo: Describe keeping fees low as a central belief, as well as other things like unconfirmed chain etc.
+  body: >-
+    <p>No other issue stood out more during BCH's split with BTC than transaction fees: We were not fine with
+    high and unpredictable fees, which were natural outcomes of a very limited blocksize limit.</p>
+    <p>That has since evolved into a more generalized attitude: We should make our users' lives easier,
+    sometimes through <a href="https://gitlab.com/0353F40E/fablous" target="_blank" rel="noopener">consensus</a>,
+    <a href="https://github.com/softwareverde/bitcoin-cash-chips/blob/master/unconfirmed-transaction-chain-limit.md" target="_blank" rel="noopener">quasi-consensus</a>
+    changes and additional <a href="https://upgradespecs.bitcoincashnode.org/dsproof/" target="_blank" rel="noopener">relayed</a>
+    information.</p>
 - id: reliable
   title: A reliable foundation to build on
-  todo: Describe CHIP process and the principle of transparency, predictability that leads to reliability.
+  body: >-
+    <p>We went through the trials having learned our lessons, and the result is a stable
+    <a href="https://gitlab.com/im_uname/cash-improvement-proposals/-/blob/master/CHIPs.md" target="_blank" rel="noopener">process</a> for
+    upgrades. We now schedule our upgrades once a year at a predictable time, commit to it six months in
+    advance to give ample time for feedback and testing, and prioritize transparency when we build consensus
+    among stakeholders towards the commitment.</p>
+    <p>Nobody should ever be hit with unexpected chaos and splits again.</p>
   links:
     - name: CHIPs
       url: /chips/
 - id: legacy
   title: Satoshi's legacy
-  todo: Describe the things we're dead set to keep, like PoW, 21M coins, neutrality (no tax to any specific entity), the original UTXO, etc.
+  body: >-
+    <p>Satoshi left us with the best money the world had ever seen, and we intend to keep it that way.</p>
+    <p>There will only ever be 21 million coins, released on Satoshi's original schedule. There can be no good
+    money if the supply can be arbitrarily changed.</p>
+    <p>We will keep proof-of-work, even as other fashionable consensus mechanisms come and go. PoW has kept
+    bitcoin permissionless and neutral at all levels, and that's where we are staying.</p>
+    <p>BCH inherited a chain of coin ownership going all the way back to Satoshi's genesis block, where every
+    single sat was mined and provable neutral. The community went through great pains staving off an attempt
+    to redirect some, and we will stay vigilant.</p>
+    <p>We believe we are doing the best job keeping Satoshi's legacy alive. You can join too: Just download a
+    <a href="/wallets/">wallet</a>, it's that easy.</p>

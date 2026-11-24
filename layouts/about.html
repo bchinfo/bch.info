@@ -12,7 +12,8 @@
 </summary>
 <div class="about__body">
 {{- with $part.body }}
-<div class="prose">{{ . | safeHTML }}</div>
+{{- /* Links to pages of this site get the language of the page. */}}
+<div class="prose">{{ replace . `href="/` (printf `href="%s` ("/" | relLangURL)) | safeHTML }}</div>
 {{- else }}
 {{- with $part.todo }}
 <p class="draft-note"><span>To be written</span>{{ . }}</p>
