@@ -8,10 +8,6 @@
     stacks:
     - js
     - api
-  - name: bitcoincashj
-    url: https://github.com/pokkst/bitcoincashj
-    stacks:
-    - java
   - name: bch-js
     url: https://github.com/Permissionless-Software-Foundation/bch-js
     stacks:
@@ -101,10 +97,6 @@
     stacks:
     - js
     - ts
-  - name: bitdb and bitsocket
-    url: https://bitdb.bch.sx/explorer
-    stacks:
-    - api
   - name: fulcrum (C++ electrumx)
     url: https://github.com/cculianu/Fulcrum
     stacks:

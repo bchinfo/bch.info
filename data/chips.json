@@ -149,7 +149,7 @@
     {
       "title": "CHIP-2021-01 Restrict-Transaction-Version",
       "lastUpdated": "2021/03/16",
-      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Restrict%20Transaction%20Versions.md",
+      "link": "https://bitcoincashresearch.org/t/restrict-transaction-version-numbers/173",
       "consensus": "Yes",
       "tags": [
         "Transactions"
@@ -159,7 +159,7 @@
     {
       "title": "CHIP-2021-01 Allow Transactions to be smaller in size",
       "lastUpdated": "2021/03/16",
-      "link": "https://gitlab.com/bitcoin.cash/chips/-/blob/master/CHIP-2021-01-Allow%20Smaller%20Transactions.md",
+      "link": "https://bitcoincashresearch.org/t/chip-2021-01-allow-transactions-to-be-smaller-in-size/154",
       "consensus": "Yes",
       "tags": [
         "Transactions"
