@@ -65,8 +65,6 @@
     static: true
   - name: Specifications
     url: /specifications/
-  - name: Upgrade Your Node
-    url: /upgrade/
   - name: News
     url: /news/
   - name: Website GitHub
