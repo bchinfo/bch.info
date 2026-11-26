@@ -1,6 +1,26 @@
 {
   "chips": [
     {
+      "title": "CHIP-2025-03 Faster Blocks for Bitcoin Cash",
+      "lastUpdated": "2026/11/25",
+      "link": "https://gitlab.com/0353F40E/fablous",
+      "consensus": "Yes",
+      "tags": [
+        "Blocks"
+      ],
+      "activated": "Pending"
+    },
+    {
+      "title": "CHIP-2025-05: Native Elliptic Curve Arithmetic Operations",
+      "lastUpdated": "2026/08/01",
+      "link": "https://github.com/lightswarm124/bch-ec-arithmetic",
+      "consensus": "Yes",
+      "tags": [
+        "Script"
+      ],
+      "activated": "No"
+    },
+    {
       "title": "CHIP-2024-07-BigInt: High-Precision Arithmetic for Bitcoin Cash",
       "lastUpdated": "2024/11/13",
       "link": "https://github.com/bitjson/bch-bigint",
