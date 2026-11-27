@@ -1,43 +1,44 @@
 # The site navigation, shown as menus in the header and as columns in the footer.
 # An item without a "url" is a page we don't have yet: it is shown greyed out.
+# Those items are commented out for now, so the menus only show pages that exist.
 # "static: true" marks a file that is not under a language prefix.
 - heading: Get & Use
   items:
   - name: Choose a Wallet
     url: /wallets/
-  - name: Send & Receive
+  # - name: Send & Receive
   - name: Buy or Sell BCH
     url: /exchanges/
-  - name: Spend Bitcoin Cash
-  - name: Explore DeFi
-  - name: Explore Tokens
+  # - name: Spend Bitcoin Cash
+  # - name: Explore DeFi
+  # - name: Explore Tokens
 - heading: Learn
   items:
   - name: About Bitcoin Cash
     url: /about/
-  - name: What is Bitcoin Cash?
-  - name: Why is Bitcoin Cash Different?
-  - name: Satoshi's Mission
+  # - name: What is Bitcoin Cash?
+  # - name: Why is Bitcoin Cash Different?
+  # - name: Satoshi's Mission
   - name: Full Upgrade Timeline History
     url: /upgrade-history/
-  - name: Full Technology Stack
+  # - name: Full Technology Stack
   - name: FAQ
     url: /faq/
 - heading: Ecosystem
   items:
-  - name: All Projects
+  # - name: All Projects
   - name: Nodes
     url: /nodes/
   - name: Block Explorers
     url: /explorers/
   - name: Exchanges
     url: /exchanges/
-  - name: Payments & Commerce
-  - name: DeFi & CashTokens
-  - name: Games & Other Apps
+  # - name: Payments & Commerce
+  # - name: DeFi & CashTokens
+  # - name: Games & Other Apps
 - heading: Developers
   items:
-  - name: Getting Started
+  # - name: Getting Started
   - name: Libraries & Documentation
     url: /developers/
   - name: Smart Contracts
@@ -50,10 +51,10 @@
   items:
   - name: All community links
     url: /community/
-  - name: Organizations & Initiatives
-  - name: Podcasts & Media
-  - name: Funding & Hackathons
-  - name: Social Channels & Meetups
+  # - name: Organizations & Initiatives
+  # - name: Podcasts & Media
+  # - name: Funding & Hackathons
+  # - name: Social Channels & Meetups
 - heading: Tools & Resources
   items:
   - name: All Tools
