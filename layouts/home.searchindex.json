@@ -70,6 +70,15 @@
 {{- end }}
 {{- end }}
 
+{{- /* Each question of the FAQ page, cut out of its text as layouts/faq.html does. */}}
+{{- if eq .Layout "faq" }}
+{{- range after 1 (split .Content "<h3") }}
+{{- $item := split (index (split . "<h2") 0) "</h3>" }}
+{{- $id := index (index (findRESubmatch `id="([^"]*)"` (index $item 0) 1) 0) 1 }}
+{{- $entries = $entries | append (dict "t" (printf "<h3%s</h3>" (index $item 0) | plainify | htmlUnescape) "x" (index $item 1 | plainify | htmlUnescape | strings.TrimSpace) "s" $title "u" (printf "%s#%s" $url $id)) }}
+{{- end }}
+{{- end }}
+
 {{- if eq .Layout "about" }}
 {{- range hugo.Data.about }}
 {{- $entries = $entries | append (dict "t" .title "x" (.body | default "" | plainify | htmlUnescape) "s" $title "u" (printf "%s#%s" $url .id)) }}

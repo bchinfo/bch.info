@@ -1,0 +1,7 @@
+{{- /* A link in a page written in Markdown. A link to a page of this site
+       starts with "/" and gets the language of the page; a link to another
+       site opens in a new tab. */ -}}
+{{- $url := .Destination -}}
+{{- if hasPrefix $url "/" }}{{ $url = $url | relLangURL }}{{ end -}}
+<a href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if hasPrefix $url "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Text }}</a>
+{{- /**/ -}}

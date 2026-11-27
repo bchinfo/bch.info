@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+{{- /* The page is written in Markdown (content/faq.md): a "##" heading starts
+       a topic, a "###" heading is a question and the text under it is its
+       answer. The text is cut at those headings to lay the topics out. */}}
+{{- $topics := split .Content "<h2" }}
+<section class="section faq">
+{{- with index $topics 0 | strings.TrimSpace }}
+<div class="padded prose">{{ . | safeHTML }}</div>
+{{- end }}
+{{- range $i, $topic := after 1 $topics }}
+{{- $topic = split $topic "</h2>" }}
+<div class="faq__topic">
+<div class="faq__side">
+<span class="label"><b>{{ printf "%02d" (add $i 1) }}</b></span>
+{{ printf "<h2%s</h2>" (index $topic 0) | safeHTML }}
+</div>
+<div class="faq__list">
+{{- range after 1 (split (index $topic 1) "<h3") }}
+{{- $item := split . "</h3>" }}
+<div class="faq__item">
+{{ printf "<h3%s</h3>" (index $item 0) | safeHTML }}
+<div class="faq__answer">{{ index $item 1 | safeHTML }}</div>
+</div>
+{{- end }}
+</div>
+</div>
+{{- end }}
+</section>
+{{ end }}

@@ -21,6 +21,8 @@
   - name: Full Upgrade Timeline History
     url: /upgrade-history/
   - name: Full Technology Stack
+  - name: FAQ
+    url: /faq/
 - heading: Ecosystem
   items:
   - name: All Projects
