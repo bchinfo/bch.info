@@ -14,7 +14,7 @@
 
   function paint() {
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = current() === "light" ? "#fafafa" : "#0a0a0a";
+    if (meta) meta.content = current() === "light" ? "#f0f0f0" : "#0a0a0a";
   }
 
   paint();
